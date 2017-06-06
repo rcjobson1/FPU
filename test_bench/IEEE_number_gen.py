@@ -9,8 +9,7 @@ def main():
     OP Codes
     1 - Convert number to IEEE
     2 - Generate n random IEEE numbers and display them next to their decimal counterpart
-    3 - Generate n random and save them to a file
-    4 - Load a list of numbers and convert them in batch
+    3 - Generates and converts n random numbers and save them to a file
     """
     if len(argv) < 3 or len(argv) > 4:
         print "Usage: op num <file>"
@@ -18,6 +17,8 @@ def main():
     op = argv[1]
     num = argv[2]
 
+    if op == "0":
+        print IEEE_convert(num)
 
     if op == "1": # Basic Conversion
         print "number %s\t converstion %s" % (num, IEEE_convert(num))
