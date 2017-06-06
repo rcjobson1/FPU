@@ -1,5 +1,6 @@
 FPU Notes
 ---------
+Using this open source FPU for a research Project.
 
 1)  The FPU will never generate a SNAN output
 1a) The SNAN output is asserted when one of the operands
