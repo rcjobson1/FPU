@@ -35,7 +35,7 @@ end
 
 initial begin
   $display("time\topa\topb\tout");
-  $monitor("%d,\t%h,\t%h,\t%h,", $time, opa,opb,out);
+  $monitor("%0d,\t%h,\t%h,\t%h,", $time, opa,opb,out);
 end
 
 

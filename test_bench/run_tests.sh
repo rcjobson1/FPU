@@ -7,3 +7,4 @@ cd ..
 iverilog test_bench/ryantb.v verilog/*.v
 
 ./a.out
+gtkwave TESTWAV.vcd &
