@@ -13,6 +13,7 @@ def main():
     """
     if len(argv) < 3 or len(argv) > 4:
         print "Usage: op num <file>"
+        exit(1)
 
     op = argv[1]
     num = argv[2]
@@ -33,6 +34,8 @@ def main():
     if op == "3":
         if len(argv) != 4:
             print "Invalid Filename"
+            exit(1)
+
         filename = argv[3]
         f = open(filename, "w+")
         numbers = generate_random(int(num))
