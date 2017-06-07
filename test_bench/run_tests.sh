@@ -4,7 +4,6 @@ clear
 
 cd ..
 
-iverilog test_bench/ryantb.v verilog/*.v
+iverilog test_bench/skeleton_tb.v verilog/*.v
 
 ./a.out
-gtkwave TESTWAV.vcd &

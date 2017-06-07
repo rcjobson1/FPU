@@ -13,7 +13,7 @@ event		error_event;
 reg clk = 0;
 always #10 clk = !clk;
 
-reg [1:0] fpu_rmode = 0; //round to nearest even
+reg [1:0] fpu_rmode = 2; //round to nearest even
 
 reg [2:0] fpu_op = 0; // add
 
