@@ -4,6 +4,6 @@ clear
 
 cd ..
 
-iverilog test_bench/skeleton_tb.v verilog/*.v
+iverilog test_bench/out.v verilog/*.v
 
 ./a.out

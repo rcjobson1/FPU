@@ -14,11 +14,10 @@ reg clk = 0;
 always #10 clk = !clk;
 
 reg [1:0] fpu_rmode = 2; //round to nearest even
-
 reg [2:0] fpu_op = 0; // add
 
 
-reg [31:0] opa = 32'h40490FD0; //3.14159
+reg [31:0] opa = 32'h40490FD0; // 3.14159
 reg [31:0] opb = 32'h49753739; // 1004403.543
 
 // Should get 28

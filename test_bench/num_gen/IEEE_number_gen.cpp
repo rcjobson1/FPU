@@ -68,7 +68,7 @@ int main(int argc, char const *argv[]) {
       char hex[10];
       sprintf(hex, "%8x", convert_float(to_float));
 
-      file << to_float << "\t" << random << "\t" << hex << endl;
+      file << to_float << "," << hex << endl;
 
     }
 
