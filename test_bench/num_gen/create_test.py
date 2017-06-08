@@ -120,22 +120,18 @@ def test_calculations(floats, operands):
 
         if operand == 0:
             res = opa + opb
-            res = IEEE_convert(res)
             f.write("%s +" % res)
             f.write("\n")
         elif operand == 1:
             res =  opa - opb
-            res = IEEE_convert(res)
             f.write("%s -" % res)
             f.write("\n")
         elif operand == 2:
             res = opa * opb
-            res = IEEE_convert(res)
             f.write("%s *" % res)
             f.write("\n")
         elif operand == 3:
             res = opa / opb
-            res = IEEE_convert(res)
             f.write("%s /" % res)
             f.write("\n")
     f.close()

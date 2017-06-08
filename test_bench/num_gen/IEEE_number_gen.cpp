@@ -96,8 +96,14 @@ int main(int argc, char const *argv[]) {
 
   }
 
+  //TODO find a way to read in floats from a file, convert them and output them to a new file
+  else if (op == "5"){
+    string filename = argv[2];
+    ofstream file;
+    file.open(filename.c_str());
 
 
+  }
 
   return 0;
 }
