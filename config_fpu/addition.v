@@ -1,11 +1,14 @@
+`timescale 1ns / 100ps
+`define BIT_SIZE 31
+
 module addition(clk, add_sub, opa, opb, sum);
   input clk, add_sub;
-  input [BIT_SIZE:0] opa, opb;
-  output [BIT_SIZE:0] sum;
+  input [`BIT_SIZE:0] opa, opb;
+  output [`BIT_SIZE:0] sum;
 
 
 
-  wire [BIT_SIZE:0] opa_normal, opb_normal, sum_normal;
+  wire [`BIT_SIZE:0] opa_normal, opb_normal, sum_normal;
 
   normalize_addition m1(clk, opa, opb, opa_normal, opb_normal);
 
@@ -18,17 +21,19 @@ endmodule // n - bit addition
 
 module normalize_addition(clk, opa, opb, n_opa, n_opb); //Normalizes the two numbers
 input clk;
-input [BIT_SIZE:0] opa, opb;
-output [BIT_SIZE:0] sum;
+input [`BIT_SIZE:0] opa, opb;
+output [`BIT_SIZE:0] n_opa, n_opb;
 
+  assign n_opa = opa;
+  assign n_opb = opb;
 
 endmodule // normalize_addition
 
 module end_normalize_addition(clk, sum, out); // Takes a number and normalizes it
 input clk;
-input [BIT_SIZE:0] sum
-output [BIT_SIZE:0] out
+input [`BIT_SIZE:0] sum;
+output [`BIT_SIZE:0] out;
 
-
+  assign out = sum;
 
 endmodule
