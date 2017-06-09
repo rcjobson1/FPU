@@ -3,9 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fstream>
-
-#define MAX_INT 2147483647
-
+#include <vector>
 
 
 using namespace std;
@@ -18,6 +16,14 @@ int convert_float(float number){
 
   return bit_value;
 
+}
+
+int convert_double(double number){
+  int* bp;
+  bp = (int*)&number; //treats the address of float as an int pointer
+  int bit_value = *bp;
+
+  return bit_value;
 }
 
 float convert_hex(string hex){
@@ -92,17 +98,36 @@ int main(int argc, char const *argv[]) {
       cout << to_float << "\t" << random << "\t" << hex << endl;
 
     }
-    return 0;
+
 
   }
 
-  //TODO find a way to read in floats from a file, convert them and output them to a new file
+
   else if (op == "5"){
+    vector<float> floats;
+
     string filename = argv[2];
-    ofstream file;
+    ifstream file;
     file.open(filename.c_str());
 
+    string file_float;
+    string op;
 
+    while(!file.eof()){
+      file >> file_float;
+      file >> op;
+
+      floats.push_back(strtof(file_float.c_str(), NULL));
+    }
+
+    // Find a better way to do this
+    FILE* file_pointer;
+    file_pointer = fopen("out.hexes", "w");
+
+    for (int i = 0; i < floats.size(); i++) {
+      fprintf(file_pointer, "%x\n", convert_float(floats.at(i)) );
+    }
+    fclose(file_pointer);
   }
 
   return 0;

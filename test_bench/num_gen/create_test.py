@@ -63,8 +63,9 @@ def write_verilog_file(filename, hexes, operands):
     always #10 clk = !clk;
 
     reg[2:0] fpu_op;
-    reg [1:0] fpu_rmode = 2;
+    reg [1:0] fpu_rmode = 3;
     reg [31:0] opa, opb;
+    integer f;
 
 
     initial begin
@@ -81,10 +82,17 @@ def write_verilog_file(filename, hexes, operands):
     initial begin
       #1000 $finish;
     end
-
+    /*
     initial begin
       $display("time\\topa\\topb\\tout");
       $monitor("%d,\\t%h,\\t%h,\\t%h,", $time, opa,opb,out);
+    end*/
+
+    initial begin
+    f = $fopen("verilog_results.hexes", "w");
+    end
+    always @(posedge clk) begin
+      $fwrite(f, "%h\\n", out);
     end
 
 
