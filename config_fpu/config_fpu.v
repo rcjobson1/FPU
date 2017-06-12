@@ -23,22 +23,26 @@ input [`BIT_SIZE:0] opa, opb; // TODO change so it can work with multiple length
 output [`BIT_SIZE:0] out;
 output errors;
 
-//parameter BIT_SIZE = 31;
+
 
 reg clk1 = 0;
-
-
 always #10 clk1 = !clk1;
-
+always #50 $finish;
 
 
 always @ (posedge clk1) begin
-  $display("%d is the answer", `BIT_SIZE);
+    $display("%d", out);
+
 end
 
-always #50 $finish;
 
-//addition m1(clk1, 1, 2, 5,out);
+initial begin
+    $dumpfile("FPU_CONFIG_WAVEFORM.vcd");
+    $dumpvars(0,fpu);
+end
+
+
+addition m1(clk1,1,32'h40800000,32'h43560000,out);
 
 
 
