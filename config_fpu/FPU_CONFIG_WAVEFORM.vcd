@@ -1,0 +1,96 @@
+$date
+	Mon Jun 12 11:46:27 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module fpu $end
+$var wire 1 ! clk $end
+$var wire 1 " errors $end
+$var wire 32 # opa [31:0] $end
+$var wire 32 $ opb [31:0] $end
+$var wire 2 % operation [1:0] $end
+$var wire 32 & out [31:0] $end
+$var reg 1 ' clk1 $end
+$scope module m1 $end
+$var wire 1 ( add_sub $end
+$var wire 1 ) clk $end
+$var wire 32 * opa [31:0] $end
+$var wire 32 + opa_normal [31:0] $end
+$var wire 32 , opb [31:0] $end
+$var wire 32 - opb_normal [31:0] $end
+$var wire 32 . sum [31:0] $end
+$var wire 32 / sum_normal [31:0] $end
+$scope module m1 $end
+$var wire 1 ) clk $end
+$var wire 32 0 n_opa [31:0] $end
+$var wire 32 1 n_opb [31:0] $end
+$var wire 32 2 opa [31:0] $end
+$var wire 8 3 opa_exp [7:0] $end
+$var wire 1 4 opa_larger $end
+$var wire 25 5 opa_mant [24:0] $end
+$var wire 1 6 opa_sign $end
+$var wire 32 7 opb [31:0] $end
+$var wire 8 8 opb_exp [7:0] $end
+$var wire 25 9 opb_mant [24:0] $end
+$var wire 1 : opb_sign $end
+$var wire 8 ; small_shift [7:0] $end
+$upscope $end
+$scope module m2 $end
+$var wire 1 ) clk $end
+$var wire 32 < out [31:0] $end
+$var wire 32 = sum [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1010011010101100000000000000000 =
+b1010011010101100000000000000000 <
+b101 ;
+0:
+b10101100000000000000000 9
+b10000110 8
+b1000011010101100000000000000000 7
+06
+b0 5
+04
+b10000001 3
+b1000000100000000000000000000000 2
+b1000011010101100000000000000000 1
+b10000000000000000000000000000 0
+b1010011010101100000000000000000 /
+b1010011010101100000000000000000 .
+b1000011010101100000000000000000 -
+b1000011010101100000000000000000 ,
+b10000000000000000000000000000 +
+b1000000100000000000000000000000 *
+0)
+1(
+0'
+b1010011010101100000000000000000 &
+bz %
+bz $
+bz #
+z"
+z!
+$end
+#100
+1'
+1)
+#200
+0'
+0)
+#300
+1'
+1)
+#400
+0'
+0)
+#500
+1'
+1)
