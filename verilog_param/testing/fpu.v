@@ -309,12 +309,12 @@ always @(posedge clk)
 // Normalize Result
 //
 wire		ine_d;
-reg	[(MANT_SIZE + 1)*2 + 1:0]	fract_denorm;
-wire	[(MANT_SIZE + 1)*2 + 1:0]	fract_div;
+reg	[47:0]	fract_denorm;
+wire	[47:0]	fract_div;
 wire		sign_d;
 reg		sign;
-reg	[BIT_SIZE - 1:0]	opa_r1;
-reg	[(MANT_SIZE + 1)*2 + 1:0]	fract_i2f;
+reg	[30:0]	opa_r1;
+reg	[47:0]	fract_i2f;
 reg		opas_r1, opas_r2;
 wire		f2i_out_sign;
 
@@ -381,7 +381,7 @@ post_norm u4(.clk(clk),			// System Clock
 // FPU Outputs
 //
 reg		fasu_op_r1, fasu_op_r2;
-wire	[BIT_SIZE - 1 :0]	out_fixed;
+wire	[30:0]	out_fixed;
 wire		output_zero_fasu;
 wire		output_zero_fdiv;
 wire		output_zero_fmul;

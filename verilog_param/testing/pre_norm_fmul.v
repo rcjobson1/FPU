@@ -118,22 +118,22 @@ always@(posedge clk)
 assign exp_out_div = (expa_dn | expb_dn) ? (co2 ? exp_tmp5 : exp_tmp3 ) : co2 ? exp_tmp4 : exp_tmp2;
 assign exp_out_mul = exp_ovf_d[1] ? exp_out_a : (expa_dn | expb_dn) ? exp_tmp3 : exp_tmp2;
 assign exp_out_a   = (expa_dn | expb_dn) ? exp_tmp5 : exp_tmp4;
-assign exp_ovf_d[0] = op_div ? (expa[EXP_SIZE] & !expb[EXP_SIZE]) : (co2 & expa[EXP_SIZE] & expb[EXP_SIZE]);
-assign exp_ovf_d[1] = op_div ? co2                  : ((!expa[EXP_SIZE] & !expb[EXP_SIZE] & exp_tmp2[EXP_SIZE]) | co2);
+assign exp_ovf_d[0] = op_div ? (expa[7] & !expb[7]) : (co2 & expa[7] & expb[7]);
+assign exp_ovf_d[1] = op_div ? co2                  : ((!expa[7] & !expb[7] & exp_tmp2[7]) | co2);
 
 always @(posedge clk)
 	exp_ovf <= #1 exp_ovf_d;
 
-assign underflow_d[0] =	(exp_tmp1 < BIAS) & !co1 & !(opa_00 | opb_00 | expa_dn | expb_dn);
-assign underflow_d[1] =	((expa[EXP_SIZE] | expb[EXP_SIZE]) & !opa_00 & !opb_00) |
+assign underflow_d[0] =	(exp_tmp1 < 8'h7f) & !co1 & !(opa_00 | opb_00 | expa_dn | expb_dn);
+assign underflow_d[1] =	((expa[7] | expb[7]) & !opa_00 & !opb_00) |
 			 (expa_dn & !fracta_00) | (expb_dn & !fractb_00);
-assign underflow_d[2] =	 !opa_00 & !opb_00 & (exp_tmp1 == BIAS);
+assign underflow_d[2] =	 !opa_00 & !opb_00 & (exp_tmp1 == 8'h7f);
 
 always @(posedge clk)
 	underflow <= #1 underflow_d;
 
 always @(posedge clk)
-	inf <= #1 op_div ? (expb_dn & !expa[EXP_SIZE]) : ({co1,exp_tmp1} > 9'h17e) ; // TODO FIX INFINITY
+	inf <= #1 op_div ? (expb_dn & !expa[7]) : ({co1,exp_tmp1} > 9'h17e) ;
 
 
 ////////////////////////////////////////////////////////////////////////

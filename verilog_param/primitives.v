@@ -43,9 +43,13 @@
 
 module add_sub27(add, opa, opb, sum, co);
 input		add;
-input	[26:0]	opa, opb;
-output	[26:0]	sum;
+input	[MANT_SIZE + 4:0]	opa, opb;
+output	[MANT_SIZE + 4:0]	sum;
 output		co;
+
+parameter BIT_SIZE = 31,
+  EXP_SIZE = 7,
+  MANT_SIZE = 22;
 
 
 
@@ -60,10 +64,14 @@ endmodule
 
 module mul_r2(clk, opa, opb, prod);
 input		clk;
-input	[23:0]	opa, opb;
-output	[47:0]	prod;
+input	[MANT_SIZE + 1:0]	opa, opb;
+output	[(MANT_SIZE + 1) * 2 + 1 : 0]	prod;
 
-reg	[47:0]	prod1, prod;
+parameter BIT_SIZE = 31,
+  EXP_SIZE = 7,
+  MANT_SIZE = 22;
+
+reg	[(MANT_SIZE + 1) * 2 + 1:0]	prod1, prod;
 
 always @(posedge clk)
 	prod1 <= #1 opa * opb;
@@ -84,6 +92,10 @@ input	[49:0]	opa;
 input	[23:0]	opb;
 output	[49:0]	quo, rem;
 
+parameter BIT_SIZE = 31,
+  EXP_SIZE = 7,
+  MANT_SIZE = 22;
+
 reg	[49:0]	quo, rem, quo1, remainder;
 
 always @(posedge clk)
@@ -99,5 +111,3 @@ always @(posedge clk)
 	rem <= #1 remainder;
 
 endmodule
-
-
