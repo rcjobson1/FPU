@@ -39,7 +39,7 @@
 module except(	clk, opa, opb, inf, ind, qnan, snan, opa_nan, opb_nan,
 		opa_00, opb_00, opa_inf, opb_inf, opa_dn, opb_dn);
 input		clk;
-input	[31:0]	opa, opb;
+input	[BIT_SIZE:0]	opa, opb;
 output		inf, ind, qnan, snan, opa_nan, opb_nan;
 output		opa_00, opb_00;
 output		opa_inf, opb_inf;
@@ -51,8 +51,8 @@ output		opb_dn;
 // Local Wires and registers
 //
 
-wire	[7:0]	expa, expb;		// alias to opX exponent
-wire	[22:0]	fracta, fractb;		// alias to opX fraction
+wire	[EXP_SIZE:0]	expa, expb;		// alias to opX exponent
+wire	[MANT_SIZE:0]	fracta, fractb;		// alias to opX fraction
 reg		expa_ff, infa_f_r, qnan_r_a, snan_r_a;
 reg		expb_ff, infb_f_r, qnan_r_b, snan_r_b;
 reg		inf, ind, qnan, snan;	// Output registers
@@ -63,14 +63,20 @@ reg		opa_inf, opb_inf;
 reg		opa_dn, opb_dn;
 
 ////////////////////////////////////////////////////////////////////////
+// Parameters
+parameter BIT_SIZE = 31,
+  EXP_SIZE = 7,
+  MANT_SIZE = 22,
+  BIAS = 127;
+////////////////////////////////////////////////////////////////////////
 //
 // Aliases
 //
 
-assign   expa = opa[30:23];
-assign   expb = opb[30:23];
-assign fracta = opa[22:0];
-assign fractb = opb[22:0];
+assign   expa = opa[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE];
+assign   expb = opb[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE];
+assign fracta = opa[MANT_SIZE:0];
+assign fractb = opb[MANT_SIZE:0];
 
 ////////////////////////////////////////////////////////////////////////
 //
@@ -82,7 +88,7 @@ always @(posedge clk)
 
 always @(posedge clk)
 	expb_ff <= #1 &expb;
-	
+
 always @(posedge clk)
 	infa_f_r <= #1 !(|fracta);
 
@@ -90,16 +96,16 @@ always @(posedge clk)
 	infb_f_r <= #1 !(|fractb);
 
 always @(posedge clk)
-	qnan_r_a <= #1  fracta[22];
+	qnan_r_a <= #1  fracta[MANT_SIZE];
 
 always @(posedge clk)
-	snan_r_a <= #1 !fracta[22] & |fracta[21:0];
-	
-always @(posedge clk)
-	qnan_r_b <= #1  fractb[22];
+	snan_r_a <= #1 !fracta[MANT_SIZE] & |fracta[MANT_SIZE - 1:0];
 
 always @(posedge clk)
-	snan_r_b <= #1 !fractb[22] & |fractb[21:0];
+	qnan_r_b <= #1  fractb[MANT_SIZE];
+
+always @(posedge clk)
+	snan_r_b <= #1 !fractb[MANT_SIZE] & |fractb[MANT_SIZE - 1:0];
 
 always @(posedge clk)
 	ind  <= #1 (expa_ff & infa_f_r) & (expb_ff & infb_f_r);
@@ -114,10 +120,10 @@ always @(posedge clk)
 	snan <= #1 (expa_ff & snan_r_a) | (expb_ff & snan_r_b);
 
 always @(posedge clk)
-	opa_nan <= #1 &expa & (|fracta[22:0]);
+	opa_nan <= #1 &expa & (|fracta[MANT_SIZE:0]);
 
 always @(posedge clk)
-	opb_nan <= #1 &expb & (|fractb[22:0]);
+	opb_nan <= #1 &expb & (|fractb[MANT_SIZE:0]);
 
 always @(posedge clk)
 	opa_inf <= #1 (expa_ff & infa_f_r);
@@ -150,4 +156,3 @@ always @(posedge clk)
 	opb_dn <= #1 expb_00;
 
 endmodule
-

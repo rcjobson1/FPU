@@ -43,14 +43,14 @@ input	[2:0]	fpu_op;
 input		opas;
 input		sign;
 input	[1:0]	rmode;
-input	[47:0]	fract_in;
+input	[(MANT_SIZE + 1) * 2 + 1:0]	fract_in;
 input	[1:0]	exp_ovf;
-input	[7:0]	exp_in;
+input	[EXP_SIZE:0]	exp_in;
 input		opa_dn, opb_dn;
 input		rem_00;
 input	[4:0]	div_opa_ldz;
 input		output_zero;
-output	[30:0]	out;
+output	[BIT_SIZE-1:0]	out;
 output		ine;
 output		overflow, underflow;
 output		f2i_out_sign;
@@ -60,17 +60,17 @@ output		f2i_out_sign;
 // Local Wires and registers
 //
 
-wire	[22:0]	fract_out;
-wire	[7:0]	exp_out;
-wire	[30:0]	out;
+wire	[MANT_SIZE:0]	fract_out;
+wire	[EXP_SIZE:0]	exp_out;
+wire	[BIT_SIZE-1:0]	out;
 wire		exp_out1_co, overflow, underflow;
-wire	[22:0]	fract_out_final;
-reg	[22:0]	fract_out_rnd;
-wire	[8:0]	exp_next_mi;
+wire	[MANT_SIZE:0]	fract_out_final;
+reg	[MANT_SIZE:0]	fract_out_rnd;
+wire	[EXP_SIZE+1:0]	exp_next_mi;
 wire		dn;
 wire		exp_rnd_adj;
-wire	[7:0]	exp_out_final;
-reg	[7:0]	exp_out_rnd;
+wire	[EXP_SIZE:0]	exp_out_final;
+reg	[EXP_SIZE:0]	exp_out_rnd;
 wire		op_dn = opa_dn | opb_dn;
 wire		op_mul = fpu_op[2:0]==3'b010;
 wire		op_div = fpu_op[2:0]==3'b011;
@@ -80,59 +80,71 @@ reg	[5:0]	fi_ldz;
 
 wire		g, r, s;
 wire		round, round2, round2a, round2_fasu, round2_fmul;
-wire	[7:0]	exp_out_rnd0, exp_out_rnd1, exp_out_rnd2, exp_out_rnd2a;
-wire	[22:0]	fract_out_rnd0, fract_out_rnd1, fract_out_rnd2, fract_out_rnd2a;
+wire	[EXP_SIZE:0]	exp_out_rnd0, exp_out_rnd1, exp_out_rnd2, exp_out_rnd2a;
+wire	[MANT_SIZE:0]	fract_out_rnd0, fract_out_rnd1, fract_out_rnd2, fract_out_rnd2a;
 wire		exp_rnd_adj0, exp_rnd_adj2a;
 wire		r_sign;
 wire		ovf0, ovf1;
-wire	[23:0]	fract_out_pl1;
-wire	[7:0]	exp_out_pl1, exp_out_mi1;
+wire	[MANT_SIZE+1:0]	fract_out_pl1;
+wire	[EXP_SIZE:0]	exp_out_pl1, exp_out_mi1;
 wire		exp_out_00, exp_out_fe, exp_out_ff, exp_in_00, exp_in_ff;
 wire		exp_out_final_ff, fract_out_7fffff;
 wire	[24:0]	fract_trunc;
-wire	[7:0]	exp_out1;
+wire	[EXP_SIZE:0]	exp_out1;
 wire		grs_sel;
 wire		fract_out_00, fract_in_00;
 wire		shft_co;
-wire	[8:0]	exp_in_pl1, exp_in_mi1;
-wire	[47:0]	fract_in_shftr;
-wire	[47:0]	fract_in_shftl;
+wire	[EXP_SIZE+1:0]	exp_in_pl1, exp_in_mi1;
+wire	[(MANT_SIZE + 1) * 2 + 1:0]	fract_in_shftr;
+wire	[(MANT_SIZE + 1) * 2 + 1:0]	fract_in_shftl;
 
-wire	[7:0]	exp_div;
-wire	[7:0]	shft2;
-wire	[7:0]	exp_out1_mi1;
+wire	[EXP_SIZE:0]	exp_div;
+wire	[EXP_SIZE:0]	shft2;
+wire	[EXP_SIZE:0]	exp_out1_mi1;
 wire		div_dn;
 wire		div_nr;
 wire		grs_sel_div;
 
 wire		div_inf;
 wire	[6:0]	fi_ldz_2a;
-wire	[7:0]	fi_ldz_2;
-wire	[7:0]	div_shft1, div_shft2, div_shft3, div_shft4;
+wire	[EXP_SIZE:0]	fi_ldz_2;
+wire	[EXP_SIZE:0]	div_shft1, div_shft2, div_shft3, div_shft4;
 wire		div_shft1_co;
-wire	[8:0]	div_exp1;
-wire	[7:0]	div_exp2, div_exp3;
+wire	[EXP_SIZE+1:0]	div_exp1;
+wire	[EXP_SIZE:0]	div_exp2, div_exp3;
 wire		left_right, lr_mul, lr_div;
-wire	[7:0]	shift_right, shftr_mul, shftr_div;
-wire	[7:0]	shift_left,  shftl_mul, shftl_div;
-wire	[7:0]	fasu_shift;
-wire	[7:0]	exp_fix_div;
+wire	[EXP_SIZE:0]	shift_right, shftr_mul, shftr_div;
+wire	[EXP_SIZE:0]	shift_left,  shftl_mul, shftl_div;
+wire	[EXP_SIZE:0]	fasu_shift;
+wire	[EXP_SIZE:0]	exp_fix_div;
 
-wire	[7:0]	exp_fix_diva, exp_fix_divb;
+wire	[EXP_SIZE:0]	exp_fix_diva, exp_fix_divb;
 wire	[5:0]	fi_ldz_mi1;
 wire	[5:0]	fi_ldz_mi22;
 wire		exp_zero;
 wire	[6:0]	ldz_all;
-wire	[7:0]	ldz_dif;
+wire	[EXP_SIZE:0]	ldz_dif;
 
-wire	[8:0]	div_scht1a;
-wire	[7:0]	f2i_shft;
+wire	[EXP_SIZE+1:0]	div_scht1a;
+wire	[EXP_SIZE:0]	f2i_shft;
 wire	[55:0]	exp_f2i_1;
 wire		f2i_zero, f2i_max;
-wire	[7:0]	f2i_emin;
-wire	[7:0]	conv_shft;
-wire	[7:0]	exp_i2f, exp_f2i, conv_exp;
+wire	[EXP_SIZE:0]	f2i_emin;
+wire	[EXP_SIZE:0]	conv_shft;
+wire	[EXP_SIZE:0]	exp_i2f, exp_f2i, conv_exp;
 wire		round2_f2i;
+
+
+////////////////////////////////////////////////////////////////////////
+// Parameters
+parameter BIT_SIZE = 31,
+  EXP_SIZE = 7,
+  MANT_SIZE = 22,
+  BIAS = 127;
+
+////////////////////////////////////////////////////////////////////////
+
+
 
 ////////////////////////////////////////////////////////////////////////
 //
@@ -365,7 +377,7 @@ assign r_sign = sign;
 assign round2a = !exp_out_fe | !fract_out_7fffff | (exp_out_fe & fract_out_7fffff);
 assign round2_fasu = ((r | s) & !r_sign) & (!exp_out[7] | (exp_out[7] & round2a));
 
-assign round2_fmul = !r_sign & 
+assign round2_fmul = !r_sign &
 		(
 			(exp_ovf[1] & !fract_in_00 &
 				( ((!exp_out1_co | op_dn) & (r | s | (!rem_00 & op_div) )) | fract_out_00 | (!op_dn & !op_div))
@@ -420,11 +432,11 @@ assign	max_num =  ( !rmode_00 & (op_mul | op_div ) & (
 							 (exp_ovf[1] &  exp_ovf[0] )
 						)
 				   ) |
-		
+
 				   ( rmode[1] & !exp_ovf[1] & (
 								   ( exp_ovf[0] & exp_in_ff & r_sign & fract_in[47]
 								   ) |
-						
+
 								   (  r_sign & (
 										(fract_in[47] & div_inf) |
 										(exp_in[7] & !exp_out_rnd[7] & !exp_in_80 & exp_out!=8'h7f ) |
@@ -445,7 +457,7 @@ assign	max_num =  ( !rmode_00 & (op_mul | op_div ) & (
 
 
 assign inf_out = (rmode[1] & (op_mul | op_div) & !r_sign & (	(exp_in_ff & !op_div) |
-								(exp_ovf[1] & exp_ovf[0] & (exp_in_00 | exp_in[7]) ) 
+								(exp_ovf[1] & exp_ovf[0] & (exp_in_00 | exp_in[7]) )
 							   )
 		) | (div_inf & op_div & (
 				 rmode_00 |
@@ -486,7 +498,7 @@ assign undeflow_div =	!(exp_ovf[1] &  exp_ovf[0] & rmode_00) & !inf_out & !max_n
 			((|fract_trunc) & !opb_dn & (
 							( op_dn & !exp_ovf[1] & exp_ovf[0])	|
 							( op_dn &  exp_ovf[1])			|
-							( op_dn &  div_shft1_co)		| 
+							( op_dn &  div_shft1_co)		|
 							  exp_out_00				|
 							  exp_ovf[1]
 						  )
@@ -538,30 +550,30 @@ assign ine =	op_f2i ? f2i_ine :
 
 // synopsys translate_off
 
-wire	[26:0]	fracta_del, fractb_del;
+wire	[MANT_SIZE + 4:0]	fracta_del, fractb_del;
 wire	[2:0]	grs_del;
 wire		dn_del;
-wire	[7:0]	exp_in_del;
-wire	[7:0]	exp_out_del;
-wire	[22:0]	fract_out_del;
-wire	[47:0]	fract_in_del;
+wire	[EXP_SIZE:0]	exp_in_del;
+wire	[EXP_SIZE:0]	exp_out_del;
+wire	[MANT_SIZE:0]	fract_out_del;
+wire	[(MANT_SIZE + 1) * 2 + 1:0]	fract_in_del;
 wire		overflow_del;
 wire	[1:0]	exp_ovf_del;
-wire	[22:0]	fract_out_x_del, fract_out_rnd2a_del;
-wire	[24:0]	trunc_xx_del;
+wire	[MANT_SIZE:0]	fract_out_x_del, fract_out_rnd2a_del;
+wire	[MANT_SIZE + 2:0]	trunc_xx_del;
 wire		exp_rnd_adj2a_del;
-wire	[22:0]	fract_dn_del;
+wire	[MANT_SIZE:0]	fract_dn_del;
 wire	[4:0]	div_opa_ldz_del;
-wire	[23:0]	fracta_div_del;
-wire	[23:0]	fractb_div_del;
+wire	[MANT_SIZE + 1:0]	fracta_div_del;
+wire	[MANT_SIZE + 1:0]	fractb_div_del;
 wire		div_inf_del;
-wire	[7:0]	fi_ldz_2_del;
+wire	[EXP_SIZE:0]	fi_ldz_2_del;
 wire		inf_out_del, max_out_del;
 wire	[5:0]	fi_ldz_del;
 wire		rx_del;
 wire		ez_del;
 wire		lr;
-wire	[7:0]	shr, shl, exp_div_del;
+wire	[EXP_SIZE:0]	shr, shl, exp_div_del;
 
 delay2 #26 ud000(clk, test.u0.fracta, fracta_del);
 delay2 #26 ud001(clk, test.u0.fractb, fractb_del);

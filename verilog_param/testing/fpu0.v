@@ -73,8 +73,7 @@ output		div_by_zero;
 
 parameter BIT_SIZE = 31,
   EXP_SIZE = 7,
-  MANT_SIZE = 22,
-  BIAS = 127;
+  MANT_SIZE = 22;
 
 
 
@@ -258,14 +257,14 @@ mul_r2 u5(.clk(clk), .opa(fracta_mul), .opb(fractb_mul), .prod(prod));
 //
 // Divide
 //
-wire	[(MANT_SIZE + 1) * 2 + 3 :0]	quo;
-wire	[(MANT_SIZE + 1) * 2 + 3 :0]	fdiv_opa;
-wire	[(MANT_SIZE + 1) * 2 + 3 :0]	remainder;
+wire	[49:0]	quo;
+wire	[49:0]	fdiv_opa;
+wire	[49:0]	remainder;
 wire		remainder_00;
 reg	[4:0]	div_opa_ldz_d, div_opa_ldz_r1, div_opa_ldz_r2;
 
 always @(fracta_mul)
-	casex(fracta_mul[MANT_SIZE:0])
+	casex(fracta_mul[22:0])
 	   23'b1??????????????????????: div_opa_ldz_d = 1;
 	   23'b01?????????????????????: div_opa_ldz_d = 2;
 	   23'b001????????????????????: div_opa_ldz_d = 3;
@@ -291,8 +290,8 @@ always @(fracta_mul)
 	   23'b0000000000000000000000?: div_opa_ldz_d = 23;
 	endcase
 
-//assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
-assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
+assign fdiv_opa = !(|opa_r[30:23]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
+
 
 div_r2 u6(.clk(clk), .opa(fdiv_opa), .opb(fractb_mul), .quo(quo), .rem(remainder));
 
@@ -324,24 +323,18 @@ always @(posedge clk)			// Exponent must be once cycle delayed
 	  0,1:	exp_r <= #1 exp_fasu;
 	  2,3:	exp_r <= #1 exp_mul;
 	  4:	exp_r <= #1 0;
-	  5:	exp_r <= #1 opa_r1[BIT_SIZE - 1: (BIT_SIZE -1) - EXP_SIZE];
+	  5:	exp_r <= #1 opa_r1[30:23];
 	endcase
 
-//assign fract_div = (opb_dn ? quo[49:2] : {quo[26:0], 21'h0});
-assign fract_div = (opb_dn ? quo[(MANT_SIZE + 1) * 2 + 3:2] : {quo[MANT_SIZE + 4:0], 21'h0});
-
+assign fract_div = (opb_dn ? quo[49:2] : {quo[26:0], 21'h0});
 
 always @(posedge clk)
-	opa_r1 <= #1 opa_r[BIT_SIZE-1:0];
+	opa_r1 <= #1 opa_r[30:0];
 
 always @(posedge clk)
-	/*fract_i2f <= #1 (fpu_op_r2==5) ?
+	fract_i2f <= #1 (fpu_op_r2==5) ?
 			(sign_d ?  1-{24'h00, (|opa_r1[30:23]), opa_r1[22:0]}-1 : {24'h0, (|opa_r1[30:23]), opa_r1[22:0]}) :
-			(sign_d ? 1 - {opa_r1, 17'h01} : {opa_r1, 17'h0});*/
-
-  fract_i2f <= #1 (fpu_op_r2==5) ?
-    	(sign_d ?  1-{24'h00, (|opa_r1[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE]), opa_r1[22:0]}-1 : {24'h0, (|opa_r1[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE]), opa_r1[MANT_SIZE:0]}) :
-    	(sign_d ? 1 - {opa_r1, 17'h01} : {opa_r1, 17'h0});
+			(sign_d ? 1 - {opa_r1, 17'h01} : {opa_r1, 17'h0});
 
 always @(fpu_op_r3 or fract_out_q or prod or fract_div or fract_i2f)
 	case(fpu_op_r3)
@@ -496,11 +489,11 @@ always @(posedge clk)
 wire		mul_uf_del;
 wire		uf2_del, ufb2_del, ufc2_del,  underflow_d_del;
 wire		co_del;
-wire	[BIT_SIZE-1:0]	out_d_del;
+wire	[30:0]	out_d_del;
 wire		ov_fasu_del, ov_fmul_del;
 wire	[2:0]	fop;
 wire	[4:0]	ldza_del;
-wire	[(MANT_SIZE + 1)*2 + 3:0]	quo_del;
+wire	[49:0]	quo_del;
 
 delay1  #0 ud000(clk, underflow_fmul1, mul_uf_del);
 delay1  #0 ud001(clk, underflow_fmul_r[0], uf2_del);

@@ -55,19 +55,19 @@ output		fasu_op;			// Operation Output
 //
 
 wire		signa, signb;		// alias to opX sign
-wire	[EXP_SIZE:0]	expa, expb;		// alias to opX exponent
-wire	[MANT_SIZE:0]	fracta, fractb;		// alias to opX fraction
+wire	[7:0]	expa, expb;		// alias to opX exponent
+wire	[22:0]	fracta, fractb;		// alias to opX fraction
 wire		expa_lt_expb;		// expa is larger than expb indicator
 wire		fractb_lt_fracta;	// fractb is larger than fracta indicator
-reg	[EXP_SIZE:0]	exp_dn_out;		// de normalized exponent output
-wire	[EXP_SIZE:0]	exp_small, exp_large;
-wire	[EXP_SIZE:0]	exp_diff;		// Numeric difference of the two exponents
-wire	[MANT_SIZE:0]	adj_op;			// Fraction adjustment: input
-wire	[MANT_SIZE + 4:0]	adj_op_tmp;
-wire	[MANT_SIZE + 4:0]	adj_op_out;		// Fraction adjustment: output
-wire	[MANT_SIZE + 4:0]	fracta_n, fractb_n;	// Fraction selection after normalizing
-wire	[MANT_SIZE + 4:0]	fracta_s, fractb_s;	// Fraction Sorting out
-reg	[MANT_SIZE + 4:0]	fracta_out, fractb_out;	// Fraction Output
+reg	[7:0]	exp_dn_out;		// de normalized exponent output
+wire	[7:0]	exp_small, exp_large;
+wire	[7:0]	exp_diff;		// Numeric difference of the two exponents
+wire	[22:0]	adj_op;			// Fraction adjustment: input
+wire	[26:0]	adj_op_tmp;
+wire	[26:0]	adj_op_out;		// Fraction adjustment: output
+wire	[26:0]	fracta_n, fractb_n;	// Fraction selection after normalizing
+wire	[26:0]	fracta_s, fractb_s;	// Fraction Sorting out
+reg	[26:0]	fracta_out, fractb_out;	// Fraction Output
 reg		sign, sign_d;		// Sign Output
 reg		add_d;			// operation (add/sub)
 reg		fasu_op;		// operation (add/sub) register
@@ -78,7 +78,7 @@ reg		add_r, signa_r, signb_r;
 wire	[4:0]	exp_diff_sft;
 wire		exp_lt_27;
 wire		op_dn;
-wire	[MANT_SIZE + 4:0]	adj_op_out_sft;
+wire	[26:0]	adj_op_out_sft;
 reg		fracta_lt_fractb, fracta_eq_fractb;
 wire		nan_sign1;
 reg		nan_sign;
@@ -120,17 +120,17 @@ assign expb_dn = !(|expb);			// opb denormalized
 // ---------------------------------------------------------------------
 // Calculate the difference between the smaller and larger exponent
 
-wire	[EXP_SIZE:0]	exp_diff1, exp_diff1a, exp_diff2;
+wire	[7:0]	exp_diff1, exp_diff1a, exp_diff2;
 
 assign exp_small  = expa_lt_expb ? expb : expa;
 assign exp_large  = expa_lt_expb ? expa : expb;
 assign exp_diff1  = exp_large - exp_small;
 assign exp_diff1a = exp_diff1-1;
 assign exp_diff2  = (expa_dn | expb_dn) ? exp_diff1a : exp_diff1;
-assign  exp_diff  = (expa_dn & expb_dn) ? 0 /* TODO test this*/ : exp_diff2;
+assign  exp_diff  = (expa_dn & expb_dn) ? 8'h0 : exp_diff2;
 
 always @(posedge clk)	// If numbers are equal we should return zero
-	exp_dn_out <= #1 (!add_d & expa==expb & fracta==fractb) ? 0 /* TODO test this*/ : exp_large;
+	exp_dn_out <= #1 (!add_d & expa==expb & fracta==fractb) ? 8'h0 : exp_large;
 
 // ---------------------------------------------------------------------
 // Adjust the smaller fraction
@@ -140,17 +140,17 @@ assign op_dn	  = expa_lt_expb ? expb_dn : expa_dn;
 assign adj_op     = expa_lt_expb ? fractb : fracta;
 assign adj_op_tmp = { ~op_dn, adj_op, 3'b0 };	// recover hidden bit (op_dn)
 
-// adj_op_out is MANT_SIZE + 5 bits wide, so can only be shifted MANT_SIZE + 5 bits to the right
-assign exp_lt_27	= exp_diff  > MANT_SIZE + 5;
-assign exp_diff_sft	= exp_lt_27 ? MANT_SIZE + 5 : exp_diff[4:0];
+// adj_op_out is 27 bits wide, so can only be shifted 27 bits to the right
+assign exp_lt_27	= exp_diff  > 8'd27;
+assign exp_diff_sft	= exp_lt_27 ? 5'd27 : exp_diff[4:0];
 assign adj_op_out_sft	= adj_op_tmp >> exp_diff_sft;
-assign adj_op_out	= {adj_op_out_sft[ MANT_SIZE + 4 :1], adj_op_out_sft[0] | sticky };
+assign adj_op_out	= {adj_op_out_sft[26:1], adj_op_out_sft[0] | sticky };
 
 // ---------------------------------------------------------------------
 // Get truncated portion (sticky bit)
 
 always @(exp_diff_sft or adj_op_tmp)
-   case(exp_diff_sft)		// synopsys full_case parallel_case or  sticky = exp_diff_sft ? |adj_op_tmp[exp_diff_sft - 1:0] : 1'h0;
+   case(exp_diff_sft)		// synopsys full_case parallel_case
 	00: sticky = 1'h0;
 	01: sticky =  adj_op_tmp[0];
 	02: sticky = |adj_op_tmp[01:0];
@@ -179,39 +179,8 @@ always @(exp_diff_sft or adj_op_tmp)
 	25: sticky = |adj_op_tmp[24:0];
 	26: sticky = |adj_op_tmp[25:0];
 	27: sticky = |adj_op_tmp[26:0];
-
-  28: sticky = |adj_op_tmp[27:0];
-	29: sticky = |adj_op_tmp[28:0];
-	30: sticky = |adj_op_tmp[29:0];
-	31: sticky = |adj_op_tmp[30:0];
-	32: sticky = |adj_op_tmp[31:0];
-	33: sticky = |adj_op_tmp[32:0];
-	34: sticky = |adj_op_tmp[33:0];
-	35: sticky = |adj_op_tmp[34:0];
-	36: sticky = |adj_op_tmp[35:0];
-	37: sticky = |adj_op_tmp[36:0];
-	38: sticky = |adj_op_tmp[37:0];
-	39: sticky = |adj_op_tmp[38:0];
-	40: sticky = |adj_op_tmp[39:0];
-	41: sticky = |adj_op_tmp[40:0];
-	42: sticky = |adj_op_tmp[41:0];
-	43: sticky = |adj_op_tmp[42:0];
-	44: sticky = |adj_op_tmp[43:0];
-	45: sticky = |adj_op_tmp[44:0];
-  46: sticky = |adj_op_tmp[45:0];
-	47: sticky = |adj_op_tmp[46:0];
-	48: sticky = |adj_op_tmp[47:0];
-	49: sticky = |adj_op_tmp[48:0];
-	50: sticky = |adj_op_tmp[49:0];
-  51: sticky = |adj_op_tmp[50:0];
-	52: sticky = |adj_op_tmp[51:0];
-  53: sticky = |adj_op_tmp[52:0];
-	54: sticky = |adj_op_tmp[53:0];
-	55: sticky = |adj_op_tmp[54:0];
-	56: sticky = |adj_op_tmp[55:0];
-	57: sticky = |adj_op_tmp[56:0];
    endcase
-   //sticky = exp_diff_sft ? |(adj_op_tmp[exp_diff_sft - 1:0]) : 1'h0;
+
 // ---------------------------------------------------------------------
 // Select operands for add/sub (recover hidden bit)
 
