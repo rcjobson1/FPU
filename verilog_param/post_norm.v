@@ -89,7 +89,7 @@ wire	[MANT_SIZE+1:0]	fract_out_pl1;
 wire	[EXP_SIZE:0]	exp_out_pl1, exp_out_mi1;
 wire		exp_out_00, exp_out_fe, exp_out_ff, exp_in_00, exp_in_ff;
 wire		exp_out_final_ff, fract_out_7fffff;
-wire	[24:0]	fract_trunc;
+wire	[MANT_SIZE + 2 :0]	fract_trunc;
 wire	[EXP_SIZE:0]	exp_out1;
 wire		grs_sel;
 wire		fract_out_00, fract_in_00;
@@ -216,10 +216,10 @@ wire		rmode_00, rmode_01, rmode_10, rmode_11;
 // Misc common signals
 assign exp_in_ff        = &exp_in;
 assign exp_in_00        = !(|exp_in);
-assign exp_in_80	= exp_in[7] & !(|exp_in[6:0]);
+assign exp_in_80	= exp_in[EXP_SIZE] & !(|exp_in[EXP_SIZE - 1:0]);
 assign exp_out_ff       = &exp_out;
 assign exp_out_00       = !(|exp_out);
-assign exp_out_fe       = &exp_out[7:1] & !exp_out[0];
+assign exp_out_fe       = &exp_out[EXP_SIZE:1] & !exp_out[0];
 assign exp_out_final_ff = &exp_out_final;
 
 assign fract_out_7fffff = &fract_out;
@@ -236,7 +236,7 @@ assign dn = !op_mul & !op_div & (exp_in_00 | (exp_next_mi[8] & !fract_in[47]) );
 
 // ---------------------------------------------------------------------
 // Fraction Normalization
-parameter	f2i_emax = 8'h9d;
+parameter	f2i_emax = 8'h9d; // TODO FIX THIS
 
 // Incremented fraction for rounding
 assign fract_out_pl1 = fract_out + 1;
@@ -277,7 +277,7 @@ assign lr_mul = 	(shft_co | (!exp_ovf[1] & exp_in_00) |
 											1;
 
 // Select Left and Right shift value
-assign fasu_shift  = (dn | exp_out_00) ? (exp_in_00 ? 8'h2 : exp_in_pl1[7:0]) : {2'h0, fi_ldz};
+assign fasu_shift  = (dn | exp_out_00) ? (exp_in_00 ? 8'h2 : exp_in_pl1[EXP_SIZE:0]) : {2'h0, fi_ldz};
 assign shift_right = op_div ? shftr_div : shftr_mul;
 
 assign conv_shft = op_f2i ? f2i_shft : {2'h0, fi_ldz};
@@ -286,10 +286,10 @@ assign shift_left  = op_div ? shftl_div : op_mul ? shftl_mul : (op_f2i | op_i2f)
 
 assign shftl_mul = 	(shft_co |
 			(!exp_ovf[1] & exp_in_00) |
-			(!exp_ovf[1] & !exp_in_00 & (exp_out1_co | exp_out_00))) ? exp_in_pl1[7:0] : {2'h0, fi_ldz};
+			(!exp_ovf[1] & !exp_in_00 & (exp_out1_co | exp_out_00))) ? exp_in_pl1[EXP_SIZE:0] : {2'h0, fi_ldz};
 
-assign shftl_div = 	( op_dn & exp_out_00 & !(!exp_ovf[1] & exp_ovf[0]))	? div_shft1[7:0] :
-			(!op_dn & exp_out_00 & !exp_ovf[1])    			? exp_in[7:0] :
+assign shftl_div = 	( op_dn & exp_out_00 & !(!exp_ovf[1] & exp_ovf[0]))	? div_shft1[EXP_SIZE:0] :
+			(!op_dn & exp_out_00 & !exp_ovf[1])    			? exp_in[EXP_SIZE:0] :
 			                                        		 {2'h0, fi_ldz};
 assign shftr_div = 	(op_dn & exp_ovf[1])                   ? div_shft3 :
 			(op_dn & div_shft1_co)                 ? div_shft4 :
@@ -355,8 +355,8 @@ assign div_inf = opb_dn & !opa_dn & (div_exp1[7:0] < 8'h7f);
 assign grs_sel_div = op_div & (exp_ovf[1] | div_dn | exp_out1_co | exp_out_00);
 
 assign g = grs_sel_div ? fract_out[0]                   : fract_out[0];
-assign r = grs_sel_div ? (fract_trunc[24] & !div_nr)    : fract_trunc[24];
-assign s = grs_sel_div ? |fract_trunc[24:0]             : (|fract_trunc[23:0] | (fract_trunc[24] & op_div));
+assign r = grs_sel_div ? (fract_trunc[MANT_SIZE + 2] & !div_nr)    : fract_trunc[MANT_SIZE + 2];
+assign s = grs_sel_div ? |fract_trunc[MANT_SIZE + 2:0]             : (|fract_trunc[23:0] | (fract_trunc[MANT_SIZE + 2] & op_div));
 
 // Round to nearest even
 assign round = (g & r) | (r & s) ;
