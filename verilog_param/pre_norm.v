@@ -209,7 +209,7 @@ always @(exp_diff_sft or adj_op_tmp)
 	54: sticky = |adj_op_tmp[53:0];
 	55: sticky = |adj_op_tmp[54:0];
 	56: sticky = |adj_op_tmp[55:0];
-	57: sticky = |adj_op_tmp[56:0];
+	//57: sticky = |adj_op_tmp[56:0];
    endcase
    //sticky = exp_diff_sft ? |(adj_op_tmp[exp_diff_sft - 1:0]) : 1'h0;
 // ---------------------------------------------------------------------

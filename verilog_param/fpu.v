@@ -152,7 +152,7 @@ wire		opa_00, opb_00;
 wire		opa_inf, opb_inf;
 wire		opa_dn, opb_dn;
 
-except u0  (.clk(clk),
+except #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u0  (.clk(clk),
 		.opa(opa_r), .opb(opb_r),
 		.inf(inf_d), .ind(ind_d),
 		.qnan(qnan_d), .snan(snan_d),
@@ -185,7 +185,7 @@ reg		sign_exe_r;
 wire	[2:0]	underflow_fmul_d;
 
 
-pre_norm u1(.clk(clk),				// System Clock
+pre_norm #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u1(.clk(clk),				// System Clock
 	.rmode(rmode_r2),			// Roundin Mode
 	.add(!fpu_op_r1[0]),			// Add/Sub Input
 	.opa(opa_r),  .opb(opb_r),		// Registered OP Inputs
@@ -203,7 +203,7 @@ pre_norm u1(.clk(clk),				// System Clock
 always @(posedge clk)
 	sign_fasu_r <= #1 sign_fasu;
 
-pre_norm_fmul u2(
+pre_norm_fmul #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u2(
 		.clk(clk),
 		.fpu_op(fpu_op_r1),
 		.opa(opa_r), .opb(opb_r),
@@ -236,7 +236,7 @@ always @(posedge clk)
 // Add/Sub
 //
 
-add_sub27 u3(
+add_sub27 #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u3(
 	.add(fasu_op),			// Add/Sub
 	.opa(fracta),			// Fraction A input
 	.opb(fractb),			// Fraction B Input
@@ -252,7 +252,7 @@ always @(posedge clk)
 //
 wire	[(MANT_SIZE + 1) * 2 + 1:0]	prod;
 
-mul_r2 u5(.clk(clk), .opa(fracta_mul), .opb(fractb_mul), .prod(prod));
+mul_r2 #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u5(.clk(clk), .opa(fracta_mul), .opb(fractb_mul), .prod(prod));
 
 ////////////////////////////////////////////////////////////////////////
 //
@@ -344,7 +344,7 @@ always @(fracta_mul) begin
   52'b0000000000000000000000000000000000000000000000001???: div_opa_ldz_d = 49;
   52'b00000000000000000000000000000000000000000000000001??: div_opa_ldz_d = 50;
   52'b000000000000000000000000000000000000000000000000001?: div_opa_ldz_d = 51;
-  52'b0000000000000000000000000000000000000000000000000001: div_opa_ldz_d = 52;
+  52'b000000000000000000000000000000000000000000000000000?: div_opa_ldz_d = 52;
 
   endcase
 
@@ -356,7 +356,7 @@ always @(fracta_mul) begin
 //assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
 assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
 
-div_r2 u6(.clk(clk), .opa(fdiv_opa), .opb(fractb_mul), .quo(quo), .rem(remainder));
+div_r2 #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u6(.clk(clk), .opa(fdiv_opa), .opb(fractb_mul), .quo(quo), .rem(remainder));
 
 assign remainder_00 = !(|remainder);
 
@@ -428,7 +428,7 @@ assign sign_d = fpu_op_r2[1] ? sign_mul : sign_fasu;
 always @(posedge clk)
 	sign <= #1 (rmode_r2==2'h3) ? !sign_d : sign_d;
 
-post_norm u4(.clk(clk),			// System Clock
+post_norm #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u4(.clk(clk),			// System Clock
 	.fpu_op(fpu_op_r3),		// Floating Point Operation
 	.opas(opas_r2),			// OPA Sign
 	.sign(sign),			// Sign of the result
@@ -496,7 +496,7 @@ assign out_fixed = (	(qnan_d | snan_d) |
 		   )  ? QNAN : INF;
 
 always @(posedge clk)
-	out[30:0] <= #1 (mul_inf | div_inf | (inf_d & (fpu_op_r3!=3'b011) & (fpu_op_r3!=3'b101)) | snan_d | qnan_d) & fpu_op_r3!=3'b100 ? out_fixed :
+	out[BIT_SIZE-1:0] <= #1 (mul_inf | div_inf | (inf_d & (fpu_op_r3!=3'b011) & (fpu_op_r3!=3'b101)) | snan_d | qnan_d) & fpu_op_r3!=3'b100 ? out_fixed :
 			out_d;
 
 assign out_d_00 = !(|out_d);
@@ -505,7 +505,7 @@ assign sign_mul_final = (sign_exe_r & ((opa_00 & opb_inf) | (opb_00 & opa_inf)))
 assign sign_div_final = (sign_exe_r & (opa_inf & opb_inf)) ? !sign_mul_r : sign_mul_r | (opa_00 & opb_00);
 
 always @(posedge clk)
-	out[31] <= #1	((fpu_op_r3==3'b101) & out_d_00) ? (f2i_out_sign & !(qnan_d | snan_d) ) :
+	out[BIT_SIZE] <= #1	((fpu_op_r3==3'b101) & out_d_00) ? (f2i_out_sign & !(qnan_d | snan_d) ) :
 			((fpu_op_r3==3'b010) & !(snan_d | qnan_d)) ?	sign_mul_final :
 			((fpu_op_r3==3'b011) & !(snan_d | qnan_d)) ?	sign_div_final :
 			(snan_d | qnan_d | ind_d) ?			nan_sign_d :
@@ -573,7 +573,7 @@ delay1  #0 ud002(clk, underflow_fmul_r[1], ufb2_del);
 delay1  #0 ud003(clk, underflow_d, underflow_d_del);
 delay1  #0 ud004(clk, test.u0.u4.exp_out1_co, co_del);
 delay1  #0 ud005(clk, underflow_fmul_r[2], ufc2_del);
-delay1 #30 ud006(clk, out_d, out_d_del);
+delay1 #(BIT_SIZE - 1) ud006(clk, out_d, out_d_del);
 
 delay1  #0 ud007(clk, overflow_fasu, ov_fasu_del);
 delay1  #0 ud008(clk, overflow_fmul, ov_fmul_del);
@@ -582,7 +582,7 @@ delay1  #2 ud009(clk, fpu_op_r3, fop);
 
 delay3  #4 ud010(clk, div_opa_ldz_d, ldza_del);
 
-delay1  #49 ud012(clk, quo, quo_del);
+delay1  #((MANT_SIZE + 1) * 2 + 3 ) ud012(clk, quo, quo_del);
 
 always @(test.error_event)
    begin

@@ -47,9 +47,13 @@ input	[MANT_SIZE + 4:0]	opa, opb;
 output	[MANT_SIZE + 4:0]	sum;
 output		co;
 
+////////////////////////////////////////////////////////////////////////
+// Parameters
 parameter BIT_SIZE = 31,
   EXP_SIZE = 7,
-  MANT_SIZE = 22;
+  MANT_SIZE = 22,
+  BIAS = 127;
+////////////////////////////////////////////////////////////////////////
 
 
 
@@ -67,9 +71,13 @@ input		clk;
 input	[MANT_SIZE + 1:0]	opa, opb;
 output	[(MANT_SIZE + 1) * 2 + 1 : 0]	prod;
 
+////////////////////////////////////////////////////////////////////////
+// Parameters
 parameter BIT_SIZE = 31,
   EXP_SIZE = 7,
-  MANT_SIZE = 22;
+  MANT_SIZE = 22,
+  BIAS = 127;
+////////////////////////////////////////////////////////////////////////
 
 reg	[(MANT_SIZE + 1) * 2 + 1:0]	prod1, prod;
 
@@ -92,9 +100,13 @@ input	[(MANT_SIZE + 1) * 2 + 3 :0]	opa;
 input	[MANT_SIZE + 1:0]	opb;
 output	[(MANT_SIZE + 1) * 2 + 3:0]	quo, rem;
 
+////////////////////////////////////////////////////////////////////////
+// Parameters
 parameter BIT_SIZE = 31,
   EXP_SIZE = 7,
-  MANT_SIZE = 22;
+  MANT_SIZE = 22,
+  BIAS = 127;
+////////////////////////////////////////////////////////////////////////
 
 reg	[(MANT_SIZE + 1) * 2 + 3 :0]	quo, rem, quo1, remainder;
 

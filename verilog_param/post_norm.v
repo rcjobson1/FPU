@@ -76,7 +76,7 @@ wire		op_mul = fpu_op[2:0]==3'b010;
 wire		op_div = fpu_op[2:0]==3'b011;
 wire		op_i2f = fpu_op[2:0]==3'b100;
 wire		op_f2i = fpu_op[2:0]==3'b101;
-reg	[5:0]	fi_ldz;
+reg	[5:0]	fi_ldz; //TODO change this to allow for more than 64 leading zeros
 
 wire		g, r, s;
 wire		round, round2, round2a, round2_fasu, round2_fmul;
@@ -232,7 +232,7 @@ assign rmode_10 = (rmode==2'b10);
 assign rmode_11 = (rmode==2'b11);
 
 // Fasu Output will be denormalized ...
-assign dn = !op_mul & !op_div & (exp_in_00 | (exp_next_mi[8] & !fract_in[47]) );
+assign dn = !op_mul & !op_div & (exp_in_00 | (exp_next_mi[EXP_SIZE + 1] & !fract_in[(MANT_SIZE + 1)* 2 + 1]) );
 
 // ---------------------------------------------------------------------
 // Fraction Normalization
@@ -257,7 +257,7 @@ assign div_shft3  = div_opa_ldz+exp_in;
 assign div_shft4  = div_opa_ldz-exp_in;
 
 assign div_dn    = op_dn & div_shft1_co;
-assign div_nr    = op_dn & exp_ovf[1]  & !(|fract_in[46:23]) & (div_shft3>8'h16);
+assign div_nr    = op_dn & exp_ovf[1]  & !(|fract_in[(MANT_SIZE + 1)*2:MANT_SIZE + 1]) & (div_shft3>8'h16);
 
 assign f2i_shft  = exp_in-8'h7d;
 
@@ -295,8 +295,8 @@ assign shftr_div = 	(op_dn & exp_ovf[1])                   ? div_shft3 :
 			(op_dn & div_shft1_co)                 ? div_shft4 :
 								 div_shft2;
 // Do the actual shifting
-assign fract_in_shftr   = (|shift_right[7:6])                      ? 0 : fract_in>>shift_right[5:0];
-assign fract_in_shftl   = (|shift_left[7:6] | (f2i_zero & op_f2i)) ? 0 : fract_in<<shift_left[5:0];
+assign fract_in_shftr   = (|shift_right[EXP_SIZE:EXP_SIZE-1])            ? 0 : fract_in>>shift_right[EXP_SIZE - 2:0];
+assign fract_in_shftl   = (|shift_left[EXP_SIZE:EXP_SIZE-1] | (f2i_zero & op_f2i)) ? 0 : fract_in<<shift_left[EXP_SIZE - 2:0];
 
 // Chose final fraction output
 assign {fract_out,fract_trunc} = left_right ? fract_in_shftl : fract_in_shftr;
@@ -305,7 +305,7 @@ assign {fract_out,fract_trunc} = left_right ? fract_in_shftl : fract_in_shftr;
 // Exponent Normalization
 
 assign fi_ldz_mi1    = fi_ldz - 1;
-assign fi_ldz_mi22   = fi_ldz - 22;
+assign fi_ldz_mi22   = fi_ldz - MANT_SIZE;
 assign exp_out_pl1   = exp_out + 1;
 assign exp_out_mi1   = exp_out - 1;
 assign exp_in_pl1    = exp_in  + 1;	// 9 bits - includes carry out
@@ -318,21 +318,21 @@ assign exp_fix_diva = exp_in - fi_ldz_mi22;
 assign exp_fix_divb = exp_in - fi_ldz_mi1;
 
 assign exp_zero  = (exp_ovf[1] & !exp_ovf[0] & op_mul & (!exp_rnd_adj2a | !rmode[1])) | (op_mul & exp_out1_co);
-assign {exp_out1_co, exp_out1} = fract_in[47] ? exp_in_pl1 : exp_next_mi;
+assign {exp_out1_co, exp_out1} = fract_in[(MANT_SIZE + 1)* 2 + 1] ? exp_in_pl1 : exp_next_mi;
 
 assign f2i_out_sign =  !opas ? ((exp_in<f2i_emin) ? 0 : (exp_in>f2i_emax) ? 0 : opas) :
 			       ((exp_in<f2i_emin) ? 0 : (exp_in>f2i_emax) ? 1 : opas);
 
 assign exp_i2f   = fract_in_00 ? (opas ? 8'h9e : 0) : (8'h9e-fi_ldz);
-assign exp_f2i_1 = {{8{fract_in[47]}}, fract_in }<<f2i_shft;
+assign exp_f2i_1 = {{8{fract_in[(MANT_SIZE + 1)* 2 + 1]}}, fract_in }<<f2i_shft;
 assign exp_f2i   = f2i_zero ? 0 : f2i_max ? 8'hff : exp_f2i_1[55:48];
 assign conv_exp  = op_f2i ? exp_f2i : exp_i2f;
 
-assign exp_out = op_div ? exp_div : (op_f2i | op_i2f) ? conv_exp : exp_zero ? 8'h0 : dn ? {6'h0, fract_in[47:46]} : exp_out1;
+assign exp_out = op_div ? exp_div : (op_f2i | op_i2f) ? conv_exp : exp_zero ? 8'h0 : dn ? {6'h0, fract_in[(MANT_SIZE + 1)* 2 + 1:(MANT_SIZE + 1)* 2]} : exp_out1;
 
 assign ldz_all   = div_opa_ldz + fi_ldz;
 assign ldz_dif   = fi_ldz_2 - div_opa_ldz;
-assign fi_ldz_2a = 6'd23 - fi_ldz;
+assign fi_ldz_2a = (MANT_SIZE + 1) - fi_ldz;
 assign fi_ldz_2  = {fi_ldz_2a[6], fi_ldz_2a[6:0]};
 
 assign div_exp1  = exp_in_mi1 + fi_ldz_2;	// 9 bits - includes carry out
@@ -341,12 +341,12 @@ assign div_exp2  = exp_in_pl1 - ldz_all;
 assign div_exp3  = exp_in + ldz_dif;
 
 assign exp_div =(opa_dn & opb_dn)					? div_exp3 :
-		 opb_dn							? div_exp1[7:0] :
+		 opb_dn							? div_exp1[EXP_SIZE:0] :
 		(opa_dn & !( (exp_in<div_opa_ldz) | (div_exp2>9'hfe) ))	? div_exp2 :
 		(opa_dn | (exp_in_00 & !exp_ovf[1]) )			? 0 :
 									  exp_out1_mi1;
 
-assign div_inf = opb_dn & !opa_dn & (div_exp1[7:0] < 8'h7f);
+assign div_inf = opb_dn & !opa_dn & (div_exp1[EXP_SIZE:0] < 8'h7f);
 
 // ---------------------------------------------------------------------
 // Round
@@ -356,7 +356,7 @@ assign grs_sel_div = op_div & (exp_ovf[1] | div_dn | exp_out1_co | exp_out_00);
 
 assign g = grs_sel_div ? fract_out[0]                   : fract_out[0];
 assign r = grs_sel_div ? (fract_trunc[MANT_SIZE + 2] & !div_nr)    : fract_trunc[MANT_SIZE + 2];
-assign s = grs_sel_div ? |fract_trunc[MANT_SIZE + 2:0]             : (|fract_trunc[23:0] | (fract_trunc[MANT_SIZE + 2] & op_div));
+assign s = grs_sel_div ? |fract_trunc[MANT_SIZE + 2:0]             : (|fract_trunc[MANT_SIZE + 1:0] | (fract_trunc[MANT_SIZE + 2] & op_div));
 
 // Round to nearest even
 assign round = (g & r) | (r & s) ;
@@ -366,8 +366,8 @@ assign ovf0 = exp_out_final_ff & !rmode_01 & !op_f2i;
 
 // round to zero
 assign fract_out_rnd1 = (exp_out_ff & !op_div & !dn & !op_f2i) ? 23'h7fffff : fract_out;
-assign exp_fix_div    = (fi_ldz>22) ? exp_fix_diva : exp_fix_divb;
-assign exp_out_rnd1   = (g & r & s & exp_in_ff) ? (op_div ? exp_fix_div : exp_next_mi[7:0]) :
+assign exp_fix_div    = (fi_ldz>MANT_SIZE) ? exp_fix_diva : exp_fix_divb;
+assign exp_out_rnd1   = (g & r & s & exp_in_ff) ? (op_div ? exp_fix_div : exp_next_mi[EXP_SIZE:0]) :
 			(exp_out_ff & !op_f2i) ? exp_in : exp_out;
 assign ovf1 = exp_out_ff & !dn;
 
@@ -375,7 +375,7 @@ assign ovf1 = exp_out_ff & !dn;
 assign r_sign = sign;
 
 assign round2a = !exp_out_fe | !fract_out_7fffff | (exp_out_fe & fract_out_7fffff);
-assign round2_fasu = ((r | s) & !r_sign) & (!exp_out[7] | (exp_out[7] & round2a));
+assign round2_fasu = ((r | s) & !r_sign) & (!exp_out[EXP_SIZE] | (exp_out[EXP_SIZE] & round2a));
 
 assign round2_fmul = !r_sign &
 		(
@@ -439,8 +439,8 @@ assign	max_num =  ( !rmode_00 & (op_mul | op_div ) & (
 
 								   (  r_sign & (
 										(fract_in[47] & div_inf) |
-										(exp_in[7] & !exp_out_rnd[7] & !exp_in_80 & exp_out!=8'h7f ) |
-										(exp_in[7] &  exp_out_rnd[7] & r_sign & exp_out_ff & op_dn &
+										(exp_in[EXP_SIZE] & !exp_out_rnd[EXP_SIZE] & !exp_in_80 & exp_out!=8'h7f ) |
+										(exp_in[EXP_SIZE] &  exp_out_rnd[EXP_SIZE] & r_sign & exp_out_ff & op_dn &
 											 div_exp1>9'h0fe )
 										)
 								   ) |
@@ -507,17 +507,17 @@ assign undeflow_div =	!(exp_ovf[1] &  exp_ovf[0] & rmode_00) & !inf_out & !max_n
 
 			( exp_ovf[1] & !exp_ovf[0] & (
 							(  op_dn & exp_in>8'h16 & fi_ldz<23) |
-							(  op_dn & exp_in<23 & fi_ldz<23 & !rem_00) |
-							( !op_dn & (exp_in[7]==exp_div[7]) & !rem_00) |
+							(  op_dn & exp_in<(MANT_SIZE+1) & fi_ldz<(MANT_SIZE+1) & !rem_00) |
+							( !op_dn & (exp_in[EXP_SIZE]==exp_div[EXP_SIZE]) & !rem_00) |
 							( !op_dn & exp_in_00 & (exp_div[7:1]==7'h7f) ) |
 							( !op_dn & exp_in<8'h7f & exp_in>8'h20 )
 							)
 			) |
 
 			(!exp_ovf[1] & !exp_ovf[0] & (
-							( op_dn & fi_ldz<23 & exp_out_00) |
+							( op_dn & fi_ldz<(MANT_SIZE + 1) & exp_out_00) |
 							( exp_in_00 & !rem_00) |
-							( !op_dn & ldz_all<23 & exp_in==1 & exp_out_00 & !rem_00)
+							( !op_dn & ldz_all<(MANT_SIZE + 1) & exp_in==1 & exp_out_00 & !rem_00)
 							)
 			)
 
@@ -527,7 +527,7 @@ assign underflow = op_div ? undeflow_div : op_mul ? underflow_fmul : (!fract_in[
 
 assign overflow_fdiv =	inf_out |
 			(!rmode_00 & max_num) |
-			(exp_in[7] & op_dn & exp_out_ff) |
+			(exp_in[EXP_SIZE] & op_dn & exp_out_ff) |
 			(exp_ovf[0] & (exp_ovf[1] | exp_out_ff) );
 
 assign overflow  = op_div ? overflow_fdiv : (ovf0 | ovf1);
@@ -575,34 +575,34 @@ wire		ez_del;
 wire		lr;
 wire	[EXP_SIZE:0]	shr, shl, exp_div_del;
 
-delay2 #26 ud000(clk, test.u0.fracta, fracta_del);
-delay2 #26 ud001(clk, test.u0.fractb, fractb_del);
+delay2 #(MANT_SIZE + 4) ud000(clk, test.u0.fracta, fracta_del);
+delay2 #(MANT_SIZE + 4) ud001(clk, test.u0.fractb, fractb_del);
 delay1  #2 ud002(clk, {g,r,s}, grs_del);
 delay1  #0 ud004(clk, dn, dn_del);
-delay1  #7 ud005(clk, exp_in, exp_in_del);
-delay1  #7 ud007(clk, exp_out_rnd, exp_out_del);
-delay1 #47 ud009(clk, fract_in, fract_in_del);
+delay1  #(EXP_SIZE) ud005(clk, exp_in, exp_in_del);
+delay1  #(EXP_SIZE) ud007(clk, exp_out_rnd, exp_out_del);
+delay1 #((MANT_SIZE + 1) * 2 + 1) ud009(clk, fract_in, fract_in_del);
 delay1  #0 ud010(clk, overflow, overflow_del);
 delay1  #1 ud011(clk, exp_ovf, exp_ovf_del);
-delay1 #22 ud014(clk, fract_out, fract_out_x_del);
-delay1 #24 ud015(clk, fract_trunc, trunc_xx_del);
+delay1 #(MANT_SIZE) ud014(clk, fract_out, fract_out_x_del);
+delay1 #(MANT_SIZE + 2) ud015(clk, fract_trunc, trunc_xx_del);
 delay1 	#0 ud017(clk, exp_rnd_adj2a, exp_rnd_adj2a_del);
 delay1  #4 ud019(clk, div_opa_ldz, div_opa_ldz_del);
-delay3 #23 ud020(clk, test.u0.fdiv_opa[49:26],	fracta_div_del);
-delay3 #23 ud021(clk, test.u0.fractb_mul,	fractb_div_del);
+delay3 #(MANT_SIZE + 1) ud020(clk, test.u0.fdiv_opa[(MANT_SIZE+1) * 2 + 3 :(MANT_SIZE+1) * 2 + 3 - (MANT_SIZE + 1)],	fracta_div_del); //TODO CHANGE THIS
+delay3 #(MANT_SIZE + 1) ud021(clk, test.u0.fractb_mul,	fractb_div_del);
 delay1 	#0 ud023(clk, div_inf, div_inf_del);
-delay1  #7 ud024(clk, fi_ldz_2, fi_ldz_2_del);
+delay1  #(EXP_SIZE) ud024(clk, fi_ldz_2, fi_ldz_2_del);
 delay1 	#0 ud025(clk, inf_out, inf_out_del);
 delay1 	#0 ud026(clk, max_num, max_num_del);
 delay1 	#5 ud027(clk, fi_ldz, fi_ldz_del);
 delay1  #0 ud028(clk, rem_00, rx_del);
 
 delay1  #0 ud029(clk, left_right, lr);
-delay1  #7 ud030(clk, shift_right, shr);
-delay1  #7 ud031(clk, shift_left, shl);
-delay1 #22 ud032(clk, fract_out_rnd2a, fract_out_rnd2a_del);
+delay1  #(EXP_SIZE) ud030(clk, shift_right, shr);
+delay1  #(EXP_SIZE) ud031(clk, shift_left, shl);
+delay1 #(MANT_SIZE) ud032(clk, fract_out_rnd2a, fract_out_rnd2a_del);
 
-delay1  #7 ud033(clk, exp_div, exp_div_del);
+delay1  #(EXP_SIZE) ud033(clk, exp_div, exp_div_del);
 
 always @(test.error_event)
    begin
