@@ -79,7 +79,8 @@ parameter BIT_SIZE = 31,
 
 
 
-parameter	INF  = 31'h7f800000, //TODO CHANGE THESE VALUES TO FIT GENERIC CASE
+parameter
+    INF  = 31'h7f800000, //TODO CHANGE THESE VALUES TO FIT GENERIC CASE
 		QNAN = 31'h7fc00001,
 		SNAN = 31'h7f800001;
 
@@ -588,7 +589,7 @@ always @(test.error_event)
    begin
 	#0.2
 	$display("muf: %b uf0: %b uf1: %b uf2: %b, tx0: %b, co: %b, out_d: %h (%h %h), ov_fasu: %b, ov_fmul: %b, fop: %h",
-			mul_uf_del, uf2_del, ufb2_del, ufc2_del, underflow_d_del, co_del, out_d_del, out_d_del[30:23], out_d_del[22:0],
+			mul_uf_del, uf2_del, ufb2_del, ufc2_del, underflow_d_del, co_del, out_d_del, out_d_del[BIT_SIZE-1:MANT_SIZE + 1], out_d_del[MANT_SIZE:0],
 			ov_fasu_del, ov_fmul_del, fop );
 	$display("ldza: %h, quo: %b",
 			ldza_del, quo_del);

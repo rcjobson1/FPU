@@ -133,7 +133,8 @@ always @(posedge clk)
 	underflow <= #1 underflow_d;
 
 always @(posedge clk)
-	inf <= #1 op_div ? (expb_dn & !expa[EXP_SIZE]) : ({co1,exp_tmp1} > 9'h17e) ; // TODO FIX INFINITY
+	//inf <= #1 op_div ? (expb_dn & !expa[EXP_SIZE]) : ({co1,exp_tmp1} > 9'h17e) ; // TODO FIX INFINITY
+  inf <= #1 op_div ? (expb_dn & !expa[EXP_SIZE]) : ({co1,exp_tmp1} > {1'b1, 1'b0, {EXP_SIZE - 1{1'b1}}, 1'b0 }); 
 
 
 ////////////////////////////////////////////////////////////////////////
