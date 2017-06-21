@@ -481,7 +481,8 @@ always @(posedge clk)
 	fasu_op_r2 <= #1 fasu_op_r1;
 
 always @(posedge clk)
-	inf_mul2 <= #1 exp_mul == 8'hff;
+  inf_mul2 <= #1 exp_mul == {EXP_SIZE + 1{1'b1}};
+  //inf_mul2 <= #1 exp_mul == 8'hff;
 
 
 // Force pre-set values for non numerical output
