@@ -5,10 +5,16 @@ module test;
 
 ////////////////////////////////////////////////////////////////////////
 // Parameters
-parameter BIT_SIZE = 63,
-  EXP_SIZE = 10,
-  MANT_SIZE = 51,
-  BIAS = 1023;
+// 64 bit = 0
+// 32 bit = 1
+// 16 bit = 2
+parameter
+  FPU_TYPE = 0,
+
+  BIT_SIZE = 16 * 2**(2 - FPU_TYPE) - 1,
+  EXP_SIZE = 11- (3*FPU_TYPE) - 1,
+  MANT_SIZE = BIT_SIZE  - EXP_SIZE - 2,
+  BIAS = 2**(10-(3*FPU_TYPE)) - 1;
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -24,11 +30,11 @@ always #10 clk = !clk;
 
 reg [1:0] fpu_rmode = 0; //round to nearest even
 
-reg [2:0] fpu_op = 2; // mul
+reg [2:0] fpu_op = 3; // div
 
 
-reg [63:0] opa = 64'h4034000000000000 ; //20
-reg [63:0] opb = 64'h4055000000000000; // 84
+reg [63:0] opa = 64'h4014000000000000; //5
+reg [63:0] opb = 64'h4000000000000000; // 2
 
 // Should get 28
 
@@ -44,7 +50,7 @@ end
 
 initial begin
   $display("time\topa\topb\tout");
-  $monitor("%0d,\t%h,\t%h,\t%h,", $time, opa,opb,out);
+  $monitor("%0d,\t%h,\t%h,\t%h, UNDERFLOW: %d", $time, opa,opb,out, underflow);
 end
 
 

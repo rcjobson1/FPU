@@ -5,10 +5,17 @@ module test;
 
 ////////////////////////////////////////////////////////////////////////
 // Parameters
-parameter BIT_SIZE = 31,
-  EXP_SIZE = 7,
-  MANT_SIZE = 22,
-  BIAS = 127;
+// 64 bit = 0
+// 32 bit = 1
+// 16 bit = 2
+parameter
+  FPU_TYPE = 2,
+
+
+  BIT_SIZE = 16 * 2**(2 - FPU_TYPE) - 1,
+  EXP_SIZE = 11- (3*FPU_TYPE) - 1,
+  MANT_SIZE = BIT_SIZE  - EXP_SIZE - 2,
+  BIAS = 2**(10-(3*FPU_TYPE)) - 1;
 
 ////////////////////////////////////////////////////////////////////////
 

@@ -355,7 +355,8 @@ always @(fracta_mul) begin
   end
 
 //assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
-assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
+//assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
+assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), {MANT_SIZE + 4 {1'b0}}} : {fracta_mul, {MANT_SIZE + 4 {1'b0}} };
 
 div_r2 #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u6(.clk(clk), .opa(fdiv_opa), .opb(fractb_mul), .quo(quo), .rem(remainder));
 
