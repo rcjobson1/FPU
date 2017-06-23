@@ -35,11 +35,11 @@ always #10 clk = !clk;
 
 reg [1:0] fpu_rmode = 0; //round to nearest even
 
-reg [2:0] fpu_op = 3; // div
+reg [2:0] fpu_op = 0; // div
 
 
-reg [31:0] opa = 32'h40a00000 ; //1.e-45
-reg [31:0] opb = 32'h40000000; // 2
+reg [31:0] opa = 32'h41a00000 ; //20
+reg [31:0] opb = 32'h42a80000; // 2
 
 // Should get 28
 

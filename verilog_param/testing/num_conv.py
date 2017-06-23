@@ -24,7 +24,6 @@ def convert_16(num):
     byte_form = struct.unpack("H" , x)
     byte_form = byte_form[0]
     #binary = '{:016b}'.format(byte_form)
-
     return hex(byte_form)
 
 
