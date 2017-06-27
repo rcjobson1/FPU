@@ -80,7 +80,7 @@ parameter BIT_SIZE = 31,
 
 
 parameter
-    INF  = 31'h7f800000, //TODO CHANGE THESE VALUES TO FIT GENERIC CASE
+    INF  = BIT_SIZE == 63 ? 64'h7FF0000000000000 : BIT_SIZE == 31 ? 31'h7f800000 : 16'b0_11111_0000000000,
 		QNAN = 31'h7fc00001,
 		SNAN = 31'h7f800001;
 
@@ -292,7 +292,7 @@ always @(fracta_mul) begin
 	   23'b0000000000000000000000?: div_opa_ldz_d = 23;
 	endcase
 
-  if(MANT_SIZE > 22) begin
+  if(MANT_SIZE == 51) begin
   casex(fracta_mul[MANT_SIZE:0])
   52'b1???????????????????????????????????????????????????: div_opa_ldz_d = 1;
   52'b01??????????????????????????????????????????????????: div_opa_ldz_d = 2;
@@ -348,11 +348,31 @@ always @(fracta_mul) begin
   52'b000000000000000000000000000000000000000000000000000?: div_opa_ldz_d = 52;
 
   endcase
+  end // MANT_SIZE  == 51
 
 
+
+  if(MANT_SIZE < 22) begin
+  casex(fracta_mul[MANT_SIZE:0])
+  10'b1?????????: div_opa_ldz_d = 1;
+  10'b01????????: div_opa_ldz_d = 2;
+  10'b001???????: div_opa_ldz_d = 3;
+  10'b0001??????: div_opa_ldz_d = 4;
+  10'b00001?????: div_opa_ldz_d = 5;
+  10'b000001????: div_opa_ldz_d = 6;
+  10'b0000001???: div_opa_ldz_d = 7;
+  10'b00000001??: div_opa_ldz_d = 8;
+  10'b000000001?: div_opa_ldz_d = 9;
+  10'b000000000?: div_opa_ldz_d = 10;
+  endcase // MANT_SIZE < 22
   end
 
-  end
+
+
+
+
+
+  end // fracta_mul
 
 //assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
 //assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};

@@ -1,0 +1,63 @@
+`timescale 1ns / 100ps
+
+module test;
+
+////////////////////////////////////////////////////////////////////////
+parameter
+
+  BIT_SIZE_64 = 63,
+  BIT_SIZE_32 = 31,
+  BIT_SIZE_16 = 15,
+
+  EXP_SIZE_64 = 10,
+  EXP_SIZE_32 = 7,
+  EXP_SIZE_16 = 4,
+
+  MANT_SIZE_64 = 51,
+  MANT_SIZE_32 = 22,
+  MANT_SIZE_16 = 9,
+
+  BIAS_64 = 1023,
+  BIAS_32 = 127,
+  BIAS_16 = 15;
+////////////////////////////////////////////////////////////////////////
+
+initial begin
+  $dumpfile("ALLTESTS.vcd");
+  $dumpvars(0,test);
+end
+
+event		error_event;
+
+reg clk = 0;
+always #10 clk = !clk;
+
+
+reg [1:0] fpu_rmode16 = 0;
+reg [1:0] fpu_rmode32 = 0;
+reg [1:0] fpu_rmode64 = 0;
+
+
+
+reg [63:0] opa_64, opb_64;
+reg [31:0] opa_32, opb_32;
+reg [15:0] opa_16, opb_16;
+
+reg [2:0] fpu_op16, fpu_op32, fpu_op64;
+
+wire [63:0] out_64;
+wire [31:0] out_32;
+wire [15:0] out_16;
+
+
+wire snan16, qnan16, inf16, ine16, overflow16, underflow16, div_by_zero16, zero16;
+wire snan32, qnan32, inf32, ine32, overflow32, underflow32, div_by_zero32, zero32;
+wire snan64, qnan64, inf64, ine64, overflow64, underflow64, div_by_zero64, zero64;
+
+fpu #(.BIT_SIZE(BIT_SIZE_16), .EXP_SIZE(EXP_SIZE_16), .MANT_SIZE(MANT_SIZE_16), .BIAS(BIAS_16) ) u0(clk, fpu_rmode16, fpu_op16, opa_16, opb_16, out_16, snan16, qnan16, inf16, ine16, overflow16, underflow16, div_by_zero16, zero16);
+fpu #(.BIT_SIZE(BIT_SIZE_32), .EXP_SIZE(EXP_SIZE_32), .MANT_SIZE(MANT_SIZE_32), .BIAS(BIAS_32) ) u1(clk, fpu_rmode32, fpu_op32, opa_32, opb_32, out_32, snan32, qnan32, inf32, ine32, overflow32, underflow32, div_by_zero32, zero32);
+fpu #(.BIT_SIZE(BIT_SIZE_64), .EXP_SIZE(EXP_SIZE_64), .MANT_SIZE(MANT_SIZE_64), .BIAS(BIAS_64) ) u2(clk, fpu_rmode64, fpu_op64, opa_64, opb_64, out_64, snan64, qnan64, inf64, ine64, overflow64, underflow64, div_by_zero64, zero64);
+
+
+
+endmodule
