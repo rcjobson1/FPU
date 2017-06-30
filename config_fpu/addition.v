@@ -16,7 +16,7 @@ module addition(clk, add_sub, opa, opb, sum);
 
   assign sum_normal = add_sub ? (opa_normal + opb_normal) : (opa_normal - opb_normal); // TODO Change this to only add exponents
 
-  end_normalize_addition m2(clk, sum_normal, sum);
+  end_normalize_addition m2(clk,sum_normal, sum);
 
 
 endmodule // n - bit addition
@@ -32,7 +32,7 @@ output [`BIT_SIZE:0] n_opa, n_opb;
 
   wire[`EXP_SIZE:0] small_shift;
 
-  wire o pa_larger;
+  wire opa_larger;
   assign opa_larger = opa_exp >= opb_exp;
 
   assign opa_sign = opa[`BIT_SIZE];
@@ -51,7 +51,6 @@ output [`BIT_SIZE:0] n_opa, n_opb;
   //assign n_opb = opa_larger ? opb << small_shift : opb;
 
   always @ (clk) begin
-
     $display ("small shift: %b\t opa_exp : %b\t opb_exp: %b\n\n\n\n",small_shift, opa_exp, opb_exp);
   end
 
@@ -59,11 +58,18 @@ output [`BIT_SIZE:0] n_opa, n_opb;
 
 endmodule // normalize_addition
 
-module end_normalize_addition(clk, sum, out); // Takes a number and normalizes it
+module end_normalize_addition (clk,sum,out); // Takes a number and normalizes it
 input clk;
 input [`BIT_SIZE:0] sum;
 output [`BIT_SIZE:0] out;
 
+parameter num = 4;
+
+
+always @ (clk) begin
+
+  $display ("param = %d",num);
+end
   assign out = sum;
 
 endmodule

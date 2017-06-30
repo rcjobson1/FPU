@@ -75,7 +75,7 @@ wire		expa_dn, expb_dn;
 reg		sticky;
 reg		result_zero_sign;
 reg		add_r, signa_r, signb_r;
-wire	[4:0]	exp_diff_sft;
+wire	[EXP_SHIFT:0]	exp_diff_sft;
 wire		exp_lt_27;
 wire		op_dn;
 wire	[MANT_SIZE + 4:0]	adj_op_out_sft;
@@ -88,8 +88,8 @@ reg		nan_sign;
 parameter BIT_SIZE = 31,
   EXP_SIZE = 7,
   MANT_SIZE = 22,
-  BIAS = 127;
-
+  BIAS = 127,
+  EXP_SHIFT = MANT_SIZE == 51 ? 5 : MANT_SIZE == 22 ? 4 : 3;
 ////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////
@@ -142,7 +142,7 @@ assign adj_op_tmp = { ~op_dn, adj_op, 3'b0 };	// recover hidden bit (op_dn)
 
 // adj_op_out is MANT_SIZE + 5 bits wide, so can only be shifted MANT_SIZE + 5 bits to the right
 assign exp_lt_27	= exp_diff  > MANT_SIZE + 5;
-assign exp_diff_sft	= exp_lt_27 ? MANT_SIZE + 5 : exp_diff[4:0];
+assign exp_diff_sft	= exp_lt_27 ? MANT_SIZE + 5 : exp_diff[5:0];
 assign adj_op_out_sft	= adj_op_tmp >> exp_diff_sft;
 assign adj_op_out	= {adj_op_out_sft[ MANT_SIZE + 4 :1], adj_op_out_sft[0] | sticky };
 

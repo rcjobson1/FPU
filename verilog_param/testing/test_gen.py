@@ -40,8 +40,8 @@ def test_32(num_test_cases):
         rbitsa = hex(grb(32))
         rbitsb = hex(grb(32))
 
-        opa = nc.convert_from_64(rbitsa)
-        opb = nc.convert_from_64(rbitsb)
+        opa = nc.convert_from_32(rbitsa)
+        opb = nc.convert_from_32(rbitsb)
         op = choice(operators)
 
         if op == 0:
@@ -67,8 +67,8 @@ def test_16(num_test_cases):
         rbitsa = hex(grb(16))
         rbitsb = hex(grb(16))
 
-        opa = nc.convert_from_64(rbitsa)
-        opb = nc.convert_from_64(rbitsb)
+        opa = nc.convert_from_16(rbitsa)
+        opb = nc.convert_from_16(rbitsb)
         op = choice(operators)
 
         if op == 0:
@@ -118,8 +118,8 @@ def generate_32(test_vectors):
     return_string += "initial begin\n"
     for vector in test_vectors:
 
-        opa = nc.convert_64(vector[0])[2:] # the 2:0 gets rid of the 0x part
-        opb = nc.convert_64(vector[1])[2:]
+        opa = nc.convert_32(vector[0])[2:] # the 2:0 gets rid of the 0x part
+        opb = nc.convert_32(vector[1])[2:]
 
         if opa[-1] == "L":
             opa = opa[:-1]
@@ -143,8 +143,8 @@ def generate_16(test_vectors):
     return_string += "initial begin\n"
     for vector in test_vectors:
 
-        opa = nc.convert_64(vector[0])[2:] # the 2:0 gets rid of the 0x part
-        opb = nc.convert_64(vector[1])[2:]
+        opa = nc.convert_16(vector[0])[2:] # the 2:0 gets rid of the 0x part
+        opb = nc.convert_16(vector[1])[2:]
 
         if opa[-1] == "L":
             opa = opa[:-1]
@@ -281,27 +281,50 @@ def generate_test_code(num_test_cases):
 
 
 
-    results = []
+    results16 = []
+    results32 = []
+    results64 = []
 
     for i in range(0, num_test_cases):
-        results.append(nc.convert_32(tv_32[i][-1]))
+        results16.append(nc.convert_16(tv_16[i][-1]))
+        results32.append(nc.convert_32(tv_32[i][-1]))
+        results64.append(nc.convert_64(tv_64[i][-1]))
 
-    print results
 
-    f = open("gencode_test_64.v", "w")
+    f = open("gencode/gencode_test_64.v", "w")
     f.write(tb_64)
     f.close()
 
-    f1 = open("gencode_test_32.v", "w")
+    r64 = open("gencode/gencode_results_64.txt", "w")
+    for result in results64:
+        r64.write(str(result) + "\n")
+
+    r64.close()
+
+    f1 = open("gencode/gencode_test_32.v", "w")
     f1.write(tb_32)
     f1.close()
 
+    r32 = open("gencode/gencode_results_32.txt", "w")
+    for result in results32:
+        r32.write(str(result)+ "\n")
+    r32.close()
 
-    f2 = open("gencode_test_16.v", "w")
+
+    f2 = open("gencode/gencode_test_16.v", "w")
     f2.write(tb_16)
     f2.close()
 
+    r16 = open("gencode/gencode_results_16.txt", "w")
+    for result in results16:
+        r16.write(str(result)+ "\n")
+    r16.close()
+
 def main():
+
+    if len(argv) != 2:
+        print "usage: python test_gen.py <n> where n is the number of tests to generate"
+        return
     generate_test_code(int(argv[1]))
     return
 main()

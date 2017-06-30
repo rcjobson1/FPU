@@ -119,15 +119,15 @@ wire	[EXP_SIZE:0]	fasu_shift;
 wire	[EXP_SIZE:0]	exp_fix_div;
 
 wire	[EXP_SIZE:0]	exp_fix_diva, exp_fix_divb;
-wire	[6:0]	fi_ldz_mi1;
-wire	[6:0]	fi_ldz_mi22;
+wire	[5:0]	fi_ldz_mi1;
+wire	[5:0]	fi_ldz_mi22;
 wire		exp_zero;
 wire	[6:0]	ldz_all;
 wire	[EXP_SIZE:0]	ldz_dif;
 
 wire	[EXP_SIZE+1:0]	div_scht1a;
 wire	[EXP_SIZE:0]	f2i_shft;
-wire	[BIT_SIZE + 1 + MANT_SIZE + 2:0]	exp_f2i_1;
+wire	[55:0]	exp_f2i_1;
 wire		f2i_zero, f2i_max;
 wire	[EXP_SIZE:0]	f2i_emin;
 wire	[EXP_SIZE:0]	conv_shft;
@@ -385,14 +385,13 @@ assign dn = !op_mul & !op_div & (exp_in_00 | (exp_next_mi[EXP_SIZE + 1] & !fract
 
 // ---------------------------------------------------------------------
 // Fraction Normalization
-parameter	f2i_emax = 8'h9d; // 157? but why though TODO FIX THIS
+parameter	f2i_emax = 8'h9d; // TODO FIX THIS
 
 // Incremented fraction for rounding
 assign fract_out_pl1 = fract_out + 1;
 
 // Special Signals for f2i
-//assign f2i_emin = rmode_00 ? 8'h7e : 8'h7f; //126 : 127
-assign f2i_emin = rmode_00 ? BIAS-1 : BIAS; //126 : 127
+assign f2i_emin = rmode_00 ? 8'h7e : 8'h7f;
 assign f2i_zero = (!opas & (exp_in<f2i_emin)) | (opas & (exp_in>f2i_emax)) | (opas & (exp_in<f2i_emin) & (fract_in_00 | !rmode_11));
 assign f2i_max = (!opas & (exp_in>f2i_emax)) | (opas & (exp_in<f2i_emin) & !fract_in_00 & rmode_11);
 
@@ -407,9 +406,9 @@ assign div_shft3  = div_opa_ldz+exp_in;
 assign div_shft4  = div_opa_ldz-exp_in;
 
 assign div_dn    = op_dn & div_shft1_co;
-assign div_nr    = op_dn & exp_ovf[1]  & !(|fract_in[(MANT_SIZE + 1)*2:MANT_SIZE + 1]) & (div_shft3>MANT_SIZE);
+assign div_nr    = op_dn & exp_ovf[1]  & !(|fract_in[(MANT_SIZE + 1)*2:MANT_SIZE + 1]) & (div_shft3>8'h16);
 
-assign f2i_shft  = exp_in-8'h7d; //125
+assign f2i_shft  = exp_in-8'h7d;
 
 // Select shifting direction
 assign left_right = op_div ? lr_div : op_mul ? lr_mul : 1;
@@ -475,8 +474,7 @@ assign f2i_out_sign =  !opas ? ((exp_in<f2i_emin) ? 0 : (exp_in>f2i_emax) ? 0 : 
 
 assign exp_i2f   = fract_in_00 ? (opas ? 8'h9e : 0) : (8'h9e-fi_ldz);
 assign exp_f2i_1 = {{8{fract_in[(MANT_SIZE + 1)* 2 + 1]}}, fract_in }<<f2i_shft;
-//assign exp_f2i   = f2i_zero ? 0 : f2i_max ? 8'hff : exp_f2i_1[BIT_SIZE + 1 + MANT_SIZE + 2:BIT_SIZE + 1 + MANT_SIZE + 2 - EXP_SIZE]; //TODO FIGURE OUT WHAT THIS DOES
-assign exp_f2i   = f2i_zero ? 0 : f2i_max ? 2**(EXP_SIZE + 1) : exp_f2i_1[BIT_SIZE + 1 + MANT_SIZE + 2:BIT_SIZE + 1 + MANT_SIZE + 2 - EXP_SIZE];
+assign exp_f2i   = f2i_zero ? 0 : f2i_max ? 8'hff : exp_f2i_1[55:48]; //TODO FIGURE OUT WHAT THIS DOES
 assign conv_exp  = op_f2i ? exp_f2i : exp_i2f;
 
 assign exp_out = op_div ? exp_div : (op_f2i | op_i2f) ? conv_exp : exp_zero ? 8'h0 : dn ? {6'h0, fract_in[(MANT_SIZE + 1)* 2 + 1:(MANT_SIZE + 1)* 2]} : exp_out1;
@@ -497,7 +495,7 @@ assign exp_div =(opa_dn & opb_dn)					? div_exp3 :
 		(opa_dn | (exp_in_00 & !exp_ovf[1]) )			? 0 :
 									  exp_out1_mi1;
 
-assign div_inf = opb_dn & !opa_dn & (div_exp1[EXP_SIZE:0] < BIAS);
+assign div_inf = opb_dn & !opa_dn & (div_exp1[EXP_SIZE:0] < 8'h7f);
 
 // ---------------------------------------------------------------------
 // Round
@@ -542,8 +540,7 @@ assign round2_fmul = !r_sign &
 			)
 		);
 
-//assign round2_f2i = rmode_10 & (( |fract_in[MANT_SIZE+1:0] & !opas & (exp_in<8'h80 )) | (|fract_trunc));
-assign round2_f2i = rmode_10 & (( |fract_in[MANT_SIZE+1:0] & !opas & (exp_in<(BIAS + 1) )) | (|fract_trunc));
+assign round2_f2i = rmode_10 & (( |fract_in[MANT_SIZE+1:0] & !opas & (exp_in<8'h80 )) | (|fract_trunc));
 assign round2 = (op_mul | op_div) ? round2_fmul : op_f2i ? round2_f2i : round2_fasu;
 
 assign {exp_rnd_adj2a, fract_out_rnd2a} = round2 ? fract_out_pl1 : {1'b0, fract_out};
@@ -576,7 +573,7 @@ wire	max_num, inf_out;
 
 assign	max_num =  ( !rmode_00 & (op_mul | op_div ) & (
 							  ( exp_ovf[1] &  exp_ovf[0]) |
-							  (!exp_ovf[1] & !exp_ovf[0] & exp_in_ff & (fi_ldz_2<MANT_SIZE + 2) & (exp_out!=8'hfe) )
+							  (!exp_ovf[1] & !exp_ovf[0] & exp_in_ff & (fi_ldz_2<24) & (exp_out!=8'hfe) )
 							  )
 		   ) |
 
@@ -593,7 +590,7 @@ assign	max_num =  ( !rmode_00 & (op_mul | op_div ) & (
 
 								   (  r_sign & (
 										(fract_in[47] & div_inf) |
-										(exp_in[EXP_SIZE] & !exp_out_rnd[EXP_SIZE] & !exp_in_80 & exp_out!=BIAS ) |
+										(exp_in[EXP_SIZE] & !exp_out_rnd[EXP_SIZE] & !exp_in_80 & exp_out!=8'h7f ) |
 										(exp_in[EXP_SIZE] &  exp_out_rnd[EXP_SIZE] & r_sign & exp_out_ff & op_dn &
 											 div_exp1>9'h0fe )
 										)
@@ -611,14 +608,14 @@ assign	max_num =  ( !rmode_00 & (op_mul | op_div ) & (
 
 
 assign inf_out = (rmode[1] & (op_mul | op_div) & !r_sign & (	(exp_in_ff & !op_div) |
-								(exp_ovf[1] & exp_ovf[0] & (exp_in_00 | exp_in[EXP_SIZE]) )
+								(exp_ovf[1] & exp_ovf[0] & (exp_in_00 | exp_in[7]) )
 							   )
 		) | (div_inf & op_div & (
 				 rmode_00 |
 				(rmode[1] & !exp_in_ff & !exp_ovf[1] & !exp_ovf[0] & !r_sign ) |
 				(rmode[1] & !exp_ovf[1] & exp_ovf[0] & exp_in_00 & !r_sign)
 				)
-		) | (op_div & rmode[1] & exp_in_ff & op_dn & !r_sign & (fi_ldz_2 < MANT_SIZE + 2)  & (exp_out_rnd!=8'hfe) );
+		) | (op_div & rmode[1] & exp_in_ff & op_dn & !r_sign & (fi_ldz_2 < 24)  & (exp_out_rnd!=8'hfe) );
 
 /*assign fract_out_final =	(inf_out | ovf0 | output_zero ) ? 23'h0 :
 				(max_num | (f2i_max & op_f2i) ) ? {MANT_SIZE + 1{1'b1}} :
@@ -694,8 +691,8 @@ wire		f2i_ine;
 
 assign f2i_ine =	(f2i_zero & !fract_in_00 & !opas) |
 			(|fract_trunc) |
-			(f2i_zero & (exp_in<(BIAS + 1)) & opas & !fract_in_00) |
-			(f2i_max & rmode_11 & (exp_in<(BIAS + 1)));
+			(f2i_zero & (exp_in<8'h80) & opas & !fract_in_00) |
+			(f2i_max & rmode_11 & (exp_in<8'h80));
 
 
 

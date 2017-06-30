@@ -31,6 +31,7 @@ def convert_16(num):
 def convert_from_64(hex_string):
     int_representation = literal_eval(hex_string)
     byte_form = struct.pack("Q", int_representation)
+
     converted = np.fromstring(byte_form, dtype = np.float64)[0]
     return converted
 
@@ -50,24 +51,35 @@ def main():
     num = argv[1];
     #print convert_32(-20)
 
-    n64 = convert_64(num)
-    n32 = convert_32(num)
-    n16 = convert_16(num)
 
-    c64 = convert_from_64(n64)
-    c32 = convert_from_32(n32)
-    c16 = convert_from_16(n16)
+    if(num[0:2] == "0x"):
+        if(len(num) == 6):
+            print "16 bit: " + str(convert_from_16(num))
+        elif(len(num) == 10):
+            print "32 bit: " + str(convert_from_32(num))
+        elif(len(num) == 18):
+            print "64 bit: " + str(convert_from_64(num))
+        else:
+            print "Invalid entry"
+    else:
+        n64 = convert_64(num)
+        n32 = convert_32(num)
+        n16 = convert_16(num)
 
-    print "Number: %s" % num
-    print "Double: %s" % n64
-    print "Single: %s" % n32
-    print "Half  : %s\n" % n16
-    #print "Double Precision : %s\n Single Precision : %x\n Half Precision : %x" % convert_64(num), convert_32(num), convert_16(num)
+        c64 = convert_from_64(n64)
+        c32 = convert_from_32(n32)
+        c16 = convert_from_16(n16)
 
-    print "Converted Back: "
-    print "Double: %s" % c64
-    print "Single: %s" % c32
-    print "Half  : %s" % c16
+        print "Number: %s" % num
+        print "Double: %s" % n64
+        print "Single: %s" % n32
+        print "Half  : %s\n" % n16
+        #print "Double Precision : %s\n Single Precision : %x\n Half Precision : %x" % convert_64(num), convert_32(num), convert_16(num)
+
+        print "Converted Back: "
+        print "Double: %s" % c64
+        print "Single: %s" % c32
+        print "Half  : %s" % c16
 
 
 
