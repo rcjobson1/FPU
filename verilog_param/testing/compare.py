@@ -29,9 +29,9 @@ def compare_files(file1, file2):
 
     for i in range(0, len(base_results)):
         if base_results[i] == test_results[i]:
-            print "Test " + str(i) + " passed"
+            print "Test " + str(i+1) + " passed"
         else:
-            print "Test " + str(i) + " FAILED"
+            print "Test " + str(i+1) + " FAILED"
             print "Expected: " + hex(base_results[i]) + " Got: " + hex(test_results[i])
 
 main()
