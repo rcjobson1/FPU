@@ -200,6 +200,14 @@ def generate_test_code(num_test_cases):
 
     fpu #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u0(clk, fpu_rmode, fpu_op, opa, opb, out, snan, qnan, inf, ine, overflow, underflow, div_by_zero, zero);
 
+    integer f;
+    initial begin
+        f = $fopen("verilog_results_64.txt");
+    end
+
+    always @(out) begin
+        $fwrite(f,"0x%h\\n", out);
+    end
     """
     fmt_begin_32 = """`timescale 1ns / 100ps
     module test;
@@ -233,6 +241,15 @@ def generate_test_code(num_test_cases):
 
     fpu #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u0(clk, fpu_rmode, fpu_op, opa, opb, out, snan, qnan, inf, ine, overflow, underflow, div_by_zero, zero);
 
+
+    integer f;
+    initial begin
+        f = $fopen("verilog_results_32.txt");
+    end
+
+    always @(out) begin
+        $fwrite(f,"0x%h\\n", out);
+    end
     """
     fmt_begin_16 = """`timescale 1ns / 100ps
     module test;
@@ -266,6 +283,15 @@ def generate_test_code(num_test_cases):
 
     fpu #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u0(clk, fpu_rmode, fpu_op, opa, opb, out, snan, qnan, inf, ine, overflow, underflow, div_by_zero, zero);
 
+
+    integer f;
+    initial begin
+        f = $fopen("verilog_results_16.txt");
+    end
+
+    always @(out) begin
+        $fwrite(f,"0x%h\\n", out);
+    end
     """
     fmt_end = """endmodule"""
 

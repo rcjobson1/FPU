@@ -628,10 +628,16 @@ assign fract_out_final =	(inf_out | ovf0 | output_zero ) ? {MANT_SIZE + 1{1'b0}}
       (max_num | (f2i_max & op_f2i) ) ? {MANT_SIZE + 1{1'b1}} :
         fract_out_rnd;
 
-assign exp_out_final =	((op_div & exp_ovf[1] & !exp_ovf[0]) | output_zero ) ? 8'h00 :
+/*assign exp_out_final =	((op_div & exp_ovf[1] & !exp_ovf[0]) | output_zero ) ? 8'h00 :
 			((op_div & exp_ovf[1] &  exp_ovf[0] & rmode_00) | inf_out | (f2i_max & op_f2i) ) ? 8'hff :
 			max_num ? 8'hfe :
 			exp_out_rnd;
+*/
+assign exp_out_final =	((op_div & exp_ovf[1] & !exp_ovf[0]) | output_zero ) ? 8'h00 :
+      			((op_div & exp_ovf[1] &  exp_ovf[0] & rmode_00) | inf_out | (f2i_max & op_f2i) ) ? (BIT_SIZE == 63 ? 12'h7ff : 8'hff) :
+      			max_num ? 8'hfe :
+      			exp_out_rnd;
+
 
 
 // ---------------------------------------------------------------------
@@ -664,7 +670,7 @@ assign undeflow_div =	!(exp_ovf[1] &  exp_ovf[0] & rmode_00) & !inf_out & !max_n
 			) |
 
 			( exp_ovf[1] & !exp_ovf[0] & (
-							(  op_dn & exp_in>8'h16 & fi_ldz<23) |
+							(  op_dn & exp_in>8'h16 & fi_ldz<MANT_SIZE+1) |
 							(  op_dn & exp_in<(MANT_SIZE+1) & fi_ldz<(MANT_SIZE+1) & !rem_00) |
 							( !op_dn & (exp_in[EXP_SIZE]==exp_div[EXP_SIZE]) & !rem_00) |
 							( !op_dn & exp_in_00 & (exp_div[7:1]==7'h7f) ) |
