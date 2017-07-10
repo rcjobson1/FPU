@@ -1,0 +1,561 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : add_sub27_DW01_sub_2
+Version: D-2010.03-SP4
+Date   : Fri Jul  7 16:05:38 2017
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: A[7] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[7] (in)                                0.00       0.00 r
+  U263/ZN (INV_X4)                         0.01       0.01 f
+  U262/ZN (NAND2_X2)                       0.05       0.06 r
+  U261/ZN (INV_X4)                         0.01       0.07 f
+  U7/ZN (NOR2_X2)                          0.03       0.10 r
+  U6/ZN (NAND3_X2)                         0.04       0.13 f
+  U34/ZN (NOR2_X2)                         0.04       0.17 r
+  U179/ZN (NAND2_X2)                       0.02       0.19 f
+  U33/ZN (NOR2_X2)                         0.03       0.22 r
+  U25/ZN (NOR2_X2)                         0.02       0.24 f
+  U23/ZN (NAND3_X2)                        0.06       0.30 r
+  U50/ZN (NAND3_X2)                        0.03       0.32 f
+  U49/ZN (NAND3_X2)                        0.06       0.39 r
+  U27/ZN (NAND3_X2)                        0.03       0.41 f
+  U26/ZN (NAND3_X2)                        0.06       0.47 r
+  U110/ZN (INV_X4)                         0.01       0.48 f
+  U51/ZN (OAI21_X2)                        0.06       0.54 r
+  U102/ZN (INV_X4)                         0.01       0.56 f
+  U28/ZN (OAI21_X2)                        0.06       0.62 r
+  U94/ZN (INV_X4)                          0.01       0.63 f
+  U52/ZN (OAI21_X2)                        0.06       0.70 r
+  U86/ZN (INV_X4)                          0.01       0.71 f
+  U29/ZN (OAI21_X2)                        0.06       0.77 r
+  U85/ZN (XNOR2_X2)                        0.06       0.83 r
+  DIFF[26] (out)                           0.00       0.83 r
+  data arrival time                                   0.83
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: A[7] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[7] (in)                                0.00       0.00 r
+  U263/ZN (INV_X4)                         0.01       0.01 f
+  U262/ZN (NAND2_X2)                       0.05       0.06 r
+  U261/ZN (INV_X4)                         0.01       0.07 f
+  U7/ZN (NOR2_X2)                          0.03       0.10 r
+  U6/ZN (NAND3_X2)                         0.04       0.13 f
+  U36/ZN (NOR3_X2)                         0.06       0.20 r
+  U172/ZN (AOI21_X2)                       0.03       0.22 f
+  U23/ZN (NAND3_X2)                        0.07       0.30 r
+  U50/ZN (NAND3_X2)                        0.03       0.32 f
+  U49/ZN (NAND3_X2)                        0.06       0.38 r
+  U27/ZN (NAND3_X2)                        0.03       0.41 f
+  U26/ZN (NAND3_X2)                        0.06       0.47 r
+  U110/ZN (INV_X4)                         0.01       0.48 f
+  U51/ZN (OAI21_X2)                        0.06       0.54 r
+  U102/ZN (INV_X4)                         0.01       0.56 f
+  U28/ZN (OAI21_X2)                        0.06       0.62 r
+  U94/ZN (INV_X4)                          0.01       0.63 f
+  U52/ZN (OAI21_X2)                        0.06       0.70 r
+  U86/ZN (INV_X4)                          0.01       0.71 f
+  U29/ZN (OAI21_X2)                        0.06       0.77 r
+  U85/ZN (XNOR2_X2)                        0.06       0.83 r
+  DIFF[26] (out)                           0.00       0.83 r
+  data arrival time                                   0.83
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: A[11] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[11] (in)                               0.00       0.00 r
+  U233/ZN (INV_X4)                         0.01       0.01 f
+  U232/ZN (NAND2_X2)                       0.05       0.06 r
+  U220/ZN (INV_X4)                         0.01       0.07 f
+  U10/ZN (NOR2_X2)                         0.03       0.10 r
+  U9/ZN (NAND3_X2)                         0.04       0.14 f
+  U182/ZN (INV_X4)                         0.03       0.16 r
+  U178/ZN (NAND2_X2)                       0.02       0.18 f
+  U33/ZN (NOR2_X2)                         0.04       0.21 r
+  U25/ZN (NOR2_X2)                         0.02       0.23 f
+  U23/ZN (NAND3_X2)                        0.06       0.29 r
+  U50/ZN (NAND3_X2)                        0.03       0.32 f
+  U49/ZN (NAND3_X2)                        0.06       0.38 r
+  U27/ZN (NAND3_X2)                        0.03       0.41 f
+  U26/ZN (NAND3_X2)                        0.06       0.46 r
+  U110/ZN (INV_X4)                         0.01       0.48 f
+  U51/ZN (OAI21_X2)                        0.06       0.54 r
+  U102/ZN (INV_X4)                         0.01       0.55 f
+  U28/ZN (OAI21_X2)                        0.06       0.62 r
+  U94/ZN (INV_X4)                          0.01       0.63 f
+  U52/ZN (OAI21_X2)                        0.06       0.69 r
+  U86/ZN (INV_X4)                          0.01       0.70 f
+  U29/ZN (OAI21_X2)                        0.06       0.76 r
+  U85/ZN (XNOR2_X2)                        0.06       0.83 r
+  DIFF[26] (out)                           0.00       0.83 r
+  data arrival time                                   0.83
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: A[11] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[11] (in)                               0.00       0.00 r
+  U233/ZN (INV_X4)                         0.01       0.01 f
+  U232/ZN (NAND2_X2)                       0.05       0.06 r
+  U220/ZN (INV_X4)                         0.01       0.07 f
+  U10/ZN (NOR2_X2)                         0.03       0.10 r
+  U9/ZN (NAND3_X2)                         0.04       0.14 f
+  U182/ZN (INV_X4)                         0.03       0.16 r
+  U180/ZN (NAND2_X2)                       0.02       0.18 f
+  U35/ZN (NOR3_X2)                         0.03       0.21 r
+  U25/ZN (NOR2_X2)                         0.02       0.23 f
+  U23/ZN (NAND3_X2)                        0.06       0.29 r
+  U50/ZN (NAND3_X2)                        0.03       0.32 f
+  U49/ZN (NAND3_X2)                        0.06       0.38 r
+  U27/ZN (NAND3_X2)                        0.03       0.41 f
+  U26/ZN (NAND3_X2)                        0.06       0.46 r
+  U110/ZN (INV_X4)                         0.01       0.47 f
+  U51/ZN (OAI21_X2)                        0.06       0.54 r
+  U102/ZN (INV_X4)                         0.01       0.55 f
+  U28/ZN (OAI21_X2)                        0.06       0.61 r
+  U94/ZN (INV_X4)                          0.01       0.62 f
+  U52/ZN (OAI21_X2)                        0.06       0.69 r
+  U86/ZN (INV_X4)                          0.01       0.70 f
+  U29/ZN (OAI21_X2)                        0.06       0.76 r
+  U85/ZN (XNOR2_X2)                        0.06       0.82 r
+  DIFF[26] (out)                           0.00       0.82 r
+  data arrival time                                   0.82
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: B[7] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  B[7] (in)                                0.00       0.00 f
+  U262/ZN (NAND2_X2)                       0.05       0.05 r
+  U261/ZN (INV_X4)                         0.01       0.06 f
+  U7/ZN (NOR2_X2)                          0.03       0.09 r
+  U6/ZN (NAND3_X2)                         0.04       0.12 f
+  U34/ZN (NOR2_X2)                         0.04       0.16 r
+  U179/ZN (NAND2_X2)                       0.02       0.18 f
+  U33/ZN (NOR2_X2)                         0.03       0.21 r
+  U25/ZN (NOR2_X2)                         0.02       0.23 f
+  U23/ZN (NAND3_X2)                        0.06       0.28 r
+  U50/ZN (NAND3_X2)                        0.03       0.31 f
+  U49/ZN (NAND3_X2)                        0.06       0.37 r
+  U27/ZN (NAND3_X2)                        0.03       0.40 f
+  U26/ZN (NAND3_X2)                        0.06       0.46 r
+  U110/ZN (INV_X4)                         0.01       0.47 f
+  U51/ZN (OAI21_X2)                        0.06       0.53 r
+  U102/ZN (INV_X4)                         0.01       0.54 f
+  U28/ZN (OAI21_X2)                        0.06       0.61 r
+  U94/ZN (INV_X4)                          0.01       0.62 f
+  U52/ZN (OAI21_X2)                        0.06       0.68 r
+  U86/ZN (INV_X4)                          0.01       0.69 f
+  U29/ZN (OAI21_X2)                        0.06       0.76 r
+  U85/ZN (XNOR2_X2)                        0.06       0.82 r
+  DIFF[26] (out)                           0.00       0.82 r
+  data arrival time                                   0.82
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: B[7] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  B[7] (in)                                0.00       0.00 f
+  U262/ZN (NAND2_X2)                       0.05       0.05 r
+  U261/ZN (INV_X4)                         0.01       0.06 f
+  U7/ZN (NOR2_X2)                          0.03       0.09 r
+  U6/ZN (NAND3_X2)                         0.04       0.12 f
+  U36/ZN (NOR3_X2)                         0.06       0.19 r
+  U172/ZN (AOI21_X2)                       0.03       0.21 f
+  U23/ZN (NAND3_X2)                        0.07       0.28 r
+  U50/ZN (NAND3_X2)                        0.03       0.31 f
+  U49/ZN (NAND3_X2)                        0.06       0.37 r
+  U27/ZN (NAND3_X2)                        0.03       0.40 f
+  U26/ZN (NAND3_X2)                        0.06       0.46 r
+  U110/ZN (INV_X4)                         0.01       0.47 f
+  U51/ZN (OAI21_X2)                        0.06       0.53 r
+  U102/ZN (INV_X4)                         0.01       0.54 f
+  U28/ZN (OAI21_X2)                        0.06       0.61 r
+  U94/ZN (INV_X4)                          0.01       0.62 f
+  U52/ZN (OAI21_X2)                        0.06       0.68 r
+  U86/ZN (INV_X4)                          0.01       0.69 f
+  U29/ZN (OAI21_X2)                        0.06       0.76 r
+  U85/ZN (XNOR2_X2)                        0.06       0.82 r
+  DIFF[26] (out)                           0.00       0.82 r
+  data arrival time                                   0.82
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: B[11] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  B[11] (in)                               0.00       0.00 f
+  U232/ZN (NAND2_X2)                       0.05       0.05 r
+  U220/ZN (INV_X4)                         0.01       0.06 f
+  U10/ZN (NOR2_X2)                         0.03       0.09 r
+  U9/ZN (NAND3_X2)                         0.04       0.12 f
+  U182/ZN (INV_X4)                         0.03       0.15 r
+  U178/ZN (NAND2_X2)                       0.02       0.16 f
+  U33/ZN (NOR2_X2)                         0.04       0.20 r
+  U25/ZN (NOR2_X2)                         0.02       0.22 f
+  U23/ZN (NAND3_X2)                        0.06       0.28 r
+  U50/ZN (NAND3_X2)                        0.03       0.31 f
+  U49/ZN (NAND3_X2)                        0.06       0.37 r
+  U27/ZN (NAND3_X2)                        0.03       0.40 f
+  U26/ZN (NAND3_X2)                        0.06       0.45 r
+  U110/ZN (INV_X4)                         0.01       0.46 f
+  U51/ZN (OAI21_X2)                        0.06       0.53 r
+  U102/ZN (INV_X4)                         0.01       0.54 f
+  U28/ZN (OAI21_X2)                        0.06       0.60 r
+  U94/ZN (INV_X4)                          0.01       0.61 f
+  U52/ZN (OAI21_X2)                        0.06       0.68 r
+  U86/ZN (INV_X4)                          0.01       0.69 f
+  U29/ZN (OAI21_X2)                        0.06       0.75 r
+  U85/ZN (XNOR2_X2)                        0.06       0.81 r
+  DIFF[26] (out)                           0.00       0.81 r
+  data arrival time                                   0.81
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: A[6] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[6] (in)                                0.00       0.00 r
+  U267/ZN (INV_X4)                         0.01       0.01 f
+  U266/ZN (NAND2_X2)                       0.05       0.06 r
+  U30/ZN (OAI21_X2)                        0.03       0.09 f
+  U4/ZN (OAI21_X2)                         0.04       0.13 r
+  U247/ZN (INV_X4)                         0.02       0.15 f
+  U35/ZN (NOR3_X2)                         0.05       0.20 r
+  U25/ZN (NOR2_X2)                         0.02       0.22 f
+  U23/ZN (NAND3_X2)                        0.06       0.28 r
+  U50/ZN (NAND3_X2)                        0.03       0.30 f
+  U49/ZN (NAND3_X2)                        0.06       0.36 r
+  U27/ZN (NAND3_X2)                        0.03       0.39 f
+  U26/ZN (NAND3_X2)                        0.06       0.45 r
+  U110/ZN (INV_X4)                         0.01       0.46 f
+  U51/ZN (OAI21_X2)                        0.06       0.52 r
+  U102/ZN (INV_X4)                         0.01       0.53 f
+  U28/ZN (OAI21_X2)                        0.06       0.60 r
+  U94/ZN (INV_X4)                          0.01       0.61 f
+  U52/ZN (OAI21_X2)                        0.06       0.68 r
+  U86/ZN (INV_X4)                          0.01       0.69 f
+  U29/ZN (OAI21_X2)                        0.06       0.75 r
+  U85/ZN (XNOR2_X2)                        0.06       0.81 r
+  DIFF[26] (out)                           0.00       0.81 r
+  data arrival time                                   0.81
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: B[11] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  B[11] (in)                               0.00       0.00 f
+  U232/ZN (NAND2_X2)                       0.05       0.05 r
+  U220/ZN (INV_X4)                         0.01       0.06 f
+  U10/ZN (NOR2_X2)                         0.03       0.09 r
+  U9/ZN (NAND3_X2)                         0.04       0.12 f
+  U182/ZN (INV_X4)                         0.03       0.15 r
+  U180/ZN (NAND2_X2)                       0.02       0.16 f
+  U35/ZN (NOR3_X2)                         0.03       0.20 r
+  U25/ZN (NOR2_X2)                         0.02       0.22 f
+  U23/ZN (NAND3_X2)                        0.06       0.27 r
+  U50/ZN (NAND3_X2)                        0.03       0.30 f
+  U49/ZN (NAND3_X2)                        0.06       0.36 r
+  U27/ZN (NAND3_X2)                        0.03       0.39 f
+  U26/ZN (NAND3_X2)                        0.06       0.45 r
+  U110/ZN (INV_X4)                         0.01       0.46 f
+  U51/ZN (OAI21_X2)                        0.06       0.52 r
+  U102/ZN (INV_X4)                         0.01       0.53 f
+  U28/ZN (OAI21_X2)                        0.06       0.60 r
+  U94/ZN (INV_X4)                          0.01       0.61 f
+  U52/ZN (OAI21_X2)                        0.06       0.67 r
+  U86/ZN (INV_X4)                          0.01       0.69 f
+  U29/ZN (OAI21_X2)                        0.06       0.75 r
+  U85/ZN (XNOR2_X2)                        0.06       0.81 r
+  DIFF[26] (out)                           0.00       0.81 r
+  data arrival time                                   0.81
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: A[3] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[3] (in)                                0.00       0.00 r
+  U285/ZN (INV_X4)                         0.01       0.01 f
+  U284/ZN (NAND2_X2)                       0.05       0.06 r
+  U19/ZN (OAI21_X2)                        0.03       0.09 f
+  U17/ZN (OAI21_X2)                        0.05       0.14 r
+  U179/ZN (NAND2_X2)                       0.02       0.17 f
+  U33/ZN (NOR2_X2)                         0.03       0.20 r
+  U25/ZN (NOR2_X2)                         0.02       0.22 f
+  U23/ZN (NAND3_X2)                        0.06       0.27 r
+  U50/ZN (NAND3_X2)                        0.03       0.30 f
+  U49/ZN (NAND3_X2)                        0.06       0.36 r
+  U27/ZN (NAND3_X2)                        0.03       0.39 f
+  U26/ZN (NAND3_X2)                        0.06       0.45 r
+  U110/ZN (INV_X4)                         0.01       0.46 f
+  U51/ZN (OAI21_X2)                        0.06       0.52 r
+  U102/ZN (INV_X4)                         0.01       0.53 f
+  U28/ZN (OAI21_X2)                        0.06       0.60 r
+  U94/ZN (INV_X4)                          0.01       0.61 f
+  U52/ZN (OAI21_X2)                        0.06       0.67 r
+  U86/ZN (INV_X4)                          0.01       0.69 f
+  U29/ZN (OAI21_X2)                        0.06       0.75 r
+  U85/ZN (XNOR2_X2)                        0.06       0.81 r
+  DIFF[26] (out)                           0.00       0.81 r
+  data arrival time                                   0.81
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -true
+        -max_paths 1
+Design : add_sub27_DW01_sub_2
+Version: D-2010.03-SP4
+Date   : Fri Jul  7 16:05:38 2017
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  A True path:
+
+  Startpoint: A[7] (input port)
+  Endpoint: DIFF[26] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  add_sub27_DW01_sub_2
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  A[7] (in)                                0.00       0.00 r
+  U263/ZN (INV_X4)                         0.01       0.01 f
+  U262/ZN (NAND2_X2)                       0.05       0.06 r
+  U261/ZN (INV_X4)                         0.01       0.07 f
+  U7/ZN (NOR2_X2)                          0.03       0.10 r
+  U6/ZN (NAND3_X2)                         0.04       0.13 f
+  U36/ZN (NOR3_X2)                         0.06       0.20 r
+  U172/ZN (AOI21_X2)                       0.03       0.22 f
+  U23/ZN (NAND3_X2)                        0.07       0.30 r
+  U50/ZN (NAND3_X2)                        0.03       0.32 f
+  U49/ZN (NAND3_X2)                        0.06       0.38 r
+  U27/ZN (NAND3_X2)                        0.03       0.41 f
+  U26/ZN (NAND3_X2)                        0.06       0.47 r
+  U110/ZN (INV_X4)                         0.01       0.48 f
+  U51/ZN (OAI21_X2)                        0.06       0.54 r
+  U102/ZN (INV_X4)                         0.01       0.56 f
+  U28/ZN (OAI21_X2)                        0.06       0.62 r
+  U94/ZN (INV_X4)                          0.01       0.63 f
+  U52/ZN (OAI21_X2)                        0.06       0.70 r
+  U86/ZN (INV_X4)                          0.01       0.71 f
+  U29/ZN (OAI21_X2)                        0.06       0.77 r
+  U85/ZN (XNOR2_X2)                        0.06       0.83 r
+  DIFF[26] (out)                           0.00       0.83 r
+  data arrival time                                   0.83
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+  True-delay Input Vector
+  ---------------------------------------
+  A[1] (in)                            r 
+  A[3] (in)                            f 
+  A[2] (in)                            f 
+  A[26] (in)                           f 
+  B[26] (in)                           r 
+  A[25] (in)                           f 
+  B[25] (in)                           f 
+  A[24] (in)                           f 
+  B[24] (in)                           f 
+  A[23] (in)                           f 
+  B[23] (in)                           f 
+  A[22] (in)                           f 
+  B[22] (in)                           f 
+  A[20] (in)                           f 
+  A[21] (in)                           f 
+  B[21] (in)                           f 
+  B[20] (in)                           f 
+  A[18] (in)                           f 
+  A[17] (in)                           f 
+  A[16] (in)                           f 
+  A[19] (in)                           f 
+  B[19] (in)                           f 
+  B[18] (in)                           f 
+  B[17] (in)                           f 
+  B[16] (in)                           f 
+  A[13] (in)                           f 
+  A[15] (in)                           f 
+  A[14] (in)                           f 
+  A[12] (in)                           f 
+  A[11] (in)                           f 
+  A[10] (in)                           f 
+  A[8] (in)                            f 
+  B[9] (in)                            r 
+  A[6] (in)                            f 
+  A[4] (in)                            f 
+  B[5] (in)                            r 
+  B[13] (in)                           f 
+  B[15] (in)                           f 
+  B[14] (in)                           f 
+  A[9] (in)                            r 
+  B[11] (in)                           f 
+  B[8] (in)                            f 
+  B[10] (in)                           f 
+  B[2] (in)                            f 
+  B[1] (in)                            f 
+  B[3] (in)                            f 
+  B[0] (in)                            f 
+  A[0] (in)                            r 
+  B[12] (in)                           f 
+  B[4] (in)                            f 
+  B[6] (in)                            f 
+  A[5] (in)                            r 
+  B[7] (in)                            r 
+  A[7] (in)                            r 
+  ---------------------------------------
+
+
+  True-delay conclusions:
+  ------------------------------------------------------------------
+  1. A path of length 0.83 (unconstrained) was proven true.
+     However, The search reached the backtrack limit of 1000,
+     so there may be other true paths that are longer but were
+     not found.  You may want to increase the prove-true backtrack
+     limit by increasing true_delay_prove_true_backtrack_limit.
+  ------------------------------------------------------------------
+
+
+1

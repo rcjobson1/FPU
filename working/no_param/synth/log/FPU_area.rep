@@ -1,0 +1,66 @@
+ 
+****************************************
+Report : area
+Design : add_sub27_DW01_sub_2
+Version: D-2010.03-SP4
+Date   : Fri Jul  7 16:14:54 2017
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /files1/home/rjobson/synth/lib/NangateOpenCellLibrary_typical_conditional_nldm.db)
+
+Number of ports:               86
+Number of nets:               351
+Number of cells:              297
+Number of references:           9
+
+Combinational area:        240.729997
+Noncombinational area:       0.000000
+Net Interconnect area:      88.412516  
+
+Total cell area:           240.729997
+Total area:                329.142513
+1
+ 
+****************************************
+Report : reference
+Design : add_sub27_DW01_sub_2
+Version: D-2010.03-SP4
+Date   : Fri Jul  7 16:14:54 2017
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI21_X2           NangateOpenCellLibrary
+                                  1.064000       7      7.448000  
+INV_X4             NangateOpenCellLibrary
+                                  0.532000     108     57.456001  
+NAND2_X2           NangateOpenCellLibrary
+                                  0.798000     108     86.183998  
+NAND3_X2           NangateOpenCellLibrary
+                                  1.064000      10     10.640000  
+NOR2_X2            NangateOpenCellLibrary
+                                  0.798000      11      8.778000  
+NOR3_X2            NangateOpenCellLibrary
+                                  1.064000       2      2.128000  
+OAI21_X2           NangateOpenCellLibrary
+                                  1.064000      23     24.472000  
+OR2_X4             NangateOpenCellLibrary
+                                  1.064000       2      2.128000  
+XNOR2_X2           NangateOpenCellLibrary
+                                  1.596000      26     41.495999  
+-----------------------------------------------------------------------------
+Total 9 references                                    240.729997
+1
