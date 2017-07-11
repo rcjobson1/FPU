@@ -1,5 +1,5 @@
 0 
-24
+23
 +v2k
 -Mamsrun=
 -Masflags=--32
@@ -21,7 +21,6 @@
 ../lib/NangateOpenCellLibrary_typical_conditional_cbn.v
 ../lib/NangateOpenCellLibrary_typical_conditional_sqt.v
 /vol/synopsys/vcs/linux/bin/vcs1
-dlh.v
 fpu_flat.v
 tb.v
 27
@@ -53,15 +52,14 @@ GROUP=e90joseph
 DC_EXE=/vol/synopsys/syn/bin
 ASTRO_EXE=/vol/synopsys/astro_vY-2006.06-SP2/bin
 0
-5
-1499783442 dlh.v
-1499705515 tb.v
+4
 1499699527 ../lib/NangateOpenCellLibrary_typical_conditional_sqt.v
 1499699527 ../lib/NangateOpenCellLibrary_typical_conditional_cbn.v
-1499792873 fpu_flat.v
+1499705515 tb.v
+1499802952 fpu_flat.v
 4
 0 
 1298523739 /vol/synopsys/vcs/linux/lib/libvirsim.so
 1298523341 /vol/synopsys/vcs/linux/lib/librterrorinf.so
 1298523301 /vol/synopsys/vcs/linux/lib/libsnpsmalloc.so
-1499792939 simv.daidir
+1499802966 simv.daidir

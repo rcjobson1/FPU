@@ -1074,18 +1074,12 @@ extern void schedResetRecoveryDbs(U cedges, EBLK* peblkFirst);
 extern "C" {
 #endif
 void  hsF0_0_0_(UB  * I597, scalar  val);
-void  hsF0_0_5_(UB  * I597, UB  val);
 void  hsF0_1_0_(UB  * I597, scalar  val);
 void  hsF0_2_0_(UB  * I597, scalar  val);
-void  hsF0_2_5_(UB  * I597, UB  val);
 void  hsF0_3_0_(UB  * I597, scalar  val);
-void  hsF0_3_5_(UB  * I597, UB  val);
 void  hsF0_4_0_(UB  * I597, scalar  val);
-void  hsF0_4_5_(UB  * I597, UB  val);
 void  hsF0_5_0_(UB  * I597, scalar  val);
-void  hsF0_5_5_(UB  * I597, UB  val);
 void  hsF0_6_0_(UB  * I597, scalar  val);
-void  hsF0_6_5_(UB  * I597, UB  val);
 void  hsF0_7_0_(UB  * I597, scalar  val);
 void  hsF0_8_0_(UB  * I597, scalar  val);
 void  hsF0_9_0_(UB  * I597, scalar  val);
@@ -1164,18 +1158,18 @@ void  hsF0_81_0_(UB  * I597, scalar  val);
 void  hsF0_82_0_(UB  * I597, scalar  val);
 void  hsF0_83_0_(UB  * I597, scalar  val);
 void  hsF0_84_0_(UB  * I597, scalar  val);
+void  hsF0_84_5_(UB  * I597, UB  val);
 void  hsF0_85_0_(UB  * I597, scalar  val);
 void  hsF0_86_0_(UB  * I597, scalar  val);
+void  hsF0_86_5_(UB  * I597, UB  val);
 void  hsF0_87_0_(UB  * I597, scalar  val);
+void  hsF0_87_5_(UB  * I597, UB  val);
 void  hsF0_88_0_(UB  * I597, scalar  val);
+void  hsF0_88_5_(UB  * I597, UB  val);
 void  hsF0_89_0_(UB  * I597, scalar  val);
+void  hsF0_89_5_(UB  * I597, UB  val);
 void  hsF0_90_0_(UB  * I597, scalar  val);
-void  hsF0_91_0_(UB  * I597, scalar  val);
-void  hsF0_92_0_(UB  * I597, scalar  val);
-void  hsF0_93_0_(UB  * I597, scalar  val);
-void  hsF0_94_0_(UB  * I597, scalar  val);
-void  hsF0_95_0_(UB  * I597, scalar  val);
-void  hsF0_96_0_(UB  * I597, scalar  val);
+void  hsF0_90_5_(UB  * I597, UB  val);
 void  schedNewEvent(struct dummyq_struct * I651, EBLK  * I652, U  I509);
 #ifdef __cplusplus
 }

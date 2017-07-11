@@ -24,11 +24,10 @@ set rtl_files { \
 		fpu.v \
 		except.v \
 		post_norm.v \
-		pre_norm_fmul.v \
 		pre_norm.v \
-		
+		pre_norm_fmul.v \
 		primitives.v \
-		}
+}
 
 #set dont_touch_modules { Mult }
 

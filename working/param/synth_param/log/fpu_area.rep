@@ -1,0 +1,176 @@
+ 
+****************************************
+Report : area
+Design : fpu
+Version: D-2010.03-SP4
+Date   : Tue Jul 11 14:37:30 2017
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /files1/home/rjobson/FPU/working/param/synth_param/lib/NangateOpenCellLibrary_typical_conditional_nldm.db)
+
+Number of ports:              206
+Number of nets:             18885
+Number of cells:            15531
+Number of references:          64
+
+Combinational area:       24320.912070
+Noncombinational area:    6141.939801
+Net Interconnect area:    8189.633974  
+
+Total cell area:          30462.851871
+Total area:               38652.485846
+1
+ 
+****************************************
+Report : reference
+Design : fpu
+Version: D-2010.03-SP4
+Date   : Tue Jul 11 14:37:30 2017
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NangateOpenCellLibrary
+                                  1.064000     214    227.696002  
+AND2_X2            NangateOpenCellLibrary
+                                  1.064000      67     71.288001  
+AND2_X4            NangateOpenCellLibrary
+                                  1.064000     234    248.976002  
+AND3_X1            NangateOpenCellLibrary
+                                  1.330000       8     10.640000  
+AND3_X2            NangateOpenCellLibrary
+                                  1.330000      18     23.940001  
+AND3_X4            NangateOpenCellLibrary
+                                  1.330000       3      3.990000  
+AND4_X1            NangateOpenCellLibrary
+                                  1.596000       9     14.364000  
+AND4_X2            NangateOpenCellLibrary
+                                  1.596000      19     30.323999  
+AOI21_X1           NangateOpenCellLibrary
+                                  1.064000      69     73.416001  
+AOI21_X2           NangateOpenCellLibrary
+                                  1.064000      31     32.984000  
+AOI21_X4           NangateOpenCellLibrary
+                                  1.862000       1      1.862000  
+AOI22_X1           NangateOpenCellLibrary
+                                  1.330000     276    367.080012  
+AOI22_X2           NangateOpenCellLibrary
+                                  1.330000     418    555.940018  
+AOI211_X1          NangateOpenCellLibrary
+                                  1.330000       1      1.330000  
+AOI211_X2          NangateOpenCellLibrary
+                                  1.330000      13     17.290001  
+AOI221_X1          NangateOpenCellLibrary
+                                  1.596000     179    285.683992  
+AOI221_X2          NangateOpenCellLibrary
+                                  1.596000      28     44.687999  
+AOI222_X1          NangateOpenCellLibrary
+                                  1.862000     153    284.885998  
+DFF_X2             NangateOpenCellLibrary
+                                  4.522000    1289   5828.857789  n
+DLH_X2             NangateOpenCellLibrary
+                                  2.926000     107    313.082013  n
+FA_X1              NangateOpenCellLibrary
+                                  4.256000    2854  12146.624120  r
+HA_X1              NangateOpenCellLibrary
+                                  2.660000      88    234.080008  r
+INV_X1             NangateOpenCellLibrary
+                                  0.532000     227    120.764001  
+INV_X4             NangateOpenCellLibrary
+                                  0.532000    2052   1091.664011  
+INV_X8             NangateOpenCellLibrary
+                                  0.798000       2      1.596000  
+MUX2_X1            NangateOpenCellLibrary
+                                  1.862000      10     18.620000  
+MUX2_X2            NangateOpenCellLibrary
+                                  1.862000    1337   2489.493985  
+NAND2_X1           NangateOpenCellLibrary
+                                  0.798000     216    172.367995  
+NAND2_X2           NangateOpenCellLibrary
+                                  0.798000     258    205.883994  
+NAND3_X1           NangateOpenCellLibrary
+                                  1.064000      43     45.752000  
+NAND3_X2           NangateOpenCellLibrary
+                                  1.064000      95    101.080001  
+NAND4_X1           NangateOpenCellLibrary
+                                  1.330000      12     15.960001  
+NAND4_X2           NangateOpenCellLibrary
+                                  1.330000     118    156.940005  
+NOR2_X1            NangateOpenCellLibrary
+                                  0.798000    3038   2424.323933  
+NOR2_X2            NangateOpenCellLibrary
+                                  0.798000     153    122.093997  
+NOR2_X4            NangateOpenCellLibrary
+                                  1.330000       3      3.990000  
+NOR3_X1            NangateOpenCellLibrary
+                                  1.064000       5      5.320000  
+NOR3_X2            NangateOpenCellLibrary
+                                  1.064000     134    142.576001  
+NOR3_X4            NangateOpenCellLibrary
+                                  1.862000       3      5.586000  
+NOR4_X1            NangateOpenCellLibrary
+                                  1.330000      17     22.610001  
+NOR4_X2            NangateOpenCellLibrary
+                                  1.330000     108    143.640005  
+OAI21_X1           NangateOpenCellLibrary
+                                  1.064000      79     84.056001  
+OAI21_X2           NangateOpenCellLibrary
+                                  1.064000      69     73.416001  
+OAI21_X4           NangateOpenCellLibrary
+                                  1.862000       2      3.724000  
+OAI22_X1           NangateOpenCellLibrary
+                                  1.330000      82    109.060004  
+OAI22_X2           NangateOpenCellLibrary
+                                  1.330000     325    432.250014  
+OAI33_X1           NangateOpenCellLibrary
+                                  1.862000      16     29.792000  
+OAI211_X1          NangateOpenCellLibrary
+                                  1.330000      25     33.250001  
+OAI211_X2          NangateOpenCellLibrary
+                                  1.330000      35     46.550002  
+OAI221_X1          NangateOpenCellLibrary
+                                  1.596000     231    368.675990  
+OAI221_X2          NangateOpenCellLibrary
+                                  1.596000     196    312.815991  
+OAI222_X1          NangateOpenCellLibrary
+                                  2.128000      31     65.968001  
+OAI222_X2          NangateOpenCellLibrary
+                                  2.128000       2      4.256000  
+OR2_X1             NangateOpenCellLibrary
+                                  1.064000      43     45.752000  
+OR2_X2             NangateOpenCellLibrary
+                                  1.064000      36     38.304000  
+OR2_X4             NangateOpenCellLibrary
+                                  1.064000      11     11.704000  
+OR3_X1             NangateOpenCellLibrary
+                                  1.330000       4      5.320000  
+OR3_X2             NangateOpenCellLibrary
+                                  1.330000      15     19.950001  
+OR4_X1             NangateOpenCellLibrary
+                                  1.596000       4      6.384000  
+OR4_X2             NangateOpenCellLibrary
+                                  1.596000      15     23.939999  
+XNOR2_X1           NangateOpenCellLibrary
+                                  1.596000      53     84.587998  
+XNOR2_X2           NangateOpenCellLibrary
+                                  1.596000      23     36.707999  
+XOR2_X1            NangateOpenCellLibrary
+                                  1.596000      93    148.427996  
+XOR2_X2            NangateOpenCellLibrary
+                                  1.596000     231    368.675990  
+-----------------------------------------------------------------------------
+Total 64 references                                 30462.851871
+1

@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Tue Jul 11 11:36:26 2017
+# Created by write_sdc on Tue Jul 11 14:53:20 2017
 
 ###################################################################
 set sdc_version 1.8
@@ -363,30 +363,6 @@ snan_reg/CK] [get_pins underflow_reg/CK] [get_pins underflow_fmul_r_reg_0_/CK] \
 [get_pins out_reg_30_/CK] [get_pins inf_mul2_reg/CK] [get_pins                 \
 fasu_op_r2_reg/CK] [get_pins fasu_op_r1_reg/CK] [get_pins sign_reg/CK]         \
 [get_pins opas_r2_reg/CK] [get_pins opas_r1_reg/CK] [get_pins                  \
-fract_denorm_reg_0_/G] [get_pins fract_denorm_reg_1_/G] [get_pins              \
-fract_denorm_reg_2_/G] [get_pins fract_denorm_reg_3_/G] [get_pins              \
-fract_denorm_reg_4_/G] [get_pins fract_denorm_reg_5_/G] [get_pins              \
-fract_denorm_reg_6_/G] [get_pins fract_denorm_reg_7_/G] [get_pins              \
-fract_denorm_reg_8_/G] [get_pins fract_denorm_reg_9_/G] [get_pins              \
-fract_denorm_reg_10_/G] [get_pins fract_denorm_reg_11_/G] [get_pins            \
-fract_denorm_reg_12_/G] [get_pins fract_denorm_reg_13_/G] [get_pins            \
-fract_denorm_reg_14_/G] [get_pins fract_denorm_reg_15_/G] [get_pins            \
-fract_denorm_reg_16_/G] [get_pins fract_denorm_reg_17_/G] [get_pins            \
-fract_denorm_reg_18_/G] [get_pins fract_denorm_reg_19_/G] [get_pins            \
-fract_denorm_reg_20_/G] [get_pins fract_denorm_reg_21_/G] [get_pins            \
-fract_denorm_reg_22_/G] [get_pins fract_denorm_reg_23_/G] [get_pins            \
-fract_denorm_reg_24_/G] [get_pins fract_denorm_reg_25_/G] [get_pins            \
-fract_denorm_reg_26_/G] [get_pins fract_denorm_reg_27_/G] [get_pins            \
-fract_denorm_reg_28_/G] [get_pins fract_denorm_reg_29_/G] [get_pins            \
-fract_denorm_reg_30_/G] [get_pins fract_denorm_reg_31_/G] [get_pins            \
-fract_denorm_reg_32_/G] [get_pins fract_denorm_reg_33_/G] [get_pins            \
-fract_denorm_reg_34_/G] [get_pins fract_denorm_reg_35_/G] [get_pins            \
-fract_denorm_reg_36_/G] [get_pins fract_denorm_reg_37_/G] [get_pins            \
-fract_denorm_reg_38_/G] [get_pins fract_denorm_reg_39_/G] [get_pins            \
-fract_denorm_reg_40_/G] [get_pins fract_denorm_reg_41_/G] [get_pins            \
-fract_denorm_reg_42_/G] [get_pins fract_denorm_reg_43_/G] [get_pins            \
-fract_denorm_reg_44_/G] [get_pins fract_denorm_reg_45_/G] [get_pins            \
-fract_denorm_reg_46_/G] [get_pins fract_denorm_reg_47_/G] [get_pins            \
 fract_i2f_reg_0_/CK] [get_pins fract_i2f_reg_1_/CK] [get_pins                  \
 fract_i2f_reg_2_/CK] [get_pins fract_i2f_reg_3_/CK] [get_pins                  \
 fract_i2f_reg_4_/CK] [get_pins fract_i2f_reg_5_/CK] [get_pins                  \
@@ -694,30 +670,6 @@ snan_reg/CK] [get_pins underflow_reg/CK] [get_pins underflow_fmul_r_reg_0_/CK] \
 [get_pins out_reg_30_/CK] [get_pins inf_mul2_reg/CK] [get_pins                 \
 fasu_op_r2_reg/CK] [get_pins fasu_op_r1_reg/CK] [get_pins sign_reg/CK]         \
 [get_pins opas_r2_reg/CK] [get_pins opas_r1_reg/CK] [get_pins                  \
-fract_denorm_reg_0_/G] [get_pins fract_denorm_reg_1_/G] [get_pins              \
-fract_denorm_reg_2_/G] [get_pins fract_denorm_reg_3_/G] [get_pins              \
-fract_denorm_reg_4_/G] [get_pins fract_denorm_reg_5_/G] [get_pins              \
-fract_denorm_reg_6_/G] [get_pins fract_denorm_reg_7_/G] [get_pins              \
-fract_denorm_reg_8_/G] [get_pins fract_denorm_reg_9_/G] [get_pins              \
-fract_denorm_reg_10_/G] [get_pins fract_denorm_reg_11_/G] [get_pins            \
-fract_denorm_reg_12_/G] [get_pins fract_denorm_reg_13_/G] [get_pins            \
-fract_denorm_reg_14_/G] [get_pins fract_denorm_reg_15_/G] [get_pins            \
-fract_denorm_reg_16_/G] [get_pins fract_denorm_reg_17_/G] [get_pins            \
-fract_denorm_reg_18_/G] [get_pins fract_denorm_reg_19_/G] [get_pins            \
-fract_denorm_reg_20_/G] [get_pins fract_denorm_reg_21_/G] [get_pins            \
-fract_denorm_reg_22_/G] [get_pins fract_denorm_reg_23_/G] [get_pins            \
-fract_denorm_reg_24_/G] [get_pins fract_denorm_reg_25_/G] [get_pins            \
-fract_denorm_reg_26_/G] [get_pins fract_denorm_reg_27_/G] [get_pins            \
-fract_denorm_reg_28_/G] [get_pins fract_denorm_reg_29_/G] [get_pins            \
-fract_denorm_reg_30_/G] [get_pins fract_denorm_reg_31_/G] [get_pins            \
-fract_denorm_reg_32_/G] [get_pins fract_denorm_reg_33_/G] [get_pins            \
-fract_denorm_reg_34_/G] [get_pins fract_denorm_reg_35_/G] [get_pins            \
-fract_denorm_reg_36_/G] [get_pins fract_denorm_reg_37_/G] [get_pins            \
-fract_denorm_reg_38_/G] [get_pins fract_denorm_reg_39_/G] [get_pins            \
-fract_denorm_reg_40_/G] [get_pins fract_denorm_reg_41_/G] [get_pins            \
-fract_denorm_reg_42_/G] [get_pins fract_denorm_reg_43_/G] [get_pins            \
-fract_denorm_reg_44_/G] [get_pins fract_denorm_reg_45_/G] [get_pins            \
-fract_denorm_reg_46_/G] [get_pins fract_denorm_reg_47_/G] [get_pins            \
 fract_i2f_reg_0_/CK] [get_pins fract_i2f_reg_1_/CK] [get_pins                  \
 fract_i2f_reg_2_/CK] [get_pins fract_i2f_reg_3_/CK] [get_pins                  \
 fract_i2f_reg_4_/CK] [get_pins fract_i2f_reg_5_/CK] [get_pins                  \
