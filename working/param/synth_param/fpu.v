@@ -60,10 +60,10 @@ Rounding Modes (rmode):
 
 
 module fpu(clk, rmode, fpu_op, opa, opb, out, inf, snan, qnan, ine, overflow, underflow, zero, div_by_zero);
-parameter BIT_SIZE = 31,
-  EXP_SIZE = 7,
-  MANT_SIZE = 22,
-  BIAS = 127;
+parameter BIT_SIZE = 63,
+  EXP_SIZE = 10,
+  MANT_SIZE = 51,
+  BIAS = 1023;
 
 
 
@@ -155,7 +155,7 @@ wire		opa_00, opb_00;
 wire		opa_inf, opb_inf;
 wire		opa_dn, opb_dn;
 
-except #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u0  (.clk(clk),
+except /*#(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) )*/ u0  (.clk(clk),
 		.opa(opa_r), .opb(opb_r),
 		.inf(inf_d), .ind(ind_d),
 		.qnan(qnan_d), .snan(snan_d),
@@ -188,7 +188,7 @@ reg		sign_exe_r;
 wire	[2:0]	underflow_fmul_d;
 wire		fasu_op, co_d;
 
-pre_norm #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u1(.clk(clk),				// System Clock
+pre_norm /*#(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) )*/ u1(.clk(clk),				// System Clock
 	.rmode(rmode_r2),			// Roundin Mode
 	.add(!fpu_op_r1[0]),			// Add/Sub Input
 	.opa(opa_r),  .opb(opb_r),		// Registered OP Inputs
@@ -206,7 +206,7 @@ pre_norm #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIA
 always @(posedge clk)
 	sign_fasu_r <= #1 sign_fasu;
 
-pre_norm_fmul #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u2(
+pre_norm_fmul /*#(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) )*/ u2(
 		.clk(clk),
 		.fpu_op(fpu_op_r1),
 		.opa(opa_r), .opb(opb_r),
@@ -239,7 +239,7 @@ always @(posedge clk)
 // Add/Sub
 //
 
-add_sub27 #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u3(
+add_sub27 /*#(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) )*/ u3(
 	.add(fasu_op),			// Add/Sub
 	.opa(fracta),			// Fraction A input
 	.opb(fractb),			// Fraction B Input
@@ -255,7 +255,7 @@ always @(posedge clk)
 //
 wire	[(MANT_SIZE + 1) * 2 + 1:0]	prod;
 
-mul_r2 #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u5(.clk(clk), .opa(fracta_mul), .opb(fractb_mul), .prod(prod));
+mul_r2 /*#(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) )*/ u5(.clk(clk), .opa(fracta_mul), .opb(fractb_mul), .prod(prod));
 
 ////////////////////////////////////////////////////////////////////////
 //
@@ -380,7 +380,7 @@ always @(fracta_mul) begin
 //assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
 assign fdiv_opa = !(|opa_r[(BIT_SIZE -1): (BIT_SIZE -1) - EXP_SIZE]) ? {(fracta_mul<<div_opa_ldz_d), {MANT_SIZE + 4 {1'b0}}} : {fracta_mul, {MANT_SIZE + 4 {1'b0}} };
 
-div_r2 #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u6(.clk(clk), .opa(fdiv_opa), .opb(fractb_mul), .quo(quo), .rem(remainder));
+div_r2 /*#(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) )*/ u6(.clk(clk), .opa(fdiv_opa), .opb(fractb_mul), .quo(quo), .rem(remainder));
 
 assign remainder_00 = !(|remainder);
 
@@ -431,13 +431,14 @@ always @(posedge clk)
     	(sign_d ?  1-{24'h00, (|opa_r1[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE]), opa_r1[MANT_SIZE:0]}-1 : {{MANT_SIZE + 2 {1'b0}}, (|opa_r1[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE]), opa_r1[MANT_SIZE:0]}) :
     	(sign_d ? 1 - {opa_r1, {MANT_SIZE - 4{1'b0}}, 1'h1 } : {opa_r1, {MANT_SIZE - 5 {1'b0}}});
 
-always @(fpu_op_r3 or fract_out_q or prod or fract_div or fract_i2f)
+always @*//(fpu_op_r3 or fract_out_q or prod or fract_div or fract_i2f)
 	case(fpu_op_r3)
 	   //0,1:	fract_denorm = {fract_out_q, 20'h0};
      0,1:	fract_denorm = {fract_out_q, {MANT_SIZE - 2 {1'h0}}  };
 	   2:	fract_denorm = prod;
 	   3:	fract_denorm = fract_div;
 	   4,5:	fract_denorm = fract_i2f;
+           default: fract_denorm = {(MANT_SIZE + 1)*2 + 1{1'bx}}; 
 	endcase
 
 
@@ -452,7 +453,7 @@ assign sign_d = fpu_op_r2[1] ? sign_mul : sign_fasu;
 always @(posedge clk)
 	sign <= #1 (rmode_r2==2'h3) ? !sign_d : sign_d;
 
-post_norm #(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) ) u4(.clk(clk),			// System Clock
+post_norm /*#(.BIT_SIZE(BIT_SIZE), .EXP_SIZE(EXP_SIZE), .MANT_SIZE(MANT_SIZE), .BIAS(BIAS) )*/ u4(.clk(clk),			// System Clock
 	.fpu_op(fpu_op_r3),		// Floating Point Operation
 	.opas(opas_r2),			// OPA Sign
 	.sign(sign),			// Sign of the result

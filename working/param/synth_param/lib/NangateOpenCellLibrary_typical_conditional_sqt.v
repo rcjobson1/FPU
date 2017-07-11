@@ -50,14 +50,14 @@ module DFFR_X1 (CK, D, RN, Q, QN);
 
   always @ (negedge CK) #0 start <= 1'b0;
 
-  always @ (D) begin
+/*  always @ (D) begin
 	  if (start) begin
 		  #0 arrivalTime = $realtime;
 		  $sformat(name, "%m");
 	  	  $reg_acc(startTime, arrivalTime, name);
 	  end
   end
-
+*/
 
   specify
     (posedge CK => (Q +: D)) = (0.001, 0.001);
@@ -131,14 +131,14 @@ module DFFR_X2 (CK, D, RN, Q, QN);
 
   always @ (negedge CK) #0 start <= 1'b0;
 
-  always @ (D) begin
+  /*always @ (D) begin
 	  if (start) begin
 		#0 arrivalTime = $realtime;
 		$sformat(name, "%m");
 	  	$reg_acc(startTime, arrivalTime, name);
 	  end
   end
-
+*/
 
 
   specify
@@ -213,14 +213,14 @@ module DFFS_X1 (CK, D, SN, Q, QN);
 
   always @ (negedge CK) #0 start <= 1'b0;
 
-  always @ (D) begin
+  /*always @ (D) begin
 	  if (start) begin
 		 #0 arrivalTime = $realtime;
 		 $sformat(name, "%m");
 	 	 $reg_acc(startTime, arrivalTime, name);
 	  end
   end
-
+*/
 
   specify
     (posedge CK => (Q +: D)) = (0.001, 0.001);
@@ -294,14 +294,14 @@ module DFFS_X2 (CK, D, SN, Q, QN);
 
   always @ (negedge CK) #0 start <= 1'b0;
 
-  always @ (D) begin
+  /*always @ (D) begin
 	  if (start) begin
 	  	#0 arrivalTime = $realtime;
 	  	$sformat(name, "%m");
 	  	$reg_acc(startTime, arrivalTime, name);
 	  end
   end
-
+*/
 
   specify
     (posedge CK => (Q +: D)) = (0.001, 0.001);
@@ -371,14 +371,14 @@ module DFF_X1 (CK, D, Q, QN);
 
   always @ (negedge CK) #0 start <= 1'b0;
 
-  always @ (D) begin
+  /*always @ (D) begin
 	  if (start) begin
 	  	#0 arrivalTime = $realtime;
 	  	$sformat(name, "%m");
 	  	$reg_acc(startTime, arrivalTime, name);
 	  end
   end
-
+*/
 
   specify
     (posedge CK => (Q +: D)) = (0.001, 0.001);
@@ -440,14 +440,14 @@ module DFF_X2 (CK, D, Q, QN);
 
   always @ (negedge CK) #0 start <= 1'b0;
 
-  always @ (D) begin
+ /* always @ (D) begin
 	  if (start) begin
 	  	#0 arrivalTime = $realtime;
 	  	$sformat(name, "%m");
 	  	$reg_acc(startTime, arrivalTime, name);
 	  end
   end
-
+*/
 
   specify
     (posedge CK => (Q +: D)) = (0.001, 0.001);

@@ -56,16 +56,16 @@ DC_EXE=/vol/synopsys/syn/bin
 ASTRO_EXE=/vol/synopsys/astro_vY-2006.06-SP2/bin
 0
 7
-1499443656 tb.v
-1499463941 primitives.v
-1499447134 pre_norm.v
-1499447134 pre_norm_fmul.v
-1499447134 post_norm.v
-1499463835 fpu.v
-1499447134 except.v
+1499699527 tb.v
+1499699527 primitives.v
+1499699527 pre_norm.v
+1499699527 pre_norm_fmul.v
+1499699527 post_norm.v
+1499699527 fpu.v
+1499699527 except.v
 4
 0 
 1298523739 /vol/synopsys/vcs/linux/lib/libvirsim.so
 1298523341 /vol/synopsys/vcs/linux/lib/librterrorinf.so
 1298523301 /vol/synopsys/vcs/linux/lib/libsnpsmalloc.so
-1499697521 simv.daidir
+1499787541 simv.daidir

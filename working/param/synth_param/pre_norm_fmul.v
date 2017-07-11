@@ -37,13 +37,15 @@
 module pre_norm_fmul(clk, fpu_op, opa, opb, fracta, fractb, exp_out, sign,
 		sign_exe, inf, exp_ovf, underflow);
 ////////////////////////////////////////////////////////////////////////
-// Parameters
-parameter BIT_SIZE = 31,
-  EXP_SIZE = 7,
-  MANT_SIZE = 22,
-  BIAS = 127;
 
 ////////////////////////////////////////////////////////////////////////
+// Parameters
+parameter BIT_SIZE = 63,
+  EXP_SIZE = 10,
+  MANT_SIZE = 51,
+  BIAS = 1023;
+
+///
 
 
 

@@ -40,11 +40,12 @@ module post_norm( clk, fpu_op, opas, sign, rmode, fract_in, exp_in, exp_ovf,
 		ine, overflow, underflow, f2i_out_sign);
 ////////////////////////////////////////////////////////////////////////
 // Parameters
-parameter BIT_SIZE = 31,
-  EXP_SIZE = 7,
-  MANT_SIZE = 22,
-  BIAS = 127;
+parameter BIT_SIZE = 63,
+  EXP_SIZE = 10,
+  MANT_SIZE = 51,
+  BIAS = 1023;
 
+///
 ////////////////////////////////////////////////////////////////////////
 
 

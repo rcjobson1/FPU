@@ -40,10 +40,10 @@ module pre_norm(clk, rmode, add, opa, opb, opa_nan, opb_nan, fracta_out,
 		fasu_op);
 ////////////////////////////////////////////////////////////////////////
 // Parameters
-parameter BIT_SIZE = 31,
-  EXP_SIZE = 7,
-  MANT_SIZE = 22,
-  BIAS = 127,
+parameter BIT_SIZE = 63,
+  EXP_SIZE = 10,
+  MANT_SIZE = 51,
+  BIAS = 1023,
   EXP_SHIFT = MANT_SIZE == 51 ? 5 : MANT_SIZE == 22 ? 4 : 3;
 ////////////////////////////////////////////////////////////////////////
 

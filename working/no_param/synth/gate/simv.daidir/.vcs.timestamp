@@ -1,0 +1,65 @@
+0 
+23
++v2k
+-Mamsrun=
+-Masflags=--32
+-Mcc=gcc
+-Mcfl= -pipe -m32 -O -I/vol/synopsys/vcs/include
+-Mcmodrun=
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags=-melf_i386 -m32
+-Mobjects= /vol/synopsys/vcs/linux/lib/libvirsim.so /vol/synopsys/vcs/linux/lib/librterrorinf.so /vol/synopsys/vcs/linux/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/vol/synopsys/vcs/linux/lib/vcs_save_restore_new.o
+-Msyslibs=/vol/synopsys/vcs/linux/lib/ctype-stubs_32.a -ldl
+-Mvcsaceobjs=
+-cm_xmldb
+-gen_obj
+../lib/NangateOpenCellLibrary_typical_conditional_cbn.v
+../lib/NangateOpenCellLibrary_typical_conditional_sqt.v
+/vol/synopsys/vcs/linux/bin/vcs1
+fpu_flat.v
+tb.v
+27
+VMR_MODE_FLAG=32
+VENDOR=unknown
+VCS_HOME=/vol/synopsys/vcs
+VCS_EXE=/vol/synopsys/vcs/bin
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux
+VCS_AMD_PURE32=1
+UNAME=/bin/uname
+TOOL_HOME=/vol/synopsys/vcs/linux
+SYNOPSYS=/vol/synopsys
+SSH_TTY=/dev/pts/9
+SSH_CONNECTION=129.105.15.70 34718 129.105.8.239 22
+SSH_CLIENT=129.105.15.70 34718 22
+SNPSLM_LICENSE_FILE=@synopsyslm.eecs.northwestern.edu
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+REMOTEHOST=cameron-desktop.ece.northwestern.edu
+PT_EXE=/vol/synopsys/pts/bin
+OVA_UUM=0
+OSTYPE=linux
+HOSTTYPE=x86_64-linux
+HOSTNAME=serpentor.ece.northwestern.edu
+HOST=serpentor.ece.northwestern.edu
+GROUP=e90joseph
+DC_EXE=/vol/synopsys/syn/bin
+ASTRO_EXE=/vol/synopsys/astro_vY-2006.06-SP2/bin
+0
+4
+1499699527 ../lib/NangateOpenCellLibrary_typical_conditional_sqt.v
+1499699527 ../lib/NangateOpenCellLibrary_typical_conditional_cbn.v
+1499705515 tb.v
+1499802952 fpu_flat.v
+4
+0 
+1298523739 /vol/synopsys/vcs/linux/lib/libvirsim.so
+1298523341 /vol/synopsys/vcs/linux/lib/librterrorinf.so
+1298523301 /vol/synopsys/vcs/linux/lib/libsnpsmalloc.so
+1499803145 simv.daidir
