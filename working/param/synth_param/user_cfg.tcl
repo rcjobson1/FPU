@@ -26,13 +26,13 @@ set rtl_files { \
 		post_norm.v \
 		pre_norm_fmul.v \
 		pre_norm.v \
-	
+		
 		primitives.v \
 		}
 
 #set dont_touch_modules { Mult }
 
-set dont_use_cells 1
+#set dont_use_cells 1
 # can only use DFFRS, DFFR, DFFS, DFF
 set dont_use_cell_list { \
 	NangateOpenCellLibrary/DFF_X2 \
@@ -63,7 +63,7 @@ set dont_use_cell_list { \
 	NangateOpenCellLibrary/TLAT_X1 \
 	NangateOpenCellLibrary/FA_X1 \
 }
- 
+
 set mix_files {}
 set top_module fpu 
 set include_paths { design/sys/iop/include }
@@ -82,11 +82,13 @@ set compile_no_new_cells_at_top_level false
 #set compile_delete_unloaded_sequential_cells false
 
 set default_clk clk
-set default_clk_freq  1000
+set default_clk_freq  100
+#set default_clk_freq  1000
 set default_setup_skew  0.1
 set default_hold_skew  0.1
 set default_clk_transition 0.1 
-set clk_list {{ clk 720.0 0 0 0 }}
+set clk_list {{ clk 72.0 0 0 0 }}
+#set clk_list {{ clk 720.0 0 0 0 }}
 set ideal_net_list {}
 set false_path_list {}
 set enforce_input_fanout_one     0

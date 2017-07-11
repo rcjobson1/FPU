@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version D-2010.03-SP4 for linux -- Aug 27, 2010
-#@ # Date:   %sMon Jul 10 09:33:02 2017
+#@ # Date:   %sTue Jul 11 10:43:17 2017
 #@ # Run by: rjobson@serpentor.ece.northwestern.edu
 #@ 
 
@@ -4681,7 +4681,7 @@ source /vol/synopsys/syn/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /vol/synopsys/syn/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /files1/home/rjobson/synth_param/run.tcl
+source -echo -verbose /files1/home/rjobson/FPU/working/param/synth_param/run.tcl
 #@ # ========== Copyright Header Begin ==========================================
 #@ # 
 #@ # OpenSPARC T1 Processor File: run.scr

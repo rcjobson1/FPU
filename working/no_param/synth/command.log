@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version D-2010.03-SP4 for linux -- Aug 27, 2010
-#@ # Date:   %sMon Jul 10 10:00:33 2017
+#@ # Date:   %sTue Jul 11 11:35:55 2017
 #@ # Run by: rjobson@serpentor.ece.northwestern.edu
 #@ 
 
@@ -4681,7 +4681,7 @@ source /vol/synopsys/syn/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /vol/synopsys/syn/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /files1/home/rjobson/synth/run.tcl
+source -echo -verbose /files1/home/rjobson/FPU/working/no_param/synth/run.tcl
 #@ # ========== Copyright Header Begin ==========================================
 #@ # 
 #@ # OpenSPARC T1 Processor File: run.scr
@@ -4853,7 +4853,7 @@ source -echo -verbose /files1/home/rjobson/synth/run.tcl
 #@ 
 #@ #set dont_touch_modules { Mult }
 #@ 
-#@ set dont_use_cells 1
+#@ #set dont_use_cells 1
 #@ # can only use DFFRS, DFFR, DFFS, DFF
 #@ set dont_use_cell_list { 	NangateOpenCellLibrary/DFF_X2 	NangateOpenCellLibrary/DFFR_X2 	NangateOpenCellLibrary/DFFS_X2 	NangateOpenCellLibrary/DFFRS_X1 	NangateOpenCellLibrary/DFFRS_X2 	NangateOpenCellLibrary/DLH_X1 	NangateOpenCellLibrary/DLH_X2 	NangateOpenCellLibrary/CLKGATETST_X1 	NangateOpenCellLibrary/CLKGATETST_X2 	NangateOpenCellLibrary/CLKGATETST_X4 	NangateOpenCellLibrary/CLKGATETST_X8 	NangateOpenCellLibrary/CLKGATE_X1 	NangateOpenCellLibrary/CLKGATE_X2 	NangateOpenCellLibrary/CLKGATE_X4 	NangateOpenCellLibrary/CLKGATE_X8 	NangateOpenCellLibrary/DLL_X1 	NangateOpenCellLibrary/DLL_X2 	NangateOpenCellLibrary/SDFFRS_X1 	NangateOpenCellLibrary/SDFFRS_X2 	NangateOpenCellLibrary/SDFFR_X1 	NangateOpenCellLibrary/SDFFR_X2 	NangateOpenCellLibrary/SDFFS_X1 	NangateOpenCellLibrary/SDFFS_X2 	NangateOpenCellLibrary/SDFF_X1 	NangateOpenCellLibrary/SDFF_X2 	NangateOpenCellLibrary/TLAT_X1 	NangateOpenCellLibrary/FA_X1 }
 #@ 
@@ -4875,11 +4875,13 @@ source -echo -verbose /files1/home/rjobson/synth/run.tcl
 #@ #set compile_delete_unloaded_sequential_cells false
 #@ 
 #@ set default_clk clk
-#@ set default_clk_freq  1000
+#@ set default_clk_freq  100
+#@ #set default_clk_freq  1000
 #@ set default_setup_skew  0.1
 #@ set default_hold_skew  0.1
 #@ set default_clk_transition 0.1 
-#@ set clk_list {{ clk 720.0 0 0 0 }}
+#@ set clk_list {{ clk 72.0 0 0 0 }}
+#@ #set clk_list {{ clk 720.0 0 0 0 }}
 #@ set ideal_net_list {}
 #@ set false_path_list {}
 #@ set enforce_input_fanout_one     0
@@ -5199,3 +5201,113 @@ source -echo -verbose /files1/home/rjobson/synth/run.tcl
 #@ 
 #@ ### section 5e. will be skipped if user want to use PC flow
 #@ }
+#@ 
+#@ 
+#@ ###########################################################################
+#@ # 6. Write Out Design
+#@ ###########################################################################
+#@ # Get rid of *cell* names
+#@ define_name_rules afara_rules -map {{ {"\\*cell\\*", "UDW_"}}}
+#@ change_names -rule afara_rules -hierarchy
+#@ 
+#@ sh date
+#@ if {[info exists use_physopt] && ($use_physopt == 1)} {
+#@    write -format verilog -hier -output [format "%s%s%s" gate/ $top_module _hier_fromdc.v]
+#@ } else {
+#@    write -format verilog -hier -output [format "%s%s%s" gate/ $top_module _hier.v]
+#@ }
+#@ 
+#@ ###########################################################################
+#@ # 7. Write Reports
+#@ ###########################################################################
+#@ redirect [format "%s%s%s" log/ $top_module _hier_area.rep] { report_area }
+#@ redirect -append [format "%s%s%s" log/ $top_module _hier_area.rep] { report_reference }
+#@ redirect [format "%s%s%s" log/ $top_module _hier_timing.rep] { report_timing -max_paths $num_of_path}
+#@ 
+#@ ###########################################################################
+#@ # 8. Flatten hierarchy for backend tools
+#@ ###########################################################################
+#@ sh date
+#@ 
+#@ # remove dont_touch attribute before flattening the design
+#@ if { [get_designs -hier $dont_touch_modules] != {} } {
+#@    set_dont_touch $dont_touch_modules false
+#@ }
+#@ 
+#@ current_design $top_module
+#@ ungroup -all -flatten
+#@ 
+#@ #optimize_registers -clock clk -edge rise -delay_threshold 1 
+#@ 
+#@ # Make sure flat netlist does not have "/" in signal names
+#@ #define_name_rules hier_change -restricted "/" -replacement_char "_"
+#@ #change_names -rule hier_change -hierarchy
+#@ 
+#@ # When writing out Verilog files, set the
+#@ # verilogout_single_bit variable to false (the default).
+#@ # Set the bus_inference_style variable and the
+#@ # bus_naming_style variable to the naming style.  For
+#@ # more information, see the man pages for the
+#@ # bus_inference_style and bus_naming_style variables.
+#@ change_names -rules verilog -hierarchy
+#@ 
+#@ # Write out flat netlist.  Location depends on CMP or IO synthesis
+#@ if {[info exists project_io_cfg] && ($project_io_cfg == 1) } {
+#@    write -format verilog -output [format "%s%s%s"  gate/ $top_module _flat_nc.v]
+#@ } else {
+#@    write -format verilog -output [format "%s%s%s"  gate/ $top_module _flat.v]
+#@ }
+#@ 
+#@ 
+#@ # Report flattened results
+#@ redirect [format "%s%s%s" log/ $top_module _area.rep] { report_area }
+#@ redirect -append [format "%s%s%s" log/ $top_module _area.rep] {report_reference }
+#@ redirect [format "%s%s%s" log/ $top_module _timing.rep] { report_timing -max_paths $num_of_path -nworst $num_of_path}
+#@ redirect -append [format "%s%s%s" log/ $top_module _timing.rep] { report_timing -true}
+#@ 
+#@ check_timing
+#@ set true_delay_prove_true_backtrack_limit $num_of_path 
+#@ 
+#@ report_timing -group clk -max_paths $num_of_path
+#@ report_timing -true
+#@ write_sdf -version 2.1 -context verilog arm-pipeline.sdf
+#@ write_sdc arm-pipeline.sdc
+#@ 
+#@ #write_sdf -version 2.1 A5.sdf
+#@ #redirect [format "%s%s%s" log/ $top_module _timing.rep] { report_timing -max_paths 1000 -greater_path 2.5 -nworst 10000}
+#@ #redirect [format "%s%s%s" log/ $top_module _timing_in2out.rep] { report_timing -max_paths 1000 -nworst 10 -group in2out -path end}
+#@ #redirect [format "%s%s%s" log/ $top_module _timing_in2reg.rep] { report_timing -max_paths 1000 -nworst 10 -group in2reg -path end}
+#@ #redirect [format "%s%s%s" log/ $top_module _timing_reg2out.rep] { report_timing -max_paths 1000 -nworst 10 -group reg2out -path end}
+#@ #redirect [format "%s%s%s" log/ $top_module _timing_reg2reg.rep] { report_timing -max_paths 1000 -nworst 10 -group reg2reg -path end}
+#@ #redirect [format "%s%s%s" log/ $top_module _timing.rep] { report_timing -max_paths 1 -nworst 1}
+#@ #redirect [format "%s%s%s" log/ $top_module _path_group.rep] { report_path_group }
+#@ 
+#@ ###########################################################################
+#@ # 9. Compress output files
+#@ ###########################################################################
+#@ #sh gzip -f gate/${top_module}_hier.v 
+#@ #sh gzip -f gate/${top_module}_flat.v
+#@ 
+#@ 
+#@ ###########################################################################
+#@ # 10. Check design and Detect unmapped design
+#@ ###########################################################################
+#@ 
+#@ set unmapped_designs [get_designs -filter "is_unmapped == true" $top_module]
+#@ 
+#@ if {  [sizeof_collection $unmapped_designs] != 0 } {
+#@    echo "****************************************************"
+#@    echo "* ERROR!!!! Compile finished with unmapped logic.  *"
+#@    echo "****************************************************"
+#@    quit
+#@ }
+#@ 
+#@ 
+#@ ###########################################################################
+#@ # 11. Done
+#@ ###########################################################################
+#@ sh date
+#@ 
+#@ echo "run.scr completed successfully"
+#@ 
+#@ quit

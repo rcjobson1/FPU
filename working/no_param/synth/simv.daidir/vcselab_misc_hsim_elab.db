@@ -1,5 +1,5 @@
 psSimBaseName                      	simv
-pDaiDir                            	/files1/home/rjobson/synth/simv.daidir
+pDaiDir                            	/files1/home/rjobson/FPU/working/no_param/synth/simv.daidir
 destPath                           	csrc/
 hsMainFileCount                    	0
 hsMainFileName                     	dummy
