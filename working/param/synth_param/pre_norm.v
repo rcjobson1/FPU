@@ -154,7 +154,7 @@ assign adj_op_out	= {adj_op_out_sft[ MANT_SIZE + 4 :1], adj_op_out_sft[0] | stic
 always @(exp_diff_sft or adj_op_tmp)
    case(exp_diff_sft)		// sticky = exp_diff_sft ? |adj_op_tmp[exp_diff_sft - 1:0] : 1'h0;
 	00: sticky = 1'h0;
-	01: sticky =  adj_op_tmp[0];
+	01: sticky = |adj_op_tmp[0];
 	02: sticky = |adj_op_tmp[01:0];
 	03: sticky = |adj_op_tmp[02:0];
 	04: sticky = |adj_op_tmp[03:0];
@@ -211,6 +211,7 @@ always @(exp_diff_sft or adj_op_tmp)
 	54: sticky = |adj_op_tmp[53:0];
 	55: sticky = |adj_op_tmp[54:0];
 	56: sticky = |adj_op_tmp[55:0];
+	default: sticky = 1'h0;
 	//57: sticky = |adj_op_tmp[56:0];
    endcase
    //sticky = exp_diff_sft ? |(adj_op_tmp[exp_diff_sft - 1:0]) : 1'h0;

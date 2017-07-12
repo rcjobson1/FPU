@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Tue Jul 11 15:15:21 2017
+# Created by write_sdc on Wed Jul 12 12:07:27 2017
 
 ###################################################################
 set sdc_version 1.8
@@ -1179,19 +1179,19 @@ u1_signb_r_reg/CK] [get_pins u1_signa_r_reg/CK] [get_pins u1_sign_reg/CK]      \
 [get_pins u1_fracta_out_reg_50_/CK] [get_pins u1_fracta_out_reg_51_/CK]        \
 [get_pins u1_fracta_out_reg_52_/CK] [get_pins u1_fracta_out_reg_53_/CK]        \
 [get_pins u1_fracta_out_reg_54_/CK] [get_pins u1_fracta_out_reg_55_/CK]        \
-[get_pins u1_sticky_reg/G] [get_pins u1_exp_dn_out_reg_0_/CK] [get_pins        \
-u1_exp_dn_out_reg_1_/CK] [get_pins u1_exp_dn_out_reg_2_/CK] [get_pins          \
-u1_exp_dn_out_reg_3_/CK] [get_pins u1_exp_dn_out_reg_4_/CK] [get_pins          \
-u1_exp_dn_out_reg_5_/CK] [get_pins u1_exp_dn_out_reg_6_/CK] [get_pins          \
-u1_exp_dn_out_reg_7_/CK] [get_pins u1_exp_dn_out_reg_8_/CK] [get_pins          \
-u1_exp_dn_out_reg_9_/CK] [get_pins u1_exp_dn_out_reg_10_/CK] [get_pins         \
-u0_opb_dn_reg/CK] [get_pins u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK]      \
-[get_pins u0_opa_00_reg/CK] [get_pins u0_fractb_00_reg/CK] [get_pins           \
-u0_fracta_00_reg/CK] [get_pins u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] \
-[get_pins u0_opb_inf_reg/CK] [get_pins u0_opa_inf_reg/CK] [get_pins            \
-u0_opb_nan_reg/CK] [get_pins u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK]      \
-[get_pins u0_qnan_reg/CK] [get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK]    \
-[get_pins u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins          \
+[get_pins u1_exp_dn_out_reg_0_/CK] [get_pins u1_exp_dn_out_reg_1_/CK]          \
+[get_pins u1_exp_dn_out_reg_2_/CK] [get_pins u1_exp_dn_out_reg_3_/CK]          \
+[get_pins u1_exp_dn_out_reg_4_/CK] [get_pins u1_exp_dn_out_reg_5_/CK]          \
+[get_pins u1_exp_dn_out_reg_6_/CK] [get_pins u1_exp_dn_out_reg_7_/CK]          \
+[get_pins u1_exp_dn_out_reg_8_/CK] [get_pins u1_exp_dn_out_reg_9_/CK]          \
+[get_pins u1_exp_dn_out_reg_10_/CK] [get_pins u0_opb_dn_reg/CK] [get_pins      \
+u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK] [get_pins u0_opa_00_reg/CK]      \
+[get_pins u0_fractb_00_reg/CK] [get_pins u0_fracta_00_reg/CK] [get_pins        \
+u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] [get_pins u0_opb_inf_reg/CK]   \
+[get_pins u0_opa_inf_reg/CK] [get_pins u0_opb_nan_reg/CK] [get_pins            \
+u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK] [get_pins u0_qnan_reg/CK]         \
+[get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK] [get_pins                    \
+u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins                    \
 u0_snan_r_a_reg/CK] [get_pins u0_qnan_r_a_reg/CK] [get_pins                    \
 u0_infb_f_r_reg/CK] [get_pins u0_infa_f_r_reg/CK] [get_pins u0_expb_ff_reg/CK] \
 [get_pins u0_expa_ff_reg/CK] [get_pins fpu_op_r3_reg_0_/CK] [get_pins          \
@@ -1784,19 +1784,19 @@ u1_signb_r_reg/CK] [get_pins u1_signa_r_reg/CK] [get_pins u1_sign_reg/CK]      \
 [get_pins u1_fracta_out_reg_50_/CK] [get_pins u1_fracta_out_reg_51_/CK]        \
 [get_pins u1_fracta_out_reg_52_/CK] [get_pins u1_fracta_out_reg_53_/CK]        \
 [get_pins u1_fracta_out_reg_54_/CK] [get_pins u1_fracta_out_reg_55_/CK]        \
-[get_pins u1_sticky_reg/G] [get_pins u1_exp_dn_out_reg_0_/CK] [get_pins        \
-u1_exp_dn_out_reg_1_/CK] [get_pins u1_exp_dn_out_reg_2_/CK] [get_pins          \
-u1_exp_dn_out_reg_3_/CK] [get_pins u1_exp_dn_out_reg_4_/CK] [get_pins          \
-u1_exp_dn_out_reg_5_/CK] [get_pins u1_exp_dn_out_reg_6_/CK] [get_pins          \
-u1_exp_dn_out_reg_7_/CK] [get_pins u1_exp_dn_out_reg_8_/CK] [get_pins          \
-u1_exp_dn_out_reg_9_/CK] [get_pins u1_exp_dn_out_reg_10_/CK] [get_pins         \
-u0_opb_dn_reg/CK] [get_pins u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK]      \
-[get_pins u0_opa_00_reg/CK] [get_pins u0_fractb_00_reg/CK] [get_pins           \
-u0_fracta_00_reg/CK] [get_pins u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] \
-[get_pins u0_opb_inf_reg/CK] [get_pins u0_opa_inf_reg/CK] [get_pins            \
-u0_opb_nan_reg/CK] [get_pins u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK]      \
-[get_pins u0_qnan_reg/CK] [get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK]    \
-[get_pins u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins          \
+[get_pins u1_exp_dn_out_reg_0_/CK] [get_pins u1_exp_dn_out_reg_1_/CK]          \
+[get_pins u1_exp_dn_out_reg_2_/CK] [get_pins u1_exp_dn_out_reg_3_/CK]          \
+[get_pins u1_exp_dn_out_reg_4_/CK] [get_pins u1_exp_dn_out_reg_5_/CK]          \
+[get_pins u1_exp_dn_out_reg_6_/CK] [get_pins u1_exp_dn_out_reg_7_/CK]          \
+[get_pins u1_exp_dn_out_reg_8_/CK] [get_pins u1_exp_dn_out_reg_9_/CK]          \
+[get_pins u1_exp_dn_out_reg_10_/CK] [get_pins u0_opb_dn_reg/CK] [get_pins      \
+u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK] [get_pins u0_opa_00_reg/CK]      \
+[get_pins u0_fractb_00_reg/CK] [get_pins u0_fracta_00_reg/CK] [get_pins        \
+u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] [get_pins u0_opb_inf_reg/CK]   \
+[get_pins u0_opa_inf_reg/CK] [get_pins u0_opb_nan_reg/CK] [get_pins            \
+u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK] [get_pins u0_qnan_reg/CK]         \
+[get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK] [get_pins                    \
+u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins                    \
 u0_snan_r_a_reg/CK] [get_pins u0_qnan_r_a_reg/CK] [get_pins                    \
 u0_infb_f_r_reg/CK] [get_pins u0_infa_f_r_reg/CK] [get_pins u0_expb_ff_reg/CK] \
 [get_pins u0_expa_ff_reg/CK] [get_pins fpu_op_r3_reg_0_/CK] [get_pins          \

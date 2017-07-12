@@ -1166,10 +1166,9 @@ void  hsF0_89_0_(UB  * I597, scalar  val);
 void  hsF0_90_0_(UB  * I597, scalar  val);
 void  hsF0_91_0_(UB  * I597, scalar  val);
 void  hsF0_92_0_(UB  * I597, scalar  val);
-void  hsF0_92_5_(UB  * I597, UB  val);
 void  hsF0_93_0_(UB  * I597, scalar  val);
+void  hsF0_93_5_(UB  * I597, UB  val);
 void  hsF0_94_0_(UB  * I597, scalar  val);
-void  hsF0_94_5_(UB  * I597, UB  val);
 void  hsF0_95_0_(UB  * I597, scalar  val);
 void  hsF0_95_5_(UB  * I597, UB  val);
 void  hsF0_96_0_(UB  * I597, scalar  val);
@@ -1178,6 +1177,8 @@ void  hsF0_97_0_(UB  * I597, scalar  val);
 void  hsF0_97_5_(UB  * I597, UB  val);
 void  hsF0_98_0_(UB  * I597, scalar  val);
 void  hsF0_98_5_(UB  * I597, UB  val);
+void  hsF0_99_0_(UB  * I597, scalar  val);
+void  hsF0_99_5_(UB  * I597, UB  val);
 void  schedNewEvent(struct dummyq_struct * I651, EBLK  * I652, U  I509);
 #ifdef __cplusplus
 }
