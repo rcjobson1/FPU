@@ -1,0 +1,263 @@
+Information: Updating graph... (UID-83)
+Warning: Design 'fpu' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Timing loop detected. (OPT-150)
+	U27/B2 U27/ZN U1722/A U1722/ZN U110/C2 U110/ZN u4/srl_453/U942/A1 u4/srl_453/U942/ZN u4/srl_453/U75/A u4/srl_453/U75/ZN u4/srl_453/U21/A1 u4/srl_453/U21/ZN u4/srl_453/U866/A1 u4/srl_453/U866/ZN U1804/A1 U1804/ZN U174/A U174/ZN u4/add_396/U1_1_51/A u4/add_396/U1_1_51/CO U1736/A1 U1736/ZN U3713/A1 U3713/ZN U1701/A U1701/ZN U3937/A1 U3937/ZN U3935/A1 U3935/ZN U3431/A1 U3431/ZN U3933/A U3933/ZN 
+Information: Timing loop detected. (OPT-150)
+	U29/B2 U29/ZN U1720/A U1720/ZN U107/C2 U107/ZN u4/srl_453/U942/A2 u4/srl_453/U942/ZN u4/srl_453/U75/A u4/srl_453/U75/ZN u4/srl_453/U21/A1 u4/srl_453/U21/ZN u4/srl_453/U866/A1 u4/srl_453/U866/ZN U1804/A1 U1804/ZN U174/A U174/ZN u4/add_396/U1_1_51/A u4/add_396/U1_1_51/CO U1736/A1 U1736/ZN U3713/A1 U3713/ZN U1701/A U1701/ZN U3937/A1 U3937/ZN U3935/A1 U3935/ZN U3431/A1 U3431/ZN U3933/A U3933/ZN 
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U27'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U27'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U27'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U29'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U29'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U29'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U32'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U32'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U32'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U21'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U21'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U21'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U19'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U19'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U19'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U25'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U25'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U25'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U23'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U23'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B2' and 'ZN' on cell 'U23'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'U18'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'U18'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'B1' and 'ZN' on cell 'U18'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'ZN' on cell 'U17'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'C1' and 'ZN' on cell 'U131'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'C1' and 'ZN' on cell 'U131'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'u4/C19471'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'ZN' on cell 'u4/C19471'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'u4/C19051'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'u4/C19735'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'ZN' on cell 'u4/C19051'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'ZN' on cell 'u4/C19042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'ZN' on cell 'u4/C19042'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'ZN' on cell 'u4/C19733'
+         to break a timing loop. (OPT-314)
+ 
+****************************************
+Report : area
+Design : fpu
+Version: D-2010.03-SP4
+Date   : Thu Jul 13 15:06:13 2017
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'fpu' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /files1/home/rjobson/FPU/working/param/working_synth_param/lib/NangateOpenCellLibrary_typical_conditional_nldm.db)
+
+Number of ports:              206
+Number of nets:              6178
+Number of cells:             4939
+Number of references:          82
+
+Combinational area:       24362.940080
+Noncombinational area:    5828.857789
+Net Interconnect area:    8138.193769  
+
+Total cell area:          30191.797868
+Total area:               38329.991638
+1
+ 
+****************************************
+Report : reference
+Design : fpu
+Version: D-2010.03-SP4
+Date   : Thu Jul 13 15:06:13 2017
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NangateOpenCellLibrary
+                                  1.064000      43     45.752000  
+AND2_X2            NangateOpenCellLibrary
+                                  1.064000      79     84.056001  
+AND2_X4            NangateOpenCellLibrary
+                                  1.064000       5      5.320000  
+AND3_X1            NangateOpenCellLibrary
+                                  1.330000       3      3.990000  
+AND3_X2            NangateOpenCellLibrary
+                                  1.330000      31     41.230001  
+AND3_X4            NangateOpenCellLibrary
+                                  1.330000       4      5.320000  
+AND4_X2            NangateOpenCellLibrary
+                                  1.596000      25     39.899999  
+AOI21_X1           NangateOpenCellLibrary
+                                  1.064000      14     14.896000  
+AOI21_X2           NangateOpenCellLibrary
+                                  1.064000      36     38.304000  
+AOI22_X2           NangateOpenCellLibrary
+                                  1.330000     557    740.810024  
+AOI211_X1          NangateOpenCellLibrary
+                                  1.330000       1      1.330000  
+AOI211_X2          NangateOpenCellLibrary
+                                  1.330000      16     21.280001  
+AOI221_X1          NangateOpenCellLibrary
+                                  1.596000       3      4.788000  
+AOI221_X2          NangateOpenCellLibrary
+                                  1.596000      76    121.295997  
+AOI222_X1          NangateOpenCellLibrary
+                                  1.862000      29     53.998000  
+DFF_X2             NangateOpenCellLibrary
+                                  4.522000    1289   5828.857789  n
+FA_X1              NangateOpenCellLibrary
+                                  4.256000      16     68.096001  r
+INV_X1             NangateOpenCellLibrary
+                                  0.532000       6      3.192000  
+INV_X4             NangateOpenCellLibrary
+                                  0.532000    1000    532.000005  
+INV_X8             NangateOpenCellLibrary
+                                  0.798000       1      0.798000  
+MUX2_X2            NangateOpenCellLibrary
+                                  1.862000       3      5.586000  
+NAND2_X1           NangateOpenCellLibrary
+                                  0.798000      29     23.141999  
+NAND2_X2           NangateOpenCellLibrary
+                                  0.798000     127    101.345997  
+NAND3_X1           NangateOpenCellLibrary
+                                  1.064000      14     14.896000  
+NAND3_X2           NangateOpenCellLibrary
+                                  1.064000     102    108.528001  
+NAND4_X1           NangateOpenCellLibrary
+                                  1.330000       6      7.980000  
+NAND4_X2           NangateOpenCellLibrary
+                                  1.330000     125    166.250005  
+NOR2_X1            NangateOpenCellLibrary
+                                  0.798000      41     32.717999  
+NOR2_X2            NangateOpenCellLibrary
+                                  0.798000     134    106.931997  
+NOR2_X4            NangateOpenCellLibrary
+                                  1.330000       4      5.320000  
+NOR3_X1            NangateOpenCellLibrary
+                                  1.064000       4      4.256000  
+NOR3_X2            NangateOpenCellLibrary
+                                  1.064000     161    171.304002  
+NOR4_X1            NangateOpenCellLibrary
+                                  1.330000       8     10.640000  
+NOR4_X2            NangateOpenCellLibrary
+                                  1.330000     128    170.240005  
+OAI21_X1           NangateOpenCellLibrary
+                                  1.064000      33     35.112000  
+OAI21_X2           NangateOpenCellLibrary
+                                  1.064000      53     56.392001  
+OAI22_X1           NangateOpenCellLibrary
+                                  1.330000       1      1.330000  
+OAI22_X2           NangateOpenCellLibrary
+                                  1.330000     212    281.960009  
+OAI33_X1           NangateOpenCellLibrary
+                                  1.862000      14     26.068000  
+OAI211_X1          NangateOpenCellLibrary
+                                  1.330000       9     11.970000  
+OAI211_X2          NangateOpenCellLibrary
+                                  1.330000     102    135.660004  
+OAI221_X1          NangateOpenCellLibrary
+                                  1.596000       4      6.384000  
+OAI221_X2          NangateOpenCellLibrary
+                                  1.596000     140    223.439994  
+OAI222_X2          NangateOpenCellLibrary
+                                  2.128000       3      6.384000  
+OR2_X1             NangateOpenCellLibrary
+                                  1.064000      36     38.304000  
+OR2_X2             NangateOpenCellLibrary
+                                  1.064000      27     28.728000  
+OR2_X4             NangateOpenCellLibrary
+                                  1.064000       8      8.512000  
+OR3_X1             NangateOpenCellLibrary
+                                  1.330000       3      3.990000  
+OR3_X2             NangateOpenCellLibrary
+                                  1.330000      22     29.260001  
+OR4_X1             NangateOpenCellLibrary
+                                  1.596000       3      4.788000  
+OR4_X2             NangateOpenCellLibrary
+                                  1.596000      18     28.727999  
+OR4_X4             NangateOpenCellLibrary
+                                  1.596000       1      1.596000  
+XNOR2_X1           NangateOpenCellLibrary
+                                  1.596000      46     73.415998  
+XOR2_X1            NangateOpenCellLibrary
+                                  1.596000      50     79.799998  
+XOR2_X2            NangateOpenCellLibrary
+                                  1.596000       7     11.172000  
+fpu_DW01_add_0                   23.940000       1     23.940000  h
+fpu_DW01_add_1                   39.368000       1     39.368000  h
+fpu_DW01_add_4                  236.740002       1    236.740002  h
+fpu_DW01_add_6                   45.220000       1     45.220000  h
+fpu_DW01_add_9                   39.368000       1     39.368000  h
+fpu_DW01_ash_0                 1363.249993       1   1363.249993  h
+fpu_DW01_ash_1                  974.889995       1    974.889995  h
+fpu_DW01_ash_2                  476.139997       1    476.139997  h
+fpu_DW01_cmp2_13                148.161998       1    148.161998  h
+fpu_DW01_cmp6_0                 169.441999       1    169.441999  h
+fpu_DW01_inc_0                   26.068001       1     26.068001  h
+fpu_DW01_inc_1                   27.132001       1     27.132001  h
+fpu_DW01_inc_2                  136.192004       1    136.192004  h
+fpu_DW01_inc_3                   26.068001       1     26.068001  h
+fpu_DW01_inc_4                   26.068001       1     26.068001  h
+fpu_DW01_sub_0                   44.156000       1     44.156000  h
+fpu_DW01_sub_1                   44.156000       1     44.156000  h
+fpu_DW01_sub_4                   47.614000       1     47.614000  h
+fpu_DW01_sub_5                   44.156000       1     44.156000  h
+fpu_DW01_sub_9                  267.330003       1    267.330003  h
+fpu_DW01_sub_12                  51.870000       1     51.870000  h
+fpu_DW01_sub_13                  53.200001       1     53.200001  h
+fpu_DW01_sub_14                 181.411998       1    181.411998  h
+fpu_DW01_sub_15                 166.249999       1    166.249999  h
+fpu_DW02_mult_0               14286.062044       1  14286.062044  h
+fpu_DW_rash_0                  1102.038000       1   1102.038000  h
+fpu_DW_rash_1                   468.160002       1    468.160002  h
+-----------------------------------------------------------------------------
+Total 82 references                                 30191.797868
+1

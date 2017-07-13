@@ -1,0 +1,3226 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : fpu
+Version: D-2010.03-SP4
+Date   : Thu Jul 13 15:06:14 2017
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: fpu_op[0] (input port clocked by clk)
+  Endpoint: fpu_op_r1_reg_0_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  fpu_op[0] (in)                           0.00       0.00 r
+  fpu_op_r1_reg_0_/D (DFF_X2)              0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  fpu_op_r1_reg_0_/CK (DFF_X2)             0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: fpu_op[1] (input port clocked by clk)
+  Endpoint: fpu_op_r1_reg_1_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  fpu_op[1] (in)                           0.00       0.00 r
+  fpu_op_r1_reg_1_/D (DFF_X2)              0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  fpu_op_r1_reg_1_/CK (DFF_X2)             0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: fpu_op[2] (input port clocked by clk)
+  Endpoint: fpu_op_r1_reg_2_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  fpu_op[2] (in)                           0.00       0.00 r
+  fpu_op_r1_reg_2_/D (DFF_X2)              0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  fpu_op_r1_reg_2_/CK (DFF_X2)             0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: opa[0] (input port clocked by clk)
+  Endpoint: opa_r_reg_0_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  opa[0] (in)                              0.00       0.00 r
+  opa_r_reg_0_/D (DFF_X2)                  0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  opa_r_reg_0_/CK (DFF_X2)                 0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: opa[1] (input port clocked by clk)
+  Endpoint: opa_r_reg_1_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  opa[1] (in)                              0.00       0.00 r
+  opa_r_reg_1_/D (DFF_X2)                  0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  opa_r_reg_1_/CK (DFF_X2)                 0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: opa[2] (input port clocked by clk)
+  Endpoint: opa_r_reg_2_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  opa[2] (in)                              0.00       0.00 r
+  opa_r_reg_2_/D (DFF_X2)                  0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  opa_r_reg_2_/CK (DFF_X2)                 0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: opa[3] (input port clocked by clk)
+  Endpoint: opa_r_reg_3_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  opa[3] (in)                              0.00       0.00 r
+  opa_r_reg_3_/D (DFF_X2)                  0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  opa_r_reg_3_/CK (DFF_X2)                 0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: opa[4] (input port clocked by clk)
+  Endpoint: opa_r_reg_4_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  opa[4] (in)                              0.00       0.00 r
+  opa_r_reg_4_/D (DFF_X2)                  0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  opa_r_reg_4_/CK (DFF_X2)                 0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: opa[5] (input port clocked by clk)
+  Endpoint: opa_r_reg_5_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  opa[5] (in)                              0.00       0.00 r
+  opa_r_reg_5_/D (DFF_X2)                  0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  opa_r_reg_5_/CK (DFF_X2)                 0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: opa[6] (input port clocked by clk)
+  Endpoint: opa_r_reg_6_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  opa[6] (in)                              0.00       0.00 r
+  opa_r_reg_6_/D (DFF_X2)                  0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  opa_r_reg_6_/CK (DFF_X2)                 0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+
+  Startpoint: div_by_zero_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: div_by_zero
+            (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  div_by_zero_reg/CK (DFF_X2)              0.00 #     0.00 r
+  div_by_zero_reg/Q (DFF_X2)               0.16       0.16 f
+  div_by_zero (out)                        0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: ine_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ine (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  ine_reg/CK (DFF_X2)                      0.00 #     0.00 r
+  ine_reg/Q (DFF_X2)                       0.16       0.16 f
+  ine (out)                                0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: inf_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inf (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  inf_reg/CK (DFF_X2)                      0.00 #     0.00 r
+  inf_reg/Q (DFF_X2)                       0.16       0.16 f
+  inf (out)                                0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: out_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  out_reg_0_/CK (DFF_X2)                   0.00 #     0.00 r
+  out_reg_0_/Q (DFF_X2)                    0.16       0.16 f
+  out[0] (out)                             0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: out_reg_1_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[1] (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  out_reg_1_/CK (DFF_X2)                   0.00 #     0.00 r
+  out_reg_1_/Q (DFF_X2)                    0.16       0.16 f
+  out[1] (out)                             0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: out_reg_2_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[2] (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  out_reg_2_/CK (DFF_X2)                   0.00 #     0.00 r
+  out_reg_2_/Q (DFF_X2)                    0.16       0.16 f
+  out[2] (out)                             0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: out_reg_3_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[3] (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  out_reg_3_/CK (DFF_X2)                   0.00 #     0.00 r
+  out_reg_3_/Q (DFF_X2)                    0.16       0.16 f
+  out[3] (out)                             0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: out_reg_4_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[4] (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  out_reg_4_/CK (DFF_X2)                   0.00 #     0.00 r
+  out_reg_4_/Q (DFF_X2)                    0.16       0.16 f
+  out[4] (out)                             0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: out_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[5] (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  out_reg_5_/CK (DFF_X2)                   0.00 #     0.00 r
+  out_reg_5_/Q (DFF_X2)                    0.16       0.16 f
+  out[5] (out)                             0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: out_reg_6_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out[6] (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  out_reg_6_/CK (DFF_X2)                   0.00 #     0.00 r
+  out_reg_6_/Q (DFF_X2)                    0.16       0.16 f
+  out[6] (out)                             0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3743/ZN (AOI21_X2)                      0.06      11.55 f
+  U1588/ZN (NOR4_X2)                       0.09      11.64 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.83 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.91 f
+  U4010/ZN (INV_X4)                        0.12      12.03 r
+  U1525/ZN (OAI221_X2)                     0.07      12.10 f
+  U1524/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.38 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.45 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.55 f
+  U1308/ZN (AOI22_X2)                      0.06      12.61 r
+  U3825/ZN (OAI21_X2)                      0.03      12.64 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.64 f
+  data arrival time                                  12.64
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.64
+  -----------------------------------------------------------
+  slack (MET)                                         1.20
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3739/ZN (AOI21_X2)                      0.06      11.54 f
+  U1595/ZN (INV_X4)                        0.03      11.58 r
+  U3585/ZN (NAND3_X2)                      0.02      11.60 f
+  U1588/ZN (NOR4_X2)                       0.03      11.64 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.83 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.91 f
+  U4010/ZN (INV_X4)                        0.12      12.03 r
+  U1525/ZN (OAI221_X2)                     0.07      12.10 f
+  U1524/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.38 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.45 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.55 f
+  U1308/ZN (AOI22_X2)                      0.06      12.61 r
+  U3825/ZN (OAI21_X2)                      0.03      12.64 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.64 f
+  data arrival time                                  12.64
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.64
+  -----------------------------------------------------------
+  slack (MET)                                         1.20
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3740/ZN (AOI21_X2)                      0.06      11.54 f
+  U1593/ZN (INV_X4)                        0.04      11.58 r
+  U3585/ZN (NAND3_X2)                      0.03      11.60 f
+  U1588/ZN (NOR4_X2)                       0.03      11.64 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.83 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.91 f
+  U4010/ZN (INV_X4)                        0.12      12.02 r
+  U1525/ZN (OAI221_X2)                     0.07      12.10 f
+  U1524/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.38 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.45 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.55 f
+  U1308/ZN (AOI22_X2)                      0.06      12.61 r
+  U3825/ZN (OAI21_X2)                      0.03      12.64 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.64 f
+  data arrival time                                  12.64
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.64
+  -----------------------------------------------------------
+  slack (MET)                                         1.20
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3743/ZN (AOI21_X2)                      0.06      11.55 f
+  U1588/ZN (NOR4_X2)                       0.09      11.64 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.83 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.91 f
+  U4010/ZN (INV_X4)                        0.12      12.03 r
+  U1521/ZN (OAI221_X2)                     0.07      12.10 f
+  U1520/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.38 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.45 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.55 f
+  U1308/ZN (AOI22_X2)                      0.06      12.61 r
+  U3825/ZN (OAI21_X2)                      0.03      12.64 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.64 f
+  data arrival time                                  12.64
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.64
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3739/ZN (AOI21_X2)                      0.06      11.54 f
+  U1595/ZN (INV_X4)                        0.03      11.58 r
+  U3585/ZN (NAND3_X2)                      0.02      11.60 f
+  U1588/ZN (NOR4_X2)                       0.03      11.64 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.83 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.91 f
+  U4010/ZN (INV_X4)                        0.12      12.03 r
+  U1521/ZN (OAI221_X2)                     0.07      12.10 f
+  U1520/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.38 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.45 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.55 f
+  U1308/ZN (AOI22_X2)                      0.06      12.61 r
+  U3825/ZN (OAI21_X2)                      0.03      12.64 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.64 f
+  data arrival time                                  12.64
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.64
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3740/ZN (AOI21_X2)                      0.06      11.54 f
+  U1593/ZN (INV_X4)                        0.04      11.58 r
+  U3585/ZN (NAND3_X2)                      0.03      11.60 f
+  U1588/ZN (NOR4_X2)                       0.03      11.64 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.83 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.91 f
+  U4010/ZN (INV_X4)                        0.12      12.02 r
+  U1521/ZN (OAI221_X2)                     0.07      12.10 f
+  U1520/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.38 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.45 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.55 f
+  U1308/ZN (AOI22_X2)                      0.06      12.61 r
+  U3825/ZN (OAI21_X2)                      0.03      12.64 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.64 f
+  data arrival time                                  12.64
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.64
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3738/ZN (AOI21_X2)                      0.06      11.54 f
+  U1597/ZN (INV_X4)                        0.03      11.58 r
+  U3585/ZN (NAND3_X2)                      0.02      11.60 f
+  U1588/ZN (NOR4_X2)                       0.03      11.63 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.82 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.90 f
+  U4010/ZN (INV_X4)                        0.12      12.02 r
+  U1525/ZN (OAI221_X2)                     0.07      12.10 f
+  U1524/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.37 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.45 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.54 f
+  U1308/ZN (AOI22_X2)                      0.06      12.61 r
+  U3825/ZN (OAI21_X2)                      0.03      12.64 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.64 f
+  data arrival time                                  12.64
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.64
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/S (FA_X1)                0.08       3.11 r
+  u4_sub_496_U22/ZN (INV_X4)               0.02       3.13 f
+  u4_sub_496_U2_1/CO (FA_X1)               0.12       3.25 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.11       3.36 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.47 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.58 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.69 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.81 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.86 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.88 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.90 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.92 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.94 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.99 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.11 f
+  U3803/ZN (AOI222_X1)                     0.17       4.28 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.35 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.78 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.83 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.95 r
+  U1928/ZN (AOI22_X2)                      0.04       4.99 f
+  U3417/ZN (NOR3_X2)                       0.16       5.15 r
+  U139/ZN (AOI22_X2)                       0.03       5.18 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.29 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.34 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.78 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.02 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.27 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.49 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.54 f
+  U1814/ZN (AOI22_X2)                      0.09       6.63 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.72 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.78 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.84 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.90 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.96 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.61 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.67 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.73 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.79 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.85 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.91 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.97 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.03 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.09 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.15 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.21 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.27 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.33 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.39 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.45 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.10 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.16 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.22 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.28 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.34 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.40 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.46 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.52 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.58 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.64 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.70 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.77 f
+  U1701/ZN (INV_X4)                        0.03       9.80 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.87 r
+  U3430/ZN (NOR2_X2)                       0.02       9.89 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.08 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.19 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.33 r
+  U4342/ZN (INV_X1)                        0.03      10.36 f
+  U4006/ZN (OR2_X4)                        0.07      10.43 f
+  U4343/ZN (NOR2_X1)                       0.07      10.50 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.68 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.84 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.95 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.06 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.34 r
+  U3590/ZN (NOR2_X2)                       0.03      11.37 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3738/ZN (AOI21_X2)                      0.06      11.54 f
+  U1597/ZN (INV_X4)                        0.03      11.58 r
+  U3585/ZN (NAND3_X2)                      0.02      11.60 f
+  U1588/ZN (NOR4_X2)                       0.03      11.63 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.82 f
+  U3580/ZN (OAI21_X2)                      0.04      11.87 r
+  U3966/ZN (NAND2_X2)                      0.04      11.90 f
+  U4010/ZN (INV_X4)                        0.12      12.02 r
+  U1521/ZN (OAI221_X2)                     0.07      12.10 f
+  U1520/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.37 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.44 r
+  U1315/ZN (INV_X4)                        0.01      12.46 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.54 f
+  U1308/ZN (AOI22_X2)                      0.06      12.60 r
+  U3825/ZN (OAI21_X2)                      0.03      12.63 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.63 f
+  data arrival time                                  12.63
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.63
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/CO (FA_X1)               0.08       3.11 r
+  u4_add_489_U1_2/S (FA_X1)                0.10       3.21 r
+  u4_sub_496_U21/ZN (INV_X4)               0.02       3.23 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.12       3.35 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.46 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.57 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.68 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.80 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.85 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.87 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.89 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.91 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.93 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.98 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.10 f
+  U3803/ZN (AOI222_X1)                     0.17       4.27 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.34 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.77 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.82 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.94 r
+  U1928/ZN (AOI22_X2)                      0.04       4.98 f
+  U3417/ZN (NOR3_X2)                       0.16       5.14 r
+  U139/ZN (AOI22_X2)                       0.03       5.17 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.28 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.33 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.77 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.01 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.26 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.48 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.53 f
+  U1814/ZN (AOI22_X2)                      0.09       6.62 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.71 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.77 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.83 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.89 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.95 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.60 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.66 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.72 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.78 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.84 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.90 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.96 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.02 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.08 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.14 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.20 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.26 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.32 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.38 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.44 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.09 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.15 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.21 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.27 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.33 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.39 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.45 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.51 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.57 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.63 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.69 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.76 f
+  U1701/ZN (INV_X4)                        0.03       9.79 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.86 r
+  U3430/ZN (NOR2_X2)                       0.02       9.88 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.07 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.18 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.32 r
+  U4342/ZN (INV_X1)                        0.03      10.35 f
+  U4006/ZN (OR2_X4)                        0.07      10.42 f
+  U4343/ZN (NOR2_X1)                       0.07      10.49 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.67 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.83 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.94 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.05 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.33 r
+  U3590/ZN (NOR2_X2)                       0.03      11.36 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3743/ZN (AOI21_X2)                      0.06      11.54 f
+  U1588/ZN (NOR4_X2)                       0.09      11.63 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.82 f
+  U3580/ZN (OAI21_X2)                      0.04      11.86 r
+  U3966/ZN (NAND2_X2)                      0.04      11.90 f
+  U4010/ZN (INV_X4)                        0.12      12.02 r
+  U1525/ZN (OAI221_X2)                     0.07      12.09 f
+  U1524/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.37 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.44 r
+  U1315/ZN (INV_X4)                        0.01      12.45 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.54 f
+  U1308/ZN (AOI22_X2)                      0.06      12.60 r
+  U3825/ZN (OAI21_X2)                      0.03      12.63 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.63 f
+  data arrival time                                  12.63
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.63
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+  Startpoint: u0_opb_dn_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_reg_63_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u0_opb_dn_reg/CK (DFF_X2)                0.00 #     0.00 r
+  u0_opb_dn_reg/Q (DFF_X2)                 0.23       0.23 f
+  U974/ZN (NAND2_X2)                       0.05       0.28 r
+  U3714/ZN (OAI21_X2)                      0.03       0.30 f
+  U3/Z (MUX2_X2)                           0.12       0.42 f
+  U4/Z (MUX2_X2)                           0.12       0.54 f
+  U6/Z (MUX2_X2)                           0.25       0.79 f
+  U4017/ZN (INV_X4)                        0.09       0.88 r
+  U4015/ZN (INV_X4)                        0.04       0.92 f
+  U4016/ZN (INV_X4)                        0.07       0.99 r
+  U2188/ZN (AND3_X2)                       0.07       1.06 r
+  U2184/ZN (NAND2_X2)                      0.04       1.10 f
+  U5021/ZN (INV_X4)                        0.04       1.14 r
+  U3633/ZN (NAND3_X2)                      0.05       1.19 f
+  U5019/ZN (INV_X4)                        0.05       1.24 r
+  U3544/ZN (NAND3_X2)                      0.06       1.30 f
+  U3642/ZN (NOR3_X2)                       0.13       1.43 r
+  U5018/ZN (INV_X4)                        0.04       1.47 f
+  U3409/ZN (NOR3_X2)                       0.12       1.59 r
+  U5017/ZN (INV_X4)                        0.04       1.63 f
+  U3725/ZN (NOR3_X2)                       0.12       1.75 r
+  U350/ZN (AND3_X2)                        0.07       1.83 r
+  U4073/ZN (AND3_X4)                       0.09       1.92 r
+  U3641/ZN (NAND3_X2)                      0.06       1.98 f
+  U3411/ZN (NOR3_X2)                       0.16       2.14 r
+  U5015/ZN (INV_X4)                        0.03       2.17 f
+  U3724/ZN (NOR3_X2)                       0.17       2.33 r
+  U5012/ZN (INV_X4)                        0.02       2.36 f
+  U3402/ZN (NOR3_X2)                       0.18       2.53 r
+  U5011/ZN (INV_X4)                        0.02       2.56 f
+  U292/ZN (OAI221_X2)                      0.09       2.65 r
+  U291/ZN (AOI221_X2)                      0.04       2.69 f
+  U290/ZN (NAND4_X2)                       0.07       2.77 r
+  U289/ZN (AOI221_X2)                      0.04       2.80 f
+  U4024/ZN (NAND4_X2)                      0.16       2.96 r
+  u4_add_489_U3/ZN (AND2_X4)               0.07       3.03 r
+  u4_add_489_U1_1/CO (FA_X1)               0.08       3.11 r
+  u4_add_489_U1_2/S (FA_X1)                0.10       3.21 r
+  u4_sub_496_U21/ZN (INV_X4)               0.02       3.23 f
+  u4_sub_496_U2_2/CO (FA_X1)               0.12       3.35 f
+  u4_sub_496_U2_3/CO (FA_X1)               0.11       3.46 f
+  u4_sub_496_U2_4/CO (FA_X1)               0.11       3.57 f
+  u4_sub_496_U2_5/CO (FA_X1)               0.11       3.68 f
+  u4_sub_496_U2_6/CO (FA_X1)               0.12       3.80 f
+  u4_sub_496_U5/ZN (INV_X4)                0.02       3.83 r
+  u4_sub_496_U2/ZN (NAND2_X2)              0.03       3.85 f
+  u4_sub_496_U9/ZN (INV_X4)                0.02       3.87 r
+  u4_sub_496_U6/ZN (NAND2_X2)              0.02       3.89 f
+  u4_sub_496_U13/ZN (INV_X4)               0.02       3.91 r
+  u4_sub_496_U10/ZN (NAND2_X2)             0.02       3.93 f
+  u4_sub_496_U1/ZN (XNOR2_X2)              0.05       3.98 r
+  U4403/ZN (OR4_X1)                        0.06       4.05 r
+  U3977/ZN (NOR3_X2)                       0.05       4.10 f
+  U3803/ZN (AOI222_X1)                     0.17       4.27 r
+  U3802/ZN (OAI21_X2)                      0.05       4.32 f
+  U4524/ZN (INV_X4)                        0.02       4.34 r
+  U32/ZN (OAI221_X2)                       0.05       4.39 f
+  u4_C19050/ZN (OR2_X2)                    0.08       4.47 f
+  u4_C19049/ZN (OR2_X2)                    0.05       4.52 f
+  u4_C19048/ZN (OR2_X2)                    0.05       4.57 f
+  u4_C19047/ZN (OR2_X2)                    0.05       4.62 f
+  u4_C19046/ZN (OR2_X2)                    0.05       4.67 f
+  u4_C19045/ZN (OR2_X2)                    0.05       4.72 f
+  u4_C19044/ZN (OR2_X2)                    0.05       4.77 f
+  u4_C19043/ZN (OR2_X2)                    0.05       4.82 f
+  u4_C19042/ZN (OR2_X2)                    0.08       4.90 f
+  U1929/ZN (NOR2_X4)                       0.04       4.94 r
+  U1928/ZN (AOI22_X2)                      0.04       4.98 f
+  U3417/ZN (NOR3_X2)                       0.16       5.14 r
+  U139/ZN (AOI22_X2)                       0.03       5.17 f
+  U137/ZN (NAND2_X2)                       0.07       5.25 r
+  u4_sll_454_U37/ZN (INV_X4)               0.04       5.28 f
+  u4_sll_454_U264/ZN (NAND2_X1)            0.05       5.33 r
+  u4_sll_454_U263/ZN (INV_X1)              0.05       5.39 f
+  u4_sll_454_U262/ZN (AOI21_X1)            0.21       5.60 r
+  u4_sll_454_U29/ZN (INV_X4)               0.17       5.77 f
+  u4_sll_454_M1_0_24/Z (MUX2_X2)           0.12       5.89 f
+  u4_sll_454_M1_1_26/Z (MUX2_X2)           0.12       6.01 f
+  u4_sll_454_M1_2_30/Z (MUX2_X2)           0.12       6.14 f
+  u4_sll_454_M1_3_38/Z (MUX2_X2)           0.12       6.26 f
+  u4_sll_454_M1_4_54/Z (MUX2_X2)           0.12       6.39 f
+  u4_sll_454_M1_5_54/Z (MUX2_X2)           0.09       6.48 f
+  u4_sll_454_U104/ZN (AND2_X1)             0.05       6.53 f
+  U1814/ZN (AOI22_X2)                      0.09       6.62 r
+  U1729/ZN (INV_X4)                        0.03       6.65 f
+  u4_add_396_U1_1_1/CO (HA_X1)             0.06       6.71 f
+  u4_add_396_U1_1_2/CO (HA_X1)             0.06       6.77 f
+  u4_add_396_U1_1_3/CO (HA_X1)             0.06       6.83 f
+  u4_add_396_U1_1_4/CO (HA_X1)             0.06       6.89 f
+  u4_add_396_U1_1_5/CO (HA_X1)             0.06       6.95 f
+  u4_add_396_U1_1_6/CO (HA_X1)             0.06       7.01 f
+  u4_add_396_U1_1_7/CO (HA_X1)             0.06       7.07 f
+  u4_add_396_U1_1_8/CO (HA_X1)             0.06       7.13 f
+  u4_add_396_U1_1_9/CO (HA_X1)             0.06       7.19 f
+  u4_add_396_U1_1_10/CO (HA_X1)            0.06       7.25 f
+  u4_add_396_U1_1_11/CO (HA_X1)            0.06       7.31 f
+  u4_add_396_U1_1_12/CO (HA_X1)            0.06       7.37 f
+  u4_add_396_U1_1_13/CO (HA_X1)            0.06       7.43 f
+  u4_add_396_U1_1_14/CO (HA_X1)            0.06       7.49 f
+  u4_add_396_U1_1_15/CO (HA_X1)            0.06       7.55 f
+  u4_add_396_U1_1_16/CO (HA_X1)            0.06       7.60 f
+  u4_add_396_U1_1_17/CO (HA_X1)            0.06       7.66 f
+  u4_add_396_U1_1_18/CO (HA_X1)            0.06       7.72 f
+  u4_add_396_U1_1_19/CO (HA_X1)            0.06       7.78 f
+  u4_add_396_U1_1_20/CO (HA_X1)            0.06       7.84 f
+  u4_add_396_U1_1_21/CO (HA_X1)            0.06       7.90 f
+  u4_add_396_U1_1_22/CO (HA_X1)            0.06       7.96 f
+  u4_add_396_U1_1_23/CO (HA_X1)            0.06       8.02 f
+  u4_add_396_U1_1_24/CO (HA_X1)            0.06       8.08 f
+  u4_add_396_U1_1_25/CO (HA_X1)            0.06       8.14 f
+  u4_add_396_U1_1_26/CO (HA_X1)            0.06       8.20 f
+  u4_add_396_U1_1_27/CO (HA_X1)            0.06       8.26 f
+  u4_add_396_U1_1_28/CO (HA_X1)            0.06       8.32 f
+  u4_add_396_U1_1_29/CO (HA_X1)            0.06       8.38 f
+  u4_add_396_U1_1_30/CO (HA_X1)            0.06       8.44 f
+  u4_add_396_U1_1_31/CO (HA_X1)            0.06       8.50 f
+  u4_add_396_U1_1_32/CO (HA_X1)            0.06       8.56 f
+  u4_add_396_U1_1_33/CO (HA_X1)            0.06       8.62 f
+  u4_add_396_U1_1_34/CO (HA_X1)            0.06       8.68 f
+  u4_add_396_U1_1_35/CO (HA_X1)            0.06       8.74 f
+  u4_add_396_U1_1_36/CO (HA_X1)            0.06       8.80 f
+  u4_add_396_U1_1_37/CO (HA_X1)            0.06       8.86 f
+  u4_add_396_U1_1_38/CO (HA_X1)            0.06       8.92 f
+  u4_add_396_U1_1_39/CO (HA_X1)            0.06       8.98 f
+  u4_add_396_U1_1_40/CO (HA_X1)            0.06       9.04 f
+  u4_add_396_U1_1_41/CO (HA_X1)            0.06       9.09 f
+  u4_add_396_U1_1_42/CO (HA_X1)            0.06       9.15 f
+  u4_add_396_U1_1_43/CO (HA_X1)            0.06       9.21 f
+  u4_add_396_U1_1_44/CO (HA_X1)            0.06       9.27 f
+  u4_add_396_U1_1_45/CO (HA_X1)            0.06       9.33 f
+  u4_add_396_U1_1_46/CO (HA_X1)            0.06       9.39 f
+  u4_add_396_U1_1_47/CO (HA_X1)            0.06       9.45 f
+  u4_add_396_U1_1_48/CO (HA_X1)            0.06       9.51 f
+  u4_add_396_U1_1_49/CO (HA_X1)            0.06       9.57 f
+  u4_add_396_U1_1_50/CO (HA_X1)            0.06       9.63 f
+  u4_add_396_U1_1_51/CO (HA_X1)            0.06       9.69 f
+  U1736/ZN (NAND2_X2)                      0.04       9.74 r
+  U3713/ZN (NOR2_X2)                       0.03       9.76 f
+  U1701/ZN (INV_X4)                        0.03       9.79 r
+  U3937/ZN (NAND3_X2)                      0.02       9.81 f
+  U3935/ZN (NAND3_X2)                      0.05       9.86 r
+  U3430/ZN (NOR2_X2)                       0.02       9.88 f
+  U3938/ZN (AOI222_X1)                     0.12      10.01 r
+  U8/ZN (NAND2_X2)                         0.07      10.07 f
+  U4337/ZN (NOR2_X1)                       0.07      10.15 r
+  U4338/ZN (INV_X1)                        0.03      10.18 f
+  U4339/ZN (NOR2_X1)                       0.06      10.24 r
+  U4340/ZN (INV_X1)                        0.03      10.27 f
+  U4341/ZN (NOR2_X1)                       0.06      10.32 r
+  U4342/ZN (INV_X1)                        0.03      10.35 f
+  U4006/ZN (OR2_X4)                        0.07      10.42 f
+  U4343/ZN (NOR2_X1)                       0.07      10.49 r
+  U4344/ZN (NAND2_X1)                      0.05      10.54 f
+  U4345/ZN (NOR2_X1)                       0.08      10.62 r
+  U4346/ZN (NAND2_X1)                      0.05      10.67 f
+  U4347/ZN (NOR2_X1)                       0.07      10.74 r
+  U4348/Z (XOR2_X1)                        0.10      10.83 r
+  U1691/ZN (AOI22_X2)                      0.02      10.86 f
+  U1688/ZN (AND3_X2)                       0.08      10.94 f
+  U1637/ZN (NAND4_X2)                      0.04      10.98 r
+  U1636/ZN (NAND4_X2)                      0.03      11.01 f
+  U3416/ZN (OAI21_X2)                      0.04      11.05 r
+  U1632/ZN (AOI22_X2)                      0.02      11.08 f
+  U3378/ZN (OAI33_X1)                      0.17      11.25 r
+  U1631/ZN (INV_X4)                        0.02      11.27 f
+  U1630/ZN (OAI211_X2)                     0.07      11.33 r
+  U3590/ZN (NOR2_X2)                       0.03      11.36 f
+  U3667/ZN (NOR2_X2)                       0.11      11.48 r
+  U3739/ZN (AOI21_X2)                      0.06      11.54 f
+  U1595/ZN (INV_X4)                        0.03      11.57 r
+  U3585/ZN (NAND3_X2)                      0.02      11.60 f
+  U1588/ZN (NOR4_X2)                       0.03      11.63 r
+  U1587/ZN (AND4_X2)                       0.08      11.71 r
+  U3662/ZN (NAND3_X2)                      0.03      11.74 f
+  U1585/ZN (AND3_X2)                       0.09      11.82 f
+  U3580/ZN (OAI21_X2)                      0.04      11.86 r
+  U3966/ZN (NAND2_X2)                      0.04      11.90 f
+  U4010/ZN (INV_X4)                        0.12      12.02 r
+  U1525/ZN (OAI221_X2)                     0.07      12.09 f
+  U1524/ZN (INV_X4)                        0.03      12.13 r
+  U1328/ZN (NAND4_X2)                      0.03      12.16 f
+  U1327/ZN (NOR4_X2)                       0.09      12.25 r
+  U1326/ZN (NAND4_X2)                      0.06      12.31 f
+  U3645/ZN (NOR2_X2)                       0.06      12.37 r
+  U1317/ZN (INV_X4)                        0.02      12.39 f
+  U1316/ZN (AOI22_X2)                      0.06      12.44 r
+  U1315/ZN (INV_X4)                        0.01      12.45 f
+  U1314/ZN (AOI22_X2)                      0.05      12.51 r
+  U1309/ZN (OAI22_X2)                      0.04      12.54 f
+  U1308/ZN (AOI22_X2)                      0.06      12.60 r
+  U3825/ZN (OAI21_X2)                      0.03      12.63 f
+  out_reg_63_/D (DFF_X2)                   0.00      12.63 f
+  data arrival time                                  12.63
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  out_reg_63_/CK (DFF_X2)                  0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                 -12.63
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -true
+        -max_paths 1
+Design : fpu
+Version: D-2010.03-SP4
+Date   : Thu Jul 13 15:06:14 2017
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  A True path:
+
+  Startpoint: rmode[1] (input port clocked by clk)
+  Endpoint: rmode_r1_reg_1_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  rmode[1] (in)                            0.00       0.00 r
+  rmode_r1_reg_1_/D (DFF_X2)               0.00       0.00 r
+  data arrival time                                   0.00
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  rmode_r1_reg_1_/CK (DFF_X2)              0.00      13.89 r
+  library setup time                      -0.04      13.85
+  data required time                                 13.85
+  -----------------------------------------------------------
+  data required time                                 13.85
+  data arrival time                                   0.00
+  -----------------------------------------------------------
+  slack (MET)                                        13.85
+
+  True-delay Input Vector
+  ---------------------------------------
+  rmode[1] (in)                        r 
+  ---------------------------------------
+
+
+  True-delay conclusions:
+  ----------------------------------------------------------
+  1. A path of length 0.00 (slack 13.85) was proven true.
+     The search completed, so there are no true paths that
+     have worse slack.
+  ----------------------------------------------------------
+
+
+  A True path:
+
+  Startpoint: zero_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: zero (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  zero_reg/CK (DFF_X2)                     0.00 #     0.00 r
+  zero_reg/Q (DFF_X2)                      0.16       0.16 f
+  zero (out)                               0.00       0.16 f
+  data arrival time                                   0.16
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  output external delay                    0.00      13.89
+  data required time                                 13.89
+  -----------------------------------------------------------
+  data required time                                 13.89
+  data arrival time                                  -0.16
+  -----------------------------------------------------------
+  slack (MET)                                        13.73
+
+  True-delay Input Vector
+  ---------------------------------------
+  zero_reg/QN (DFF_X2)                 r 
+  zero_reg/Q (DFF_X2)                  f 
+  ---------------------------------------
+
+
+  True-delay conclusions:
+  ----------------------------------------------------------
+  1. A path of length 0.16 (slack 13.73) was proven true.
+     The search completed, so there are no true paths that
+     have worse slack.
+  ----------------------------------------------------------
+
+
+  A True path:
+
+  Startpoint: opb_r_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u5_prod1_reg_81_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  opb_r_reg_0_/CK (DFF_X2)                 0.00 #     0.00 r
+  opb_r_reg_0_/Q (DFF_X2)                  0.20       0.20 f
+  u5_mult_82_U479/ZN (INV_X4)              0.09       0.29 r
+  u5_mult_82_U798/ZN (NOR2_X1)             0.05       0.34 f
+  u5_mult_82_S4_0/CO (FA_X1)               7.02       7.35 f
+  u5_mult_82_U261/ZN (AND2_X4)             0.07       7.42 f
+  u5_mult_82_FS_1_U306/ZN (NAND2_X1)       0.05       7.47 r
+  u5_mult_82_FS_1_U69/ZN (INV_X4)          0.01       7.49 f
+  u5_mult_82_FS_1_U304/ZN (AOI21_X1)       0.08       7.57 r
+  u5_mult_82_FS_1_U302/ZN (OAI21_X1)       0.06       7.63 f
+  u5_mult_82_FS_1_U66/ZN (INV_X4)          0.02       7.66 r
+  u5_mult_82_FS_1_U300/ZN (OAI21_X1)       0.04       7.69 f
+  u5_mult_82_FS_1_U298/ZN (AOI21_X1)       0.09       7.78 r
+  u5_mult_82_FS_1_U296/ZN (OAI21_X1)       0.06       7.84 f
+  u5_mult_82_FS_1_U294/ZN (AOI21_X1)       0.09       7.93 r
+  u5_mult_82_FS_1_U292/ZN (OAI21_X1)       0.06       7.99 f
+  u5_mult_82_FS_1_U60/ZN (INV_X4)          0.02       8.01 r
+  u5_mult_82_FS_1_U290/ZN (OAI21_X1)       0.04       8.05 f
+  u5_mult_82_FS_1_U288/ZN (AOI21_X1)       0.09       8.14 r
+  u5_mult_82_FS_1_U286/ZN (OAI21_X1)       0.06       8.20 f
+  u5_mult_82_FS_1_U284/ZN (AOI21_X1)       0.11       8.30 r
+  u5_mult_82_FS_1_U282/ZN (OR2_X1)         0.06       8.36 r
+  u5_mult_82_FS_1_U281/ZN (NOR4_X1)        0.05       8.41 f
+  u5_mult_82_FS_1_U159/ZN (NOR2_X1)        0.10       8.51 r
+  u5_mult_82_FS_1_U148/ZN (OAI21_X1)       0.06       8.57 f
+  u5_mult_82_FS_1_U135/ZN (AOI21_X1)       0.08       8.65 r
+  u5_mult_82_FS_1_U133/ZN (OAI21_X1)       0.06       8.71 f
+  u5_mult_82_FS_1_U129/ZN (AOI21_X1)       0.09       8.80 r
+  u5_mult_82_FS_1_U127/ZN (OAI21_X1)       0.05       8.85 f
+  u5_mult_82_FS_1_U125/Z (XOR2_X1)         0.06       8.91 r
+  u5_prod1_reg_81_/D (DFF_X2)              0.00       8.91 r
+  data arrival time                                   8.91
+
+  clock clk (rise edge)                   13.89      13.89
+  clock network delay (ideal)              0.00      13.89
+  u5_prod1_reg_81_/CK (DFF_X2)             0.00      13.89 r
+  library setup time                      -0.05      13.84
+  data required time                                 13.84
+  -----------------------------------------------------------
+  data required time                                 13.84
+  data arrival time                                  -8.91
+  -----------------------------------------------------------
+  slack (MET)                                         4.93
+
+  True-delay Input Vector
+  ---------------------------------------
+  opb_r_reg_51_/QN (DFF_X2)            f 
+  opb_r_reg_51_/Q (DFF_X2)             r 
+  opb_r_reg_52_/QN (DFF_X2)            f 
+  opb_r_reg_52_/Q (DFF_X2)             r 
+  opb_r_reg_4_/QN (DFF_X2)             f 
+  opb_r_reg_4_/Q (DFF_X2)              r 
+  opb_r_reg_5_/QN (DFF_X2)             f 
+  opb_r_reg_5_/Q (DFF_X2)              r 
+  opb_r_reg_6_/QN (DFF_X2)             f 
+  opb_r_reg_6_/Q (DFF_X2)              r 
+  opb_r_reg_7_/QN (DFF_X2)             f 
+  opb_r_reg_7_/Q (DFF_X2)              r 
+  opb_r_reg_8_/QN (DFF_X2)             f 
+  opb_r_reg_8_/Q (DFF_X2)              r 
+  opb_r_reg_9_/QN (DFF_X2)             f 
+  opb_r_reg_9_/Q (DFF_X2)              r 
+  opb_r_reg_10_/QN (DFF_X2)            f 
+  opb_r_reg_10_/Q (DFF_X2)             r 
+  opb_r_reg_11_/QN (DFF_X2)            f 
+  opb_r_reg_11_/Q (DFF_X2)             r 
+  opb_r_reg_12_/QN (DFF_X2)            f 
+  opb_r_reg_12_/Q (DFF_X2)             r 
+  opb_r_reg_13_/QN (DFF_X2)            f 
+  opb_r_reg_13_/Q (DFF_X2)             r 
+  opb_r_reg_14_/QN (DFF_X2)            f 
+  opb_r_reg_14_/Q (DFF_X2)             r 
+  opb_r_reg_15_/QN (DFF_X2)            f 
+  opb_r_reg_15_/Q (DFF_X2)             r 
+  opb_r_reg_16_/QN (DFF_X2)            f 
+  opb_r_reg_16_/Q (DFF_X2)             r 
+  opb_r_reg_17_/QN (DFF_X2)            f 
+  opb_r_reg_17_/Q (DFF_X2)             r 
+  opb_r_reg_30_/QN (DFF_X2)            f 
+  opb_r_reg_30_/Q (DFF_X2)             r 
+  opb_r_reg_31_/QN (DFF_X2)            f 
+  opb_r_reg_31_/Q (DFF_X2)             r 
+  opb_r_reg_32_/QN (DFF_X2)            f 
+  opb_r_reg_32_/Q (DFF_X2)             r 
+  opb_r_reg_33_/QN (DFF_X2)            f 
+  opb_r_reg_33_/Q (DFF_X2)             r 
+  opb_r_reg_34_/QN (DFF_X2)            f 
+  opb_r_reg_34_/Q (DFF_X2)             r 
+  opb_r_reg_35_/QN (DFF_X2)            f 
+  opb_r_reg_35_/Q (DFF_X2)             r 
+  opb_r_reg_36_/QN (DFF_X2)            f 
+  opb_r_reg_36_/Q (DFF_X2)             r 
+  opb_r_reg_37_/QN (DFF_X2)            f 
+  opb_r_reg_37_/Q (DFF_X2)             r 
+  opb_r_reg_38_/QN (DFF_X2)            f 
+  opb_r_reg_38_/Q (DFF_X2)             r 
+  opb_r_reg_39_/QN (DFF_X2)            f 
+  opb_r_reg_39_/Q (DFF_X2)             r 
+  opb_r_reg_40_/QN (DFF_X2)            f 
+  opb_r_reg_40_/Q (DFF_X2)             r 
+  opb_r_reg_41_/QN (DFF_X2)            f 
+  opb_r_reg_41_/Q (DFF_X2)             r 
+  opb_r_reg_42_/QN (DFF_X2)            f 
+  opb_r_reg_42_/Q (DFF_X2)             r 
+  opb_r_reg_43_/QN (DFF_X2)            f 
+  opb_r_reg_43_/Q (DFF_X2)             r 
+  opb_r_reg_44_/QN (DFF_X2)            f 
+  opb_r_reg_44_/Q (DFF_X2)             r 
+  opb_r_reg_45_/QN (DFF_X2)            f 
+  opb_r_reg_45_/Q (DFF_X2)             r 
+  opb_r_reg_46_/QN (DFF_X2)            f 
+  opb_r_reg_46_/Q (DFF_X2)             r 
+  opb_r_reg_47_/QN (DFF_X2)            f 
+  opb_r_reg_47_/Q (DFF_X2)             r 
+  opb_r_reg_48_/QN (DFF_X2)            f 
+  opb_r_reg_48_/Q (DFF_X2)             r 
+  opb_r_reg_49_/QN (DFF_X2)            f 
+  opb_r_reg_49_/Q (DFF_X2)             r 
+  opb_r_reg_50_/QN (DFF_X2)            f 
+  opb_r_reg_50_/Q (DFF_X2)             r 
+  opb_r_reg_29_/QN (DFF_X2)            f 
+  opb_r_reg_29_/Q (DFF_X2)             r 
+  opb_r_reg_28_/QN (DFF_X2)            f 
+  opb_r_reg_28_/Q (DFF_X2)             r 
+  opb_r_reg_27_/QN (DFF_X2)            f 
+  opb_r_reg_27_/Q (DFF_X2)             r 
+  opb_r_reg_26_/QN (DFF_X2)            f 
+  opb_r_reg_26_/Q (DFF_X2)             r 
+  opb_r_reg_22_/QN (DFF_X2)            f 
+  opb_r_reg_22_/Q (DFF_X2)             r 
+  opb_r_reg_23_/QN (DFF_X2)            f 
+  opb_r_reg_23_/Q (DFF_X2)             r 
+  opb_r_reg_24_/QN (DFF_X2)            f 
+  opb_r_reg_24_/Q (DFF_X2)             r 
+  opb_r_reg_25_/QN (DFF_X2)            f 
+  opb_r_reg_25_/Q (DFF_X2)             r 
+  opb_r_reg_18_/QN (DFF_X2)            f 
+  opb_r_reg_18_/Q (DFF_X2)             r 
+  opb_r_reg_19_/QN (DFF_X2)            f 
+  opb_r_reg_19_/Q (DFF_X2)             r 
+  opb_r_reg_20_/QN (DFF_X2)            f 
+  opb_r_reg_20_/Q (DFF_X2)             r 
+  opa_r_reg_52_/QN (DFF_X2)            f 
+  opa_r_reg_52_/Q (DFF_X2)             r 
+  opb_r_reg_21_/QN (DFF_X2)            f 
+  opb_r_reg_21_/Q (DFF_X2)             r 
+  opa_r_reg_48_/QN (DFF_X2)            r 
+  opa_r_reg_48_/Q (DFF_X2)             f 
+  opa_r_reg_19_/QN (DFF_X2)            r 
+  opa_r_reg_19_/Q (DFF_X2)             f 
+  opa_r_reg_0_/QN (DFF_X2)             r 
+  opa_r_reg_0_/Q (DFF_X2)              f 
+  opb_r_reg_3_/QN (DFF_X2)             f 
+  opb_r_reg_3_/Q (DFF_X2)              r 
+  opb_r_reg_1_/QN (DFF_X2)             r 
+  opb_r_reg_1_/Q (DFF_X2)              f 
+  opb_r_reg_2_/QN (DFF_X2)             r 
+  opb_r_reg_2_/Q (DFF_X2)              f 
+  opa_r_reg_51_/QN (DFF_X2)            r 
+  opa_r_reg_51_/Q (DFF_X2)             f 
+  opa_r_reg_50_/QN (DFF_X2)            r 
+  opa_r_reg_50_/Q (DFF_X2)             f 
+  opa_r_reg_49_/QN (DFF_X2)            r 
+  opa_r_reg_49_/Q (DFF_X2)             f 
+  opa_r_reg_47_/QN (DFF_X2)            r 
+  opa_r_reg_47_/Q (DFF_X2)             f 
+  opa_r_reg_46_/QN (DFF_X2)            r 
+  opa_r_reg_46_/Q (DFF_X2)             f 
+  opa_r_reg_45_/QN (DFF_X2)            r 
+  opa_r_reg_45_/Q (DFF_X2)             f 
+  opa_r_reg_44_/QN (DFF_X2)            r 
+  opa_r_reg_44_/Q (DFF_X2)             f 
+  opa_r_reg_43_/QN (DFF_X2)            r 
+  opa_r_reg_43_/Q (DFF_X2)             f 
+  opa_r_reg_42_/QN (DFF_X2)            r 
+  opa_r_reg_42_/Q (DFF_X2)             f 
+  opa_r_reg_41_/QN (DFF_X2)            r 
+  opa_r_reg_41_/Q (DFF_X2)             f 
+  opa_r_reg_40_/QN (DFF_X2)            r 
+  opa_r_reg_40_/Q (DFF_X2)             f 
+  opa_r_reg_39_/QN (DFF_X2)            r 
+  opa_r_reg_39_/Q (DFF_X2)             f 
+  opa_r_reg_38_/QN (DFF_X2)            r 
+  opa_r_reg_38_/Q (DFF_X2)             f 
+  opa_r_reg_37_/QN (DFF_X2)            r 
+  opa_r_reg_37_/Q (DFF_X2)             f 
+  opa_r_reg_36_/QN (DFF_X2)            r 
+  opa_r_reg_36_/Q (DFF_X2)             f 
+  opa_r_reg_35_/QN (DFF_X2)            r 
+  opa_r_reg_35_/Q (DFF_X2)             f 
+  opa_r_reg_34_/QN (DFF_X2)            r 
+  opa_r_reg_34_/Q (DFF_X2)             f 
+  opa_r_reg_33_/QN (DFF_X2)            r 
+  opa_r_reg_33_/Q (DFF_X2)             f 
+  opa_r_reg_32_/QN (DFF_X2)            r 
+  opa_r_reg_32_/Q (DFF_X2)             f 
+  opa_r_reg_31_/QN (DFF_X2)            r 
+  opa_r_reg_31_/Q (DFF_X2)             f 
+  opa_r_reg_30_/QN (DFF_X2)            r 
+  opa_r_reg_30_/Q (DFF_X2)             f 
+  opa_r_reg_29_/QN (DFF_X2)            r 
+  opa_r_reg_29_/Q (DFF_X2)             f 
+  opa_r_reg_28_/QN (DFF_X2)            r 
+  opa_r_reg_28_/Q (DFF_X2)             f 
+  opa_r_reg_27_/QN (DFF_X2)            r 
+  opa_r_reg_27_/Q (DFF_X2)             f 
+  opa_r_reg_26_/QN (DFF_X2)            r 
+  opa_r_reg_26_/Q (DFF_X2)             f 
+  opa_r_reg_25_/QN (DFF_X2)            r 
+  opa_r_reg_25_/Q (DFF_X2)             f 
+  opa_r_reg_24_/QN (DFF_X2)            r 
+  opa_r_reg_24_/Q (DFF_X2)             f 
+  opa_r_reg_23_/QN (DFF_X2)            r 
+  opa_r_reg_23_/Q (DFF_X2)             f 
+  opa_r_reg_22_/QN (DFF_X2)            r 
+  opa_r_reg_22_/Q (DFF_X2)             f 
+  opa_r_reg_21_/QN (DFF_X2)            r 
+  opa_r_reg_21_/Q (DFF_X2)             f 
+  opa_r_reg_20_/QN (DFF_X2)            r 
+  opa_r_reg_20_/Q (DFF_X2)             f 
+  opa_r_reg_18_/QN (DFF_X2)            r 
+  opa_r_reg_18_/Q (DFF_X2)             f 
+  opa_r_reg_17_/QN (DFF_X2)            r 
+  opa_r_reg_17_/Q (DFF_X2)             f 
+  opa_r_reg_16_/QN (DFF_X2)            r 
+  opa_r_reg_16_/Q (DFF_X2)             f 
+  opa_r_reg_15_/QN (DFF_X2)            r 
+  opa_r_reg_15_/Q (DFF_X2)             f 
+  opa_r_reg_14_/QN (DFF_X2)            r 
+  opa_r_reg_14_/Q (DFF_X2)             f 
+  opa_r_reg_13_/QN (DFF_X2)            r 
+  opa_r_reg_13_/Q (DFF_X2)             f 
+  opa_r_reg_12_/QN (DFF_X2)            r 
+  opa_r_reg_12_/Q (DFF_X2)             f 
+  opa_r_reg_11_/QN (DFF_X2)            r 
+  opa_r_reg_11_/Q (DFF_X2)             f 
+  opa_r_reg_10_/QN (DFF_X2)            r 
+  opa_r_reg_10_/Q (DFF_X2)             f 
+  opa_r_reg_9_/QN (DFF_X2)             r 
+  opa_r_reg_9_/Q (DFF_X2)              f 
+  opa_r_reg_8_/QN (DFF_X2)             r 
+  opa_r_reg_8_/Q (DFF_X2)              f 
+  opa_r_reg_7_/QN (DFF_X2)             r 
+  opa_r_reg_7_/Q (DFF_X2)              f 
+  opa_r_reg_6_/QN (DFF_X2)             r 
+  opa_r_reg_6_/Q (DFF_X2)              f 
+  opa_r_reg_5_/QN (DFF_X2)             r 
+  opa_r_reg_5_/Q (DFF_X2)              f 
+  opa_r_reg_4_/QN (DFF_X2)             r 
+  opa_r_reg_4_/Q (DFF_X2)              f 
+  opa_r_reg_3_/QN (DFF_X2)             r 
+  opa_r_reg_3_/Q (DFF_X2)              f 
+  opa_r_reg_2_/QN (DFF_X2)             r 
+  opa_r_reg_2_/Q (DFF_X2)              f 
+  opa_r_reg_1_/QN (DFF_X2)             f 
+  opa_r_reg_1_/Q (DFF_X2)              r 
+  opb_r_reg_0_/QN (DFF_X2)             r 
+  opb_r_reg_0_/Q (DFF_X2)              f 
+  ---------------------------------------
+
+
+  True-delay conclusions:
+  ------------------------------------------------------------------
+  1. A path of length 8.91 (slack 4.93) was proven true.
+     However, The search reached the backtrack limit of 1000,
+     so there may be other true paths that have worse slack but
+     were not found.  You may want to increase the prove-true
+     limit by increasing true_delay_prove_true_backtrack_limit.
+
+  2. All paths of length 12.63 or longer were proven false.
+     However, The search reached the backtrack limit of 1000.
+     To get a tighter bound you can increase the prove-false
+     limit by increasing true_delay_prove_false_backtrack_limit.
+  ------------------------------------------------------------------
+
+
+1

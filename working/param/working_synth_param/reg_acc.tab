@@ -1,0 +1,3 @@
+$reg_acc call=reg_acc
+$print_table call=print_table
+acc+=r:*
