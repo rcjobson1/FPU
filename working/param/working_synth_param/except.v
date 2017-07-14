@@ -35,11 +35,22 @@
 
 `timescale 1ns / 100ps
 
+<<<<<<< HEAD
 `define BIT_SIZE 15 
 `define EXP_SIZE 4
 `define MANT_SIZE 9 
 `define BIAS 15
 `define EXP_SHIFT 3
+=======
+
+
+`define BIT_SIZE 63
+`define EXP_SIZE 10
+`define MANT_SIZE 51
+`define BIAS 1023
+`define EXP_SHIFT 5
+
+>>>>>>> 19bcd6ae7dd75d2fa45f393a96c8f1177c0bf471
 
 module except(	clk, opa, opb, inf, ind, qnan, snan, opa_nan, opb_nan,
 		opa_00, opb_00, opa_inf, opb_inf, opa_dn, opb_dn);

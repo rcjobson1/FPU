@@ -1,12 +1,20 @@
 ###################################################################
 
+<<<<<<< HEAD
 # Created by write_sdc on Thu Jul 13 16:30:22 2017
+=======
+# Created by write_sdc on Tue Jul 11 14:53:20 2017
+>>>>>>> 19bcd6ae7dd75d2fa45f393a96c8f1177c0bf471
 
 ###################################################################
 set sdc_version 1.8
 
 set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+<<<<<<< HEAD
 create_clock [get_ports clk]  -period 1.38889  -waveform {0 0.694444}
+=======
+create_clock [get_ports clk]  -period 13.8889  -waveform {0 6.94444}
+>>>>>>> 19bcd6ae7dd75d2fa45f393a96c8f1177c0bf471
 set_clock_uncertainty 0  [get_clocks clk]
 set_clock_transition -fall 0 [get_clocks clk]
 set_clock_transition -rise 0 [get_clocks clk]
