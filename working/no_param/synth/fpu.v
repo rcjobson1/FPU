@@ -279,6 +279,7 @@ always @(fracta_mul)
 	   23'b000000000000000000001??: div_opa_ldz_d = 21;
 	   23'b0000000000000000000001?: div_opa_ldz_d = 22;
 	   23'b0000000000000000000000?: div_opa_ldz_d = 23;
+	   default: div_opa_ldz_d = 5'bx; 
 	endcase
 
 assign fdiv_opa = !(|opa_r[30:23]) ? {(fracta_mul<<div_opa_ldz_d), 26'h0} : {fracta_mul, 26'h0};
@@ -315,6 +316,7 @@ always @(posedge clk)			// Exponent must be once cycle delayed
 	  2,3:	exp_r <= #1 exp_mul;
 	  4:	exp_r <= #1 0;
 	  5:	exp_r <= #1 opa_r1[30:23];
+	  default: exp_r <= 8'bx; 
 	endcase
 
 assign fract_div = (opb_dn ? quo[49:2] : {quo[26:0], 21'h0});

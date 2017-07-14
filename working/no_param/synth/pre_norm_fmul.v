@@ -139,6 +139,7 @@ always @(signa or signb)
 	2'b0_1: sign_d = 1;
 	2'b1_0: sign_d = 1;
 	2'b1_1: sign_d = 0;
+	default: sign_d = 1'bx;
    endcase
 
 always @(posedge clk)

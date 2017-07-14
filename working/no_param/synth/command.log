@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version D-2010.03-SP4 for linux -- Aug 27, 2010
-#@ # Date:   %sTue Jul 11 14:52:40 2017
+#@ # Date:   %sThu Jul 13 16:27:17 2017
 #@ # Run by: rjobson@serpentor.ece.northwestern.edu
 #@ 
 
@@ -4875,13 +4875,13 @@ source -echo -verbose /files1/home/rjobson/FPU/working/no_param/synth/run.tcl
 #@ #set compile_delete_unloaded_sequential_cells false
 #@ 
 #@ set default_clk clk
-#@ set default_clk_freq  100
-#@ #set default_clk_freq  1000
+#@ #set default_clk_freq  100
+#@ set default_clk_freq  1000
 #@ set default_setup_skew  0.1
 #@ set default_hold_skew  0.1
 #@ set default_clk_transition 0.1 
-#@ set clk_list {{ clk 72.0 0 0 0 }}
-#@ #set clk_list {{ clk 720.0 0 0 0 }}
+#@ #set clk_list {{ clk 72.0 0 0 0 }}
+#@ set clk_list {{ clk 720.0 0 0 0 }}
 #@ set ideal_net_list {}
 #@ set false_path_list {}
 #@ set enforce_input_fanout_one     0

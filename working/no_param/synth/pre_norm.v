@@ -170,6 +170,7 @@ always @(exp_diff_sft or adj_op_tmp)
 	25: sticky = |adj_op_tmp[24:0];
 	26: sticky = |adj_op_tmp[25:0];
 	27: sticky = |adj_op_tmp[26:0];
+	default: sticky = 1'bx;
    endcase
 
 // ---------------------------------------------------------------------
@@ -209,6 +210,7 @@ always @(signa or signb or add or fractb_lt_fracta)
 	3'b0_1_0: sign_d = 0;
 	3'b1_0_0: sign_d = 1;
 	3'b1_1_0: sign_d = !fractb_lt_fracta;
+	default: sign_d = 1'bx;
    endcase
 
 always @(posedge clk)
@@ -262,6 +264,7 @@ always @(signa or signb or add)
 	3'b0_1_0: add_d = 1;
 	3'b1_0_0: add_d = 1;
 	3'b1_1_0: add_d = 0;
+	default: add_d = 1'bx;
    endcase
 
 always @(posedge clk)

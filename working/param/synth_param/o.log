@@ -1,0 +1,1397 @@
+
+                        DC Professional (TM)
+                           DC Expert (TM)
+                            DC Ultra (TM)
+                       FloorPlan Manager (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                        Library Compiler (TM)
+                      DesignWare Developer (TM)
+                          DFT Compiler (TM)
+                            BSD Compiler
+                         Power Compiler (TM)
+
+           Version D-2010.03-SP4 for linux -- Aug 27, 2010
+              Copyright (c) 1988-2010 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+The above trademark notice does not imply that you are licensed to use 
+all of the listed products. You are licensed to use only those products 
+for which you have lawfully obtained a valid license key.
+
+Initializing...
+# ========== Copyright Header Begin ==========================================
+# 
+# OpenSPARC T1 Processor File: run.scr
+# Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES.
+# 
+# The above named program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public
+# License version 2 as published by the Free Software Foundation.
+# 
+# The above named program is distributed in the hope that it will be 
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public
+# License along with this work; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+# 
+# ========== Copyright Header End ============================================
+sh date
+Tue Jul 11 15:30:58 CDT 2017
+sh hostname
+serpentor.ece.northwestern.edu
+sh uptime
+ 15:30:58 up 15 days,  6:18,  6 users,  load average: 2.11, 2.10, 2.06
+remove_design -all
+1
+if {[file exists template]} {
+   sh rm -rf template
+}
+sh mkdir template
+if {![file exists gate]} {
+   sh mkdir gate
+}
+if {![file exists log]} {
+   sh mkdir log
+}
+###########################################################################
+# Setup from environment variables
+###########################################################################
+#set dv_root [sh echo \$DV_ROOT]
+#set syn_home [sh echo \$SYN_LIB]
+source -echo -verbose user_cfg.tcl
+# ========== Copyright Header Begin ==========================================
+# 
+# OpenSPARC T1 Processor File: user_cfg.scr
+# Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES.
+# 
+# The above named program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public
+# License version 2 as published by the Free Software Foundation.
+# 
+# The above named program is distributed in the hope that it will be 
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public
+# License along with this work; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+# 
+# ========== Copyright Header End ============================================
+source -echo -verbose ./project_cfg.tcl
+# ========== Copyright Header Begin ==========================================
+# 
+# OpenSPARC T1 Processor File: project_sparc_cfg.scr
+# Copyright (c) 2006 Sun Microsystems, Inc.  All Rights Reserved.
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES.
+# 
+# The above named program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public
+# License version 2 as published by the Free Software Foundation.
+# 
+# The above named program is distributed in the hope that it will be 
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public
+# License along with this work; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+# 
+# ========== Copyright Header End ============================================
+###########################################################################
+# Need to define in this file
+###########################################################################
+# Include target library
+# Include Synopsys Designware
+#
+# clk_list (name + freq/MHz)
+# default_clk
+#
+# setup_skew  (all timing in ns)
+# hold_skew
+# clk_transition
+# max_transition
+# max_fanout
+#
+# This variable indicates we are synthesizing cmp blocks
+set project_cfg	1
+1
+###########################################################################
+# Specify target library specific variables
+###########################################################################
+#source $dv_root/design/sys/synopsys/script/target_lib.tcl
+###########################################################################
+# Include Synopsys Designware library
+###########################################################################
+# Designware will not be used in sparc control blocks
+set synthetic_library {}
+#set link_path [concat  $link_library $synthetic_library]
+###########################################################################
+# Sparc/IO clocks
+###########################################################################
+# Name				Freq	Comment
+# cpu_clk			1400.0	CPU clock
+# cmp_gclk			1400.0	CPU clock
+# clk				240.0   BSC clock 200 + 20%
+# The script will NOT automatically pad 20% (1.2x) to these
+# frequencies  mhz,setup_skew  ns,hold_skew  ns,clk_transition  ns
+#set clk_list {                          #                {cpu_clk   1204.82   0.130   0.130   0.040}     #                {cmp_gclk  1204.82   0.130   0.130   0.040}     #                {clk       1204.82   0.086   0.086   0.040}     #                {clk      1204.82   0.086   0.086   0.040}     #}
+# setup_skew = local skew (60ps) + jitter (36ps)
+#set default_clk clk
+#set default_clk_freq 1204.82
+#set default_setup_skew       0.086
+#set default_hold_skew        0.086
+#set default_clock_transition 0.040
+# More parameters
+# setup_skew = local skew (125ps) + jitter (250ps)
+set default_clk clk
+clk
+set default_clk_freq	500
+500
+set default_setup_skew       0.001
+0.001
+set default_hold_skew        0.001
+0.001
+set default_clock_transition 0.001
+0.001
+set max_transition   0.110
+0.110
+set max_fanout         6
+6
+# default input/output delays
+#set default_input_delay  0.15
+#set default_output_delay 0.2 
+#set critical_range       0.30
+set default_input_delay  0.001
+Information: Use of Variable 'default_input_delay' is not recommended. This variable will be obsolete in a future release. (INFO-101)
+0.001
+set default_output_delay 0.001 
+Information: Use of Variable 'default_output_delay' is not recommended. This variable will be obsolete in a future release. (INFO-101)
+0.001
+set critical_range       1
+1
+# default number of worst path reported
+set num_of_path 10
+10
+#default compile style for io is to not flatten the whole design
+set compile_flatten_all 0
+0
+0
+set rtl_files { 		fpu.v 		except.v 		post_norm.v 		pre_norm.v 		pre_norm_fmul.v 		primitives.v }
+ 		fpu.v 		except.v 		post_norm.v 		pre_norm.v 		pre_norm_fmul.v 		primitives.v 
+#set dont_touch_modules { Mult }
+#set dont_use_cells 1
+# can only use DFFRS, DFFR, DFFS, DFF
+set dont_use_cell_list { 	NangateOpenCellLibrary/DFF_X2 	NangateOpenCellLibrary/DFFR_X2 	NangateOpenCellLibrary/DFFS_X2 	NangateOpenCellLibrary/DFFRS_X1 	NangateOpenCellLibrary/DFFRS_X2 	NangateOpenCellLibrary/DLH_X1 	NangateOpenCellLibrary/DLH_X2 	NangateOpenCellLibrary/CLKGATETST_X1 	NangateOpenCellLibrary/CLKGATETST_X2 	NangateOpenCellLibrary/CLKGATETST_X4 	NangateOpenCellLibrary/CLKGATETST_X8 	NangateOpenCellLibrary/CLKGATE_X1 	NangateOpenCellLibrary/CLKGATE_X2 	NangateOpenCellLibrary/CLKGATE_X4 	NangateOpenCellLibrary/CLKGATE_X8 	NangateOpenCellLibrary/DLL_X1 	NangateOpenCellLibrary/DLL_X2 	NangateOpenCellLibrary/SDFFRS_X1 	NangateOpenCellLibrary/SDFFRS_X2 	NangateOpenCellLibrary/SDFFR_X1 	NangateOpenCellLibrary/SDFFR_X2 	NangateOpenCellLibrary/SDFFS_X1 	NangateOpenCellLibrary/SDFFS_X2 	NangateOpenCellLibrary/SDFF_X1 	NangateOpenCellLibrary/SDFF_X2 	NangateOpenCellLibrary/TLAT_X1 	NangateOpenCellLibrary/FA_X1 }
+ 	NangateOpenCellLibrary/DFF_X2 	NangateOpenCellLibrary/DFFR_X2 	NangateOpenCellLibrary/DFFS_X2 	NangateOpenCellLibrary/DFFRS_X1 	NangateOpenCellLibrary/DFFRS_X2 	NangateOpenCellLibrary/DLH_X1 	NangateOpenCellLibrary/DLH_X2 	NangateOpenCellLibrary/CLKGATETST_X1 	NangateOpenCellLibrary/CLKGATETST_X2 	NangateOpenCellLibrary/CLKGATETST_X4 	NangateOpenCellLibrary/CLKGATETST_X8 	NangateOpenCellLibrary/CLKGATE_X1 	NangateOpenCellLibrary/CLKGATE_X2 	NangateOpenCellLibrary/CLKGATE_X4 	NangateOpenCellLibrary/CLKGATE_X8 	NangateOpenCellLibrary/DLL_X1 	NangateOpenCellLibrary/DLL_X2 	NangateOpenCellLibrary/SDFFRS_X1 	NangateOpenCellLibrary/SDFFRS_X2 	NangateOpenCellLibrary/SDFFR_X1 	NangateOpenCellLibrary/SDFFR_X2 	NangateOpenCellLibrary/SDFFS_X1 	NangateOpenCellLibrary/SDFFS_X2 	NangateOpenCellLibrary/SDFF_X1 	NangateOpenCellLibrary/SDFF_X2 	NangateOpenCellLibrary/TLAT_X1 	NangateOpenCellLibrary/FA_X1 
+set mix_files {}
+set top_module fpu 
+fpu
+set include_paths { design/sys/iop/include }
+ design/sys/iop/include 
+set black_box_libs {}
+set black_box_designs {}
+set mem_libs {}
+set compile_effort "high"
+high
+set area_effort "low"
+low
+set compile_flatten_all 1
+1
+set hdlin_keep_signal_name user
+user
+set compile_no_new_cells_at_top_level false
+false
+#set compile_delete_unloaded_sequential_cells false
+set default_clk clk
+clk
+set default_clk_freq  100
+100
+#set default_clk_freq  1000
+set default_setup_skew  0.1
+0.1
+set default_hold_skew  0.1
+0.1
+set default_clk_transition 0.1 
+0.1
+set clk_list {{ clk 72.0 0 0 0 }}
+{ clk 72.0 0 0 0 }
+#set clk_list {{ clk 720.0 0 0 0 }}
+set ideal_net_list {}
+set false_path_list {}
+set enforce_input_fanout_one     0
+0
+set allow_outport_drive_innodes  1
+1
+set skip_scan            0
+0
+set add_lockup_latch     false
+false
+set chain_count          1
+1
+set scanin_port_list     {}
+set scanout_port_list    {}
+set scanenable_port      global_shift_enable
+global_shift_enable
+set has_test_stub        0
+0
+set scanenable_pin       test_stub_no_bist/se
+test_stub_no_bist/se
+set long_chain_so_0_net  long_chain_so_0
+long_chain_so_0
+set short_chain_so_0_net short_chain_so_0
+short_chain_so_0
+set so_0_net             so_0
+so_0
+set insert_extra_lockup_latch 0
+0
+set extra_lockup_latch_clk_list {}
+set search_path [concat $search_path . 									./verilog 									./lib 									]
+. /vol/synopsys/syn/libraries/syn /vol/synopsys/syn/dw/syn_ver /vol/synopsys/syn/dw/sim_ver . ./verilog ./lib
+#foreach include_path $include_paths {
+#   set search_path [concat $search_path $dv_root/$include_path]
+#}
+sh date
+Tue Jul 11 15:30:58 CDT 2017
+set target_library NangateOpenCellLibrary_typical_conditional_nldm.db
+NangateOpenCellLibrary_typical_conditional_nldm.db
+set link_library $target_library
+NangateOpenCellLibrary_typical_conditional_nldm.db
+#set link_library [concat $link_library #                         $mem_libs #                         $black_box_designs #						 $target_library ]
+#set target_library [concat $target_library #                           $mem_libs]
+set hdlin_enable_vpp true
+Information: Variable 'hdlin_enable_vpp' is obsolete and is being ignored. (INFO-100)
+true
+set hdlin_auto_save_templates false
+false
+define_design_lib WORK -path .template
+1
+set verilogout_single_bit false
+false
+set hdlout_internal_busses true
+true
+set bus_naming_style {%s[%d]}
+%s[%d]
+set bus_inference_style $bus_naming_style
+%s[%d]
+echo $search_path
+. /vol/synopsys/syn/libraries/syn /vol/synopsys/syn/dw/syn_ver /vol/synopsys/syn/dw/sim_ver . ./verilog ./lib
+foreach rtl_file $rtl_files {
+    read_file -format verilog -define RUNDC $rtl_file
+}
+Loading db file '/files1/home/rjobson/FPU/working/param/synth_param/lib/NangateOpenCellLibrary_typical_conditional_nldm.db'
+Loading db file '/vol/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/vol/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Loading verilog file '/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /files1/home/rjobson/FPU/working/param/synth_param/fpu.v
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:126: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:129: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:132: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:135: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:138: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:141: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:144: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:147: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:207: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:225: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:228: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:231: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:234: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:250: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:388: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:391: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:410: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:411: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:412: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:413: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:423: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:430: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:446: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:449: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:454: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:501: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:504: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:507: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:525: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:534: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:551: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:561: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:566: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:579: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:584: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:628: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:639: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:657: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:663: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:666: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/fpu.v:357: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 270 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           298            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 408 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           409            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 434 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           435            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine fpu line 125 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      opa_r_reg      | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 128 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      opb_r_reg      | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 131 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rmode_r1_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 134 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rmode_r2_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 137 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rmode_r3_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 140 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    fpu_op_r1_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 143 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    fpu_op_r2_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 146 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    fpu_op_r3_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 206 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sign_fasu_r_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 224 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sign_mul_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 227 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sign_exe_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 230 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    inf_mul_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 233 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    exp_ovf_r_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 249 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   fract_out_q_reg   | Flip-flop |  57   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 387 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| div_opa_ldz_r1_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 390 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| div_opa_ldz_r2_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 408 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      exp_r_reg      | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 422 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opa_r1_reg      | Flip-flop |  63   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 425 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    fract_i2f_reg    | Flip-flop |  106  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 445 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opas_r1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 448 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opas_r2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 453 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sign_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 500 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   fasu_op_r1_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 503 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   fasu_op_r2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 506 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    inf_mul2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 524 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       out_reg       | Flip-flop |  63   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 533 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       out_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 550 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       ine_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 560 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    overflow_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 565 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| underflow_fmul_r_reg | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine fpu line 578 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    underflow_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 583 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      snan_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 627 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      qnan_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 638 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       inf_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 656 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      zero_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 662 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    opa_nan_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 665 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   div_by_zero_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/files1/home/rjobson/FPU/working/param/synth_param/fpu.db:fpu'
+Loaded 1 design.
+Current design is 'fpu'.
+Loading verilog file '/files1/home/rjobson/FPU/working/param/synth_param/except.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /files1/home/rjobson/FPU/working/param/synth_param/except.v
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:98: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:101: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:104: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:107: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:110: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:113: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:116: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:119: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:122: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:125: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:128: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:131: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:134: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:137: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:140: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:143: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:146: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:149: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:152: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:155: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:158: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/except.v:161: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+
+Inferred memory devices in process
+	in routine except line 91 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     expa_ff_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 94 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     expb_ff_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 97 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    infa_f_r_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 100 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    infb_f_r_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 103 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    qnan_r_a_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 106 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    snan_r_a_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 109 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    qnan_r_b_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 112 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    snan_r_b_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 115 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       ind_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 118 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       inf_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 121 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      qnan_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 124 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      snan_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 127 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opa_nan_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 130 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opb_nan_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 133 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opa_inf_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 136 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opb_inf_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 139 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     expa_00_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 142 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     expb_00_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 145 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    fracta_00_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 148 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    fractb_00_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 151 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opa_00_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 154 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opb_00_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 157 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opa_dn_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine except line 160 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/except.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     opb_dn_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/files1/home/rjobson/FPU/working/param/synth_param/except.db:except'
+Loaded 1 design.
+Current design is 'except'.
+Loading verilog file '/files1/home/rjobson/FPU/working/param/synth_param/post_norm.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:398: signed to unsigned assignment occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:482: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:489: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:549: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:580: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:616: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:663: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:704: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:420: signed to unsigned assignment occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/post_norm.v:427: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 160 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/post_norm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           246            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 561 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/post_norm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           562            |    user/user     |
+===============================================
+
+Statistics for case statements in always block at line 568 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/post_norm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           569            |    user/user     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/files1/home/rjobson/FPU/working/param/synth_param/post_norm.db:post_norm'
+Loaded 1 design.
+Current design is 'post_norm'.
+Loading verilog file '/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:135: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:231: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:234: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:257: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:261: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:264: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:267: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:270: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:277: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:280: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:285: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:310: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:146: signed to unsigned conversion occurs. (VER-318)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v:147: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 154 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           155            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 240 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           241            |    user/user     |
+===============================================
+
+Inferred memory devices in process
+	in routine pre_norm line 134 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   exp_dn_out_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 154 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     sticky_reg      | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 230 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   fracta_out_reg    | Flip-flop |  56   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 233 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   fractb_out_reg    | Flip-flop |  56   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 256 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sign_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 260 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     signa_r_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 263 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     signb_r_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 266 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      add_r_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 269 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| result_zero_sign_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 276 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| fracta_lt_fractb_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 279 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| fracta_eq_fractb_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 284 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    nan_sign_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm line 309 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     fasu_op_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/files1/home/rjobson/FPU/working/param/synth_param/pre_norm.db:pre_norm'
+Loaded 1 design.
+Current design is 'pre_norm'.
+Loading verilog file '/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v:120: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v:129: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v:137: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v:141: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v:159: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v:162: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+
+Statistics for case statements in always block at line 150 in file
+	'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           151            |    user/user     |
+===============================================
+
+Inferred memory devices in process
+	in routine pre_norm_fmul line 119 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     exp_out_reg     | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm_fmul line 128 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     exp_ovf_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm_fmul line 136 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    underflow_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm_fmul line 139 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       inf_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm_fmul line 158 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sign_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pre_norm_fmul line 161 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    sign_exe_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/files1/home/rjobson/FPU/working/param/synth_param/pre_norm_fmul.db:pre_norm_fmul'
+Loaded 1 design.
+Current design is 'pre_norm_fmul'.
+Loading verilog file '/files1/home/rjobson/FPU/working/param/synth_param/primitives.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /files1/home/rjobson/FPU/working/param/synth_param/primitives.v
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/primitives.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/primitives.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/primitives.v:118: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/primitives.v:121: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/primitives.v:124: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /files1/home/rjobson/FPU/working/param/synth_param/primitives.v:127: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+
+Inferred memory devices in process
+	in routine mul_r2 line 86 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/primitives.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      prod1_reg      | Flip-flop |  106  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine mul_r2 line 89 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/primitives.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      prod_reg       | Flip-flop |  106  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine div_r2 line 117 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/primitives.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      quo1_reg       | Flip-flop |  108  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine div_r2 line 120 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/primitives.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       quo_reg       | Flip-flop |  108  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine div_r2 line 123 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/primitives.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    remainder_reg    | Flip-flop |  108  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine div_r2 line 126 in file
+		'/files1/home/rjobson/FPU/working/param/synth_param/primitives.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       rem_reg       | Flip-flop |  108  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/files1/home/rjobson/FPU/working/param/synth_param/add_sub27.db:add_sub27'
+Loaded 3 designs.
+Current design is 'add_sub27'.
+if {[info exists mix_files] && ($mix_files != {}) } {
+   foreach mix_file $mix_files {
+      set index_beg [expr {[string last "/" $mix_file] + 1}]
+      set mix_file_name [string range $mix_file $index_beg end]
+      read_file -format verilog -define RUNDC gate/${mix_file_name}.exp
+   }
+}
+set design_list [list]
+foreach_in_collection design_object [get_designs] {
+   set design_name [get_object_name $design_object]
+   lappend design_list $design_name
+}
+sh date
+Tue Jul 11 15:30:59 CDT 2017
+current_design $top_module
+Current design is 'fpu'.
+{fpu}
+echo $top_module
+fpu
+if {[get_designs -hier $dont_touch_modules] != {}} {
+   set_dont_touch $dont_touch_modules
+}
+Error: can't read "dont_touch_modules": no such variable
+	Use error_info for more info. (CMD-013)
+set dc_shell_status [ link ]
+
+  Linking design 'fpu'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  NangateOpenCellLibrary (library) /files1/home/rjobson/FPU/working/param/synth_param/lib/NangateOpenCellLibrary_typical_conditional_nldm.db
+
+Information: Building the design 'pre_norm' instantiated from design 'fpu' with
+	the parameters "BIT_SIZE=63,EXP_SIZE=10,MANT_SIZE=51,BIAS=1023". (HDL-193)
+Warning: Cannot find the design 'pre_norm' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'pre_norm' in 'fpu'. (LINK-5)
+0
+if {$dc_shell_status == 0} {
+   echo "****************************************************"
+   echo "* ERROR!!!! Failed to Link...exiting prematurely.  *"
+   echo "****************************************************"
+   quit
+}
+****************************************************
+* ERROR!!!! Failed to Link...exiting prematurely.  *
+****************************************************
+Information: Defining new variable 'allow_outport_drive_innodes'. (CMD-041)
+Information: Defining new variable 'default_clk_transition'. (CMD-041)
+Information: Defining new variable 'critical_range'. (CMD-041)
+Information: Defining new variable 'mix_files'. (CMD-041)
+Information: Defining new variable 'false_path_list'. (CMD-041)
+Information: Defining new variable 'long_chain_so_0_net'. (CMD-041)
+Information: Defining new variable 'default_clk_freq'. (CMD-041)
+Information: Defining new variable 'num_of_path'. (CMD-041)
+Information: Defining new variable 'enforce_input_fanout_one'. (CMD-041)
+Information: Defining new variable 'default_hold_skew'. (CMD-041)
+Information: Defining new variable 'compile_flatten_all'. (CMD-041)
+Information: Defining new variable 'so_0_net'. (CMD-041)
+Information: Defining new variable 'max_fanout'. (CMD-041)
+Information: Defining new variable 'include_paths'. (CMD-041)
+Information: Defining new variable 'area_effort'. (CMD-041)
+Information: Defining new variable 'max_transition'. (CMD-041)
+Information: Defining new variable 'extra_lockup_latch_clk_list'. (CMD-041)
+Information: Defining new variable 'mem_libs'. (CMD-041)
+Information: Defining new variable 'black_box_designs'. (CMD-041)
+Information: Defining new variable 'clk_list'. (CMD-041)
+Information: Defining new variable 'default_clock_transition'. (CMD-041)
+Information: Defining new variable 'top_module'. (CMD-041)
+Information: Defining new variable 'has_test_stub'. (CMD-041)
+Information: Defining new variable 'default_clk'. (CMD-041)
+Information: Defining new variable 'default_setup_skew'. (CMD-041)
+Information: Defining new variable 'add_lockup_latch'. (CMD-041)
+Information: Defining new variable 'design_name'. (CMD-041)
+Information: Defining new variable 'dont_use_cell_list'. (CMD-041)
+Information: Defining new variable 'ideal_net_list'. (CMD-041)
+Information: Defining new variable 'dc_shell_status'. (CMD-041)
+Information: Defining new variable 'skip_scan'. (CMD-041)
+Information: Defining new variable 'rtl_file'. (CMD-041)
+Information: Defining new variable 'design_object'. (CMD-041)
+Information: Defining new variable 'compile_effort'. (CMD-041)
+Information: Defining new variable 'scanenable_pin'. (CMD-041)
+Information: Defining new variable 'scanenable_port'. (CMD-041)
+Information: Defining new variable 'project_cfg'. (CMD-041)
+Information: Defining new variable 'scanin_port_list'. (CMD-041)
+Information: Defining new variable 'rtl_files'. (CMD-041)
+Information: Defining new variable 'insert_extra_lockup_latch'. (CMD-041)
+Information: Defining new variable 'black_box_libs'. (CMD-041)
+Information: Defining new variable 'scanout_port_list'. (CMD-041)
+Information: Defining new variable 'short_chain_so_0_net'. (CMD-041)
+Information: Defining new variable 'design_list'. (CMD-041)
+Information: Defining new variable 'chain_count'. (CMD-041)
+
+Thank you...

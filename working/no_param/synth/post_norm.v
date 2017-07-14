@@ -192,6 +192,7 @@ always @(fract_in)
 	48'b0000000000000000000000000000000000000000000001??: fi_ldz =  46;
 	48'b00000000000000000000000000000000000000000000001?: fi_ldz =  47;
 	48'b00000000000000000000000000000000000000000000000?: fi_ldz =  48;
+	default: fi_ldz = 6'bx;
    endcase
 
 
@@ -394,6 +395,7 @@ always @(rmode or exp_out_rnd0 or exp_out_rnd1 or exp_out_rnd2)
 	   0: exp_out_rnd = exp_out_rnd0;
 	   1: exp_out_rnd = exp_out_rnd1;
 	 2,3: exp_out_rnd = exp_out_rnd2;
+	default: exp_out_rnd = 8'bx;
 	endcase
 
 always @(rmode or fract_out_rnd0 or fract_out_rnd1 or fract_out_rnd2)
@@ -401,6 +403,7 @@ always @(rmode or fract_out_rnd0 or fract_out_rnd1 or fract_out_rnd2)
 	   0: fract_out_rnd = fract_out_rnd0;
 	   1: fract_out_rnd = fract_out_rnd1;
 	 2,3: fract_out_rnd = fract_out_rnd2;
+	default fract_out_rnd = 23'bx; 
 	endcase
 
 // ---------------------------------------------------------------------

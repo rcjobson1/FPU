@@ -33,7 +33,7 @@ def test_64(num_test_cases):
 
 
 def test_32(num_test_cases):
-    operators = [0, 1, 2, 3]
+    operators = [0, 1, 2]
     operations = []
 
     for i in range(0, num_test_cases):

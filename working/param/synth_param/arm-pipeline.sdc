@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Tue Jul 11 14:37:53 2017
+# Created by write_sdc on Wed Jul 12 12:07:27 2017
 
 ###################################################################
 set sdc_version 1.8
@@ -696,343 +696,290 @@ snan_reg/CK] [get_pins underflow_reg/CK] [get_pins underflow_fmul_r_reg_0_/CK] \
 [get_pins out_reg_60_/CK] [get_pins out_reg_61_/CK] [get_pins out_reg_62_/CK]  \
 [get_pins inf_mul2_reg/CK] [get_pins fasu_op_r2_reg/CK] [get_pins              \
 fasu_op_r1_reg/CK] [get_pins sign_reg/CK] [get_pins opas_r2_reg/CK] [get_pins  \
-opas_r1_reg/CK] [get_pins fract_denorm_reg_0_/G] [get_pins                     \
-fract_denorm_reg_1_/G] [get_pins fract_denorm_reg_2_/G] [get_pins              \
-fract_denorm_reg_3_/G] [get_pins fract_denorm_reg_4_/G] [get_pins              \
-fract_denorm_reg_5_/G] [get_pins fract_denorm_reg_6_/G] [get_pins              \
-fract_denorm_reg_7_/G] [get_pins fract_denorm_reg_8_/G] [get_pins              \
-fract_denorm_reg_9_/G] [get_pins fract_denorm_reg_10_/G] [get_pins             \
-fract_denorm_reg_11_/G] [get_pins fract_denorm_reg_12_/G] [get_pins            \
-fract_denorm_reg_13_/G] [get_pins fract_denorm_reg_14_/G] [get_pins            \
-fract_denorm_reg_15_/G] [get_pins fract_denorm_reg_16_/G] [get_pins            \
-fract_denorm_reg_17_/G] [get_pins fract_denorm_reg_18_/G] [get_pins            \
-fract_denorm_reg_19_/G] [get_pins fract_denorm_reg_20_/G] [get_pins            \
-fract_denorm_reg_21_/G] [get_pins fract_denorm_reg_22_/G] [get_pins            \
-fract_denorm_reg_23_/G] [get_pins fract_denorm_reg_24_/G] [get_pins            \
-fract_denorm_reg_25_/G] [get_pins fract_denorm_reg_26_/G] [get_pins            \
-fract_denorm_reg_27_/G] [get_pins fract_denorm_reg_28_/G] [get_pins            \
-fract_denorm_reg_29_/G] [get_pins fract_denorm_reg_30_/G] [get_pins            \
-fract_denorm_reg_31_/G] [get_pins fract_denorm_reg_32_/G] [get_pins            \
-fract_denorm_reg_33_/G] [get_pins fract_denorm_reg_34_/G] [get_pins            \
-fract_denorm_reg_35_/G] [get_pins fract_denorm_reg_36_/G] [get_pins            \
-fract_denorm_reg_37_/G] [get_pins fract_denorm_reg_38_/G] [get_pins            \
-fract_denorm_reg_39_/G] [get_pins fract_denorm_reg_40_/G] [get_pins            \
-fract_denorm_reg_41_/G] [get_pins fract_denorm_reg_42_/G] [get_pins            \
-fract_denorm_reg_43_/G] [get_pins fract_denorm_reg_44_/G] [get_pins            \
-fract_denorm_reg_45_/G] [get_pins fract_denorm_reg_46_/G] [get_pins            \
-fract_denorm_reg_47_/G] [get_pins fract_denorm_reg_48_/G] [get_pins            \
-fract_denorm_reg_49_/G] [get_pins fract_denorm_reg_50_/G] [get_pins            \
-fract_denorm_reg_51_/G] [get_pins fract_denorm_reg_52_/G] [get_pins            \
-fract_denorm_reg_53_/G] [get_pins fract_denorm_reg_54_/G] [get_pins            \
-fract_denorm_reg_55_/G] [get_pins fract_denorm_reg_56_/G] [get_pins            \
-fract_denorm_reg_57_/G] [get_pins fract_denorm_reg_58_/G] [get_pins            \
-fract_denorm_reg_59_/G] [get_pins fract_denorm_reg_60_/G] [get_pins            \
-fract_denorm_reg_61_/G] [get_pins fract_denorm_reg_62_/G] [get_pins            \
-fract_denorm_reg_63_/G] [get_pins fract_denorm_reg_64_/G] [get_pins            \
-fract_denorm_reg_65_/G] [get_pins fract_denorm_reg_66_/G] [get_pins            \
-fract_denorm_reg_67_/G] [get_pins fract_denorm_reg_68_/G] [get_pins            \
-fract_denorm_reg_69_/G] [get_pins fract_denorm_reg_70_/G] [get_pins            \
-fract_denorm_reg_71_/G] [get_pins fract_denorm_reg_72_/G] [get_pins            \
-fract_denorm_reg_73_/G] [get_pins fract_denorm_reg_74_/G] [get_pins            \
-fract_denorm_reg_75_/G] [get_pins fract_denorm_reg_76_/G] [get_pins            \
-fract_denorm_reg_77_/G] [get_pins fract_denorm_reg_78_/G] [get_pins            \
-fract_denorm_reg_79_/G] [get_pins fract_denorm_reg_80_/G] [get_pins            \
-fract_denorm_reg_81_/G] [get_pins fract_denorm_reg_82_/G] [get_pins            \
-fract_denorm_reg_83_/G] [get_pins fract_denorm_reg_84_/G] [get_pins            \
-fract_denorm_reg_85_/G] [get_pins fract_denorm_reg_86_/G] [get_pins            \
-fract_denorm_reg_87_/G] [get_pins fract_denorm_reg_88_/G] [get_pins            \
-fract_denorm_reg_89_/G] [get_pins fract_denorm_reg_90_/G] [get_pins            \
-fract_denorm_reg_91_/G] [get_pins fract_denorm_reg_92_/G] [get_pins            \
-fract_denorm_reg_93_/G] [get_pins fract_denorm_reg_94_/G] [get_pins            \
-fract_denorm_reg_95_/G] [get_pins fract_denorm_reg_96_/G] [get_pins            \
-fract_denorm_reg_97_/G] [get_pins fract_denorm_reg_98_/G] [get_pins            \
-fract_denorm_reg_99_/G] [get_pins fract_denorm_reg_100_/G] [get_pins           \
-fract_denorm_reg_101_/G] [get_pins fract_denorm_reg_102_/G] [get_pins          \
-fract_denorm_reg_103_/G] [get_pins fract_denorm_reg_104_/G] [get_pins          \
-fract_denorm_reg_105_/G] [get_pins fract_i2f_reg_0_/CK] [get_pins              \
-fract_i2f_reg_1_/CK] [get_pins fract_i2f_reg_2_/CK] [get_pins                  \
-fract_i2f_reg_3_/CK] [get_pins fract_i2f_reg_4_/CK] [get_pins                  \
-fract_i2f_reg_5_/CK] [get_pins fract_i2f_reg_6_/CK] [get_pins                  \
-fract_i2f_reg_7_/CK] [get_pins fract_i2f_reg_8_/CK] [get_pins                  \
-fract_i2f_reg_9_/CK] [get_pins fract_i2f_reg_10_/CK] [get_pins                 \
-fract_i2f_reg_11_/CK] [get_pins fract_i2f_reg_12_/CK] [get_pins                \
-fract_i2f_reg_13_/CK] [get_pins fract_i2f_reg_14_/CK] [get_pins                \
-fract_i2f_reg_15_/CK] [get_pins fract_i2f_reg_16_/CK] [get_pins                \
-fract_i2f_reg_17_/CK] [get_pins fract_i2f_reg_18_/CK] [get_pins                \
-fract_i2f_reg_19_/CK] [get_pins fract_i2f_reg_20_/CK] [get_pins                \
-fract_i2f_reg_21_/CK] [get_pins fract_i2f_reg_22_/CK] [get_pins                \
-fract_i2f_reg_23_/CK] [get_pins fract_i2f_reg_24_/CK] [get_pins                \
-fract_i2f_reg_25_/CK] [get_pins fract_i2f_reg_26_/CK] [get_pins                \
-fract_i2f_reg_27_/CK] [get_pins fract_i2f_reg_28_/CK] [get_pins                \
-fract_i2f_reg_29_/CK] [get_pins fract_i2f_reg_30_/CK] [get_pins                \
-fract_i2f_reg_31_/CK] [get_pins fract_i2f_reg_32_/CK] [get_pins                \
-fract_i2f_reg_33_/CK] [get_pins fract_i2f_reg_34_/CK] [get_pins                \
-fract_i2f_reg_35_/CK] [get_pins fract_i2f_reg_36_/CK] [get_pins                \
-fract_i2f_reg_37_/CK] [get_pins fract_i2f_reg_38_/CK] [get_pins                \
-fract_i2f_reg_39_/CK] [get_pins fract_i2f_reg_40_/CK] [get_pins                \
-fract_i2f_reg_41_/CK] [get_pins fract_i2f_reg_42_/CK] [get_pins                \
-fract_i2f_reg_43_/CK] [get_pins fract_i2f_reg_44_/CK] [get_pins                \
-fract_i2f_reg_45_/CK] [get_pins fract_i2f_reg_46_/CK] [get_pins                \
-fract_i2f_reg_47_/CK] [get_pins fract_i2f_reg_48_/CK] [get_pins                \
-fract_i2f_reg_49_/CK] [get_pins fract_i2f_reg_50_/CK] [get_pins                \
-fract_i2f_reg_51_/CK] [get_pins fract_i2f_reg_52_/CK] [get_pins                \
-fract_i2f_reg_53_/CK] [get_pins fract_i2f_reg_54_/CK] [get_pins                \
-fract_i2f_reg_55_/CK] [get_pins fract_i2f_reg_56_/CK] [get_pins                \
-fract_i2f_reg_57_/CK] [get_pins fract_i2f_reg_58_/CK] [get_pins                \
-fract_i2f_reg_59_/CK] [get_pins fract_i2f_reg_60_/CK] [get_pins                \
-fract_i2f_reg_61_/CK] [get_pins fract_i2f_reg_62_/CK] [get_pins                \
-fract_i2f_reg_63_/CK] [get_pins fract_i2f_reg_64_/CK] [get_pins                \
-fract_i2f_reg_65_/CK] [get_pins fract_i2f_reg_66_/CK] [get_pins                \
-fract_i2f_reg_67_/CK] [get_pins fract_i2f_reg_68_/CK] [get_pins                \
-fract_i2f_reg_69_/CK] [get_pins fract_i2f_reg_70_/CK] [get_pins                \
-fract_i2f_reg_71_/CK] [get_pins fract_i2f_reg_72_/CK] [get_pins                \
-fract_i2f_reg_73_/CK] [get_pins fract_i2f_reg_74_/CK] [get_pins                \
-fract_i2f_reg_75_/CK] [get_pins fract_i2f_reg_76_/CK] [get_pins                \
-fract_i2f_reg_77_/CK] [get_pins fract_i2f_reg_78_/CK] [get_pins                \
-fract_i2f_reg_79_/CK] [get_pins fract_i2f_reg_80_/CK] [get_pins                \
-fract_i2f_reg_81_/CK] [get_pins fract_i2f_reg_82_/CK] [get_pins                \
-fract_i2f_reg_83_/CK] [get_pins fract_i2f_reg_84_/CK] [get_pins                \
-fract_i2f_reg_85_/CK] [get_pins fract_i2f_reg_86_/CK] [get_pins                \
-fract_i2f_reg_87_/CK] [get_pins fract_i2f_reg_88_/CK] [get_pins                \
-fract_i2f_reg_89_/CK] [get_pins fract_i2f_reg_90_/CK] [get_pins                \
-fract_i2f_reg_91_/CK] [get_pins fract_i2f_reg_92_/CK] [get_pins                \
-fract_i2f_reg_93_/CK] [get_pins fract_i2f_reg_94_/CK] [get_pins                \
-fract_i2f_reg_95_/CK] [get_pins fract_i2f_reg_96_/CK] [get_pins                \
-fract_i2f_reg_97_/CK] [get_pins fract_i2f_reg_98_/CK] [get_pins                \
-fract_i2f_reg_99_/CK] [get_pins fract_i2f_reg_100_/CK] [get_pins               \
-fract_i2f_reg_101_/CK] [get_pins fract_i2f_reg_102_/CK] [get_pins              \
-fract_i2f_reg_103_/CK] [get_pins fract_i2f_reg_104_/CK] [get_pins              \
-fract_i2f_reg_105_/CK] [get_pins opa_r1_reg_0_/CK] [get_pins opa_r1_reg_1_/CK] \
-[get_pins opa_r1_reg_2_/CK] [get_pins opa_r1_reg_3_/CK] [get_pins              \
-opa_r1_reg_4_/CK] [get_pins opa_r1_reg_5_/CK] [get_pins opa_r1_reg_6_/CK]      \
-[get_pins opa_r1_reg_7_/CK] [get_pins opa_r1_reg_8_/CK] [get_pins              \
-opa_r1_reg_9_/CK] [get_pins opa_r1_reg_10_/CK] [get_pins opa_r1_reg_11_/CK]    \
-[get_pins opa_r1_reg_12_/CK] [get_pins opa_r1_reg_13_/CK] [get_pins            \
-opa_r1_reg_14_/CK] [get_pins opa_r1_reg_15_/CK] [get_pins opa_r1_reg_16_/CK]   \
-[get_pins opa_r1_reg_17_/CK] [get_pins opa_r1_reg_18_/CK] [get_pins            \
-opa_r1_reg_19_/CK] [get_pins opa_r1_reg_20_/CK] [get_pins opa_r1_reg_21_/CK]   \
-[get_pins opa_r1_reg_22_/CK] [get_pins opa_r1_reg_23_/CK] [get_pins            \
-opa_r1_reg_24_/CK] [get_pins opa_r1_reg_25_/CK] [get_pins opa_r1_reg_26_/CK]   \
-[get_pins opa_r1_reg_27_/CK] [get_pins opa_r1_reg_28_/CK] [get_pins            \
-opa_r1_reg_29_/CK] [get_pins opa_r1_reg_30_/CK] [get_pins opa_r1_reg_31_/CK]   \
-[get_pins opa_r1_reg_32_/CK] [get_pins opa_r1_reg_33_/CK] [get_pins            \
-opa_r1_reg_34_/CK] [get_pins opa_r1_reg_35_/CK] [get_pins opa_r1_reg_36_/CK]   \
-[get_pins opa_r1_reg_37_/CK] [get_pins opa_r1_reg_38_/CK] [get_pins            \
-opa_r1_reg_39_/CK] [get_pins opa_r1_reg_40_/CK] [get_pins opa_r1_reg_41_/CK]   \
-[get_pins opa_r1_reg_42_/CK] [get_pins opa_r1_reg_43_/CK] [get_pins            \
-opa_r1_reg_44_/CK] [get_pins opa_r1_reg_45_/CK] [get_pins opa_r1_reg_46_/CK]   \
-[get_pins opa_r1_reg_47_/CK] [get_pins opa_r1_reg_48_/CK] [get_pins            \
-opa_r1_reg_49_/CK] [get_pins opa_r1_reg_50_/CK] [get_pins opa_r1_reg_51_/CK]   \
-[get_pins opa_r1_reg_52_/CK] [get_pins opa_r1_reg_53_/CK] [get_pins            \
-opa_r1_reg_54_/CK] [get_pins opa_r1_reg_55_/CK] [get_pins opa_r1_reg_56_/CK]   \
-[get_pins opa_r1_reg_57_/CK] [get_pins opa_r1_reg_58_/CK] [get_pins            \
-opa_r1_reg_59_/CK] [get_pins opa_r1_reg_60_/CK] [get_pins opa_r1_reg_61_/CK]   \
-[get_pins opa_r1_reg_62_/CK] [get_pins exp_r_reg_0_/CK] [get_pins              \
-exp_r_reg_1_/CK] [get_pins exp_r_reg_2_/CK] [get_pins exp_r_reg_3_/CK]         \
-[get_pins exp_r_reg_4_/CK] [get_pins exp_r_reg_5_/CK] [get_pins                \
-exp_r_reg_6_/CK] [get_pins exp_r_reg_7_/CK] [get_pins exp_r_reg_8_/CK]         \
-[get_pins exp_r_reg_9_/CK] [get_pins exp_r_reg_10_/CK] [get_pins               \
-div_opa_ldz_r2_reg_0_/CK] [get_pins div_opa_ldz_r2_reg_1_/CK] [get_pins        \
-div_opa_ldz_r2_reg_2_/CK] [get_pins div_opa_ldz_r2_reg_3_/CK] [get_pins        \
-div_opa_ldz_r2_reg_4_/CK] [get_pins div_opa_ldz_r1_reg_0_/CK] [get_pins        \
-div_opa_ldz_r1_reg_1_/CK] [get_pins div_opa_ldz_r1_reg_2_/CK] [get_pins        \
-div_opa_ldz_r1_reg_3_/CK] [get_pins div_opa_ldz_r1_reg_4_/CK] [get_pins        \
-u6_rem_reg_0_/CK] [get_pins u6_rem_reg_1_/CK] [get_pins u6_rem_reg_2_/CK]      \
-[get_pins u6_rem_reg_3_/CK] [get_pins u6_rem_reg_4_/CK] [get_pins              \
-u6_rem_reg_5_/CK] [get_pins u6_rem_reg_6_/CK] [get_pins u6_rem_reg_7_/CK]      \
-[get_pins u6_rem_reg_8_/CK] [get_pins u6_rem_reg_9_/CK] [get_pins              \
-u6_rem_reg_10_/CK] [get_pins u6_rem_reg_11_/CK] [get_pins u6_rem_reg_12_/CK]   \
-[get_pins u6_rem_reg_13_/CK] [get_pins u6_rem_reg_14_/CK] [get_pins            \
-u6_rem_reg_15_/CK] [get_pins u6_rem_reg_16_/CK] [get_pins u6_rem_reg_17_/CK]   \
-[get_pins u6_rem_reg_18_/CK] [get_pins u6_rem_reg_19_/CK] [get_pins            \
-u6_rem_reg_20_/CK] [get_pins u6_rem_reg_21_/CK] [get_pins u6_rem_reg_22_/CK]   \
-[get_pins u6_rem_reg_23_/CK] [get_pins u6_rem_reg_24_/CK] [get_pins            \
-u6_rem_reg_25_/CK] [get_pins u6_rem_reg_26_/CK] [get_pins u6_rem_reg_27_/CK]   \
-[get_pins u6_rem_reg_28_/CK] [get_pins u6_rem_reg_29_/CK] [get_pins            \
-u6_rem_reg_30_/CK] [get_pins u6_rem_reg_31_/CK] [get_pins u6_rem_reg_32_/CK]   \
-[get_pins u6_rem_reg_33_/CK] [get_pins u6_rem_reg_34_/CK] [get_pins            \
-u6_rem_reg_35_/CK] [get_pins u6_rem_reg_36_/CK] [get_pins u6_rem_reg_37_/CK]   \
-[get_pins u6_rem_reg_38_/CK] [get_pins u6_rem_reg_39_/CK] [get_pins            \
-u6_rem_reg_40_/CK] [get_pins u6_rem_reg_41_/CK] [get_pins u6_rem_reg_42_/CK]   \
-[get_pins u6_rem_reg_43_/CK] [get_pins u6_rem_reg_44_/CK] [get_pins            \
-u6_rem_reg_45_/CK] [get_pins u6_rem_reg_46_/CK] [get_pins u6_rem_reg_47_/CK]   \
-[get_pins u6_rem_reg_48_/CK] [get_pins u6_rem_reg_49_/CK] [get_pins            \
-u6_rem_reg_50_/CK] [get_pins u6_rem_reg_51_/CK] [get_pins u6_rem_reg_52_/CK]   \
-[get_pins u6_rem_reg_55_/CK] [get_pins u6_rem_reg_56_/CK] [get_pins            \
-u6_rem_reg_57_/CK] [get_pins u6_rem_reg_58_/CK] [get_pins u6_rem_reg_59_/CK]   \
-[get_pins u6_rem_reg_60_/CK] [get_pins u6_rem_reg_61_/CK] [get_pins            \
-u6_rem_reg_62_/CK] [get_pins u6_rem_reg_63_/CK] [get_pins u6_rem_reg_64_/CK]   \
-[get_pins u6_rem_reg_65_/CK] [get_pins u6_rem_reg_66_/CK] [get_pins            \
-u6_rem_reg_67_/CK] [get_pins u6_rem_reg_68_/CK] [get_pins u6_rem_reg_69_/CK]   \
-[get_pins u6_rem_reg_70_/CK] [get_pins u6_rem_reg_71_/CK] [get_pins            \
-u6_rem_reg_72_/CK] [get_pins u6_rem_reg_73_/CK] [get_pins u6_rem_reg_74_/CK]   \
-[get_pins u6_rem_reg_75_/CK] [get_pins u6_rem_reg_76_/CK] [get_pins            \
-u6_rem_reg_77_/CK] [get_pins u6_rem_reg_78_/CK] [get_pins u6_rem_reg_79_/CK]   \
-[get_pins u6_rem_reg_80_/CK] [get_pins u6_rem_reg_81_/CK] [get_pins            \
-u6_rem_reg_82_/CK] [get_pins u6_rem_reg_83_/CK] [get_pins u6_rem_reg_84_/CK]   \
-[get_pins u6_rem_reg_85_/CK] [get_pins u6_rem_reg_86_/CK] [get_pins            \
-u6_rem_reg_87_/CK] [get_pins u6_rem_reg_88_/CK] [get_pins u6_rem_reg_89_/CK]   \
-[get_pins u6_rem_reg_90_/CK] [get_pins u6_rem_reg_91_/CK] [get_pins            \
-u6_rem_reg_92_/CK] [get_pins u6_rem_reg_93_/CK] [get_pins u6_rem_reg_94_/CK]   \
-[get_pins u6_rem_reg_95_/CK] [get_pins u6_rem_reg_96_/CK] [get_pins            \
-u6_rem_reg_97_/CK] [get_pins u6_rem_reg_98_/CK] [get_pins u6_rem_reg_99_/CK]   \
-[get_pins u6_rem_reg_100_/CK] [get_pins u6_rem_reg_101_/CK] [get_pins          \
-u6_rem_reg_102_/CK] [get_pins u6_rem_reg_103_/CK] [get_pins                    \
-u6_rem_reg_104_/CK] [get_pins u6_rem_reg_105_/CK] [get_pins                    \
-u6_rem_reg_106_/CK] [get_pins u6_rem_reg_107_/CK] [get_pins                    \
-u6_remainder_reg_0_/CK] [get_pins u6_remainder_reg_1_/CK] [get_pins            \
-u6_remainder_reg_2_/CK] [get_pins u6_remainder_reg_3_/CK] [get_pins            \
-u6_remainder_reg_4_/CK] [get_pins u6_remainder_reg_5_/CK] [get_pins            \
-u6_remainder_reg_6_/CK] [get_pins u6_remainder_reg_7_/CK] [get_pins            \
-u6_remainder_reg_8_/CK] [get_pins u6_remainder_reg_9_/CK] [get_pins            \
-u6_remainder_reg_10_/CK] [get_pins u6_remainder_reg_11_/CK] [get_pins          \
-u6_remainder_reg_12_/CK] [get_pins u6_remainder_reg_13_/CK] [get_pins          \
-u6_remainder_reg_14_/CK] [get_pins u6_remainder_reg_15_/CK] [get_pins          \
-u6_remainder_reg_16_/CK] [get_pins u6_remainder_reg_17_/CK] [get_pins          \
-u6_remainder_reg_18_/CK] [get_pins u6_remainder_reg_19_/CK] [get_pins          \
-u6_remainder_reg_20_/CK] [get_pins u6_remainder_reg_21_/CK] [get_pins          \
-u6_remainder_reg_22_/CK] [get_pins u6_remainder_reg_23_/CK] [get_pins          \
-u6_remainder_reg_24_/CK] [get_pins u6_remainder_reg_25_/CK] [get_pins          \
-u6_remainder_reg_26_/CK] [get_pins u6_remainder_reg_27_/CK] [get_pins          \
-u6_remainder_reg_28_/CK] [get_pins u6_remainder_reg_29_/CK] [get_pins          \
-u6_remainder_reg_30_/CK] [get_pins u6_remainder_reg_31_/CK] [get_pins          \
-u6_remainder_reg_32_/CK] [get_pins u6_remainder_reg_33_/CK] [get_pins          \
-u6_remainder_reg_34_/CK] [get_pins u6_remainder_reg_35_/CK] [get_pins          \
-u6_remainder_reg_36_/CK] [get_pins u6_remainder_reg_37_/CK] [get_pins          \
-u6_remainder_reg_38_/CK] [get_pins u6_remainder_reg_39_/CK] [get_pins          \
-u6_remainder_reg_40_/CK] [get_pins u6_remainder_reg_41_/CK] [get_pins          \
-u6_remainder_reg_42_/CK] [get_pins u6_remainder_reg_43_/CK] [get_pins          \
-u6_remainder_reg_44_/CK] [get_pins u6_remainder_reg_45_/CK] [get_pins          \
-u6_remainder_reg_46_/CK] [get_pins u6_remainder_reg_47_/CK] [get_pins          \
-u6_remainder_reg_48_/CK] [get_pins u6_remainder_reg_49_/CK] [get_pins          \
-u6_remainder_reg_50_/CK] [get_pins u6_remainder_reg_51_/CK] [get_pins          \
-u6_remainder_reg_52_/CK] [get_pins u6_remainder_reg_55_/CK] [get_pins          \
-u6_remainder_reg_56_/CK] [get_pins u6_remainder_reg_57_/CK] [get_pins          \
-u6_remainder_reg_58_/CK] [get_pins u6_remainder_reg_59_/CK] [get_pins          \
-u6_remainder_reg_60_/CK] [get_pins u6_remainder_reg_61_/CK] [get_pins          \
-u6_remainder_reg_62_/CK] [get_pins u6_remainder_reg_63_/CK] [get_pins          \
-u6_remainder_reg_64_/CK] [get_pins u6_remainder_reg_65_/CK] [get_pins          \
-u6_remainder_reg_66_/CK] [get_pins u6_remainder_reg_67_/CK] [get_pins          \
-u6_remainder_reg_68_/CK] [get_pins u6_remainder_reg_69_/CK] [get_pins          \
-u6_remainder_reg_70_/CK] [get_pins u6_remainder_reg_71_/CK] [get_pins          \
-u6_remainder_reg_72_/CK] [get_pins u6_remainder_reg_73_/CK] [get_pins          \
-u6_remainder_reg_74_/CK] [get_pins u6_remainder_reg_75_/CK] [get_pins          \
-u6_remainder_reg_76_/CK] [get_pins u6_remainder_reg_77_/CK] [get_pins          \
-u6_remainder_reg_78_/CK] [get_pins u6_remainder_reg_79_/CK] [get_pins          \
-u6_remainder_reg_80_/CK] [get_pins u6_remainder_reg_81_/CK] [get_pins          \
-u6_remainder_reg_82_/CK] [get_pins u6_remainder_reg_83_/CK] [get_pins          \
-u6_remainder_reg_84_/CK] [get_pins u6_remainder_reg_85_/CK] [get_pins          \
-u6_remainder_reg_86_/CK] [get_pins u6_remainder_reg_87_/CK] [get_pins          \
-u6_remainder_reg_88_/CK] [get_pins u6_remainder_reg_89_/CK] [get_pins          \
-u6_remainder_reg_90_/CK] [get_pins u6_remainder_reg_91_/CK] [get_pins          \
-u6_remainder_reg_92_/CK] [get_pins u6_remainder_reg_93_/CK] [get_pins          \
-u6_remainder_reg_94_/CK] [get_pins u6_remainder_reg_95_/CK] [get_pins          \
-u6_remainder_reg_96_/CK] [get_pins u6_remainder_reg_97_/CK] [get_pins          \
-u6_remainder_reg_98_/CK] [get_pins u6_remainder_reg_99_/CK] [get_pins          \
-u6_remainder_reg_100_/CK] [get_pins u6_remainder_reg_101_/CK] [get_pins        \
-u6_remainder_reg_102_/CK] [get_pins u6_remainder_reg_103_/CK] [get_pins        \
-u6_remainder_reg_104_/CK] [get_pins u6_remainder_reg_105_/CK] [get_pins        \
-u6_remainder_reg_106_/CK] [get_pins u6_remainder_reg_107_/CK] [get_pins        \
-u6_quo_reg_0_/CK] [get_pins u6_quo_reg_1_/CK] [get_pins u6_quo_reg_2_/CK]      \
-[get_pins u6_quo_reg_3_/CK] [get_pins u6_quo_reg_4_/CK] [get_pins              \
-u6_quo_reg_5_/CK] [get_pins u6_quo_reg_6_/CK] [get_pins u6_quo_reg_7_/CK]      \
-[get_pins u6_quo_reg_8_/CK] [get_pins u6_quo_reg_9_/CK] [get_pins              \
-u6_quo_reg_10_/CK] [get_pins u6_quo_reg_11_/CK] [get_pins u6_quo_reg_12_/CK]   \
-[get_pins u6_quo_reg_13_/CK] [get_pins u6_quo_reg_14_/CK] [get_pins            \
-u6_quo_reg_15_/CK] [get_pins u6_quo_reg_16_/CK] [get_pins u6_quo_reg_17_/CK]   \
-[get_pins u6_quo_reg_18_/CK] [get_pins u6_quo_reg_19_/CK] [get_pins            \
-u6_quo_reg_20_/CK] [get_pins u6_quo_reg_21_/CK] [get_pins u6_quo_reg_22_/CK]   \
-[get_pins u6_quo_reg_23_/CK] [get_pins u6_quo_reg_24_/CK] [get_pins            \
-u6_quo_reg_25_/CK] [get_pins u6_quo_reg_26_/CK] [get_pins u6_quo_reg_27_/CK]   \
-[get_pins u6_quo_reg_28_/CK] [get_pins u6_quo_reg_29_/CK] [get_pins            \
-u6_quo_reg_30_/CK] [get_pins u6_quo_reg_31_/CK] [get_pins u6_quo_reg_32_/CK]   \
-[get_pins u6_quo_reg_33_/CK] [get_pins u6_quo_reg_34_/CK] [get_pins            \
-u6_quo_reg_35_/CK] [get_pins u6_quo_reg_36_/CK] [get_pins u6_quo_reg_37_/CK]   \
-[get_pins u6_quo_reg_38_/CK] [get_pins u6_quo_reg_39_/CK] [get_pins            \
-u6_quo_reg_40_/CK] [get_pins u6_quo_reg_41_/CK] [get_pins u6_quo_reg_42_/CK]   \
-[get_pins u6_quo_reg_43_/CK] [get_pins u6_quo_reg_44_/CK] [get_pins            \
-u6_quo_reg_45_/CK] [get_pins u6_quo_reg_46_/CK] [get_pins u6_quo_reg_47_/CK]   \
-[get_pins u6_quo_reg_48_/CK] [get_pins u6_quo_reg_49_/CK] [get_pins            \
-u6_quo_reg_50_/CK] [get_pins u6_quo_reg_51_/CK] [get_pins u6_quo_reg_52_/CK]   \
-[get_pins u6_quo_reg_55_/CK] [get_pins u6_quo_reg_56_/CK] [get_pins            \
-u6_quo_reg_57_/CK] [get_pins u6_quo_reg_58_/CK] [get_pins u6_quo_reg_59_/CK]   \
-[get_pins u6_quo_reg_60_/CK] [get_pins u6_quo_reg_61_/CK] [get_pins            \
-u6_quo_reg_62_/CK] [get_pins u6_quo_reg_63_/CK] [get_pins u6_quo_reg_64_/CK]   \
-[get_pins u6_quo_reg_65_/CK] [get_pins u6_quo_reg_66_/CK] [get_pins            \
-u6_quo_reg_67_/CK] [get_pins u6_quo_reg_68_/CK] [get_pins u6_quo_reg_69_/CK]   \
-[get_pins u6_quo_reg_70_/CK] [get_pins u6_quo_reg_71_/CK] [get_pins            \
-u6_quo_reg_72_/CK] [get_pins u6_quo_reg_73_/CK] [get_pins u6_quo_reg_74_/CK]   \
-[get_pins u6_quo_reg_75_/CK] [get_pins u6_quo_reg_76_/CK] [get_pins            \
-u6_quo_reg_77_/CK] [get_pins u6_quo_reg_78_/CK] [get_pins u6_quo_reg_79_/CK]   \
-[get_pins u6_quo_reg_80_/CK] [get_pins u6_quo_reg_81_/CK] [get_pins            \
-u6_quo_reg_82_/CK] [get_pins u6_quo_reg_83_/CK] [get_pins u6_quo_reg_84_/CK]   \
-[get_pins u6_quo_reg_85_/CK] [get_pins u6_quo_reg_86_/CK] [get_pins            \
-u6_quo_reg_87_/CK] [get_pins u6_quo_reg_88_/CK] [get_pins u6_quo_reg_89_/CK]   \
-[get_pins u6_quo_reg_90_/CK] [get_pins u6_quo_reg_91_/CK] [get_pins            \
-u6_quo_reg_92_/CK] [get_pins u6_quo_reg_93_/CK] [get_pins u6_quo_reg_94_/CK]   \
-[get_pins u6_quo_reg_95_/CK] [get_pins u6_quo_reg_96_/CK] [get_pins            \
-u6_quo_reg_97_/CK] [get_pins u6_quo_reg_98_/CK] [get_pins u6_quo_reg_99_/CK]   \
-[get_pins u6_quo_reg_100_/CK] [get_pins u6_quo_reg_101_/CK] [get_pins          \
-u6_quo_reg_102_/CK] [get_pins u6_quo_reg_103_/CK] [get_pins                    \
-u6_quo_reg_104_/CK] [get_pins u6_quo_reg_105_/CK] [get_pins                    \
-u6_quo_reg_106_/CK] [get_pins u6_quo_reg_107_/CK] [get_pins u6_quo1_reg_0_/CK] \
-[get_pins u6_quo1_reg_1_/CK] [get_pins u6_quo1_reg_2_/CK] [get_pins            \
-u6_quo1_reg_3_/CK] [get_pins u6_quo1_reg_4_/CK] [get_pins u6_quo1_reg_5_/CK]   \
-[get_pins u6_quo1_reg_6_/CK] [get_pins u6_quo1_reg_7_/CK] [get_pins            \
-u6_quo1_reg_8_/CK] [get_pins u6_quo1_reg_9_/CK] [get_pins u6_quo1_reg_10_/CK]  \
-[get_pins u6_quo1_reg_11_/CK] [get_pins u6_quo1_reg_12_/CK] [get_pins          \
-u6_quo1_reg_13_/CK] [get_pins u6_quo1_reg_14_/CK] [get_pins                    \
-u6_quo1_reg_15_/CK] [get_pins u6_quo1_reg_16_/CK] [get_pins                    \
-u6_quo1_reg_17_/CK] [get_pins u6_quo1_reg_18_/CK] [get_pins                    \
-u6_quo1_reg_19_/CK] [get_pins u6_quo1_reg_20_/CK] [get_pins                    \
-u6_quo1_reg_21_/CK] [get_pins u6_quo1_reg_22_/CK] [get_pins                    \
-u6_quo1_reg_23_/CK] [get_pins u6_quo1_reg_24_/CK] [get_pins                    \
-u6_quo1_reg_25_/CK] [get_pins u6_quo1_reg_26_/CK] [get_pins                    \
-u6_quo1_reg_27_/CK] [get_pins u6_quo1_reg_28_/CK] [get_pins                    \
-u6_quo1_reg_29_/CK] [get_pins u6_quo1_reg_30_/CK] [get_pins                    \
-u6_quo1_reg_31_/CK] [get_pins u6_quo1_reg_32_/CK] [get_pins                    \
-u6_quo1_reg_33_/CK] [get_pins u6_quo1_reg_34_/CK] [get_pins                    \
-u6_quo1_reg_35_/CK] [get_pins u6_quo1_reg_36_/CK] [get_pins                    \
-u6_quo1_reg_37_/CK] [get_pins u6_quo1_reg_38_/CK] [get_pins                    \
-u6_quo1_reg_39_/CK] [get_pins u6_quo1_reg_40_/CK] [get_pins                    \
-u6_quo1_reg_41_/CK] [get_pins u6_quo1_reg_42_/CK] [get_pins                    \
-u6_quo1_reg_43_/CK] [get_pins u6_quo1_reg_44_/CK] [get_pins                    \
-u6_quo1_reg_45_/CK] [get_pins u6_quo1_reg_46_/CK] [get_pins                    \
-u6_quo1_reg_47_/CK] [get_pins u6_quo1_reg_48_/CK] [get_pins                    \
-u6_quo1_reg_49_/CK] [get_pins u6_quo1_reg_50_/CK] [get_pins                    \
-u6_quo1_reg_51_/CK] [get_pins u6_quo1_reg_52_/CK] [get_pins                    \
-u6_quo1_reg_55_/CK] [get_pins u6_quo1_reg_56_/CK] [get_pins                    \
-u6_quo1_reg_57_/CK] [get_pins u6_quo1_reg_58_/CK] [get_pins                    \
-u6_quo1_reg_59_/CK] [get_pins u6_quo1_reg_60_/CK] [get_pins                    \
-u6_quo1_reg_61_/CK] [get_pins u6_quo1_reg_62_/CK] [get_pins                    \
-u6_quo1_reg_63_/CK] [get_pins u6_quo1_reg_64_/CK] [get_pins                    \
-u6_quo1_reg_65_/CK] [get_pins u6_quo1_reg_66_/CK] [get_pins                    \
-u6_quo1_reg_67_/CK] [get_pins u6_quo1_reg_68_/CK] [get_pins                    \
-u6_quo1_reg_69_/CK] [get_pins u6_quo1_reg_70_/CK] [get_pins                    \
-u6_quo1_reg_71_/CK] [get_pins u6_quo1_reg_72_/CK] [get_pins                    \
-u6_quo1_reg_73_/CK] [get_pins u6_quo1_reg_74_/CK] [get_pins                    \
-u6_quo1_reg_75_/CK] [get_pins u6_quo1_reg_76_/CK] [get_pins                    \
-u6_quo1_reg_77_/CK] [get_pins u6_quo1_reg_78_/CK] [get_pins                    \
-u6_quo1_reg_79_/CK] [get_pins u6_quo1_reg_80_/CK] [get_pins                    \
-u6_quo1_reg_81_/CK] [get_pins u6_quo1_reg_82_/CK] [get_pins                    \
-u6_quo1_reg_83_/CK] [get_pins u6_quo1_reg_84_/CK] [get_pins                    \
-u6_quo1_reg_85_/CK] [get_pins u6_quo1_reg_86_/CK] [get_pins                    \
-u6_quo1_reg_87_/CK] [get_pins u6_quo1_reg_88_/CK] [get_pins                    \
-u6_quo1_reg_89_/CK] [get_pins u6_quo1_reg_90_/CK] [get_pins                    \
-u6_quo1_reg_91_/CK] [get_pins u6_quo1_reg_92_/CK] [get_pins                    \
-u6_quo1_reg_93_/CK] [get_pins u6_quo1_reg_94_/CK] [get_pins                    \
-u6_quo1_reg_95_/CK] [get_pins u6_quo1_reg_96_/CK] [get_pins                    \
-u6_quo1_reg_97_/CK] [get_pins u6_quo1_reg_98_/CK] [get_pins                    \
-u6_quo1_reg_99_/CK] [get_pins u6_quo1_reg_100_/CK] [get_pins                   \
-u6_quo1_reg_101_/CK] [get_pins u6_quo1_reg_102_/CK] [get_pins                  \
-u6_quo1_reg_103_/CK] [get_pins u6_quo1_reg_104_/CK] [get_pins                  \
-u6_quo1_reg_105_/CK] [get_pins u6_quo1_reg_106_/CK] [get_pins                  \
-u6_quo1_reg_107_/CK] [get_pins u5_prod_reg_0_/CK] [get_pins u5_prod_reg_1_/CK] \
-[get_pins u5_prod_reg_2_/CK] [get_pins u5_prod_reg_3_/CK] [get_pins            \
-u5_prod_reg_4_/CK] [get_pins u5_prod_reg_5_/CK] [get_pins u5_prod_reg_6_/CK]   \
-[get_pins u5_prod_reg_7_/CK] [get_pins u5_prod_reg_8_/CK] [get_pins            \
-u5_prod_reg_9_/CK] [get_pins u5_prod_reg_10_/CK] [get_pins u5_prod_reg_11_/CK] \
-[get_pins u5_prod_reg_12_/CK] [get_pins u5_prod_reg_13_/CK] [get_pins          \
+opas_r1_reg/CK] [get_pins fract_i2f_reg_0_/CK] [get_pins fract_i2f_reg_1_/CK]  \
+[get_pins fract_i2f_reg_2_/CK] [get_pins fract_i2f_reg_3_/CK] [get_pins        \
+fract_i2f_reg_4_/CK] [get_pins fract_i2f_reg_5_/CK] [get_pins                  \
+fract_i2f_reg_6_/CK] [get_pins fract_i2f_reg_7_/CK] [get_pins                  \
+fract_i2f_reg_8_/CK] [get_pins fract_i2f_reg_9_/CK] [get_pins                  \
+fract_i2f_reg_10_/CK] [get_pins fract_i2f_reg_11_/CK] [get_pins                \
+fract_i2f_reg_12_/CK] [get_pins fract_i2f_reg_13_/CK] [get_pins                \
+fract_i2f_reg_14_/CK] [get_pins fract_i2f_reg_15_/CK] [get_pins                \
+fract_i2f_reg_16_/CK] [get_pins fract_i2f_reg_17_/CK] [get_pins                \
+fract_i2f_reg_18_/CK] [get_pins fract_i2f_reg_19_/CK] [get_pins                \
+fract_i2f_reg_20_/CK] [get_pins fract_i2f_reg_21_/CK] [get_pins                \
+fract_i2f_reg_22_/CK] [get_pins fract_i2f_reg_23_/CK] [get_pins                \
+fract_i2f_reg_24_/CK] [get_pins fract_i2f_reg_25_/CK] [get_pins                \
+fract_i2f_reg_26_/CK] [get_pins fract_i2f_reg_27_/CK] [get_pins                \
+fract_i2f_reg_28_/CK] [get_pins fract_i2f_reg_29_/CK] [get_pins                \
+fract_i2f_reg_30_/CK] [get_pins fract_i2f_reg_31_/CK] [get_pins                \
+fract_i2f_reg_32_/CK] [get_pins fract_i2f_reg_33_/CK] [get_pins                \
+fract_i2f_reg_34_/CK] [get_pins fract_i2f_reg_35_/CK] [get_pins                \
+fract_i2f_reg_36_/CK] [get_pins fract_i2f_reg_37_/CK] [get_pins                \
+fract_i2f_reg_38_/CK] [get_pins fract_i2f_reg_39_/CK] [get_pins                \
+fract_i2f_reg_40_/CK] [get_pins fract_i2f_reg_41_/CK] [get_pins                \
+fract_i2f_reg_42_/CK] [get_pins fract_i2f_reg_43_/CK] [get_pins                \
+fract_i2f_reg_44_/CK] [get_pins fract_i2f_reg_45_/CK] [get_pins                \
+fract_i2f_reg_46_/CK] [get_pins fract_i2f_reg_47_/CK] [get_pins                \
+fract_i2f_reg_48_/CK] [get_pins fract_i2f_reg_49_/CK] [get_pins                \
+fract_i2f_reg_50_/CK] [get_pins fract_i2f_reg_51_/CK] [get_pins                \
+fract_i2f_reg_52_/CK] [get_pins fract_i2f_reg_53_/CK] [get_pins                \
+fract_i2f_reg_54_/CK] [get_pins fract_i2f_reg_55_/CK] [get_pins                \
+fract_i2f_reg_56_/CK] [get_pins fract_i2f_reg_57_/CK] [get_pins                \
+fract_i2f_reg_58_/CK] [get_pins fract_i2f_reg_59_/CK] [get_pins                \
+fract_i2f_reg_60_/CK] [get_pins fract_i2f_reg_61_/CK] [get_pins                \
+fract_i2f_reg_62_/CK] [get_pins fract_i2f_reg_63_/CK] [get_pins                \
+fract_i2f_reg_64_/CK] [get_pins fract_i2f_reg_65_/CK] [get_pins                \
+fract_i2f_reg_66_/CK] [get_pins fract_i2f_reg_67_/CK] [get_pins                \
+fract_i2f_reg_68_/CK] [get_pins fract_i2f_reg_69_/CK] [get_pins                \
+fract_i2f_reg_70_/CK] [get_pins fract_i2f_reg_71_/CK] [get_pins                \
+fract_i2f_reg_72_/CK] [get_pins fract_i2f_reg_73_/CK] [get_pins                \
+fract_i2f_reg_74_/CK] [get_pins fract_i2f_reg_75_/CK] [get_pins                \
+fract_i2f_reg_76_/CK] [get_pins fract_i2f_reg_77_/CK] [get_pins                \
+fract_i2f_reg_78_/CK] [get_pins fract_i2f_reg_79_/CK] [get_pins                \
+fract_i2f_reg_80_/CK] [get_pins fract_i2f_reg_81_/CK] [get_pins                \
+fract_i2f_reg_82_/CK] [get_pins fract_i2f_reg_83_/CK] [get_pins                \
+fract_i2f_reg_84_/CK] [get_pins fract_i2f_reg_85_/CK] [get_pins                \
+fract_i2f_reg_86_/CK] [get_pins fract_i2f_reg_87_/CK] [get_pins                \
+fract_i2f_reg_88_/CK] [get_pins fract_i2f_reg_89_/CK] [get_pins                \
+fract_i2f_reg_90_/CK] [get_pins fract_i2f_reg_91_/CK] [get_pins                \
+fract_i2f_reg_92_/CK] [get_pins fract_i2f_reg_93_/CK] [get_pins                \
+fract_i2f_reg_94_/CK] [get_pins fract_i2f_reg_95_/CK] [get_pins                \
+fract_i2f_reg_96_/CK] [get_pins fract_i2f_reg_97_/CK] [get_pins                \
+fract_i2f_reg_98_/CK] [get_pins fract_i2f_reg_99_/CK] [get_pins                \
+fract_i2f_reg_100_/CK] [get_pins fract_i2f_reg_101_/CK] [get_pins              \
+fract_i2f_reg_102_/CK] [get_pins fract_i2f_reg_103_/CK] [get_pins              \
+fract_i2f_reg_104_/CK] [get_pins fract_i2f_reg_105_/CK] [get_pins              \
+opa_r1_reg_0_/CK] [get_pins opa_r1_reg_1_/CK] [get_pins opa_r1_reg_2_/CK]      \
+[get_pins opa_r1_reg_3_/CK] [get_pins opa_r1_reg_4_/CK] [get_pins              \
+opa_r1_reg_5_/CK] [get_pins opa_r1_reg_6_/CK] [get_pins opa_r1_reg_7_/CK]      \
+[get_pins opa_r1_reg_8_/CK] [get_pins opa_r1_reg_9_/CK] [get_pins              \
+opa_r1_reg_10_/CK] [get_pins opa_r1_reg_11_/CK] [get_pins opa_r1_reg_12_/CK]   \
+[get_pins opa_r1_reg_13_/CK] [get_pins opa_r1_reg_14_/CK] [get_pins            \
+opa_r1_reg_15_/CK] [get_pins opa_r1_reg_16_/CK] [get_pins opa_r1_reg_17_/CK]   \
+[get_pins opa_r1_reg_18_/CK] [get_pins opa_r1_reg_19_/CK] [get_pins            \
+opa_r1_reg_20_/CK] [get_pins opa_r1_reg_21_/CK] [get_pins opa_r1_reg_22_/CK]   \
+[get_pins opa_r1_reg_23_/CK] [get_pins opa_r1_reg_24_/CK] [get_pins            \
+opa_r1_reg_25_/CK] [get_pins opa_r1_reg_26_/CK] [get_pins opa_r1_reg_27_/CK]   \
+[get_pins opa_r1_reg_28_/CK] [get_pins opa_r1_reg_29_/CK] [get_pins            \
+opa_r1_reg_30_/CK] [get_pins opa_r1_reg_31_/CK] [get_pins opa_r1_reg_32_/CK]   \
+[get_pins opa_r1_reg_33_/CK] [get_pins opa_r1_reg_34_/CK] [get_pins            \
+opa_r1_reg_35_/CK] [get_pins opa_r1_reg_36_/CK] [get_pins opa_r1_reg_37_/CK]   \
+[get_pins opa_r1_reg_38_/CK] [get_pins opa_r1_reg_39_/CK] [get_pins            \
+opa_r1_reg_40_/CK] [get_pins opa_r1_reg_41_/CK] [get_pins opa_r1_reg_42_/CK]   \
+[get_pins opa_r1_reg_43_/CK] [get_pins opa_r1_reg_44_/CK] [get_pins            \
+opa_r1_reg_45_/CK] [get_pins opa_r1_reg_46_/CK] [get_pins opa_r1_reg_47_/CK]   \
+[get_pins opa_r1_reg_48_/CK] [get_pins opa_r1_reg_49_/CK] [get_pins            \
+opa_r1_reg_50_/CK] [get_pins opa_r1_reg_51_/CK] [get_pins opa_r1_reg_52_/CK]   \
+[get_pins opa_r1_reg_53_/CK] [get_pins opa_r1_reg_54_/CK] [get_pins            \
+opa_r1_reg_55_/CK] [get_pins opa_r1_reg_56_/CK] [get_pins opa_r1_reg_57_/CK]   \
+[get_pins opa_r1_reg_58_/CK] [get_pins opa_r1_reg_59_/CK] [get_pins            \
+opa_r1_reg_60_/CK] [get_pins opa_r1_reg_61_/CK] [get_pins opa_r1_reg_62_/CK]   \
+[get_pins exp_r_reg_0_/CK] [get_pins exp_r_reg_1_/CK] [get_pins                \
+exp_r_reg_2_/CK] [get_pins exp_r_reg_3_/CK] [get_pins exp_r_reg_4_/CK]         \
+[get_pins exp_r_reg_5_/CK] [get_pins exp_r_reg_6_/CK] [get_pins                \
+exp_r_reg_7_/CK] [get_pins exp_r_reg_8_/CK] [get_pins exp_r_reg_9_/CK]         \
+[get_pins exp_r_reg_10_/CK] [get_pins div_opa_ldz_r2_reg_0_/CK] [get_pins      \
+div_opa_ldz_r2_reg_1_/CK] [get_pins div_opa_ldz_r2_reg_2_/CK] [get_pins        \
+div_opa_ldz_r2_reg_3_/CK] [get_pins div_opa_ldz_r2_reg_4_/CK] [get_pins        \
+div_opa_ldz_r1_reg_0_/CK] [get_pins div_opa_ldz_r1_reg_1_/CK] [get_pins        \
+div_opa_ldz_r1_reg_2_/CK] [get_pins div_opa_ldz_r1_reg_3_/CK] [get_pins        \
+div_opa_ldz_r1_reg_4_/CK] [get_pins u6_rem_reg_0_/CK] [get_pins                \
+u6_rem_reg_1_/CK] [get_pins u6_rem_reg_2_/CK] [get_pins u6_rem_reg_3_/CK]      \
+[get_pins u6_rem_reg_4_/CK] [get_pins u6_rem_reg_5_/CK] [get_pins              \
+u6_rem_reg_6_/CK] [get_pins u6_rem_reg_7_/CK] [get_pins u6_rem_reg_8_/CK]      \
+[get_pins u6_rem_reg_9_/CK] [get_pins u6_rem_reg_10_/CK] [get_pins             \
+u6_rem_reg_11_/CK] [get_pins u6_rem_reg_12_/CK] [get_pins u6_rem_reg_13_/CK]   \
+[get_pins u6_rem_reg_14_/CK] [get_pins u6_rem_reg_15_/CK] [get_pins            \
+u6_rem_reg_16_/CK] [get_pins u6_rem_reg_17_/CK] [get_pins u6_rem_reg_18_/CK]   \
+[get_pins u6_rem_reg_19_/CK] [get_pins u6_rem_reg_20_/CK] [get_pins            \
+u6_rem_reg_21_/CK] [get_pins u6_rem_reg_22_/CK] [get_pins u6_rem_reg_23_/CK]   \
+[get_pins u6_rem_reg_24_/CK] [get_pins u6_rem_reg_25_/CK] [get_pins            \
+u6_rem_reg_26_/CK] [get_pins u6_rem_reg_27_/CK] [get_pins u6_rem_reg_28_/CK]   \
+[get_pins u6_rem_reg_29_/CK] [get_pins u6_rem_reg_30_/CK] [get_pins            \
+u6_rem_reg_31_/CK] [get_pins u6_rem_reg_32_/CK] [get_pins u6_rem_reg_33_/CK]   \
+[get_pins u6_rem_reg_34_/CK] [get_pins u6_rem_reg_35_/CK] [get_pins            \
+u6_rem_reg_36_/CK] [get_pins u6_rem_reg_37_/CK] [get_pins u6_rem_reg_38_/CK]   \
+[get_pins u6_rem_reg_39_/CK] [get_pins u6_rem_reg_40_/CK] [get_pins            \
+u6_rem_reg_41_/CK] [get_pins u6_rem_reg_42_/CK] [get_pins u6_rem_reg_43_/CK]   \
+[get_pins u6_rem_reg_44_/CK] [get_pins u6_rem_reg_45_/CK] [get_pins            \
+u6_rem_reg_46_/CK] [get_pins u6_rem_reg_47_/CK] [get_pins u6_rem_reg_48_/CK]   \
+[get_pins u6_rem_reg_49_/CK] [get_pins u6_rem_reg_50_/CK] [get_pins            \
+u6_rem_reg_51_/CK] [get_pins u6_rem_reg_52_/CK] [get_pins u6_rem_reg_55_/CK]   \
+[get_pins u6_rem_reg_56_/CK] [get_pins u6_rem_reg_57_/CK] [get_pins            \
+u6_rem_reg_58_/CK] [get_pins u6_rem_reg_59_/CK] [get_pins u6_rem_reg_60_/CK]   \
+[get_pins u6_rem_reg_61_/CK] [get_pins u6_rem_reg_62_/CK] [get_pins            \
+u6_rem_reg_63_/CK] [get_pins u6_rem_reg_64_/CK] [get_pins u6_rem_reg_65_/CK]   \
+[get_pins u6_rem_reg_66_/CK] [get_pins u6_rem_reg_67_/CK] [get_pins            \
+u6_rem_reg_68_/CK] [get_pins u6_rem_reg_69_/CK] [get_pins u6_rem_reg_70_/CK]   \
+[get_pins u6_rem_reg_71_/CK] [get_pins u6_rem_reg_72_/CK] [get_pins            \
+u6_rem_reg_73_/CK] [get_pins u6_rem_reg_74_/CK] [get_pins u6_rem_reg_75_/CK]   \
+[get_pins u6_rem_reg_76_/CK] [get_pins u6_rem_reg_77_/CK] [get_pins            \
+u6_rem_reg_78_/CK] [get_pins u6_rem_reg_79_/CK] [get_pins u6_rem_reg_80_/CK]   \
+[get_pins u6_rem_reg_81_/CK] [get_pins u6_rem_reg_82_/CK] [get_pins            \
+u6_rem_reg_83_/CK] [get_pins u6_rem_reg_84_/CK] [get_pins u6_rem_reg_85_/CK]   \
+[get_pins u6_rem_reg_86_/CK] [get_pins u6_rem_reg_87_/CK] [get_pins            \
+u6_rem_reg_88_/CK] [get_pins u6_rem_reg_89_/CK] [get_pins u6_rem_reg_90_/CK]   \
+[get_pins u6_rem_reg_91_/CK] [get_pins u6_rem_reg_92_/CK] [get_pins            \
+u6_rem_reg_93_/CK] [get_pins u6_rem_reg_94_/CK] [get_pins u6_rem_reg_95_/CK]   \
+[get_pins u6_rem_reg_96_/CK] [get_pins u6_rem_reg_97_/CK] [get_pins            \
+u6_rem_reg_98_/CK] [get_pins u6_rem_reg_99_/CK] [get_pins u6_rem_reg_100_/CK]  \
+[get_pins u6_rem_reg_101_/CK] [get_pins u6_rem_reg_102_/CK] [get_pins          \
+u6_rem_reg_103_/CK] [get_pins u6_rem_reg_104_/CK] [get_pins                    \
+u6_rem_reg_105_/CK] [get_pins u6_rem_reg_106_/CK] [get_pins                    \
+u6_rem_reg_107_/CK] [get_pins u6_remainder_reg_0_/CK] [get_pins                \
+u6_remainder_reg_1_/CK] [get_pins u6_remainder_reg_2_/CK] [get_pins            \
+u6_remainder_reg_3_/CK] [get_pins u6_remainder_reg_4_/CK] [get_pins            \
+u6_remainder_reg_5_/CK] [get_pins u6_remainder_reg_6_/CK] [get_pins            \
+u6_remainder_reg_7_/CK] [get_pins u6_remainder_reg_8_/CK] [get_pins            \
+u6_remainder_reg_9_/CK] [get_pins u6_remainder_reg_10_/CK] [get_pins           \
+u6_remainder_reg_11_/CK] [get_pins u6_remainder_reg_12_/CK] [get_pins          \
+u6_remainder_reg_13_/CK] [get_pins u6_remainder_reg_14_/CK] [get_pins          \
+u6_remainder_reg_15_/CK] [get_pins u6_remainder_reg_16_/CK] [get_pins          \
+u6_remainder_reg_17_/CK] [get_pins u6_remainder_reg_18_/CK] [get_pins          \
+u6_remainder_reg_19_/CK] [get_pins u6_remainder_reg_20_/CK] [get_pins          \
+u6_remainder_reg_21_/CK] [get_pins u6_remainder_reg_22_/CK] [get_pins          \
+u6_remainder_reg_23_/CK] [get_pins u6_remainder_reg_24_/CK] [get_pins          \
+u6_remainder_reg_25_/CK] [get_pins u6_remainder_reg_26_/CK] [get_pins          \
+u6_remainder_reg_27_/CK] [get_pins u6_remainder_reg_28_/CK] [get_pins          \
+u6_remainder_reg_29_/CK] [get_pins u6_remainder_reg_30_/CK] [get_pins          \
+u6_remainder_reg_31_/CK] [get_pins u6_remainder_reg_32_/CK] [get_pins          \
+u6_remainder_reg_33_/CK] [get_pins u6_remainder_reg_34_/CK] [get_pins          \
+u6_remainder_reg_35_/CK] [get_pins u6_remainder_reg_36_/CK] [get_pins          \
+u6_remainder_reg_37_/CK] [get_pins u6_remainder_reg_38_/CK] [get_pins          \
+u6_remainder_reg_39_/CK] [get_pins u6_remainder_reg_40_/CK] [get_pins          \
+u6_remainder_reg_41_/CK] [get_pins u6_remainder_reg_42_/CK] [get_pins          \
+u6_remainder_reg_43_/CK] [get_pins u6_remainder_reg_44_/CK] [get_pins          \
+u6_remainder_reg_45_/CK] [get_pins u6_remainder_reg_46_/CK] [get_pins          \
+u6_remainder_reg_47_/CK] [get_pins u6_remainder_reg_48_/CK] [get_pins          \
+u6_remainder_reg_49_/CK] [get_pins u6_remainder_reg_50_/CK] [get_pins          \
+u6_remainder_reg_51_/CK] [get_pins u6_remainder_reg_52_/CK] [get_pins          \
+u6_remainder_reg_55_/CK] [get_pins u6_remainder_reg_56_/CK] [get_pins          \
+u6_remainder_reg_57_/CK] [get_pins u6_remainder_reg_58_/CK] [get_pins          \
+u6_remainder_reg_59_/CK] [get_pins u6_remainder_reg_60_/CK] [get_pins          \
+u6_remainder_reg_61_/CK] [get_pins u6_remainder_reg_62_/CK] [get_pins          \
+u6_remainder_reg_63_/CK] [get_pins u6_remainder_reg_64_/CK] [get_pins          \
+u6_remainder_reg_65_/CK] [get_pins u6_remainder_reg_66_/CK] [get_pins          \
+u6_remainder_reg_67_/CK] [get_pins u6_remainder_reg_68_/CK] [get_pins          \
+u6_remainder_reg_69_/CK] [get_pins u6_remainder_reg_70_/CK] [get_pins          \
+u6_remainder_reg_71_/CK] [get_pins u6_remainder_reg_72_/CK] [get_pins          \
+u6_remainder_reg_73_/CK] [get_pins u6_remainder_reg_74_/CK] [get_pins          \
+u6_remainder_reg_75_/CK] [get_pins u6_remainder_reg_76_/CK] [get_pins          \
+u6_remainder_reg_77_/CK] [get_pins u6_remainder_reg_78_/CK] [get_pins          \
+u6_remainder_reg_79_/CK] [get_pins u6_remainder_reg_80_/CK] [get_pins          \
+u6_remainder_reg_81_/CK] [get_pins u6_remainder_reg_82_/CK] [get_pins          \
+u6_remainder_reg_83_/CK] [get_pins u6_remainder_reg_84_/CK] [get_pins          \
+u6_remainder_reg_85_/CK] [get_pins u6_remainder_reg_86_/CK] [get_pins          \
+u6_remainder_reg_87_/CK] [get_pins u6_remainder_reg_88_/CK] [get_pins          \
+u6_remainder_reg_89_/CK] [get_pins u6_remainder_reg_90_/CK] [get_pins          \
+u6_remainder_reg_91_/CK] [get_pins u6_remainder_reg_92_/CK] [get_pins          \
+u6_remainder_reg_93_/CK] [get_pins u6_remainder_reg_94_/CK] [get_pins          \
+u6_remainder_reg_95_/CK] [get_pins u6_remainder_reg_96_/CK] [get_pins          \
+u6_remainder_reg_97_/CK] [get_pins u6_remainder_reg_98_/CK] [get_pins          \
+u6_remainder_reg_99_/CK] [get_pins u6_remainder_reg_100_/CK] [get_pins         \
+u6_remainder_reg_101_/CK] [get_pins u6_remainder_reg_102_/CK] [get_pins        \
+u6_remainder_reg_103_/CK] [get_pins u6_remainder_reg_104_/CK] [get_pins        \
+u6_remainder_reg_105_/CK] [get_pins u6_remainder_reg_106_/CK] [get_pins        \
+u6_remainder_reg_107_/CK] [get_pins u6_quo_reg_0_/CK] [get_pins                \
+u6_quo_reg_1_/CK] [get_pins u6_quo_reg_2_/CK] [get_pins u6_quo_reg_3_/CK]      \
+[get_pins u6_quo_reg_4_/CK] [get_pins u6_quo_reg_5_/CK] [get_pins              \
+u6_quo_reg_6_/CK] [get_pins u6_quo_reg_7_/CK] [get_pins u6_quo_reg_8_/CK]      \
+[get_pins u6_quo_reg_9_/CK] [get_pins u6_quo_reg_10_/CK] [get_pins             \
+u6_quo_reg_11_/CK] [get_pins u6_quo_reg_12_/CK] [get_pins u6_quo_reg_13_/CK]   \
+[get_pins u6_quo_reg_14_/CK] [get_pins u6_quo_reg_15_/CK] [get_pins            \
+u6_quo_reg_16_/CK] [get_pins u6_quo_reg_17_/CK] [get_pins u6_quo_reg_18_/CK]   \
+[get_pins u6_quo_reg_19_/CK] [get_pins u6_quo_reg_20_/CK] [get_pins            \
+u6_quo_reg_21_/CK] [get_pins u6_quo_reg_22_/CK] [get_pins u6_quo_reg_23_/CK]   \
+[get_pins u6_quo_reg_24_/CK] [get_pins u6_quo_reg_25_/CK] [get_pins            \
+u6_quo_reg_26_/CK] [get_pins u6_quo_reg_27_/CK] [get_pins u6_quo_reg_28_/CK]   \
+[get_pins u6_quo_reg_29_/CK] [get_pins u6_quo_reg_30_/CK] [get_pins            \
+u6_quo_reg_31_/CK] [get_pins u6_quo_reg_32_/CK] [get_pins u6_quo_reg_33_/CK]   \
+[get_pins u6_quo_reg_34_/CK] [get_pins u6_quo_reg_35_/CK] [get_pins            \
+u6_quo_reg_36_/CK] [get_pins u6_quo_reg_37_/CK] [get_pins u6_quo_reg_38_/CK]   \
+[get_pins u6_quo_reg_39_/CK] [get_pins u6_quo_reg_40_/CK] [get_pins            \
+u6_quo_reg_41_/CK] [get_pins u6_quo_reg_42_/CK] [get_pins u6_quo_reg_43_/CK]   \
+[get_pins u6_quo_reg_44_/CK] [get_pins u6_quo_reg_45_/CK] [get_pins            \
+u6_quo_reg_46_/CK] [get_pins u6_quo_reg_47_/CK] [get_pins u6_quo_reg_48_/CK]   \
+[get_pins u6_quo_reg_49_/CK] [get_pins u6_quo_reg_50_/CK] [get_pins            \
+u6_quo_reg_51_/CK] [get_pins u6_quo_reg_52_/CK] [get_pins u6_quo_reg_55_/CK]   \
+[get_pins u6_quo_reg_56_/CK] [get_pins u6_quo_reg_57_/CK] [get_pins            \
+u6_quo_reg_58_/CK] [get_pins u6_quo_reg_59_/CK] [get_pins u6_quo_reg_60_/CK]   \
+[get_pins u6_quo_reg_61_/CK] [get_pins u6_quo_reg_62_/CK] [get_pins            \
+u6_quo_reg_63_/CK] [get_pins u6_quo_reg_64_/CK] [get_pins u6_quo_reg_65_/CK]   \
+[get_pins u6_quo_reg_66_/CK] [get_pins u6_quo_reg_67_/CK] [get_pins            \
+u6_quo_reg_68_/CK] [get_pins u6_quo_reg_69_/CK] [get_pins u6_quo_reg_70_/CK]   \
+[get_pins u6_quo_reg_71_/CK] [get_pins u6_quo_reg_72_/CK] [get_pins            \
+u6_quo_reg_73_/CK] [get_pins u6_quo_reg_74_/CK] [get_pins u6_quo_reg_75_/CK]   \
+[get_pins u6_quo_reg_76_/CK] [get_pins u6_quo_reg_77_/CK] [get_pins            \
+u6_quo_reg_78_/CK] [get_pins u6_quo_reg_79_/CK] [get_pins u6_quo_reg_80_/CK]   \
+[get_pins u6_quo_reg_81_/CK] [get_pins u6_quo_reg_82_/CK] [get_pins            \
+u6_quo_reg_83_/CK] [get_pins u6_quo_reg_84_/CK] [get_pins u6_quo_reg_85_/CK]   \
+[get_pins u6_quo_reg_86_/CK] [get_pins u6_quo_reg_87_/CK] [get_pins            \
+u6_quo_reg_88_/CK] [get_pins u6_quo_reg_89_/CK] [get_pins u6_quo_reg_90_/CK]   \
+[get_pins u6_quo_reg_91_/CK] [get_pins u6_quo_reg_92_/CK] [get_pins            \
+u6_quo_reg_93_/CK] [get_pins u6_quo_reg_94_/CK] [get_pins u6_quo_reg_95_/CK]   \
+[get_pins u6_quo_reg_96_/CK] [get_pins u6_quo_reg_97_/CK] [get_pins            \
+u6_quo_reg_98_/CK] [get_pins u6_quo_reg_99_/CK] [get_pins u6_quo_reg_100_/CK]  \
+[get_pins u6_quo_reg_101_/CK] [get_pins u6_quo_reg_102_/CK] [get_pins          \
+u6_quo_reg_103_/CK] [get_pins u6_quo_reg_104_/CK] [get_pins                    \
+u6_quo_reg_105_/CK] [get_pins u6_quo_reg_106_/CK] [get_pins                    \
+u6_quo_reg_107_/CK] [get_pins u6_quo1_reg_0_/CK] [get_pins u6_quo1_reg_1_/CK]  \
+[get_pins u6_quo1_reg_2_/CK] [get_pins u6_quo1_reg_3_/CK] [get_pins            \
+u6_quo1_reg_4_/CK] [get_pins u6_quo1_reg_5_/CK] [get_pins u6_quo1_reg_6_/CK]   \
+[get_pins u6_quo1_reg_7_/CK] [get_pins u6_quo1_reg_8_/CK] [get_pins            \
+u6_quo1_reg_9_/CK] [get_pins u6_quo1_reg_10_/CK] [get_pins u6_quo1_reg_11_/CK] \
+[get_pins u6_quo1_reg_12_/CK] [get_pins u6_quo1_reg_13_/CK] [get_pins          \
+u6_quo1_reg_14_/CK] [get_pins u6_quo1_reg_15_/CK] [get_pins                    \
+u6_quo1_reg_16_/CK] [get_pins u6_quo1_reg_17_/CK] [get_pins                    \
+u6_quo1_reg_18_/CK] [get_pins u6_quo1_reg_19_/CK] [get_pins                    \
+u6_quo1_reg_20_/CK] [get_pins u6_quo1_reg_21_/CK] [get_pins                    \
+u6_quo1_reg_22_/CK] [get_pins u6_quo1_reg_23_/CK] [get_pins                    \
+u6_quo1_reg_24_/CK] [get_pins u6_quo1_reg_25_/CK] [get_pins                    \
+u6_quo1_reg_26_/CK] [get_pins u6_quo1_reg_27_/CK] [get_pins                    \
+u6_quo1_reg_28_/CK] [get_pins u6_quo1_reg_29_/CK] [get_pins                    \
+u6_quo1_reg_30_/CK] [get_pins u6_quo1_reg_31_/CK] [get_pins                    \
+u6_quo1_reg_32_/CK] [get_pins u6_quo1_reg_33_/CK] [get_pins                    \
+u6_quo1_reg_34_/CK] [get_pins u6_quo1_reg_35_/CK] [get_pins                    \
+u6_quo1_reg_36_/CK] [get_pins u6_quo1_reg_37_/CK] [get_pins                    \
+u6_quo1_reg_38_/CK] [get_pins u6_quo1_reg_39_/CK] [get_pins                    \
+u6_quo1_reg_40_/CK] [get_pins u6_quo1_reg_41_/CK] [get_pins                    \
+u6_quo1_reg_42_/CK] [get_pins u6_quo1_reg_43_/CK] [get_pins                    \
+u6_quo1_reg_44_/CK] [get_pins u6_quo1_reg_45_/CK] [get_pins                    \
+u6_quo1_reg_46_/CK] [get_pins u6_quo1_reg_47_/CK] [get_pins                    \
+u6_quo1_reg_48_/CK] [get_pins u6_quo1_reg_49_/CK] [get_pins                    \
+u6_quo1_reg_50_/CK] [get_pins u6_quo1_reg_51_/CK] [get_pins                    \
+u6_quo1_reg_52_/CK] [get_pins u6_quo1_reg_55_/CK] [get_pins                    \
+u6_quo1_reg_56_/CK] [get_pins u6_quo1_reg_57_/CK] [get_pins                    \
+u6_quo1_reg_58_/CK] [get_pins u6_quo1_reg_59_/CK] [get_pins                    \
+u6_quo1_reg_60_/CK] [get_pins u6_quo1_reg_61_/CK] [get_pins                    \
+u6_quo1_reg_62_/CK] [get_pins u6_quo1_reg_63_/CK] [get_pins                    \
+u6_quo1_reg_64_/CK] [get_pins u6_quo1_reg_65_/CK] [get_pins                    \
+u6_quo1_reg_66_/CK] [get_pins u6_quo1_reg_67_/CK] [get_pins                    \
+u6_quo1_reg_68_/CK] [get_pins u6_quo1_reg_69_/CK] [get_pins                    \
+u6_quo1_reg_70_/CK] [get_pins u6_quo1_reg_71_/CK] [get_pins                    \
+u6_quo1_reg_72_/CK] [get_pins u6_quo1_reg_73_/CK] [get_pins                    \
+u6_quo1_reg_74_/CK] [get_pins u6_quo1_reg_75_/CK] [get_pins                    \
+u6_quo1_reg_76_/CK] [get_pins u6_quo1_reg_77_/CK] [get_pins                    \
+u6_quo1_reg_78_/CK] [get_pins u6_quo1_reg_79_/CK] [get_pins                    \
+u6_quo1_reg_80_/CK] [get_pins u6_quo1_reg_81_/CK] [get_pins                    \
+u6_quo1_reg_82_/CK] [get_pins u6_quo1_reg_83_/CK] [get_pins                    \
+u6_quo1_reg_84_/CK] [get_pins u6_quo1_reg_85_/CK] [get_pins                    \
+u6_quo1_reg_86_/CK] [get_pins u6_quo1_reg_87_/CK] [get_pins                    \
+u6_quo1_reg_88_/CK] [get_pins u6_quo1_reg_89_/CK] [get_pins                    \
+u6_quo1_reg_90_/CK] [get_pins u6_quo1_reg_91_/CK] [get_pins                    \
+u6_quo1_reg_92_/CK] [get_pins u6_quo1_reg_93_/CK] [get_pins                    \
+u6_quo1_reg_94_/CK] [get_pins u6_quo1_reg_95_/CK] [get_pins                    \
+u6_quo1_reg_96_/CK] [get_pins u6_quo1_reg_97_/CK] [get_pins                    \
+u6_quo1_reg_98_/CK] [get_pins u6_quo1_reg_99_/CK] [get_pins                    \
+u6_quo1_reg_100_/CK] [get_pins u6_quo1_reg_101_/CK] [get_pins                  \
+u6_quo1_reg_102_/CK] [get_pins u6_quo1_reg_103_/CK] [get_pins                  \
+u6_quo1_reg_104_/CK] [get_pins u6_quo1_reg_105_/CK] [get_pins                  \
+u6_quo1_reg_106_/CK] [get_pins u6_quo1_reg_107_/CK] [get_pins                  \
+u5_prod_reg_0_/CK] [get_pins u5_prod_reg_1_/CK] [get_pins u5_prod_reg_2_/CK]   \
+[get_pins u5_prod_reg_3_/CK] [get_pins u5_prod_reg_4_/CK] [get_pins            \
+u5_prod_reg_5_/CK] [get_pins u5_prod_reg_6_/CK] [get_pins u5_prod_reg_7_/CK]   \
+[get_pins u5_prod_reg_8_/CK] [get_pins u5_prod_reg_9_/CK] [get_pins            \
+u5_prod_reg_10_/CK] [get_pins u5_prod_reg_11_/CK] [get_pins                    \
+u5_prod_reg_12_/CK] [get_pins u5_prod_reg_13_/CK] [get_pins                    \
 u5_prod_reg_14_/CK] [get_pins u5_prod_reg_15_/CK] [get_pins                    \
 u5_prod_reg_16_/CK] [get_pins u5_prod_reg_17_/CK] [get_pins                    \
 u5_prod_reg_18_/CK] [get_pins u5_prod_reg_19_/CK] [get_pins                    \
@@ -1232,19 +1179,19 @@ u1_signb_r_reg/CK] [get_pins u1_signa_r_reg/CK] [get_pins u1_sign_reg/CK]      \
 [get_pins u1_fracta_out_reg_50_/CK] [get_pins u1_fracta_out_reg_51_/CK]        \
 [get_pins u1_fracta_out_reg_52_/CK] [get_pins u1_fracta_out_reg_53_/CK]        \
 [get_pins u1_fracta_out_reg_54_/CK] [get_pins u1_fracta_out_reg_55_/CK]        \
-[get_pins u1_sticky_reg/G] [get_pins u1_exp_dn_out_reg_0_/CK] [get_pins        \
-u1_exp_dn_out_reg_1_/CK] [get_pins u1_exp_dn_out_reg_2_/CK] [get_pins          \
-u1_exp_dn_out_reg_3_/CK] [get_pins u1_exp_dn_out_reg_4_/CK] [get_pins          \
-u1_exp_dn_out_reg_5_/CK] [get_pins u1_exp_dn_out_reg_6_/CK] [get_pins          \
-u1_exp_dn_out_reg_7_/CK] [get_pins u1_exp_dn_out_reg_8_/CK] [get_pins          \
-u1_exp_dn_out_reg_9_/CK] [get_pins u1_exp_dn_out_reg_10_/CK] [get_pins         \
-u0_opb_dn_reg/CK] [get_pins u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK]      \
-[get_pins u0_opa_00_reg/CK] [get_pins u0_fractb_00_reg/CK] [get_pins           \
-u0_fracta_00_reg/CK] [get_pins u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] \
-[get_pins u0_opb_inf_reg/CK] [get_pins u0_opa_inf_reg/CK] [get_pins            \
-u0_opb_nan_reg/CK] [get_pins u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK]      \
-[get_pins u0_qnan_reg/CK] [get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK]    \
-[get_pins u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins          \
+[get_pins u1_exp_dn_out_reg_0_/CK] [get_pins u1_exp_dn_out_reg_1_/CK]          \
+[get_pins u1_exp_dn_out_reg_2_/CK] [get_pins u1_exp_dn_out_reg_3_/CK]          \
+[get_pins u1_exp_dn_out_reg_4_/CK] [get_pins u1_exp_dn_out_reg_5_/CK]          \
+[get_pins u1_exp_dn_out_reg_6_/CK] [get_pins u1_exp_dn_out_reg_7_/CK]          \
+[get_pins u1_exp_dn_out_reg_8_/CK] [get_pins u1_exp_dn_out_reg_9_/CK]          \
+[get_pins u1_exp_dn_out_reg_10_/CK] [get_pins u0_opb_dn_reg/CK] [get_pins      \
+u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK] [get_pins u0_opa_00_reg/CK]      \
+[get_pins u0_fractb_00_reg/CK] [get_pins u0_fracta_00_reg/CK] [get_pins        \
+u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] [get_pins u0_opb_inf_reg/CK]   \
+[get_pins u0_opa_inf_reg/CK] [get_pins u0_opb_nan_reg/CK] [get_pins            \
+u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK] [get_pins u0_qnan_reg/CK]         \
+[get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK] [get_pins                    \
+u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins                    \
 u0_snan_r_a_reg/CK] [get_pins u0_qnan_r_a_reg/CK] [get_pins                    \
 u0_infb_f_r_reg/CK] [get_pins u0_infa_f_r_reg/CK] [get_pins u0_expb_ff_reg/CK] \
 [get_pins u0_expa_ff_reg/CK] [get_pins fpu_op_r3_reg_0_/CK] [get_pins          \
@@ -1354,343 +1301,290 @@ snan_reg/CK] [get_pins underflow_reg/CK] [get_pins underflow_fmul_r_reg_0_/CK] \
 [get_pins out_reg_60_/CK] [get_pins out_reg_61_/CK] [get_pins out_reg_62_/CK]  \
 [get_pins inf_mul2_reg/CK] [get_pins fasu_op_r2_reg/CK] [get_pins              \
 fasu_op_r1_reg/CK] [get_pins sign_reg/CK] [get_pins opas_r2_reg/CK] [get_pins  \
-opas_r1_reg/CK] [get_pins fract_denorm_reg_0_/G] [get_pins                     \
-fract_denorm_reg_1_/G] [get_pins fract_denorm_reg_2_/G] [get_pins              \
-fract_denorm_reg_3_/G] [get_pins fract_denorm_reg_4_/G] [get_pins              \
-fract_denorm_reg_5_/G] [get_pins fract_denorm_reg_6_/G] [get_pins              \
-fract_denorm_reg_7_/G] [get_pins fract_denorm_reg_8_/G] [get_pins              \
-fract_denorm_reg_9_/G] [get_pins fract_denorm_reg_10_/G] [get_pins             \
-fract_denorm_reg_11_/G] [get_pins fract_denorm_reg_12_/G] [get_pins            \
-fract_denorm_reg_13_/G] [get_pins fract_denorm_reg_14_/G] [get_pins            \
-fract_denorm_reg_15_/G] [get_pins fract_denorm_reg_16_/G] [get_pins            \
-fract_denorm_reg_17_/G] [get_pins fract_denorm_reg_18_/G] [get_pins            \
-fract_denorm_reg_19_/G] [get_pins fract_denorm_reg_20_/G] [get_pins            \
-fract_denorm_reg_21_/G] [get_pins fract_denorm_reg_22_/G] [get_pins            \
-fract_denorm_reg_23_/G] [get_pins fract_denorm_reg_24_/G] [get_pins            \
-fract_denorm_reg_25_/G] [get_pins fract_denorm_reg_26_/G] [get_pins            \
-fract_denorm_reg_27_/G] [get_pins fract_denorm_reg_28_/G] [get_pins            \
-fract_denorm_reg_29_/G] [get_pins fract_denorm_reg_30_/G] [get_pins            \
-fract_denorm_reg_31_/G] [get_pins fract_denorm_reg_32_/G] [get_pins            \
-fract_denorm_reg_33_/G] [get_pins fract_denorm_reg_34_/G] [get_pins            \
-fract_denorm_reg_35_/G] [get_pins fract_denorm_reg_36_/G] [get_pins            \
-fract_denorm_reg_37_/G] [get_pins fract_denorm_reg_38_/G] [get_pins            \
-fract_denorm_reg_39_/G] [get_pins fract_denorm_reg_40_/G] [get_pins            \
-fract_denorm_reg_41_/G] [get_pins fract_denorm_reg_42_/G] [get_pins            \
-fract_denorm_reg_43_/G] [get_pins fract_denorm_reg_44_/G] [get_pins            \
-fract_denorm_reg_45_/G] [get_pins fract_denorm_reg_46_/G] [get_pins            \
-fract_denorm_reg_47_/G] [get_pins fract_denorm_reg_48_/G] [get_pins            \
-fract_denorm_reg_49_/G] [get_pins fract_denorm_reg_50_/G] [get_pins            \
-fract_denorm_reg_51_/G] [get_pins fract_denorm_reg_52_/G] [get_pins            \
-fract_denorm_reg_53_/G] [get_pins fract_denorm_reg_54_/G] [get_pins            \
-fract_denorm_reg_55_/G] [get_pins fract_denorm_reg_56_/G] [get_pins            \
-fract_denorm_reg_57_/G] [get_pins fract_denorm_reg_58_/G] [get_pins            \
-fract_denorm_reg_59_/G] [get_pins fract_denorm_reg_60_/G] [get_pins            \
-fract_denorm_reg_61_/G] [get_pins fract_denorm_reg_62_/G] [get_pins            \
-fract_denorm_reg_63_/G] [get_pins fract_denorm_reg_64_/G] [get_pins            \
-fract_denorm_reg_65_/G] [get_pins fract_denorm_reg_66_/G] [get_pins            \
-fract_denorm_reg_67_/G] [get_pins fract_denorm_reg_68_/G] [get_pins            \
-fract_denorm_reg_69_/G] [get_pins fract_denorm_reg_70_/G] [get_pins            \
-fract_denorm_reg_71_/G] [get_pins fract_denorm_reg_72_/G] [get_pins            \
-fract_denorm_reg_73_/G] [get_pins fract_denorm_reg_74_/G] [get_pins            \
-fract_denorm_reg_75_/G] [get_pins fract_denorm_reg_76_/G] [get_pins            \
-fract_denorm_reg_77_/G] [get_pins fract_denorm_reg_78_/G] [get_pins            \
-fract_denorm_reg_79_/G] [get_pins fract_denorm_reg_80_/G] [get_pins            \
-fract_denorm_reg_81_/G] [get_pins fract_denorm_reg_82_/G] [get_pins            \
-fract_denorm_reg_83_/G] [get_pins fract_denorm_reg_84_/G] [get_pins            \
-fract_denorm_reg_85_/G] [get_pins fract_denorm_reg_86_/G] [get_pins            \
-fract_denorm_reg_87_/G] [get_pins fract_denorm_reg_88_/G] [get_pins            \
-fract_denorm_reg_89_/G] [get_pins fract_denorm_reg_90_/G] [get_pins            \
-fract_denorm_reg_91_/G] [get_pins fract_denorm_reg_92_/G] [get_pins            \
-fract_denorm_reg_93_/G] [get_pins fract_denorm_reg_94_/G] [get_pins            \
-fract_denorm_reg_95_/G] [get_pins fract_denorm_reg_96_/G] [get_pins            \
-fract_denorm_reg_97_/G] [get_pins fract_denorm_reg_98_/G] [get_pins            \
-fract_denorm_reg_99_/G] [get_pins fract_denorm_reg_100_/G] [get_pins           \
-fract_denorm_reg_101_/G] [get_pins fract_denorm_reg_102_/G] [get_pins          \
-fract_denorm_reg_103_/G] [get_pins fract_denorm_reg_104_/G] [get_pins          \
-fract_denorm_reg_105_/G] [get_pins fract_i2f_reg_0_/CK] [get_pins              \
-fract_i2f_reg_1_/CK] [get_pins fract_i2f_reg_2_/CK] [get_pins                  \
-fract_i2f_reg_3_/CK] [get_pins fract_i2f_reg_4_/CK] [get_pins                  \
-fract_i2f_reg_5_/CK] [get_pins fract_i2f_reg_6_/CK] [get_pins                  \
-fract_i2f_reg_7_/CK] [get_pins fract_i2f_reg_8_/CK] [get_pins                  \
-fract_i2f_reg_9_/CK] [get_pins fract_i2f_reg_10_/CK] [get_pins                 \
-fract_i2f_reg_11_/CK] [get_pins fract_i2f_reg_12_/CK] [get_pins                \
-fract_i2f_reg_13_/CK] [get_pins fract_i2f_reg_14_/CK] [get_pins                \
-fract_i2f_reg_15_/CK] [get_pins fract_i2f_reg_16_/CK] [get_pins                \
-fract_i2f_reg_17_/CK] [get_pins fract_i2f_reg_18_/CK] [get_pins                \
-fract_i2f_reg_19_/CK] [get_pins fract_i2f_reg_20_/CK] [get_pins                \
-fract_i2f_reg_21_/CK] [get_pins fract_i2f_reg_22_/CK] [get_pins                \
-fract_i2f_reg_23_/CK] [get_pins fract_i2f_reg_24_/CK] [get_pins                \
-fract_i2f_reg_25_/CK] [get_pins fract_i2f_reg_26_/CK] [get_pins                \
-fract_i2f_reg_27_/CK] [get_pins fract_i2f_reg_28_/CK] [get_pins                \
-fract_i2f_reg_29_/CK] [get_pins fract_i2f_reg_30_/CK] [get_pins                \
-fract_i2f_reg_31_/CK] [get_pins fract_i2f_reg_32_/CK] [get_pins                \
-fract_i2f_reg_33_/CK] [get_pins fract_i2f_reg_34_/CK] [get_pins                \
-fract_i2f_reg_35_/CK] [get_pins fract_i2f_reg_36_/CK] [get_pins                \
-fract_i2f_reg_37_/CK] [get_pins fract_i2f_reg_38_/CK] [get_pins                \
-fract_i2f_reg_39_/CK] [get_pins fract_i2f_reg_40_/CK] [get_pins                \
-fract_i2f_reg_41_/CK] [get_pins fract_i2f_reg_42_/CK] [get_pins                \
-fract_i2f_reg_43_/CK] [get_pins fract_i2f_reg_44_/CK] [get_pins                \
-fract_i2f_reg_45_/CK] [get_pins fract_i2f_reg_46_/CK] [get_pins                \
-fract_i2f_reg_47_/CK] [get_pins fract_i2f_reg_48_/CK] [get_pins                \
-fract_i2f_reg_49_/CK] [get_pins fract_i2f_reg_50_/CK] [get_pins                \
-fract_i2f_reg_51_/CK] [get_pins fract_i2f_reg_52_/CK] [get_pins                \
-fract_i2f_reg_53_/CK] [get_pins fract_i2f_reg_54_/CK] [get_pins                \
-fract_i2f_reg_55_/CK] [get_pins fract_i2f_reg_56_/CK] [get_pins                \
-fract_i2f_reg_57_/CK] [get_pins fract_i2f_reg_58_/CK] [get_pins                \
-fract_i2f_reg_59_/CK] [get_pins fract_i2f_reg_60_/CK] [get_pins                \
-fract_i2f_reg_61_/CK] [get_pins fract_i2f_reg_62_/CK] [get_pins                \
-fract_i2f_reg_63_/CK] [get_pins fract_i2f_reg_64_/CK] [get_pins                \
-fract_i2f_reg_65_/CK] [get_pins fract_i2f_reg_66_/CK] [get_pins                \
-fract_i2f_reg_67_/CK] [get_pins fract_i2f_reg_68_/CK] [get_pins                \
-fract_i2f_reg_69_/CK] [get_pins fract_i2f_reg_70_/CK] [get_pins                \
-fract_i2f_reg_71_/CK] [get_pins fract_i2f_reg_72_/CK] [get_pins                \
-fract_i2f_reg_73_/CK] [get_pins fract_i2f_reg_74_/CK] [get_pins                \
-fract_i2f_reg_75_/CK] [get_pins fract_i2f_reg_76_/CK] [get_pins                \
-fract_i2f_reg_77_/CK] [get_pins fract_i2f_reg_78_/CK] [get_pins                \
-fract_i2f_reg_79_/CK] [get_pins fract_i2f_reg_80_/CK] [get_pins                \
-fract_i2f_reg_81_/CK] [get_pins fract_i2f_reg_82_/CK] [get_pins                \
-fract_i2f_reg_83_/CK] [get_pins fract_i2f_reg_84_/CK] [get_pins                \
-fract_i2f_reg_85_/CK] [get_pins fract_i2f_reg_86_/CK] [get_pins                \
-fract_i2f_reg_87_/CK] [get_pins fract_i2f_reg_88_/CK] [get_pins                \
-fract_i2f_reg_89_/CK] [get_pins fract_i2f_reg_90_/CK] [get_pins                \
-fract_i2f_reg_91_/CK] [get_pins fract_i2f_reg_92_/CK] [get_pins                \
-fract_i2f_reg_93_/CK] [get_pins fract_i2f_reg_94_/CK] [get_pins                \
-fract_i2f_reg_95_/CK] [get_pins fract_i2f_reg_96_/CK] [get_pins                \
-fract_i2f_reg_97_/CK] [get_pins fract_i2f_reg_98_/CK] [get_pins                \
-fract_i2f_reg_99_/CK] [get_pins fract_i2f_reg_100_/CK] [get_pins               \
-fract_i2f_reg_101_/CK] [get_pins fract_i2f_reg_102_/CK] [get_pins              \
-fract_i2f_reg_103_/CK] [get_pins fract_i2f_reg_104_/CK] [get_pins              \
-fract_i2f_reg_105_/CK] [get_pins opa_r1_reg_0_/CK] [get_pins opa_r1_reg_1_/CK] \
-[get_pins opa_r1_reg_2_/CK] [get_pins opa_r1_reg_3_/CK] [get_pins              \
-opa_r1_reg_4_/CK] [get_pins opa_r1_reg_5_/CK] [get_pins opa_r1_reg_6_/CK]      \
-[get_pins opa_r1_reg_7_/CK] [get_pins opa_r1_reg_8_/CK] [get_pins              \
-opa_r1_reg_9_/CK] [get_pins opa_r1_reg_10_/CK] [get_pins opa_r1_reg_11_/CK]    \
-[get_pins opa_r1_reg_12_/CK] [get_pins opa_r1_reg_13_/CK] [get_pins            \
-opa_r1_reg_14_/CK] [get_pins opa_r1_reg_15_/CK] [get_pins opa_r1_reg_16_/CK]   \
-[get_pins opa_r1_reg_17_/CK] [get_pins opa_r1_reg_18_/CK] [get_pins            \
-opa_r1_reg_19_/CK] [get_pins opa_r1_reg_20_/CK] [get_pins opa_r1_reg_21_/CK]   \
-[get_pins opa_r1_reg_22_/CK] [get_pins opa_r1_reg_23_/CK] [get_pins            \
-opa_r1_reg_24_/CK] [get_pins opa_r1_reg_25_/CK] [get_pins opa_r1_reg_26_/CK]   \
-[get_pins opa_r1_reg_27_/CK] [get_pins opa_r1_reg_28_/CK] [get_pins            \
-opa_r1_reg_29_/CK] [get_pins opa_r1_reg_30_/CK] [get_pins opa_r1_reg_31_/CK]   \
-[get_pins opa_r1_reg_32_/CK] [get_pins opa_r1_reg_33_/CK] [get_pins            \
-opa_r1_reg_34_/CK] [get_pins opa_r1_reg_35_/CK] [get_pins opa_r1_reg_36_/CK]   \
-[get_pins opa_r1_reg_37_/CK] [get_pins opa_r1_reg_38_/CK] [get_pins            \
-opa_r1_reg_39_/CK] [get_pins opa_r1_reg_40_/CK] [get_pins opa_r1_reg_41_/CK]   \
-[get_pins opa_r1_reg_42_/CK] [get_pins opa_r1_reg_43_/CK] [get_pins            \
-opa_r1_reg_44_/CK] [get_pins opa_r1_reg_45_/CK] [get_pins opa_r1_reg_46_/CK]   \
-[get_pins opa_r1_reg_47_/CK] [get_pins opa_r1_reg_48_/CK] [get_pins            \
-opa_r1_reg_49_/CK] [get_pins opa_r1_reg_50_/CK] [get_pins opa_r1_reg_51_/CK]   \
-[get_pins opa_r1_reg_52_/CK] [get_pins opa_r1_reg_53_/CK] [get_pins            \
-opa_r1_reg_54_/CK] [get_pins opa_r1_reg_55_/CK] [get_pins opa_r1_reg_56_/CK]   \
-[get_pins opa_r1_reg_57_/CK] [get_pins opa_r1_reg_58_/CK] [get_pins            \
-opa_r1_reg_59_/CK] [get_pins opa_r1_reg_60_/CK] [get_pins opa_r1_reg_61_/CK]   \
-[get_pins opa_r1_reg_62_/CK] [get_pins exp_r_reg_0_/CK] [get_pins              \
-exp_r_reg_1_/CK] [get_pins exp_r_reg_2_/CK] [get_pins exp_r_reg_3_/CK]         \
-[get_pins exp_r_reg_4_/CK] [get_pins exp_r_reg_5_/CK] [get_pins                \
-exp_r_reg_6_/CK] [get_pins exp_r_reg_7_/CK] [get_pins exp_r_reg_8_/CK]         \
-[get_pins exp_r_reg_9_/CK] [get_pins exp_r_reg_10_/CK] [get_pins               \
-div_opa_ldz_r2_reg_0_/CK] [get_pins div_opa_ldz_r2_reg_1_/CK] [get_pins        \
-div_opa_ldz_r2_reg_2_/CK] [get_pins div_opa_ldz_r2_reg_3_/CK] [get_pins        \
-div_opa_ldz_r2_reg_4_/CK] [get_pins div_opa_ldz_r1_reg_0_/CK] [get_pins        \
-div_opa_ldz_r1_reg_1_/CK] [get_pins div_opa_ldz_r1_reg_2_/CK] [get_pins        \
-div_opa_ldz_r1_reg_3_/CK] [get_pins div_opa_ldz_r1_reg_4_/CK] [get_pins        \
-u6_rem_reg_0_/CK] [get_pins u6_rem_reg_1_/CK] [get_pins u6_rem_reg_2_/CK]      \
-[get_pins u6_rem_reg_3_/CK] [get_pins u6_rem_reg_4_/CK] [get_pins              \
-u6_rem_reg_5_/CK] [get_pins u6_rem_reg_6_/CK] [get_pins u6_rem_reg_7_/CK]      \
-[get_pins u6_rem_reg_8_/CK] [get_pins u6_rem_reg_9_/CK] [get_pins              \
-u6_rem_reg_10_/CK] [get_pins u6_rem_reg_11_/CK] [get_pins u6_rem_reg_12_/CK]   \
-[get_pins u6_rem_reg_13_/CK] [get_pins u6_rem_reg_14_/CK] [get_pins            \
-u6_rem_reg_15_/CK] [get_pins u6_rem_reg_16_/CK] [get_pins u6_rem_reg_17_/CK]   \
-[get_pins u6_rem_reg_18_/CK] [get_pins u6_rem_reg_19_/CK] [get_pins            \
-u6_rem_reg_20_/CK] [get_pins u6_rem_reg_21_/CK] [get_pins u6_rem_reg_22_/CK]   \
-[get_pins u6_rem_reg_23_/CK] [get_pins u6_rem_reg_24_/CK] [get_pins            \
-u6_rem_reg_25_/CK] [get_pins u6_rem_reg_26_/CK] [get_pins u6_rem_reg_27_/CK]   \
-[get_pins u6_rem_reg_28_/CK] [get_pins u6_rem_reg_29_/CK] [get_pins            \
-u6_rem_reg_30_/CK] [get_pins u6_rem_reg_31_/CK] [get_pins u6_rem_reg_32_/CK]   \
-[get_pins u6_rem_reg_33_/CK] [get_pins u6_rem_reg_34_/CK] [get_pins            \
-u6_rem_reg_35_/CK] [get_pins u6_rem_reg_36_/CK] [get_pins u6_rem_reg_37_/CK]   \
-[get_pins u6_rem_reg_38_/CK] [get_pins u6_rem_reg_39_/CK] [get_pins            \
-u6_rem_reg_40_/CK] [get_pins u6_rem_reg_41_/CK] [get_pins u6_rem_reg_42_/CK]   \
-[get_pins u6_rem_reg_43_/CK] [get_pins u6_rem_reg_44_/CK] [get_pins            \
-u6_rem_reg_45_/CK] [get_pins u6_rem_reg_46_/CK] [get_pins u6_rem_reg_47_/CK]   \
-[get_pins u6_rem_reg_48_/CK] [get_pins u6_rem_reg_49_/CK] [get_pins            \
-u6_rem_reg_50_/CK] [get_pins u6_rem_reg_51_/CK] [get_pins u6_rem_reg_52_/CK]   \
-[get_pins u6_rem_reg_55_/CK] [get_pins u6_rem_reg_56_/CK] [get_pins            \
-u6_rem_reg_57_/CK] [get_pins u6_rem_reg_58_/CK] [get_pins u6_rem_reg_59_/CK]   \
-[get_pins u6_rem_reg_60_/CK] [get_pins u6_rem_reg_61_/CK] [get_pins            \
-u6_rem_reg_62_/CK] [get_pins u6_rem_reg_63_/CK] [get_pins u6_rem_reg_64_/CK]   \
-[get_pins u6_rem_reg_65_/CK] [get_pins u6_rem_reg_66_/CK] [get_pins            \
-u6_rem_reg_67_/CK] [get_pins u6_rem_reg_68_/CK] [get_pins u6_rem_reg_69_/CK]   \
-[get_pins u6_rem_reg_70_/CK] [get_pins u6_rem_reg_71_/CK] [get_pins            \
-u6_rem_reg_72_/CK] [get_pins u6_rem_reg_73_/CK] [get_pins u6_rem_reg_74_/CK]   \
-[get_pins u6_rem_reg_75_/CK] [get_pins u6_rem_reg_76_/CK] [get_pins            \
-u6_rem_reg_77_/CK] [get_pins u6_rem_reg_78_/CK] [get_pins u6_rem_reg_79_/CK]   \
-[get_pins u6_rem_reg_80_/CK] [get_pins u6_rem_reg_81_/CK] [get_pins            \
-u6_rem_reg_82_/CK] [get_pins u6_rem_reg_83_/CK] [get_pins u6_rem_reg_84_/CK]   \
-[get_pins u6_rem_reg_85_/CK] [get_pins u6_rem_reg_86_/CK] [get_pins            \
-u6_rem_reg_87_/CK] [get_pins u6_rem_reg_88_/CK] [get_pins u6_rem_reg_89_/CK]   \
-[get_pins u6_rem_reg_90_/CK] [get_pins u6_rem_reg_91_/CK] [get_pins            \
-u6_rem_reg_92_/CK] [get_pins u6_rem_reg_93_/CK] [get_pins u6_rem_reg_94_/CK]   \
-[get_pins u6_rem_reg_95_/CK] [get_pins u6_rem_reg_96_/CK] [get_pins            \
-u6_rem_reg_97_/CK] [get_pins u6_rem_reg_98_/CK] [get_pins u6_rem_reg_99_/CK]   \
-[get_pins u6_rem_reg_100_/CK] [get_pins u6_rem_reg_101_/CK] [get_pins          \
-u6_rem_reg_102_/CK] [get_pins u6_rem_reg_103_/CK] [get_pins                    \
-u6_rem_reg_104_/CK] [get_pins u6_rem_reg_105_/CK] [get_pins                    \
-u6_rem_reg_106_/CK] [get_pins u6_rem_reg_107_/CK] [get_pins                    \
-u6_remainder_reg_0_/CK] [get_pins u6_remainder_reg_1_/CK] [get_pins            \
-u6_remainder_reg_2_/CK] [get_pins u6_remainder_reg_3_/CK] [get_pins            \
-u6_remainder_reg_4_/CK] [get_pins u6_remainder_reg_5_/CK] [get_pins            \
-u6_remainder_reg_6_/CK] [get_pins u6_remainder_reg_7_/CK] [get_pins            \
-u6_remainder_reg_8_/CK] [get_pins u6_remainder_reg_9_/CK] [get_pins            \
-u6_remainder_reg_10_/CK] [get_pins u6_remainder_reg_11_/CK] [get_pins          \
-u6_remainder_reg_12_/CK] [get_pins u6_remainder_reg_13_/CK] [get_pins          \
-u6_remainder_reg_14_/CK] [get_pins u6_remainder_reg_15_/CK] [get_pins          \
-u6_remainder_reg_16_/CK] [get_pins u6_remainder_reg_17_/CK] [get_pins          \
-u6_remainder_reg_18_/CK] [get_pins u6_remainder_reg_19_/CK] [get_pins          \
-u6_remainder_reg_20_/CK] [get_pins u6_remainder_reg_21_/CK] [get_pins          \
-u6_remainder_reg_22_/CK] [get_pins u6_remainder_reg_23_/CK] [get_pins          \
-u6_remainder_reg_24_/CK] [get_pins u6_remainder_reg_25_/CK] [get_pins          \
-u6_remainder_reg_26_/CK] [get_pins u6_remainder_reg_27_/CK] [get_pins          \
-u6_remainder_reg_28_/CK] [get_pins u6_remainder_reg_29_/CK] [get_pins          \
-u6_remainder_reg_30_/CK] [get_pins u6_remainder_reg_31_/CK] [get_pins          \
-u6_remainder_reg_32_/CK] [get_pins u6_remainder_reg_33_/CK] [get_pins          \
-u6_remainder_reg_34_/CK] [get_pins u6_remainder_reg_35_/CK] [get_pins          \
-u6_remainder_reg_36_/CK] [get_pins u6_remainder_reg_37_/CK] [get_pins          \
-u6_remainder_reg_38_/CK] [get_pins u6_remainder_reg_39_/CK] [get_pins          \
-u6_remainder_reg_40_/CK] [get_pins u6_remainder_reg_41_/CK] [get_pins          \
-u6_remainder_reg_42_/CK] [get_pins u6_remainder_reg_43_/CK] [get_pins          \
-u6_remainder_reg_44_/CK] [get_pins u6_remainder_reg_45_/CK] [get_pins          \
-u6_remainder_reg_46_/CK] [get_pins u6_remainder_reg_47_/CK] [get_pins          \
-u6_remainder_reg_48_/CK] [get_pins u6_remainder_reg_49_/CK] [get_pins          \
-u6_remainder_reg_50_/CK] [get_pins u6_remainder_reg_51_/CK] [get_pins          \
-u6_remainder_reg_52_/CK] [get_pins u6_remainder_reg_55_/CK] [get_pins          \
-u6_remainder_reg_56_/CK] [get_pins u6_remainder_reg_57_/CK] [get_pins          \
-u6_remainder_reg_58_/CK] [get_pins u6_remainder_reg_59_/CK] [get_pins          \
-u6_remainder_reg_60_/CK] [get_pins u6_remainder_reg_61_/CK] [get_pins          \
-u6_remainder_reg_62_/CK] [get_pins u6_remainder_reg_63_/CK] [get_pins          \
-u6_remainder_reg_64_/CK] [get_pins u6_remainder_reg_65_/CK] [get_pins          \
-u6_remainder_reg_66_/CK] [get_pins u6_remainder_reg_67_/CK] [get_pins          \
-u6_remainder_reg_68_/CK] [get_pins u6_remainder_reg_69_/CK] [get_pins          \
-u6_remainder_reg_70_/CK] [get_pins u6_remainder_reg_71_/CK] [get_pins          \
-u6_remainder_reg_72_/CK] [get_pins u6_remainder_reg_73_/CK] [get_pins          \
-u6_remainder_reg_74_/CK] [get_pins u6_remainder_reg_75_/CK] [get_pins          \
-u6_remainder_reg_76_/CK] [get_pins u6_remainder_reg_77_/CK] [get_pins          \
-u6_remainder_reg_78_/CK] [get_pins u6_remainder_reg_79_/CK] [get_pins          \
-u6_remainder_reg_80_/CK] [get_pins u6_remainder_reg_81_/CK] [get_pins          \
-u6_remainder_reg_82_/CK] [get_pins u6_remainder_reg_83_/CK] [get_pins          \
-u6_remainder_reg_84_/CK] [get_pins u6_remainder_reg_85_/CK] [get_pins          \
-u6_remainder_reg_86_/CK] [get_pins u6_remainder_reg_87_/CK] [get_pins          \
-u6_remainder_reg_88_/CK] [get_pins u6_remainder_reg_89_/CK] [get_pins          \
-u6_remainder_reg_90_/CK] [get_pins u6_remainder_reg_91_/CK] [get_pins          \
-u6_remainder_reg_92_/CK] [get_pins u6_remainder_reg_93_/CK] [get_pins          \
-u6_remainder_reg_94_/CK] [get_pins u6_remainder_reg_95_/CK] [get_pins          \
-u6_remainder_reg_96_/CK] [get_pins u6_remainder_reg_97_/CK] [get_pins          \
-u6_remainder_reg_98_/CK] [get_pins u6_remainder_reg_99_/CK] [get_pins          \
-u6_remainder_reg_100_/CK] [get_pins u6_remainder_reg_101_/CK] [get_pins        \
-u6_remainder_reg_102_/CK] [get_pins u6_remainder_reg_103_/CK] [get_pins        \
-u6_remainder_reg_104_/CK] [get_pins u6_remainder_reg_105_/CK] [get_pins        \
-u6_remainder_reg_106_/CK] [get_pins u6_remainder_reg_107_/CK] [get_pins        \
-u6_quo_reg_0_/CK] [get_pins u6_quo_reg_1_/CK] [get_pins u6_quo_reg_2_/CK]      \
-[get_pins u6_quo_reg_3_/CK] [get_pins u6_quo_reg_4_/CK] [get_pins              \
-u6_quo_reg_5_/CK] [get_pins u6_quo_reg_6_/CK] [get_pins u6_quo_reg_7_/CK]      \
-[get_pins u6_quo_reg_8_/CK] [get_pins u6_quo_reg_9_/CK] [get_pins              \
-u6_quo_reg_10_/CK] [get_pins u6_quo_reg_11_/CK] [get_pins u6_quo_reg_12_/CK]   \
-[get_pins u6_quo_reg_13_/CK] [get_pins u6_quo_reg_14_/CK] [get_pins            \
-u6_quo_reg_15_/CK] [get_pins u6_quo_reg_16_/CK] [get_pins u6_quo_reg_17_/CK]   \
-[get_pins u6_quo_reg_18_/CK] [get_pins u6_quo_reg_19_/CK] [get_pins            \
-u6_quo_reg_20_/CK] [get_pins u6_quo_reg_21_/CK] [get_pins u6_quo_reg_22_/CK]   \
-[get_pins u6_quo_reg_23_/CK] [get_pins u6_quo_reg_24_/CK] [get_pins            \
-u6_quo_reg_25_/CK] [get_pins u6_quo_reg_26_/CK] [get_pins u6_quo_reg_27_/CK]   \
-[get_pins u6_quo_reg_28_/CK] [get_pins u6_quo_reg_29_/CK] [get_pins            \
-u6_quo_reg_30_/CK] [get_pins u6_quo_reg_31_/CK] [get_pins u6_quo_reg_32_/CK]   \
-[get_pins u6_quo_reg_33_/CK] [get_pins u6_quo_reg_34_/CK] [get_pins            \
-u6_quo_reg_35_/CK] [get_pins u6_quo_reg_36_/CK] [get_pins u6_quo_reg_37_/CK]   \
-[get_pins u6_quo_reg_38_/CK] [get_pins u6_quo_reg_39_/CK] [get_pins            \
-u6_quo_reg_40_/CK] [get_pins u6_quo_reg_41_/CK] [get_pins u6_quo_reg_42_/CK]   \
-[get_pins u6_quo_reg_43_/CK] [get_pins u6_quo_reg_44_/CK] [get_pins            \
-u6_quo_reg_45_/CK] [get_pins u6_quo_reg_46_/CK] [get_pins u6_quo_reg_47_/CK]   \
-[get_pins u6_quo_reg_48_/CK] [get_pins u6_quo_reg_49_/CK] [get_pins            \
-u6_quo_reg_50_/CK] [get_pins u6_quo_reg_51_/CK] [get_pins u6_quo_reg_52_/CK]   \
-[get_pins u6_quo_reg_55_/CK] [get_pins u6_quo_reg_56_/CK] [get_pins            \
-u6_quo_reg_57_/CK] [get_pins u6_quo_reg_58_/CK] [get_pins u6_quo_reg_59_/CK]   \
-[get_pins u6_quo_reg_60_/CK] [get_pins u6_quo_reg_61_/CK] [get_pins            \
-u6_quo_reg_62_/CK] [get_pins u6_quo_reg_63_/CK] [get_pins u6_quo_reg_64_/CK]   \
-[get_pins u6_quo_reg_65_/CK] [get_pins u6_quo_reg_66_/CK] [get_pins            \
-u6_quo_reg_67_/CK] [get_pins u6_quo_reg_68_/CK] [get_pins u6_quo_reg_69_/CK]   \
-[get_pins u6_quo_reg_70_/CK] [get_pins u6_quo_reg_71_/CK] [get_pins            \
-u6_quo_reg_72_/CK] [get_pins u6_quo_reg_73_/CK] [get_pins u6_quo_reg_74_/CK]   \
-[get_pins u6_quo_reg_75_/CK] [get_pins u6_quo_reg_76_/CK] [get_pins            \
-u6_quo_reg_77_/CK] [get_pins u6_quo_reg_78_/CK] [get_pins u6_quo_reg_79_/CK]   \
-[get_pins u6_quo_reg_80_/CK] [get_pins u6_quo_reg_81_/CK] [get_pins            \
-u6_quo_reg_82_/CK] [get_pins u6_quo_reg_83_/CK] [get_pins u6_quo_reg_84_/CK]   \
-[get_pins u6_quo_reg_85_/CK] [get_pins u6_quo_reg_86_/CK] [get_pins            \
-u6_quo_reg_87_/CK] [get_pins u6_quo_reg_88_/CK] [get_pins u6_quo_reg_89_/CK]   \
-[get_pins u6_quo_reg_90_/CK] [get_pins u6_quo_reg_91_/CK] [get_pins            \
-u6_quo_reg_92_/CK] [get_pins u6_quo_reg_93_/CK] [get_pins u6_quo_reg_94_/CK]   \
-[get_pins u6_quo_reg_95_/CK] [get_pins u6_quo_reg_96_/CK] [get_pins            \
-u6_quo_reg_97_/CK] [get_pins u6_quo_reg_98_/CK] [get_pins u6_quo_reg_99_/CK]   \
-[get_pins u6_quo_reg_100_/CK] [get_pins u6_quo_reg_101_/CK] [get_pins          \
-u6_quo_reg_102_/CK] [get_pins u6_quo_reg_103_/CK] [get_pins                    \
-u6_quo_reg_104_/CK] [get_pins u6_quo_reg_105_/CK] [get_pins                    \
-u6_quo_reg_106_/CK] [get_pins u6_quo_reg_107_/CK] [get_pins u6_quo1_reg_0_/CK] \
-[get_pins u6_quo1_reg_1_/CK] [get_pins u6_quo1_reg_2_/CK] [get_pins            \
-u6_quo1_reg_3_/CK] [get_pins u6_quo1_reg_4_/CK] [get_pins u6_quo1_reg_5_/CK]   \
-[get_pins u6_quo1_reg_6_/CK] [get_pins u6_quo1_reg_7_/CK] [get_pins            \
-u6_quo1_reg_8_/CK] [get_pins u6_quo1_reg_9_/CK] [get_pins u6_quo1_reg_10_/CK]  \
-[get_pins u6_quo1_reg_11_/CK] [get_pins u6_quo1_reg_12_/CK] [get_pins          \
-u6_quo1_reg_13_/CK] [get_pins u6_quo1_reg_14_/CK] [get_pins                    \
-u6_quo1_reg_15_/CK] [get_pins u6_quo1_reg_16_/CK] [get_pins                    \
-u6_quo1_reg_17_/CK] [get_pins u6_quo1_reg_18_/CK] [get_pins                    \
-u6_quo1_reg_19_/CK] [get_pins u6_quo1_reg_20_/CK] [get_pins                    \
-u6_quo1_reg_21_/CK] [get_pins u6_quo1_reg_22_/CK] [get_pins                    \
-u6_quo1_reg_23_/CK] [get_pins u6_quo1_reg_24_/CK] [get_pins                    \
-u6_quo1_reg_25_/CK] [get_pins u6_quo1_reg_26_/CK] [get_pins                    \
-u6_quo1_reg_27_/CK] [get_pins u6_quo1_reg_28_/CK] [get_pins                    \
-u6_quo1_reg_29_/CK] [get_pins u6_quo1_reg_30_/CK] [get_pins                    \
-u6_quo1_reg_31_/CK] [get_pins u6_quo1_reg_32_/CK] [get_pins                    \
-u6_quo1_reg_33_/CK] [get_pins u6_quo1_reg_34_/CK] [get_pins                    \
-u6_quo1_reg_35_/CK] [get_pins u6_quo1_reg_36_/CK] [get_pins                    \
-u6_quo1_reg_37_/CK] [get_pins u6_quo1_reg_38_/CK] [get_pins                    \
-u6_quo1_reg_39_/CK] [get_pins u6_quo1_reg_40_/CK] [get_pins                    \
-u6_quo1_reg_41_/CK] [get_pins u6_quo1_reg_42_/CK] [get_pins                    \
-u6_quo1_reg_43_/CK] [get_pins u6_quo1_reg_44_/CK] [get_pins                    \
-u6_quo1_reg_45_/CK] [get_pins u6_quo1_reg_46_/CK] [get_pins                    \
-u6_quo1_reg_47_/CK] [get_pins u6_quo1_reg_48_/CK] [get_pins                    \
-u6_quo1_reg_49_/CK] [get_pins u6_quo1_reg_50_/CK] [get_pins                    \
-u6_quo1_reg_51_/CK] [get_pins u6_quo1_reg_52_/CK] [get_pins                    \
-u6_quo1_reg_55_/CK] [get_pins u6_quo1_reg_56_/CK] [get_pins                    \
-u6_quo1_reg_57_/CK] [get_pins u6_quo1_reg_58_/CK] [get_pins                    \
-u6_quo1_reg_59_/CK] [get_pins u6_quo1_reg_60_/CK] [get_pins                    \
-u6_quo1_reg_61_/CK] [get_pins u6_quo1_reg_62_/CK] [get_pins                    \
-u6_quo1_reg_63_/CK] [get_pins u6_quo1_reg_64_/CK] [get_pins                    \
-u6_quo1_reg_65_/CK] [get_pins u6_quo1_reg_66_/CK] [get_pins                    \
-u6_quo1_reg_67_/CK] [get_pins u6_quo1_reg_68_/CK] [get_pins                    \
-u6_quo1_reg_69_/CK] [get_pins u6_quo1_reg_70_/CK] [get_pins                    \
-u6_quo1_reg_71_/CK] [get_pins u6_quo1_reg_72_/CK] [get_pins                    \
-u6_quo1_reg_73_/CK] [get_pins u6_quo1_reg_74_/CK] [get_pins                    \
-u6_quo1_reg_75_/CK] [get_pins u6_quo1_reg_76_/CK] [get_pins                    \
-u6_quo1_reg_77_/CK] [get_pins u6_quo1_reg_78_/CK] [get_pins                    \
-u6_quo1_reg_79_/CK] [get_pins u6_quo1_reg_80_/CK] [get_pins                    \
-u6_quo1_reg_81_/CK] [get_pins u6_quo1_reg_82_/CK] [get_pins                    \
-u6_quo1_reg_83_/CK] [get_pins u6_quo1_reg_84_/CK] [get_pins                    \
-u6_quo1_reg_85_/CK] [get_pins u6_quo1_reg_86_/CK] [get_pins                    \
-u6_quo1_reg_87_/CK] [get_pins u6_quo1_reg_88_/CK] [get_pins                    \
-u6_quo1_reg_89_/CK] [get_pins u6_quo1_reg_90_/CK] [get_pins                    \
-u6_quo1_reg_91_/CK] [get_pins u6_quo1_reg_92_/CK] [get_pins                    \
-u6_quo1_reg_93_/CK] [get_pins u6_quo1_reg_94_/CK] [get_pins                    \
-u6_quo1_reg_95_/CK] [get_pins u6_quo1_reg_96_/CK] [get_pins                    \
-u6_quo1_reg_97_/CK] [get_pins u6_quo1_reg_98_/CK] [get_pins                    \
-u6_quo1_reg_99_/CK] [get_pins u6_quo1_reg_100_/CK] [get_pins                   \
-u6_quo1_reg_101_/CK] [get_pins u6_quo1_reg_102_/CK] [get_pins                  \
-u6_quo1_reg_103_/CK] [get_pins u6_quo1_reg_104_/CK] [get_pins                  \
-u6_quo1_reg_105_/CK] [get_pins u6_quo1_reg_106_/CK] [get_pins                  \
-u6_quo1_reg_107_/CK] [get_pins u5_prod_reg_0_/CK] [get_pins u5_prod_reg_1_/CK] \
-[get_pins u5_prod_reg_2_/CK] [get_pins u5_prod_reg_3_/CK] [get_pins            \
-u5_prod_reg_4_/CK] [get_pins u5_prod_reg_5_/CK] [get_pins u5_prod_reg_6_/CK]   \
-[get_pins u5_prod_reg_7_/CK] [get_pins u5_prod_reg_8_/CK] [get_pins            \
-u5_prod_reg_9_/CK] [get_pins u5_prod_reg_10_/CK] [get_pins u5_prod_reg_11_/CK] \
-[get_pins u5_prod_reg_12_/CK] [get_pins u5_prod_reg_13_/CK] [get_pins          \
+opas_r1_reg/CK] [get_pins fract_i2f_reg_0_/CK] [get_pins fract_i2f_reg_1_/CK]  \
+[get_pins fract_i2f_reg_2_/CK] [get_pins fract_i2f_reg_3_/CK] [get_pins        \
+fract_i2f_reg_4_/CK] [get_pins fract_i2f_reg_5_/CK] [get_pins                  \
+fract_i2f_reg_6_/CK] [get_pins fract_i2f_reg_7_/CK] [get_pins                  \
+fract_i2f_reg_8_/CK] [get_pins fract_i2f_reg_9_/CK] [get_pins                  \
+fract_i2f_reg_10_/CK] [get_pins fract_i2f_reg_11_/CK] [get_pins                \
+fract_i2f_reg_12_/CK] [get_pins fract_i2f_reg_13_/CK] [get_pins                \
+fract_i2f_reg_14_/CK] [get_pins fract_i2f_reg_15_/CK] [get_pins                \
+fract_i2f_reg_16_/CK] [get_pins fract_i2f_reg_17_/CK] [get_pins                \
+fract_i2f_reg_18_/CK] [get_pins fract_i2f_reg_19_/CK] [get_pins                \
+fract_i2f_reg_20_/CK] [get_pins fract_i2f_reg_21_/CK] [get_pins                \
+fract_i2f_reg_22_/CK] [get_pins fract_i2f_reg_23_/CK] [get_pins                \
+fract_i2f_reg_24_/CK] [get_pins fract_i2f_reg_25_/CK] [get_pins                \
+fract_i2f_reg_26_/CK] [get_pins fract_i2f_reg_27_/CK] [get_pins                \
+fract_i2f_reg_28_/CK] [get_pins fract_i2f_reg_29_/CK] [get_pins                \
+fract_i2f_reg_30_/CK] [get_pins fract_i2f_reg_31_/CK] [get_pins                \
+fract_i2f_reg_32_/CK] [get_pins fract_i2f_reg_33_/CK] [get_pins                \
+fract_i2f_reg_34_/CK] [get_pins fract_i2f_reg_35_/CK] [get_pins                \
+fract_i2f_reg_36_/CK] [get_pins fract_i2f_reg_37_/CK] [get_pins                \
+fract_i2f_reg_38_/CK] [get_pins fract_i2f_reg_39_/CK] [get_pins                \
+fract_i2f_reg_40_/CK] [get_pins fract_i2f_reg_41_/CK] [get_pins                \
+fract_i2f_reg_42_/CK] [get_pins fract_i2f_reg_43_/CK] [get_pins                \
+fract_i2f_reg_44_/CK] [get_pins fract_i2f_reg_45_/CK] [get_pins                \
+fract_i2f_reg_46_/CK] [get_pins fract_i2f_reg_47_/CK] [get_pins                \
+fract_i2f_reg_48_/CK] [get_pins fract_i2f_reg_49_/CK] [get_pins                \
+fract_i2f_reg_50_/CK] [get_pins fract_i2f_reg_51_/CK] [get_pins                \
+fract_i2f_reg_52_/CK] [get_pins fract_i2f_reg_53_/CK] [get_pins                \
+fract_i2f_reg_54_/CK] [get_pins fract_i2f_reg_55_/CK] [get_pins                \
+fract_i2f_reg_56_/CK] [get_pins fract_i2f_reg_57_/CK] [get_pins                \
+fract_i2f_reg_58_/CK] [get_pins fract_i2f_reg_59_/CK] [get_pins                \
+fract_i2f_reg_60_/CK] [get_pins fract_i2f_reg_61_/CK] [get_pins                \
+fract_i2f_reg_62_/CK] [get_pins fract_i2f_reg_63_/CK] [get_pins                \
+fract_i2f_reg_64_/CK] [get_pins fract_i2f_reg_65_/CK] [get_pins                \
+fract_i2f_reg_66_/CK] [get_pins fract_i2f_reg_67_/CK] [get_pins                \
+fract_i2f_reg_68_/CK] [get_pins fract_i2f_reg_69_/CK] [get_pins                \
+fract_i2f_reg_70_/CK] [get_pins fract_i2f_reg_71_/CK] [get_pins                \
+fract_i2f_reg_72_/CK] [get_pins fract_i2f_reg_73_/CK] [get_pins                \
+fract_i2f_reg_74_/CK] [get_pins fract_i2f_reg_75_/CK] [get_pins                \
+fract_i2f_reg_76_/CK] [get_pins fract_i2f_reg_77_/CK] [get_pins                \
+fract_i2f_reg_78_/CK] [get_pins fract_i2f_reg_79_/CK] [get_pins                \
+fract_i2f_reg_80_/CK] [get_pins fract_i2f_reg_81_/CK] [get_pins                \
+fract_i2f_reg_82_/CK] [get_pins fract_i2f_reg_83_/CK] [get_pins                \
+fract_i2f_reg_84_/CK] [get_pins fract_i2f_reg_85_/CK] [get_pins                \
+fract_i2f_reg_86_/CK] [get_pins fract_i2f_reg_87_/CK] [get_pins                \
+fract_i2f_reg_88_/CK] [get_pins fract_i2f_reg_89_/CK] [get_pins                \
+fract_i2f_reg_90_/CK] [get_pins fract_i2f_reg_91_/CK] [get_pins                \
+fract_i2f_reg_92_/CK] [get_pins fract_i2f_reg_93_/CK] [get_pins                \
+fract_i2f_reg_94_/CK] [get_pins fract_i2f_reg_95_/CK] [get_pins                \
+fract_i2f_reg_96_/CK] [get_pins fract_i2f_reg_97_/CK] [get_pins                \
+fract_i2f_reg_98_/CK] [get_pins fract_i2f_reg_99_/CK] [get_pins                \
+fract_i2f_reg_100_/CK] [get_pins fract_i2f_reg_101_/CK] [get_pins              \
+fract_i2f_reg_102_/CK] [get_pins fract_i2f_reg_103_/CK] [get_pins              \
+fract_i2f_reg_104_/CK] [get_pins fract_i2f_reg_105_/CK] [get_pins              \
+opa_r1_reg_0_/CK] [get_pins opa_r1_reg_1_/CK] [get_pins opa_r1_reg_2_/CK]      \
+[get_pins opa_r1_reg_3_/CK] [get_pins opa_r1_reg_4_/CK] [get_pins              \
+opa_r1_reg_5_/CK] [get_pins opa_r1_reg_6_/CK] [get_pins opa_r1_reg_7_/CK]      \
+[get_pins opa_r1_reg_8_/CK] [get_pins opa_r1_reg_9_/CK] [get_pins              \
+opa_r1_reg_10_/CK] [get_pins opa_r1_reg_11_/CK] [get_pins opa_r1_reg_12_/CK]   \
+[get_pins opa_r1_reg_13_/CK] [get_pins opa_r1_reg_14_/CK] [get_pins            \
+opa_r1_reg_15_/CK] [get_pins opa_r1_reg_16_/CK] [get_pins opa_r1_reg_17_/CK]   \
+[get_pins opa_r1_reg_18_/CK] [get_pins opa_r1_reg_19_/CK] [get_pins            \
+opa_r1_reg_20_/CK] [get_pins opa_r1_reg_21_/CK] [get_pins opa_r1_reg_22_/CK]   \
+[get_pins opa_r1_reg_23_/CK] [get_pins opa_r1_reg_24_/CK] [get_pins            \
+opa_r1_reg_25_/CK] [get_pins opa_r1_reg_26_/CK] [get_pins opa_r1_reg_27_/CK]   \
+[get_pins opa_r1_reg_28_/CK] [get_pins opa_r1_reg_29_/CK] [get_pins            \
+opa_r1_reg_30_/CK] [get_pins opa_r1_reg_31_/CK] [get_pins opa_r1_reg_32_/CK]   \
+[get_pins opa_r1_reg_33_/CK] [get_pins opa_r1_reg_34_/CK] [get_pins            \
+opa_r1_reg_35_/CK] [get_pins opa_r1_reg_36_/CK] [get_pins opa_r1_reg_37_/CK]   \
+[get_pins opa_r1_reg_38_/CK] [get_pins opa_r1_reg_39_/CK] [get_pins            \
+opa_r1_reg_40_/CK] [get_pins opa_r1_reg_41_/CK] [get_pins opa_r1_reg_42_/CK]   \
+[get_pins opa_r1_reg_43_/CK] [get_pins opa_r1_reg_44_/CK] [get_pins            \
+opa_r1_reg_45_/CK] [get_pins opa_r1_reg_46_/CK] [get_pins opa_r1_reg_47_/CK]   \
+[get_pins opa_r1_reg_48_/CK] [get_pins opa_r1_reg_49_/CK] [get_pins            \
+opa_r1_reg_50_/CK] [get_pins opa_r1_reg_51_/CK] [get_pins opa_r1_reg_52_/CK]   \
+[get_pins opa_r1_reg_53_/CK] [get_pins opa_r1_reg_54_/CK] [get_pins            \
+opa_r1_reg_55_/CK] [get_pins opa_r1_reg_56_/CK] [get_pins opa_r1_reg_57_/CK]   \
+[get_pins opa_r1_reg_58_/CK] [get_pins opa_r1_reg_59_/CK] [get_pins            \
+opa_r1_reg_60_/CK] [get_pins opa_r1_reg_61_/CK] [get_pins opa_r1_reg_62_/CK]   \
+[get_pins exp_r_reg_0_/CK] [get_pins exp_r_reg_1_/CK] [get_pins                \
+exp_r_reg_2_/CK] [get_pins exp_r_reg_3_/CK] [get_pins exp_r_reg_4_/CK]         \
+[get_pins exp_r_reg_5_/CK] [get_pins exp_r_reg_6_/CK] [get_pins                \
+exp_r_reg_7_/CK] [get_pins exp_r_reg_8_/CK] [get_pins exp_r_reg_9_/CK]         \
+[get_pins exp_r_reg_10_/CK] [get_pins div_opa_ldz_r2_reg_0_/CK] [get_pins      \
+div_opa_ldz_r2_reg_1_/CK] [get_pins div_opa_ldz_r2_reg_2_/CK] [get_pins        \
+div_opa_ldz_r2_reg_3_/CK] [get_pins div_opa_ldz_r2_reg_4_/CK] [get_pins        \
+div_opa_ldz_r1_reg_0_/CK] [get_pins div_opa_ldz_r1_reg_1_/CK] [get_pins        \
+div_opa_ldz_r1_reg_2_/CK] [get_pins div_opa_ldz_r1_reg_3_/CK] [get_pins        \
+div_opa_ldz_r1_reg_4_/CK] [get_pins u6_rem_reg_0_/CK] [get_pins                \
+u6_rem_reg_1_/CK] [get_pins u6_rem_reg_2_/CK] [get_pins u6_rem_reg_3_/CK]      \
+[get_pins u6_rem_reg_4_/CK] [get_pins u6_rem_reg_5_/CK] [get_pins              \
+u6_rem_reg_6_/CK] [get_pins u6_rem_reg_7_/CK] [get_pins u6_rem_reg_8_/CK]      \
+[get_pins u6_rem_reg_9_/CK] [get_pins u6_rem_reg_10_/CK] [get_pins             \
+u6_rem_reg_11_/CK] [get_pins u6_rem_reg_12_/CK] [get_pins u6_rem_reg_13_/CK]   \
+[get_pins u6_rem_reg_14_/CK] [get_pins u6_rem_reg_15_/CK] [get_pins            \
+u6_rem_reg_16_/CK] [get_pins u6_rem_reg_17_/CK] [get_pins u6_rem_reg_18_/CK]   \
+[get_pins u6_rem_reg_19_/CK] [get_pins u6_rem_reg_20_/CK] [get_pins            \
+u6_rem_reg_21_/CK] [get_pins u6_rem_reg_22_/CK] [get_pins u6_rem_reg_23_/CK]   \
+[get_pins u6_rem_reg_24_/CK] [get_pins u6_rem_reg_25_/CK] [get_pins            \
+u6_rem_reg_26_/CK] [get_pins u6_rem_reg_27_/CK] [get_pins u6_rem_reg_28_/CK]   \
+[get_pins u6_rem_reg_29_/CK] [get_pins u6_rem_reg_30_/CK] [get_pins            \
+u6_rem_reg_31_/CK] [get_pins u6_rem_reg_32_/CK] [get_pins u6_rem_reg_33_/CK]   \
+[get_pins u6_rem_reg_34_/CK] [get_pins u6_rem_reg_35_/CK] [get_pins            \
+u6_rem_reg_36_/CK] [get_pins u6_rem_reg_37_/CK] [get_pins u6_rem_reg_38_/CK]   \
+[get_pins u6_rem_reg_39_/CK] [get_pins u6_rem_reg_40_/CK] [get_pins            \
+u6_rem_reg_41_/CK] [get_pins u6_rem_reg_42_/CK] [get_pins u6_rem_reg_43_/CK]   \
+[get_pins u6_rem_reg_44_/CK] [get_pins u6_rem_reg_45_/CK] [get_pins            \
+u6_rem_reg_46_/CK] [get_pins u6_rem_reg_47_/CK] [get_pins u6_rem_reg_48_/CK]   \
+[get_pins u6_rem_reg_49_/CK] [get_pins u6_rem_reg_50_/CK] [get_pins            \
+u6_rem_reg_51_/CK] [get_pins u6_rem_reg_52_/CK] [get_pins u6_rem_reg_55_/CK]   \
+[get_pins u6_rem_reg_56_/CK] [get_pins u6_rem_reg_57_/CK] [get_pins            \
+u6_rem_reg_58_/CK] [get_pins u6_rem_reg_59_/CK] [get_pins u6_rem_reg_60_/CK]   \
+[get_pins u6_rem_reg_61_/CK] [get_pins u6_rem_reg_62_/CK] [get_pins            \
+u6_rem_reg_63_/CK] [get_pins u6_rem_reg_64_/CK] [get_pins u6_rem_reg_65_/CK]   \
+[get_pins u6_rem_reg_66_/CK] [get_pins u6_rem_reg_67_/CK] [get_pins            \
+u6_rem_reg_68_/CK] [get_pins u6_rem_reg_69_/CK] [get_pins u6_rem_reg_70_/CK]   \
+[get_pins u6_rem_reg_71_/CK] [get_pins u6_rem_reg_72_/CK] [get_pins            \
+u6_rem_reg_73_/CK] [get_pins u6_rem_reg_74_/CK] [get_pins u6_rem_reg_75_/CK]   \
+[get_pins u6_rem_reg_76_/CK] [get_pins u6_rem_reg_77_/CK] [get_pins            \
+u6_rem_reg_78_/CK] [get_pins u6_rem_reg_79_/CK] [get_pins u6_rem_reg_80_/CK]   \
+[get_pins u6_rem_reg_81_/CK] [get_pins u6_rem_reg_82_/CK] [get_pins            \
+u6_rem_reg_83_/CK] [get_pins u6_rem_reg_84_/CK] [get_pins u6_rem_reg_85_/CK]   \
+[get_pins u6_rem_reg_86_/CK] [get_pins u6_rem_reg_87_/CK] [get_pins            \
+u6_rem_reg_88_/CK] [get_pins u6_rem_reg_89_/CK] [get_pins u6_rem_reg_90_/CK]   \
+[get_pins u6_rem_reg_91_/CK] [get_pins u6_rem_reg_92_/CK] [get_pins            \
+u6_rem_reg_93_/CK] [get_pins u6_rem_reg_94_/CK] [get_pins u6_rem_reg_95_/CK]   \
+[get_pins u6_rem_reg_96_/CK] [get_pins u6_rem_reg_97_/CK] [get_pins            \
+u6_rem_reg_98_/CK] [get_pins u6_rem_reg_99_/CK] [get_pins u6_rem_reg_100_/CK]  \
+[get_pins u6_rem_reg_101_/CK] [get_pins u6_rem_reg_102_/CK] [get_pins          \
+u6_rem_reg_103_/CK] [get_pins u6_rem_reg_104_/CK] [get_pins                    \
+u6_rem_reg_105_/CK] [get_pins u6_rem_reg_106_/CK] [get_pins                    \
+u6_rem_reg_107_/CK] [get_pins u6_remainder_reg_0_/CK] [get_pins                \
+u6_remainder_reg_1_/CK] [get_pins u6_remainder_reg_2_/CK] [get_pins            \
+u6_remainder_reg_3_/CK] [get_pins u6_remainder_reg_4_/CK] [get_pins            \
+u6_remainder_reg_5_/CK] [get_pins u6_remainder_reg_6_/CK] [get_pins            \
+u6_remainder_reg_7_/CK] [get_pins u6_remainder_reg_8_/CK] [get_pins            \
+u6_remainder_reg_9_/CK] [get_pins u6_remainder_reg_10_/CK] [get_pins           \
+u6_remainder_reg_11_/CK] [get_pins u6_remainder_reg_12_/CK] [get_pins          \
+u6_remainder_reg_13_/CK] [get_pins u6_remainder_reg_14_/CK] [get_pins          \
+u6_remainder_reg_15_/CK] [get_pins u6_remainder_reg_16_/CK] [get_pins          \
+u6_remainder_reg_17_/CK] [get_pins u6_remainder_reg_18_/CK] [get_pins          \
+u6_remainder_reg_19_/CK] [get_pins u6_remainder_reg_20_/CK] [get_pins          \
+u6_remainder_reg_21_/CK] [get_pins u6_remainder_reg_22_/CK] [get_pins          \
+u6_remainder_reg_23_/CK] [get_pins u6_remainder_reg_24_/CK] [get_pins          \
+u6_remainder_reg_25_/CK] [get_pins u6_remainder_reg_26_/CK] [get_pins          \
+u6_remainder_reg_27_/CK] [get_pins u6_remainder_reg_28_/CK] [get_pins          \
+u6_remainder_reg_29_/CK] [get_pins u6_remainder_reg_30_/CK] [get_pins          \
+u6_remainder_reg_31_/CK] [get_pins u6_remainder_reg_32_/CK] [get_pins          \
+u6_remainder_reg_33_/CK] [get_pins u6_remainder_reg_34_/CK] [get_pins          \
+u6_remainder_reg_35_/CK] [get_pins u6_remainder_reg_36_/CK] [get_pins          \
+u6_remainder_reg_37_/CK] [get_pins u6_remainder_reg_38_/CK] [get_pins          \
+u6_remainder_reg_39_/CK] [get_pins u6_remainder_reg_40_/CK] [get_pins          \
+u6_remainder_reg_41_/CK] [get_pins u6_remainder_reg_42_/CK] [get_pins          \
+u6_remainder_reg_43_/CK] [get_pins u6_remainder_reg_44_/CK] [get_pins          \
+u6_remainder_reg_45_/CK] [get_pins u6_remainder_reg_46_/CK] [get_pins          \
+u6_remainder_reg_47_/CK] [get_pins u6_remainder_reg_48_/CK] [get_pins          \
+u6_remainder_reg_49_/CK] [get_pins u6_remainder_reg_50_/CK] [get_pins          \
+u6_remainder_reg_51_/CK] [get_pins u6_remainder_reg_52_/CK] [get_pins          \
+u6_remainder_reg_55_/CK] [get_pins u6_remainder_reg_56_/CK] [get_pins          \
+u6_remainder_reg_57_/CK] [get_pins u6_remainder_reg_58_/CK] [get_pins          \
+u6_remainder_reg_59_/CK] [get_pins u6_remainder_reg_60_/CK] [get_pins          \
+u6_remainder_reg_61_/CK] [get_pins u6_remainder_reg_62_/CK] [get_pins          \
+u6_remainder_reg_63_/CK] [get_pins u6_remainder_reg_64_/CK] [get_pins          \
+u6_remainder_reg_65_/CK] [get_pins u6_remainder_reg_66_/CK] [get_pins          \
+u6_remainder_reg_67_/CK] [get_pins u6_remainder_reg_68_/CK] [get_pins          \
+u6_remainder_reg_69_/CK] [get_pins u6_remainder_reg_70_/CK] [get_pins          \
+u6_remainder_reg_71_/CK] [get_pins u6_remainder_reg_72_/CK] [get_pins          \
+u6_remainder_reg_73_/CK] [get_pins u6_remainder_reg_74_/CK] [get_pins          \
+u6_remainder_reg_75_/CK] [get_pins u6_remainder_reg_76_/CK] [get_pins          \
+u6_remainder_reg_77_/CK] [get_pins u6_remainder_reg_78_/CK] [get_pins          \
+u6_remainder_reg_79_/CK] [get_pins u6_remainder_reg_80_/CK] [get_pins          \
+u6_remainder_reg_81_/CK] [get_pins u6_remainder_reg_82_/CK] [get_pins          \
+u6_remainder_reg_83_/CK] [get_pins u6_remainder_reg_84_/CK] [get_pins          \
+u6_remainder_reg_85_/CK] [get_pins u6_remainder_reg_86_/CK] [get_pins          \
+u6_remainder_reg_87_/CK] [get_pins u6_remainder_reg_88_/CK] [get_pins          \
+u6_remainder_reg_89_/CK] [get_pins u6_remainder_reg_90_/CK] [get_pins          \
+u6_remainder_reg_91_/CK] [get_pins u6_remainder_reg_92_/CK] [get_pins          \
+u6_remainder_reg_93_/CK] [get_pins u6_remainder_reg_94_/CK] [get_pins          \
+u6_remainder_reg_95_/CK] [get_pins u6_remainder_reg_96_/CK] [get_pins          \
+u6_remainder_reg_97_/CK] [get_pins u6_remainder_reg_98_/CK] [get_pins          \
+u6_remainder_reg_99_/CK] [get_pins u6_remainder_reg_100_/CK] [get_pins         \
+u6_remainder_reg_101_/CK] [get_pins u6_remainder_reg_102_/CK] [get_pins        \
+u6_remainder_reg_103_/CK] [get_pins u6_remainder_reg_104_/CK] [get_pins        \
+u6_remainder_reg_105_/CK] [get_pins u6_remainder_reg_106_/CK] [get_pins        \
+u6_remainder_reg_107_/CK] [get_pins u6_quo_reg_0_/CK] [get_pins                \
+u6_quo_reg_1_/CK] [get_pins u6_quo_reg_2_/CK] [get_pins u6_quo_reg_3_/CK]      \
+[get_pins u6_quo_reg_4_/CK] [get_pins u6_quo_reg_5_/CK] [get_pins              \
+u6_quo_reg_6_/CK] [get_pins u6_quo_reg_7_/CK] [get_pins u6_quo_reg_8_/CK]      \
+[get_pins u6_quo_reg_9_/CK] [get_pins u6_quo_reg_10_/CK] [get_pins             \
+u6_quo_reg_11_/CK] [get_pins u6_quo_reg_12_/CK] [get_pins u6_quo_reg_13_/CK]   \
+[get_pins u6_quo_reg_14_/CK] [get_pins u6_quo_reg_15_/CK] [get_pins            \
+u6_quo_reg_16_/CK] [get_pins u6_quo_reg_17_/CK] [get_pins u6_quo_reg_18_/CK]   \
+[get_pins u6_quo_reg_19_/CK] [get_pins u6_quo_reg_20_/CK] [get_pins            \
+u6_quo_reg_21_/CK] [get_pins u6_quo_reg_22_/CK] [get_pins u6_quo_reg_23_/CK]   \
+[get_pins u6_quo_reg_24_/CK] [get_pins u6_quo_reg_25_/CK] [get_pins            \
+u6_quo_reg_26_/CK] [get_pins u6_quo_reg_27_/CK] [get_pins u6_quo_reg_28_/CK]   \
+[get_pins u6_quo_reg_29_/CK] [get_pins u6_quo_reg_30_/CK] [get_pins            \
+u6_quo_reg_31_/CK] [get_pins u6_quo_reg_32_/CK] [get_pins u6_quo_reg_33_/CK]   \
+[get_pins u6_quo_reg_34_/CK] [get_pins u6_quo_reg_35_/CK] [get_pins            \
+u6_quo_reg_36_/CK] [get_pins u6_quo_reg_37_/CK] [get_pins u6_quo_reg_38_/CK]   \
+[get_pins u6_quo_reg_39_/CK] [get_pins u6_quo_reg_40_/CK] [get_pins            \
+u6_quo_reg_41_/CK] [get_pins u6_quo_reg_42_/CK] [get_pins u6_quo_reg_43_/CK]   \
+[get_pins u6_quo_reg_44_/CK] [get_pins u6_quo_reg_45_/CK] [get_pins            \
+u6_quo_reg_46_/CK] [get_pins u6_quo_reg_47_/CK] [get_pins u6_quo_reg_48_/CK]   \
+[get_pins u6_quo_reg_49_/CK] [get_pins u6_quo_reg_50_/CK] [get_pins            \
+u6_quo_reg_51_/CK] [get_pins u6_quo_reg_52_/CK] [get_pins u6_quo_reg_55_/CK]   \
+[get_pins u6_quo_reg_56_/CK] [get_pins u6_quo_reg_57_/CK] [get_pins            \
+u6_quo_reg_58_/CK] [get_pins u6_quo_reg_59_/CK] [get_pins u6_quo_reg_60_/CK]   \
+[get_pins u6_quo_reg_61_/CK] [get_pins u6_quo_reg_62_/CK] [get_pins            \
+u6_quo_reg_63_/CK] [get_pins u6_quo_reg_64_/CK] [get_pins u6_quo_reg_65_/CK]   \
+[get_pins u6_quo_reg_66_/CK] [get_pins u6_quo_reg_67_/CK] [get_pins            \
+u6_quo_reg_68_/CK] [get_pins u6_quo_reg_69_/CK] [get_pins u6_quo_reg_70_/CK]   \
+[get_pins u6_quo_reg_71_/CK] [get_pins u6_quo_reg_72_/CK] [get_pins            \
+u6_quo_reg_73_/CK] [get_pins u6_quo_reg_74_/CK] [get_pins u6_quo_reg_75_/CK]   \
+[get_pins u6_quo_reg_76_/CK] [get_pins u6_quo_reg_77_/CK] [get_pins            \
+u6_quo_reg_78_/CK] [get_pins u6_quo_reg_79_/CK] [get_pins u6_quo_reg_80_/CK]   \
+[get_pins u6_quo_reg_81_/CK] [get_pins u6_quo_reg_82_/CK] [get_pins            \
+u6_quo_reg_83_/CK] [get_pins u6_quo_reg_84_/CK] [get_pins u6_quo_reg_85_/CK]   \
+[get_pins u6_quo_reg_86_/CK] [get_pins u6_quo_reg_87_/CK] [get_pins            \
+u6_quo_reg_88_/CK] [get_pins u6_quo_reg_89_/CK] [get_pins u6_quo_reg_90_/CK]   \
+[get_pins u6_quo_reg_91_/CK] [get_pins u6_quo_reg_92_/CK] [get_pins            \
+u6_quo_reg_93_/CK] [get_pins u6_quo_reg_94_/CK] [get_pins u6_quo_reg_95_/CK]   \
+[get_pins u6_quo_reg_96_/CK] [get_pins u6_quo_reg_97_/CK] [get_pins            \
+u6_quo_reg_98_/CK] [get_pins u6_quo_reg_99_/CK] [get_pins u6_quo_reg_100_/CK]  \
+[get_pins u6_quo_reg_101_/CK] [get_pins u6_quo_reg_102_/CK] [get_pins          \
+u6_quo_reg_103_/CK] [get_pins u6_quo_reg_104_/CK] [get_pins                    \
+u6_quo_reg_105_/CK] [get_pins u6_quo_reg_106_/CK] [get_pins                    \
+u6_quo_reg_107_/CK] [get_pins u6_quo1_reg_0_/CK] [get_pins u6_quo1_reg_1_/CK]  \
+[get_pins u6_quo1_reg_2_/CK] [get_pins u6_quo1_reg_3_/CK] [get_pins            \
+u6_quo1_reg_4_/CK] [get_pins u6_quo1_reg_5_/CK] [get_pins u6_quo1_reg_6_/CK]   \
+[get_pins u6_quo1_reg_7_/CK] [get_pins u6_quo1_reg_8_/CK] [get_pins            \
+u6_quo1_reg_9_/CK] [get_pins u6_quo1_reg_10_/CK] [get_pins u6_quo1_reg_11_/CK] \
+[get_pins u6_quo1_reg_12_/CK] [get_pins u6_quo1_reg_13_/CK] [get_pins          \
+u6_quo1_reg_14_/CK] [get_pins u6_quo1_reg_15_/CK] [get_pins                    \
+u6_quo1_reg_16_/CK] [get_pins u6_quo1_reg_17_/CK] [get_pins                    \
+u6_quo1_reg_18_/CK] [get_pins u6_quo1_reg_19_/CK] [get_pins                    \
+u6_quo1_reg_20_/CK] [get_pins u6_quo1_reg_21_/CK] [get_pins                    \
+u6_quo1_reg_22_/CK] [get_pins u6_quo1_reg_23_/CK] [get_pins                    \
+u6_quo1_reg_24_/CK] [get_pins u6_quo1_reg_25_/CK] [get_pins                    \
+u6_quo1_reg_26_/CK] [get_pins u6_quo1_reg_27_/CK] [get_pins                    \
+u6_quo1_reg_28_/CK] [get_pins u6_quo1_reg_29_/CK] [get_pins                    \
+u6_quo1_reg_30_/CK] [get_pins u6_quo1_reg_31_/CK] [get_pins                    \
+u6_quo1_reg_32_/CK] [get_pins u6_quo1_reg_33_/CK] [get_pins                    \
+u6_quo1_reg_34_/CK] [get_pins u6_quo1_reg_35_/CK] [get_pins                    \
+u6_quo1_reg_36_/CK] [get_pins u6_quo1_reg_37_/CK] [get_pins                    \
+u6_quo1_reg_38_/CK] [get_pins u6_quo1_reg_39_/CK] [get_pins                    \
+u6_quo1_reg_40_/CK] [get_pins u6_quo1_reg_41_/CK] [get_pins                    \
+u6_quo1_reg_42_/CK] [get_pins u6_quo1_reg_43_/CK] [get_pins                    \
+u6_quo1_reg_44_/CK] [get_pins u6_quo1_reg_45_/CK] [get_pins                    \
+u6_quo1_reg_46_/CK] [get_pins u6_quo1_reg_47_/CK] [get_pins                    \
+u6_quo1_reg_48_/CK] [get_pins u6_quo1_reg_49_/CK] [get_pins                    \
+u6_quo1_reg_50_/CK] [get_pins u6_quo1_reg_51_/CK] [get_pins                    \
+u6_quo1_reg_52_/CK] [get_pins u6_quo1_reg_55_/CK] [get_pins                    \
+u6_quo1_reg_56_/CK] [get_pins u6_quo1_reg_57_/CK] [get_pins                    \
+u6_quo1_reg_58_/CK] [get_pins u6_quo1_reg_59_/CK] [get_pins                    \
+u6_quo1_reg_60_/CK] [get_pins u6_quo1_reg_61_/CK] [get_pins                    \
+u6_quo1_reg_62_/CK] [get_pins u6_quo1_reg_63_/CK] [get_pins                    \
+u6_quo1_reg_64_/CK] [get_pins u6_quo1_reg_65_/CK] [get_pins                    \
+u6_quo1_reg_66_/CK] [get_pins u6_quo1_reg_67_/CK] [get_pins                    \
+u6_quo1_reg_68_/CK] [get_pins u6_quo1_reg_69_/CK] [get_pins                    \
+u6_quo1_reg_70_/CK] [get_pins u6_quo1_reg_71_/CK] [get_pins                    \
+u6_quo1_reg_72_/CK] [get_pins u6_quo1_reg_73_/CK] [get_pins                    \
+u6_quo1_reg_74_/CK] [get_pins u6_quo1_reg_75_/CK] [get_pins                    \
+u6_quo1_reg_76_/CK] [get_pins u6_quo1_reg_77_/CK] [get_pins                    \
+u6_quo1_reg_78_/CK] [get_pins u6_quo1_reg_79_/CK] [get_pins                    \
+u6_quo1_reg_80_/CK] [get_pins u6_quo1_reg_81_/CK] [get_pins                    \
+u6_quo1_reg_82_/CK] [get_pins u6_quo1_reg_83_/CK] [get_pins                    \
+u6_quo1_reg_84_/CK] [get_pins u6_quo1_reg_85_/CK] [get_pins                    \
+u6_quo1_reg_86_/CK] [get_pins u6_quo1_reg_87_/CK] [get_pins                    \
+u6_quo1_reg_88_/CK] [get_pins u6_quo1_reg_89_/CK] [get_pins                    \
+u6_quo1_reg_90_/CK] [get_pins u6_quo1_reg_91_/CK] [get_pins                    \
+u6_quo1_reg_92_/CK] [get_pins u6_quo1_reg_93_/CK] [get_pins                    \
+u6_quo1_reg_94_/CK] [get_pins u6_quo1_reg_95_/CK] [get_pins                    \
+u6_quo1_reg_96_/CK] [get_pins u6_quo1_reg_97_/CK] [get_pins                    \
+u6_quo1_reg_98_/CK] [get_pins u6_quo1_reg_99_/CK] [get_pins                    \
+u6_quo1_reg_100_/CK] [get_pins u6_quo1_reg_101_/CK] [get_pins                  \
+u6_quo1_reg_102_/CK] [get_pins u6_quo1_reg_103_/CK] [get_pins                  \
+u6_quo1_reg_104_/CK] [get_pins u6_quo1_reg_105_/CK] [get_pins                  \
+u6_quo1_reg_106_/CK] [get_pins u6_quo1_reg_107_/CK] [get_pins                  \
+u5_prod_reg_0_/CK] [get_pins u5_prod_reg_1_/CK] [get_pins u5_prod_reg_2_/CK]   \
+[get_pins u5_prod_reg_3_/CK] [get_pins u5_prod_reg_4_/CK] [get_pins            \
+u5_prod_reg_5_/CK] [get_pins u5_prod_reg_6_/CK] [get_pins u5_prod_reg_7_/CK]   \
+[get_pins u5_prod_reg_8_/CK] [get_pins u5_prod_reg_9_/CK] [get_pins            \
+u5_prod_reg_10_/CK] [get_pins u5_prod_reg_11_/CK] [get_pins                    \
+u5_prod_reg_12_/CK] [get_pins u5_prod_reg_13_/CK] [get_pins                    \
 u5_prod_reg_14_/CK] [get_pins u5_prod_reg_15_/CK] [get_pins                    \
 u5_prod_reg_16_/CK] [get_pins u5_prod_reg_17_/CK] [get_pins                    \
 u5_prod_reg_18_/CK] [get_pins u5_prod_reg_19_/CK] [get_pins                    \
@@ -1890,19 +1784,19 @@ u1_signb_r_reg/CK] [get_pins u1_signa_r_reg/CK] [get_pins u1_sign_reg/CK]      \
 [get_pins u1_fracta_out_reg_50_/CK] [get_pins u1_fracta_out_reg_51_/CK]        \
 [get_pins u1_fracta_out_reg_52_/CK] [get_pins u1_fracta_out_reg_53_/CK]        \
 [get_pins u1_fracta_out_reg_54_/CK] [get_pins u1_fracta_out_reg_55_/CK]        \
-[get_pins u1_sticky_reg/G] [get_pins u1_exp_dn_out_reg_0_/CK] [get_pins        \
-u1_exp_dn_out_reg_1_/CK] [get_pins u1_exp_dn_out_reg_2_/CK] [get_pins          \
-u1_exp_dn_out_reg_3_/CK] [get_pins u1_exp_dn_out_reg_4_/CK] [get_pins          \
-u1_exp_dn_out_reg_5_/CK] [get_pins u1_exp_dn_out_reg_6_/CK] [get_pins          \
-u1_exp_dn_out_reg_7_/CK] [get_pins u1_exp_dn_out_reg_8_/CK] [get_pins          \
-u1_exp_dn_out_reg_9_/CK] [get_pins u1_exp_dn_out_reg_10_/CK] [get_pins         \
-u0_opb_dn_reg/CK] [get_pins u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK]      \
-[get_pins u0_opa_00_reg/CK] [get_pins u0_fractb_00_reg/CK] [get_pins           \
-u0_fracta_00_reg/CK] [get_pins u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] \
-[get_pins u0_opb_inf_reg/CK] [get_pins u0_opa_inf_reg/CK] [get_pins            \
-u0_opb_nan_reg/CK] [get_pins u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK]      \
-[get_pins u0_qnan_reg/CK] [get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK]    \
-[get_pins u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins          \
+[get_pins u1_exp_dn_out_reg_0_/CK] [get_pins u1_exp_dn_out_reg_1_/CK]          \
+[get_pins u1_exp_dn_out_reg_2_/CK] [get_pins u1_exp_dn_out_reg_3_/CK]          \
+[get_pins u1_exp_dn_out_reg_4_/CK] [get_pins u1_exp_dn_out_reg_5_/CK]          \
+[get_pins u1_exp_dn_out_reg_6_/CK] [get_pins u1_exp_dn_out_reg_7_/CK]          \
+[get_pins u1_exp_dn_out_reg_8_/CK] [get_pins u1_exp_dn_out_reg_9_/CK]          \
+[get_pins u1_exp_dn_out_reg_10_/CK] [get_pins u0_opb_dn_reg/CK] [get_pins      \
+u0_opa_dn_reg/CK] [get_pins u0_opb_00_reg/CK] [get_pins u0_opa_00_reg/CK]      \
+[get_pins u0_fractb_00_reg/CK] [get_pins u0_fracta_00_reg/CK] [get_pins        \
+u0_expb_00_reg/CK] [get_pins u0_expa_00_reg/CK] [get_pins u0_opb_inf_reg/CK]   \
+[get_pins u0_opa_inf_reg/CK] [get_pins u0_opb_nan_reg/CK] [get_pins            \
+u0_opa_nan_reg/CK] [get_pins u0_snan_reg/CK] [get_pins u0_qnan_reg/CK]         \
+[get_pins u0_inf_reg/CK] [get_pins u0_ind_reg/CK] [get_pins                    \
+u0_snan_r_b_reg/CK] [get_pins u0_qnan_r_b_reg/CK] [get_pins                    \
 u0_snan_r_a_reg/CK] [get_pins u0_qnan_r_a_reg/CK] [get_pins                    \
 u0_infb_f_r_reg/CK] [get_pins u0_infa_f_r_reg/CK] [get_pins u0_expb_ff_reg/CK] \
 [get_pins u0_expa_ff_reg/CK] [get_pins fpu_op_r3_reg_0_/CK] [get_pins          \

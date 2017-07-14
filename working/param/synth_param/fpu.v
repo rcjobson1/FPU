@@ -431,13 +431,14 @@ always @(posedge clk)
     	(sign_d ?  1-{24'h00, (|opa_r1[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE]), opa_r1[MANT_SIZE:0]}-1 : {{MANT_SIZE + 2 {1'b0}}, (|opa_r1[BIT_SIZE-1:BIT_SIZE-1 - EXP_SIZE]), opa_r1[MANT_SIZE:0]}) :
     	(sign_d ? 1 - {opa_r1, {MANT_SIZE - 4{1'b0}}, 1'h1 } : {opa_r1, {MANT_SIZE - 5 {1'b0}}});
 
-always @(fpu_op_r3 or fract_out_q or prod or fract_div or fract_i2f)
+always @*//(fpu_op_r3 or fract_out_q or prod or fract_div or fract_i2f)
 	case(fpu_op_r3)
 	   //0,1:	fract_denorm = {fract_out_q, 20'h0};
      0,1:	fract_denorm = {fract_out_q, {MANT_SIZE - 2 {1'h0}}  };
 	   2:	fract_denorm = prod;
 	   3:	fract_denorm = fract_div;
 	   4,5:	fract_denorm = fract_i2f;
+           default: fract_denorm = {(MANT_SIZE + 1)*2 + 1{1'bx}}; 
 	endcase
 
 
