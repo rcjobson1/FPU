@@ -1,0 +1,16 @@
+
+# ***************************** SDF Annotate *****************************
+#
+# Annotate SDF file "fpu.sdf".
+#
+# Read from SDF file:
+#
+#  IOPATH           =      35960
+#  INTERCONNECT     =      14243
+#
+# Design objects annotated:
+#
+#  Module path delays  =      38476
+#
+# ************************************************************************
+#

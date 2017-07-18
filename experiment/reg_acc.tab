@@ -1,0 +1,3 @@
+$reg_acc call=reg_acc
+$print_max_delay call=print_max_delay
+acc+=r:global
