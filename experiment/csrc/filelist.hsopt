@@ -1,5 +1,5 @@
 rmapats_mop.o: rmapats.m
-	@/vol/synopsys/vcs/amd64/bin/cgmop1 -pic -gen_obj rmapats.m rmapats_mop.o
+	@/vol/synopsys/vcs/linux/bin/cgmop1 -gen_obj rmapats.m rmapats_mop.o
 
 rmapats.o: rmapats.c
 	@$(CC) $(CFLAGS) -c  -o rmapats.o rmapats.c

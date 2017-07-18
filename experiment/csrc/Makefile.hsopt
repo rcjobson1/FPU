@@ -14,7 +14,7 @@ VCS_CC=gcc
 # Loader
 LD=g++
 # Loader Flags
-LDFLAGS= 
+LDFLAGS=-melf_i386 -m32 
 
 # Default defines
 SHELL=/bin/sh
@@ -30,10 +30,10 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=-w  -pipe -O -I/vol/synopsys/vcs/include   
+CFLAGS=-w  -pipe -m32 -O -I/vol/synopsys/vcs/include   
 
-ASFLAGS=
-LIBS=/vol/synopsys/vcs/amd64/lib/libvirsim.so /vol/synopsys/vcs/amd64/lib/liberrorinf.so /vol/synopsys/vcs/amd64/lib/libsnpsmalloc.so 
+ASFLAGS=--32
+LIBS=/vol/synopsys/vcs/linux/lib/libvirsim.so /vol/synopsys/vcs/linux/lib/librterrorinf.so /vol/synopsys/vcs/linux/lib/libsnpsmalloc.so 
 
 include filelist.hsopt
 

@@ -45,6 +45,8 @@ def generate_test_vectors(bit_size, num_test_cases):
         elif bit_size == 16:
             result = num_conv.convert_16(result)
 
+        if result[-1] == "L": #Cuts off L in string
+            result = result[:-1]
 
         packaged = (result,rbitsa,rbitsb,op)
         operations.append(packaged)

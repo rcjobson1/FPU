@@ -3,7 +3,7 @@
 
 //`include `NETLIST_FILE
 
-`define TEST_FILE "BIT_32.testvector"
+`define TEST_FILE "vectors/BIT_32.testvector"
 `define OUTPUT_FILE "results.txt"
 `define SDF_FILE "fpu.sdf" 
 
@@ -28,14 +28,14 @@ fpu u0(clk, 2'b0, fpu_op, a, b, out, inf, snan, qnan, ine, overflow, underflow, 
 	initial 
 	begin
 		//insert sdf_annotate here!
-                $sdf_annotate(`SDF_FILE, u0,,"fpu.log"); 
+//                $sdf_annotate(`SDF_FILE, u0,,"fpu.log"); 
 		inFile = $fopen(`TEST_FILE, "r");
 		outFile = $fopen(`OUTPUT_FILE, "w");
 		//$read_lib_saif("lib/NangateOpenCellLibrary_typical_conditional_ecsm.saif");
-		$set_gate_level_monitoring("on");
+//		$set_gate_level_monitoring("on");
 		//insert toggle_region here!
-		$set_toggle_region(u0);
-		$toggle_start();
+//		$set_toggle_region(u0);
+//		$toggle_start();
 		clk = 1;	
 	end
 	
@@ -48,15 +48,15 @@ fpu u0(clk, 2'b0, fpu_op, a, b, out, inf, snan, qnan, ine, overflow, underflow, 
 		begin
 			$fclose(inFile);
 			$fclose(outFile);
-			$toggle_stop();
+//			$toggle_stop();
 		//	insert toggle_report here!
-			$toggle_report("backward_saif.txt", 1e-9, u0);
+//			$toggle_report("backward_saif.txt", 1e-9, u0);
 			#14 $finish;
 		end
 	end
 
-	always @ (negedge clk)
-		$print_max_delay();
+//	always @ (negedge clk)
+//		$print_max_delay();
 
 endmodule // top
 

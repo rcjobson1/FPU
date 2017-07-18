@@ -20,8 +20,8 @@ struct vec32 {
     U  I1;
     U  I2;
 };
-typedef unsigned long RP;
-typedef unsigned long RO;
+typedef unsigned RP;
+typedef unsigned RO;
 typedef unsigned short HsimEdge;
 typedef unsigned char HsimExprNode;
 typedef union {
@@ -1074,13 +1074,18 @@ extern void schedResetRecoveryDbs(U cedges, EBLK* peblkFirst);
 extern "C" {
 #endif
 void  hsF0_0_0_(UB  * I597, scalar  val);
+void  hsF0_0_5_(UB  * I597, UB  val);
 void  hsF0_1_0_(UB  * I597, scalar  val);
-void  hsF0_2_0_(UB  * I597, vec32  * I598, U  I707);
+void  hsF0_2_0_(UB  * I597, scalar  val);
+void  hsF0_2_5_(UB  * I597, UB  val);
 void  hsF0_3_0_(UB  * I597, scalar  val);
+void  hsF0_3_5_(UB  * I597, UB  val);
 void  hsF0_4_0_(UB  * I597, scalar  val);
 void  hsF0_4_5_(UB  * I597, UB  val);
 void  hsF0_5_0_(UB  * I597, scalar  val);
+void  hsF0_5_5_(UB  * I597, UB  val);
 void  hsF0_6_0_(UB  * I597, scalar  val);
+void  hsF0_6_5_(UB  * I597, UB  val);
 void  hsF0_7_0_(UB  * I597, scalar  val);
 void  hsF0_8_0_(UB  * I597, scalar  val);
 void  hsF0_9_0_(UB  * I597, scalar  val);
@@ -1173,26 +1178,6 @@ void  hsF0_95_0_(UB  * I597, scalar  val);
 void  hsF0_96_0_(UB  * I597, scalar  val);
 void  hsF0_97_0_(UB  * I597, scalar  val);
 void  hsF0_98_0_(UB  * I597, scalar  val);
-void  hsF0_98_5_(UB  * I597, UB  val);
-void  hsF0_99_0_(UB  * I597, scalar  val);
-void  hsF0_99_5_(UB  * I597, UB  val);
-void  hsF0_100_0_(UB  * I597, scalar  val);
-void  hsF0_100_5_(UB  * I597, UB  val);
-void  hsF0_101_0_(UB  * I597, scalar  val);
-void  hsF0_101_5_(UB  * I597, UB  val);
-void  hsF0_102_0_(UB  * I597, scalar  val);
-void  hsF0_103_0_(UB  * I597, scalar  val);
-void  hsF0_103_5_(UB  * I597, UB  val);
-void  hsF0_104_0_(UB  * I597, scalar  val);
-void  hsF0_104_5_(UB  * I597, UB  val);
-void  hsF0_105_0_(UB  * I597, scalar  val);
-void  hsF0_105_5_(UB  * I597, UB  val);
-void  hsF0_106_0_(UB  * I597, scalar  val);
-void  hsF0_106_5_(UB  * I597, UB  val);
-void  hsF0_107_0_(UB  * I597, scalar  val);
-void  hsF0_107_5_(UB  * I597, UB  val);
-void  hsF0_108_0_(UB  * I597, scalar  val);
-void  hsF0_108_5_(UB  * I597, UB  val);
 void  schedNewEvent(struct dummyq_struct * I651, EBLK  * I652, U  I509);
 #ifdef __cplusplus
 }
