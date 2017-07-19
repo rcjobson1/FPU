@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/100ps
 `define EOF 32'hFFFF_FFFF
 
 //`include `NETLIST_FILE

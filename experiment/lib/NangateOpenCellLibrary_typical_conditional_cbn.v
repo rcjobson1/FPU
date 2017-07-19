@@ -23,7 +23,7 @@
 // *   NGLibraryCharacterizer, v2009.07-HR28-2009-07-08 - build 200907162109    *
 // *                                                                            *
 // ******************************************************************************
-`timescale 1ns/1ps
+`timescale 1ns/100ps
 
 module AND2_X1 (A1, A2, ZN);
 

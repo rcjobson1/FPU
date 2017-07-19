@@ -1,9 +1,9 @@
-`timescale 1ns/1ps
+`timescale 1ns / 100ps
 `define EOF 32'hFFFF_FFFF
 
 //`include `NETLIST_FILE
 
-`define TEST_FILE "BIT_32.testvector"
+`define TEST_FILE "vectors/BIT_32.testvector"
 `define OUTPUT_FILE "results.txt"
 `define SDF_FILE "fpu.sdf" 
 

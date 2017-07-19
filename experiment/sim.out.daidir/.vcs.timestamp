@@ -1,0 +1,79 @@
+2        
+0 64bit/fpu64.sdf_c
+0 64bit/fpu64.sdf_c.gz
+31
++define+TOP=tb
++neg_tchk
++sdfverbose
++v2k
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -O -I/vol/synopsys/vcs/include
+-Mcmodrun=
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=reg_acc.c
+-Mldflags=
+-Mobjects= /vol/synopsys/vcs/amd64/lib/libvirsim.so /vol/synopsys/vcs/amd64/lib/liberrorinf.so /vol/synopsys/vcs/amd64/lib/libsnpsmalloc.so
+-Mout=sim.out
+-Msaverestoreobj=/vol/synopsys/vcs/amd64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl -lm
+-Mvcsaceobjs=
+-P
+-cm_xmldb
+-full64
+-gen_obj
+-o sim.out
+-pvalue+BIT_SIZE=64
+/vol/synopsys/vcs/amd64/bin/vcs1
+64bit/fpu.v
+lib/NangateOpenCellLibrary_typical_conditional_cbn.v
+lib/NangateOpenCellLibrary_typical_conditional_sqt.v
+reg_acc.tab
+tb.v
+27
+VMR_MODE_FLAG=64
+VENDOR=unknown
+VCS_MODE_FLAG=64
+VCS_HOME=/vol/synopsys/vcs
+VCS_EXE=/vol/synopsys/vcs/bin
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=amd64
+UNAME=/bin/uname
+TOOL_HOME=/vol/synopsys/vcs/amd64
+SYNOPSYS=/vol/synopsys
+SSH_TTY=/dev/pts/3
+SSH_CONNECTION=129.105.15.70 49532 129.105.8.239 22
+SSH_CLIENT=129.105.15.70 49532 22
+SNPSLM_LICENSE_FILE=@synopsyslm.eecs.northwestern.edu
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+REMOTEHOST=cameron-desktop.ece.northwestern.edu
+PT_EXE=/vol/synopsys/pts/bin
+OVA_UUM=0
+OSTYPE=linux
+HOSTTYPE=x86_64-linux
+HOSTNAME=serpentor.ece.northwestern.edu
+HOST=serpentor.ece.northwestern.edu
+GROUP=e90joseph
+DC_EXE=/vol/synopsys/syn/bin
+ASTRO_EXE=/vol/synopsys/astro_vY-2006.06-SP2/bin
+0
+7
+1500498323 fpu.log
+1500411143 64bit/fpu64.sdf
+1500481203 lib/NangateOpenCellLibrary_typical_conditional_sqt.v
+1500481205 lib/NangateOpenCellLibrary_typical_conditional_cbn.v
+1500411149 64bit/fpu.v
+1500498017 tb.v
+1500401739 reg_acc.tab
+5
+1500401739 reg_acc.c
+0 
+1298523545 /vol/synopsys/vcs/amd64/lib/libvirsim.so
+1298523345 /vol/synopsys/vcs/amd64/lib/liberrorinf.so
+1298523150 /vol/synopsys/vcs/amd64/lib/libsnpsmalloc.so
+1500498325 sim.out.daidir

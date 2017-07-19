@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/100ps
 
 primitive DFFR_X1_seq3 (IQ, RN, nextstate, CK, NOTIFIER);
   output IQ;

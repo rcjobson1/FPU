@@ -1,6 +1,6 @@
 
    ***   $sdf_annotate() version 1.2R
-   ***    SDF file: "fpu.sdf"
+   ***    SDF file: "64bit/fpu64.sdf"
    ***    Annotation scope: top.u0
    ***    SDF Annotator log file: "fpu.log"
    ***    No MTM selection argument specified
@@ -13,13 +13,13 @@
    ***    Turnoff delay: "FROM_FILE"
    ***    Approximation (mipd) policy: "MAXIMUM"
 
-   ***    SDF annotation begin: Tue Jul 18 16:10:10 2017
+   ***    SDF annotation begin: Wed Jul 19 16:05:23 2017
 
 
 SDF Info: +pulse_r/100, +pulse_e/100 in effect
 
           Total errors: 0
           Total warnings: 0
-   ***    SDF annotation completed: Tue Jul 18 16:10:11 2017
+   ***    SDF annotation completed: Wed Jul 19 16:05:24 2017
 
 

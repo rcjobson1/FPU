@@ -8,7 +8,7 @@ VSRC=..
 TARGET_ARCH=
 
 # Choose name of executable 
-PRODUCTBASE=$(VSRC)/simv
+PRODUCTBASE=$(VSRC)/sim.out
 
 PRODUCT=$(PRODUCTBASE)
 
@@ -17,9 +17,9 @@ PRODUCT=$(PRODUCTBASE)
 PRODUCT_TIMESTAMP=product_timestamp
 
 # Path to runtime library
-RUNTIME=/vol/synopsys/vcs/linux/lib/libvcsnew.so /vol/synopsys/vcs/linux/lib/libuclinative.so 
+RUNTIME=/vol/synopsys/vcs/amd64/lib/libvcsnew.so /vol/synopsys/vcs/amd64/lib/libuclinative.so 
 
-VCS_SAVE_RESTORE_OBJ=/vol/synopsys/vcs/linux/lib/vcs_save_restore_new.o
+VCS_SAVE_RESTORE_OBJ=/vol/synopsys/vcs/amd64/lib/vcs_save_restore_new.o
 
 # Select your favorite compiler
 
@@ -31,7 +31,7 @@ VCS_CC=gcc
 # Loader
 LD=g++
 # Loader Flags
-LDFLAGS=-melf_i386 -m32 
+LDFLAGS= 
 # Picarchive Flags
 PICLDFLAGS= 
 
@@ -40,7 +40,7 @@ CRT0=
 # C run time startup
 CRTN=
 # Machine specific libraries
-SYSLIBS=/vol/synopsys/vcs/linux/lib/ctype-stubs_32.a -ldl  -lc -lm -lpthread -ldl
+SYSLIBS=-ldl -lm  -lc -lpthread -ldl
 
 # Default defines
 SHELL=/bin/sh
@@ -56,12 +56,12 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=-w  -pipe -m32 -O -I/vol/synopsys/vcs/include   
+CFLAGS=-w  -pipe -O -I/vol/synopsys/vcs/include   
 
 # Partial linking
-LD_PARTIAL=ld -r -m elf_i386 -o
-ASFLAGS=--32
-LIBS=/vol/synopsys/vcs/linux/lib/libvirsim.so /vol/synopsys/vcs/linux/lib/librterrorinf.so /vol/synopsys/vcs/linux/lib/libsnpsmalloc.so 
+LD_PARTIAL=ld -r -o
+ASFLAGS=
+LIBS=/vol/synopsys/vcs/amd64/lib/libvirsim.so /vol/synopsys/vcs/amd64/lib/liberrorinf.so /vol/synopsys/vcs/amd64/lib/libsnpsmalloc.so 
 # Note: if make gives you errors about include, either get gmake, or
 # replace the following line with the contents of the file filelist,
 # EACH TIME IT CHANGES
